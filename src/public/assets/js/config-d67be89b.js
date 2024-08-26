@@ -1,0 +1,1 @@
+const t="/login",e=["/500","/","/main/About/AboutDetail","/rpwd","/register","/main/CustomerService","/main/CustomerService/ServiceCollection"],o=["home","activity","main","promotion","chat","wallet"];export{t as L,e as R,o as T};

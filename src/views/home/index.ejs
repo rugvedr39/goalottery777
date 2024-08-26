@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.16px;">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="noindex,nofollow">
+	<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+	<title>lottery</title>
+	<link href="/css/home/new.css" rel="stylesheet" />
+	<link href="/css/home/chunk-vendors.css" rel="stylesheet" />
+	<link href="/css/home/app.css" rel="stylesheet" />
+
+	<link href="/css/home/chunk.css" rel="stylesheet" />
+	<link href="/css/home/chunk2.css" rel="stylesheet" />
+	<link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="/css/wallet/chunk-6e8d5c6e.0fc0ae11.css">
+	<style>
+		@media screen and (max-width: 500px) {
+			.mian {
+				width:100%;
+				min-height: 100vh
+			}
+		}
+		html,
+		body {
+			height: 100%;
+			width: 100%;
+
+			padding: 0;
+			margin: 0;
+		}
+
+
+
+
+
+		#popup-container {
+
+			display: none;
+			position: fixed;
+			top: 45%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 8.29333rem;
+			height: 12.4rem;
+			/* padding: 35px; */
+			border: 1px solid rgb(151, 151, 151);
+			border-radius: .2rem;
+			box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+			z-index: 1000;
+			text-align: center;
+			 background: linear-gradient(90deg,#f95959 0%,#ff9a8e 100%);
+			backface-visibility: hidden;
+			border-top-left-radius: 23px;
+		}
+
+
+		#popup-content {
+			height: 9.33333rem;
+			padding: .4rem .26667rem;
+			overflow-y: auto;
+			color: #fff;
+
+		}
+
+		#close-btn {
+
+			color: #fff;
+			width: 80%;
+			height: .93333rem;
+			text-align: center;
+			line-height: .93333rem;
+			background: #3C9CF6;
+			border-radius: 1.06667rem;
+			z-index: 100;
+			font-weight: 700;
+			font-size: .42667rem;
+			font-family: Inter;
+			font-style: normal;
+			letter-spacing: .06667rem;
+			border: none;
+		}
+
+
+
+		#popup-header {
+
+			text-align: center;
+			border-radius: 7px;
+
+			height: 1.17333rem;
+			line-height: 1.17333rem;
+			color: #fff;
+			font-weight: 700;
+			font-size: .48rem;
+			background-image: url(/images/PreSaleBg-6b500601.png);
+		}
+	</style>
+	<style>
+		#comingsoonpop {
+			display: none;
+			position: fixed;
+			top: 54%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 6.29333rem;
+			height: 6.4rem;
+			/* padding: 35px; */
+			/* border: 1px solid rgb(151, 151, 151); */
+			border-radius: 1.2rem;
+			box-shadow: 0 0 10px rgb(255 134 82 / 20%);
+			z-index: 1000;
+			text-align: center;
+			/*  background: linear-gradient(90deg,#f95959 0%,#ff9a8e 100%); */
+			background: linear-gradient(125.43deg, #ff8e89 12.38%, #ffc3a2 87.13%);
+			backface-visibility: hidden;
+			/* border-top-left-radius: 23px; */
+		}
+
+
+		#comingsoonpop-content {
+			height: 4.03333rem;
+			padding: .4rem .26667rem;
+			overflow-y: auto;
+			color: #fff;
+		}
+
+		#comingsoonpop-btn {
+			color: #fff;
+			width: 55%;
+			height: .93333rem;
+			text-align: center;
+			line-height: .93333rem;
+			background: #d75353;
+			border-radius: 1.06667rem;
+			z-index: 100;
+			font-weight: 700;
+			font-size: .42667rem;
+			font-family: Inter;
+			font-style: normal;
+			letter-spacing: .06667rem;
+			border: none;
+		}
+
+		.van-dialog {
+			top: 46% !important;
+			width: 8rem !important;
+			border-radius: .26667rem !important;
+		}
+
+
+		#comingsoonpop-header {
+
+			text-align: center;
+			border-radius: 7px;
+
+			height: 1.17333rem;
+			line-height: 1.17333rem;
+			color: #fff;
+			font-weight: 700;
+			font-size: .48rem;
+			background-image: url(/images/PreSaleBg-6b500601.png);
+		}
+
+		.dialog__container-img[data-v-cf21bf5a] {
+			width: 2.13333rem;
+			height: 2.13333rem;
+		}
+
+		.dialog__container-img img[data-v-cf21bf5a] {
+			width: 100%;
+			height: 100%;
+		}
+
+		.dialog__container-title[data-v-cf21bf5a] {
+			margin-top: .34667rem;
+			font-size: .48rem;
+			font-weight: 700;
+		}
+
+		.dialog__container-footer[data-v-cf21bf5a] {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			gap: .28rem;
+			width: 100%;
+			height: 1.06667rem;
+			margin-top: auto;
+			padding: 0 .26667rem;
+		}
+
+		.dialog__container-footer button[data-v-cf21bf5a]:last-of-type {
+			width: 4.34667rem;
+			color: #fff;
+			text-shadow: 0 0.05333rem 0.02667rem rgba(231, 65, 65, .5019607843);
+			background: -webkit-linear-gradient(top, #ff867a 0%, #f95959 100%);
+			background: linear-gradient(180deg, #ff867a 0%, #f95959 100%);
+			box-shadow: 0 0.05333rem #e74141;
+		}
+
+		.dialog__container-footer button[data-v-cf21bf5a] {
+			width: 3.12rem;
+			height: 1.06667rem;
+			color: #f95959;
+			font-size: .42667rem;
+			text-align: center;
+			border-radius: 9rem;
+			border: .01333rem solid #f95959;
+			background: transparent;
+		}
+	</style>
+
+</head>
+
+<body style="font-size: 12px;" class="">
+
+	<div id="comingsoonpop">
+
+		<div data-v-cf21bf5a="" class="dialog__container" role="dialog" tabindex="0">
+			<div data-v-cf21bf5a="" class="dialog__container-img"><img data-v-cf21bf5a="" alt="" class=""
+					data-origin="assets/png/orderCancelWarn-ac58c333.png"
+					src="assets/png/orderCancelWarn-ac58c333.png"></div>
+			<div data-v-cf21bf5a="" class="dialog__container-title">
+				<h1 data-v-cf21bf5a="">Coming Soon !!</h1>
+			</div>
+			<div data-v-cf21bf5a="" class="dialog__container-content"></div>
+			<div data-v-cf21bf5a="" class="dialog__container-footer"><button data-v-cf21bf5a=""
+					onclick="closePopup()">ok</button></div><!---->
+		</div>
+
+	</div>
+	<div class="van-overlay" style="z-index: 2001; --411bdf34: 'Roboto', 'Inter', sans-serif;" onclick="closeDialog()">
+	</div>
+	<div role="dialog" tabindex="0" class="van-popup van-popup--center van-dialog firstSaveDialog"
+		style="z-index: 2001; --411bdf34: 'Roboto', 'Inter', sans-serif;">
+		<div class="van-dialog__header">
+			<div data-v-c6c57f74="" class="header">
+				<div data-v-c6c57f74="" class="title">Extra first deposit bonus</div>
+				<div data-v-c6c57f74="" class="tip">Each account can only receive rewards once</div>
+			</div>
+
+
+		</div>
+		<div class="van-dialog__content">
+			<div data-v-c6c57f74="" class="container">
+				<div data-v-89e57484="" class="first_list-item">
+					<div data-v-89e57484="" class="head">
+						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">240000</span>
+						</div>
+						<div data-v-89e57484="" class="orange">+ ₹8,888.00</div>
+					</div>
+					<div data-v-89e57484="" class="description">Deposit 240000 for the first time in your account
+						and you can receive 8888</div>
+					<div data-v-89e57484="" class="foot">
+						<div data-v-c0491936="" data-v-89e57484="" class="progress"
+							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+							<div data-v-c0491936="" class="line"
+								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+							</div>
+							<div data-v-c0491936="" class="step">0/240000</div>
+						</div>
+						<div data-v-89e57484="" class="btn n2">Deposit</div>
+					</div>
+				</div>
+				<div data-v-89e57484="" class="first_list-item">
+					<div data-v-89e57484="" class="head">
+						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">120000</span>
+						</div>
+						<div data-v-89e57484="" class="orange">+ ₹5,888.00</div>
+					</div>
+					<div data-v-89e57484="" class="description">Deposit 120000 for the first time in your account
+						and you can receive 5888</div>
+					<div data-v-89e57484="" class="foot">
+						<div data-v-c0491936="" data-v-89e57484="" class="progress"
+							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+							<div data-v-c0491936="" class="line"
+								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+							</div>
+							<div data-v-c0491936="" class="step">0/120000</div>
+						</div>
+						<div data-v-89e57484="" class="btn n2">Deposit</div>
+					</div>
+				</div>
+				<div data-v-89e57484="" class="first_list-item">
+					<div data-v-89e57484="" class="head">
+						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">24000</span>
+						</div>
+						<div data-v-89e57484="" class="orange">+ ₹1,388.00</div>
+					</div>
+					<div data-v-89e57484="" class="description">Deposit 24000 for the first time in your account and
+						you can receive 1388</div>
+					<div data-v-89e57484="" class="foot">
+						<div data-v-c0491936="" data-v-89e57484="" class="progress"
+							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+							<div data-v-c0491936="" class="line"
+								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+							</div>
+							<div data-v-c0491936="" class="step">0/24000</div>
+						</div>
+						<div data-v-89e57484="" class="btn n2">Deposit</div>
+					</div>
+				</div>
+				<div data-v-89e57484="" class="first_list-item">
+					<div data-v-89e57484="" class="head">
+						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">10000</span>
+						</div>
+						<div data-v-89e57484="" class="orange">+ ₹488.00</div>
+					</div>
+					<div data-v-89e57484="" class="description">Deposit 10000 for the first time in your account and
+						you can receive 488</div>
+					<div data-v-89e57484="" class="foot">
+						<div data-v-c0491936="" data-v-89e57484="" class="progress"
+							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+							<div data-v-c0491936="" class="line"
+								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+							</div>
+							<div data-v-c0491936="" class="step">0/10000</div>
+						</div>
+						<div data-v-89e57484="" class="btn n2">Deposit</div>
+					</div>
+				</div>
+				<div data-v-89e57484="" class="first_list-item">
+					<div data-v-89e57484="" class="head">
+						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">2000</span>
+						</div>
+						<div data-v-89e57484="" class="orange">+ ₹188.00</div>
+					</div>
+					<div data-v-89e57484="" class="description">Deposit 2000 for the first time in your account and
+						you can receive 188</div>
+					<div data-v-89e57484="" class="foot">
+						<div data-v-c0491936="" data-v-89e57484="" class="progress"
+							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+							<div data-v-c0491936="" class="line"
+								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+							</div>
+							<div data-v-c0491936="" class="step">0/2000</div>
+						</div>
+						<div data-v-89e57484="" class="btn n2">Deposit</div>
+					</div>
+				</div>
+				<div data-v-89e57484="" class="first_list-item">
+					<div data-v-89e57484="" class="head">
+						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">1000</span>
+						</div>
+						<div data-v-89e57484="" class="orange">+ ₹108.00</div>
+					</div>
+					<div data-v-89e57484="" class="description">Deposit 1000 for the first time in your account and
+						you can receive 108</div>
+					<div data-v-89e57484="" class="foot">
+						<div data-v-c0491936="" data-v-89e57484="" class="progress"
+							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+							<div data-v-c0491936="" class="line"
+								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+							</div>
+							<div data-v-c0491936="" class="step">0/1000</div>
+						</div>
+						<div data-v-89e57484="" class="btn n2">Deposit</div>
+					</div>
+				</div>
+				<div data-v-89e57484="" class="first_list-item">
+					<div data-v-89e57484="" class="head">
+						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">400</span></div>
+						<div data-v-89e57484="" class="orange">+ ₹48.00</div>
+					</div>
+					<div data-v-89e57484="" class="description">Deposit 400 for the first time in your account and
+						you can receive 48</div>
+					<div data-v-89e57484="" class="foot">
+						<div data-v-c0491936="" data-v-89e57484="" class="progress"
+							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+							<div data-v-c0491936="" class="line"
+								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+							</div>
+							<div data-v-c0491936="" class="step">0/400</div>
+						</div>
+						<div data-v-89e57484="" class="btn n2">Deposit</div>
+					</div>
+				</div>
+				<div data-v-89e57484="" class="first_list-item">
+					<div data-v-89e57484="" class="head">
+						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">200</span></div>
+						<div data-v-89e57484="" class="orange">+ ₹28.00</div>
+					</div>
+					<div data-v-89e57484="" class="description">Deposit 200 for the first time in your account and
+						you can receive 28</div>
+					<div data-v-89e57484="" class="foot">
+						<div data-v-c0491936="" data-v-89e57484="" class="progress"
+							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+							<div data-v-c0491936="" class="line"
+								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+							</div>
+							<div data-v-c0491936="" class="step">0/200</div>
+						</div>
+						<div data-v-89e57484="" class="btn n2">Deposit</div>
+					</div>
+				</div><!----><!---->
+			</div>
+			<div data-v-c6c57f74="" class="close"></div>
+		</div>
+		<div data-v-c6c57f74="" class="footer">
+
+			<div data-v-c6c57f74="" class="btn ">Activity</div>
+		</div><!---->
+	</div>
+
+
+
+	<div id="app" data-v-app="">
+
+		<div data-v-432e6ed0="" class="home mian game">
+
+			<div data-v-18e39f8d="" class="content" style="--411bdf34: 'Roboto', 'Inter', sans-serif;">
+				<div data-v-4c21fa9e="" data-v-18e39f8d="" class="navbar">
+					<div data-v-4c21fa9e="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
+						<div data-v-4c21fa9e="" class="navbar__content">
+							<div data-v-4c21fa9e="" class="navbar__content-left"><img data-v-18e39f8d=""
+									src="/assets/png/h5setting_20230714005938hfia.png" alt=""></div>
+							<div data-v-4c21fa9e="" class="navbar__content-center"><!---->
+								<div data-v-4c21fa9e="" class="navbar__content-title"></div>
+							</div>
+							<div data-v-4c21fa9e="" class="navbar__content-right">
+								<div data-v-18e39f8d="" class="content__right">
+									<div data-v-18e39f8d="" class="message"><svg data-v-18e39f8d="" width="48"
+											height="48" viewBox="0 0 48 48" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path opacity="0.4"
+												d="M34 41H14C8 41 4 38 4 31V17C4 10 8 7 14 7H34C40 7 44 10 44 17V31C44 38 40 41 34 41Z"
+												fill="#F95959"></path>
+											<path
+												d="M23.9981 25.744C22.3181 25.744 20.6181 25.224 19.3181 24.164L13.0581 19.164C12.767 18.9112 12.5848 18.5558 12.5493 18.1719C12.5139 17.788 12.628 17.4053 12.8679 17.1035C13.1078 16.8017 13.4549 16.6042 13.8369 16.5521C14.2189 16.5 14.6062 16.5974 14.9181 16.824L21.1781 21.824C22.6981 23.044 25.2781 23.044 26.7981 21.824L33.0581 16.824C33.6981 16.304 34.6581 16.404 35.1581 17.064C35.6781 17.704 35.5781 18.664 34.9181 19.164L28.6581 24.164C27.3781 25.224 25.6781 25.744 23.9981 25.744Z"
+												fill="#F95959"></path>
+										</svg>
+										<div data-v-d6fe61e8="" data-v-18e39f8d="" class="point point-flicker point"
+											style=""></div>
+									</div><svg data-v-18e39f8d="" class="svg-icon icon-down down down"
+										style="color: rgb(251, 87, 85);">
+										<use xlink:href="#icon-down"></use>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+					
+						<div data-v-432e6ed0="" class="banner" >
+							<div data-v-432e6ed0="" class="van-swipe" style="border-radius: 20px;">
+								<div class="van-swipe__track list-banner"
+									style="width: 1448px; transition-duration: 0ms; transform: translateX(0px);">
+									<div data-v-432e6ed0="" class="van-swipe-item" style="width: 482px;">
+										<img data-v-432e6ed0=""
+											src="/assets/png/Banner_20240131163932lnmf.jpg"
+											class="img">
+									</div>
+									<div data-v-432e6ed0="" class="van-swipe-item" style="width: 482px;">
+										<img data-v-432e6ed0=""
+											src="/assets/png/Banner_20240204130106kabs.png"
+											class="img">
+									</div>
+									<div data-v-432e6ed0="" class="van-swipe-item" style="width: 482px;">
+										<img data-v-432e6ed0=""
+											src="/assets/png/Banner_20240327152703xq8d.jpg"
+											class="img">
+									</div>
+									<div data-v-432e6ed0="" class="van-swipe-item" style="width: 482px;">
+										<img data-v-432e6ed0=""
+											src="src/public/assets/png/Banner_202404022208094k2d.jpg"
+											class="img">
+									</div>
+								</div>
+								<div class="van-swipe__indicators">
+									<i class="van-swipe__indicator" style=""></i>
+									<i class="van-swipe__indicator" style=""></i>
+									<i class="van-swipe__indicator" style=""></i>
+									<i class="van-swipe__indicator"></i>
+								</div>
+							</div>
+						</div>
+					
+				
+				<div data-v-b4633b52="" data-v-18e39f8d="" class="noticeBar__container"><svg data-v-b4633b52=""
+						width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g clip-path="url(#clip0_589_37747)">
+							<path
+								d="M15.9993 4V28C11.3327 28 7.86502 21.8927 7.86502 21.8927H3.99935C3.26297 21.8927 2.66602 21.2958 2.66602 20.5594V11.3405C2.66602 10.6041 3.26297 10.0072 3.99935 10.0072H7.86502C7.86502 10.0072 11.3327 4 15.9993 4Z"
+								fill="url(#paint0_linear_589_37747)"></path>
+							<path
+								d="M21.334 10C21.7495 10.371 22.1261 10.7865 22.4567 11.2392C23.4265 12.5669 24.0007 14.2149 24.0007 16C24.0007 17.7697 23.4363 19.4045 22.4819 20.7262C22.1452 21.1923 21.7601 21.6195 21.334 22"
+								stroke="url(#paint1_linear_589_37747)" stroke-width="1.8" stroke-linecap="round"
+								stroke-linejoin="round"></path>
+							<path
+								d="M22.8242 27.4571C26.7227 25.1302 29.3336 20.87 29.3336 16C29.3336 11.2057 26.8031 7.00234 23.005 4.65271"
+								stroke="url(#paint2_linear_589_37747)" stroke-width="1.8" stroke-linecap="round"></path>
+						</g>
+						<defs>
+							<linearGradient id="paint0_linear_589_37747" x1="9.33268" y1="4" x2="9.33268" y2="28"
+								gradientUnits="userSpaceOnUse">
+								<stop stop-color="#FF7C7C"></stop>
+								<stop offset="0.74876" stop-color="#F54545"></stop>
+							</linearGradient>
+							<linearGradient id="paint1_linear_589_37747" x1="22.6673" y1="10" x2="22.6673" y2="22"
+								gradientUnits="userSpaceOnUse">
+								<stop stop-color="#FF7C7C"></stop>
+								<stop offset="0.74876" stop-color="#F54545"></stop>
+							</linearGradient>
+							<linearGradient id="paint2_linear_589_37747" x1="26.0789" y1="4.65271" x2="26.0789"
+								y2="27.4571" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#FF7C7C"></stop>
+								<stop offset="0.74876" stop-color="#F54545"></stop>
+							</linearGradient>
+							<clipPath id="clip0_589_37747">
+								<rect width="32" height="32" fill="white"></rect>
+							</clipPath>
+						</defs>
+					</svg>
+					<div data-v-b4633b52="" class="noticeBar__container-body">
+						<div data-v-b4633b52="" class="noticeBar__container-body-text">Welcome to OUR GAME! We have a
+							variety
+							of games, promos and bonus for you to enjoy, so why wait? Go register and enjoy the variety
+							reward awaits you.</div>
+					</div><button data-v-b4633b52=""><svg data-v-b4633b52="" width="24" height="24" viewBox="0 0 24 24"
+							fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g clip-path="url(#clip0_589_37755)">
+								<path d="M24 0H0V24H24V0Z" fill="white" fill-opacity="0.01"></path>
+								<path
+									d="M12 22C16.1173 22 19.4999 18.7371 19.4999 14.5491C19.4999 13.5209 19.4476 12.4187 18.8778 10.7058C18.3079 8.9929 18.1931 8.7718 17.5905 7.71395C17.333 9.8727 15.9555 10.7724 15.6055 11.0413C15.6055 10.7615 14.7722 7.66795 13.5088 5.81695C12.2685 4 10.5817 2.80796 9.59265 2C9.59265 3.53489 9.16095 5.81695 8.5427 6.9797C7.92445 8.14245 7.80835 8.1848 7.0361 9.0501C6.2639 9.9154 5.90945 10.1826 5.2637 11.2325C4.61798 12.2825 4.5 13.6809 4.5 14.7091C4.5 18.8971 7.88265 22 12 22Z"
+									fill="white"></path>
+							</g>
+							<defs>
+								<clipPath id="clip0_589_37755">
+									<rect width="24" height="24" fill="white"></rect>
+								</clipPath>
+							</defs>
+						</svg> Detail</button>
+				</div>
+				<div data-v-05b1316f="" data-v-18e39f8d="" class="gameList">
+					<div data-v-05b1316f="" role="tablist" class="van-sidebar mySideBar">
+						<div data-v-05b1316f="" role="tab" class="van-sidebar-item van-sidebar-item--select"
+							tabindex="0" aria-selected="true" id="gameType-lottery">
+							<div class="van-badge__wrapper van-sidebar-item__text">
+								<div data-v-05b1316f="" class="whiteColor">
+									<div data-v-05b1316f=""
+										style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141426883l.png&quot;);">
+									</div> Lottery
+								</div><!---->
+							</div>
+						</div>
+						<button onclick="showPopup()" style="border: none;">
+							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
+								aria-selected="false" id="gameType-flash">
+								<div class="van-badge__wrapper van-sidebar-item__text">
+									<div data-v-05b1316f="" class="">
+										<div data-v-05b1316f=""
+											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141435wkxx.png&quot;);">
+										</div> Mini games
+									</div><!---->
+								</div>
+							</div>
+						</button>
+						<button onclick="showPopup()" style="border: none;">
+							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
+								aria-selected="false" id="gameType-popular">
+								<div class="van-badge__wrapper van-sidebar-item__text">
+									<div data-v-05b1316f="" class="">
+										<div data-v-05b1316f=""
+											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141445b3ka.png&quot;);">
+										</div> Popular
+									</div><!---->
+								</div>
+							</div>
+						</button>
+						<button onclick="showPopup()" style="border: none;">
+							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
+								aria-selected="false" id="gameType-slot">
+								<div class="van-badge__wrapper van-sidebar-item__text">
+									<div data-v-05b1316f="" class="">
+										<div data-v-05b1316f=""
+											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141457h3ts.png&quot;);">
+										</div> Slots
+									</div><!---->
+								</div>
+							</div>
+						</button>
+						<button onclick="showPopup()" style="border: none;">
+							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
+								aria-selected="false" id="gameType-fish">
+								<div class="van-badge__wrapper van-sidebar-item__text">
+									<div data-v-05b1316f="" class="">
+										<div data-v-05b1316f=""
+											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141515owja.png&quot;);">
+										</div> Fishing
+									</div><!---->
+								</div>
+							</div>
+						</button>
+						<button onclick="showPopup()" style="border: none;">
+							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
+								aria-selected="false" id="gameType-chess">
+								<div class="van-badge__wrapper van-sidebar-item__text">
+									<div data-v-05b1316f="" class="">
+										<div data-v-05b1316f=""
+											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_202403111415086ujt.png&quot;);">
+										</div> PVC
+									</div><!---->
+								</div>
+							</div>
+						</button>
+						<button onclick="showPopup()" style="border: none;">
+							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
+								aria-selected="false" id="gameType-video">
+								<div class="van-badge__wrapper van-sidebar-item__text">
+									<div data-v-05b1316f="" class="">
+										<div data-v-05b1316f=""
+											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141522uvco.png&quot;);">
+										</div> Casino
+									</div><!---->
+								</div>
+							</div>
+						</button>
+						<button onclick="showPopup()" style="border: none;">
+							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
+								aria-selected="false" id="gameType-sport">
+								<div class="van-badge__wrapper van-sidebar-item__text">
+									<div data-v-05b1316f="" class="">
+										<div data-v-05b1316f=""
+											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141531fugo.png&quot;);">
+										</div> Sports
+									</div><!---->
+								</div>
+							</div>
+						</button>
+					</div>
+					<div data-v-4cdf76da="" data-v-05b1316f="" class="gameListGrid__container" style="">
+						<!----><!----><!---->
+						<div data-v-95fbb1e8="" data-v-4cdf76da="" class="lottery_container" onclick="location.href='win'">
+							<div data-v-95fbb1e8="" class="lotterySlotItem"><img data-v-95fbb1e8="" class=""
+									data-origin="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_202307140102511fow.png"
+									src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_202307140102511fow.png"><span
+									data-v-95fbb1e8="">Win Go</span>
+								<h4 data-v-95fbb1e8="">
+									<div data-v-95fbb1e8="">Guess Number</div>
+									<div >Green/Red/Purple to win</div>
+								</h4>
+							</div>
+							<div data-v-95fbb1e8="" class="lotterySlotItem"><img data-v-95fbb1e8="" class=""
+									data-origin="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010227swu2.png"
+									src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010227swu2.png"><span
+									data-v-95fbb1e8="">K3</span>
+								<h4 data-v-95fbb1e8="">
+									<div data-v-95fbb1e8="">Guess Number</div>
+									<div data-v-95fbb1e8="">Big/Small/Odd/Even</div>
+								</h4>
+							</div>
+							<div data-v-95fbb1e8="" class="lotterySlotItem"><img data-v-95fbb1e8="" class=""
+									data-origin="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_2023071401023322dy.png"
+									src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_2023071401023322dy.png"><span
+									data-v-95fbb1e8="">5D</span>
+								<h4 data-v-95fbb1e8="">
+									<div data-v-95fbb1e8="">Guess Number</div>
+									<div data-v-95fbb1e8="">Big/Small/Odd/Even</div>
+								</h4>
+							</div>
+							<div data-v-95fbb1e8="" class="lotterySlotItem"><img data-v-95fbb1e8="" class=""
+									data-origin="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010246lyuc.png"
+									src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010246lyuc.png"><span
+									data-v-95fbb1e8="">Trx Win(<strong>Coming soon</strong>)</span>
+								<h4 data-v-95fbb1e8="">
+									<div data-v-95fbb1e8="">Guess Number</div>
+									<div data-v-95fbb1e8="">Green/Red/Purple to win</div>
+								</h4>
+							</div>
+						</div><!----><button data-v-4cdf76da="" class="look_all"><img data-v-4cdf76da=""
+								src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAIVBMVEUAAAD5Wlr3WFj6WVn6WFj5V1f6WVn5WVn5WVn4V1f5WVnpXZn/AAAACnRSTlMA72C/v1DP329wWe0twgAAAKNJREFUOMtjoA/gMFwFAkkgdrMUiLlMASyhtQoCGhgYmKDMFWCJLCivgIGBDcpcDpZYBQULGBi4YOwRLlEF5SQwMLBDmcvAErOgPGBYc0KZi8ASTI4g9kIjEFsFHB/CCgyDF7AaIpwbjHAuIvkEIJLPUrCEF5RnwMDAAmUuBktIQXkCDAyMUObCgY9BGkvg9Dn+sIpCJB9WbMnHFCn5BDDQBQAAbjlnhYlIhpEAAAAASUVORK5CYII="
+								alt=""> View All</button>
+					</div>
+				</div>
+				<div data-v-d256944b="" data-v-18e39f8d="" class="luckyWinners__container">
+					<h1 data-v-d256944b="">Winning information</h1>
+					<div data-v-d256944b="" class="luckyWinners__container-wrapper">
+						<div data-v-d256944b="" style="position: relative;">
+							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
+										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
+										class="ar-lazyload" data-origin="/assets/png/19-2ac9fd83.png">
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
+									<h1 data-v-d256944b="">Mem***HMX</h1>
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
+										data-v-d256944b="" class="ar-lazyload"
+										data-origin="/assets/png/AG_Electronic-e10bfdc0.png"></div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
+									<h1 data-v-d256944b="">Receive ₹3,800.00</h1><span data-v-d256944b="">Winning
+										amount</span>
+								</div>
+							</div>
+							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
+										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
+										class="ar-lazyload" data-origin="/assets/png/19-2ac9fd83.png">
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
+									<h1 data-v-d256944b="">Mem***UKX</h1>
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
+										data-v-d256944b="" class="ar-lazyload"
+										data-origin="/assets/png/JDB-1ae3283b.png"></div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
+									<h1 data-v-d256944b="">Receive ₹17.50</h1><span data-v-d256944b="">Winning
+										amount</span>
+								</div>
+							</div>
+							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
+										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
+										class="ar-lazyload" data-origin="/assets/png/18-52955242.png">
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
+									<h1 data-v-d256944b="">Mem***FZG</h1>
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
+										data-v-d256944b="" class="ar-lazyload"
+										data-origin="/assets/png/AG_Electronic-e10bfdc0.png"></div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
+									<h1 data-v-d256944b="">Receive ₹40.00</h1><span data-v-d256944b="">Winning
+										amount</span>
+								</div>
+							</div>
+							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
+										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
+										class="ar-lazyload" data-origin="/assets/png/1-a6662edb.png">
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
+									<h1 data-v-d256944b="">Mem***CMK</h1>
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
+										data-v-d256944b="" class="ar-lazyload"
+										data-origin="/assets/png/AG_Electronic-e10bfdc0.png"></div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
+									<h1 data-v-d256944b="">Receive ₹16.00</h1><span data-v-d256944b="">Winning
+										amount</span>
+								</div>
+							</div>
+							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
+										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
+										class="ar-lazyload" data-origin="/assets/png/2-58c8a9bc.png">
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
+									<h1 data-v-d256944b="">Mem***GTL</h1>
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
+										data-v-d256944b="" class="ar-lazyload"
+										data-origin="/assets/png/TrxHash-1ff152ae.png"></div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
+									<h1 data-v-d256944b="">Receive ₹117.60</h1><span data-v-d256944b="">Winning
+										amount</span>
+								</div>
+							</div>
+							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
+										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
+										class="ar-lazyload" data-origin="/assets/png/9-6d772f2c.png">
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
+									<h1 data-v-d256944b="">Mem***RSK</h1>
+								</div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
+										data-v-d256944b="" class="ar-lazyload"
+										data-origin="/assets/png/TrxHash-1ff152ae.png"></div>
+								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
+									<h1 data-v-d256944b="">Receive ₹392.00</h1><span data-v-d256944b="">Winning
+										amount</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-v-12b85567="" data-v-18e39f8d="" class="dailyProfitRank">
+					<h1 data-v-12b85567="">Today's earnings chart</h1>
+					<div data-v-12b85567="" class="dailyProfitRank__content">
+						<div data-v-12b85567="" class="dailyProfitRank__content-topThree">
+							<div data-v-12b85567="" class="dailyProfitRank__content-topThree__item"
+								style="order: 2; top: -45px;">
+								<div data-v-12b85567=""
+									style="background: url(&quot;/assets/png/border1-3b6518ec.png&quot;) center center / 100% 100% no-repeat;">
+									<img data-v-12b85567="" data-img="/assets/png/avatar-ea3b8ee9.png" class=""
+										data-origin="/assets/png/3-abfcc056.png" src="/assets/png/3-abfcc056.png">
+								</div>
+								<div data-v-12b85567=""><img data-v-12b85567="" class=""
+										data-origin="/assets/png/crown1-3912fd85.png"
+										src="/assets/png/crown1-3912fd85.png"><img data-v-12b85567="" class=""
+										data-origin="/assets/png/place1-fe39c3f3.png"
+										src="/assets/png/place1-fe39c3f3.png"></div><span
+									data-v-12b85567="">Mem***EVT</span><span data-v-12b85567="">₹412,156,618.44</span>
+							</div>
+							<div data-v-12b85567="" class="dailyProfitRank__content-topThree__item"
+								style="order: 1; top: -30px;">
+								<div data-v-12b85567=""
+									style="background: url(&quot;/assets/png/border2-7a806be7.png&quot;) center center / 100% 100% no-repeat;">
+									<img data-v-12b85567="" data-img="/assets/png/avatar-ea3b8ee9.png" class=""
+										data-origin="/assets/png/10-29a6603e.png" src="/assets/png/10-29a6603e.png">
+								</div>
+								<div data-v-12b85567=""><img data-v-12b85567="" class=""
+										data-origin="/assets/png/crown2-c8aced52.png"
+										src="/assets/png/crown2-c8aced52.png"><img data-v-12b85567="" class=""
+										data-origin="/assets/png/place2-8189be28.png"
+										src="/assets/png/place2-8189be28.png"></div><span
+									data-v-12b85567="">Mem***HWP</span><span data-v-12b85567="">₹147,762,048.00</span>
+							</div>
+							<div data-v-12b85567="" class="dailyProfitRank__content-topThree__item"
+								style="order: 3; top: -30px;">
+								<div data-v-12b85567=""
+									style="background: url(&quot;/assets/png/border3-cfec4a7d.png&quot;) center center / 100% 100% no-repeat;">
+									<img data-v-12b85567="" data-img="/assets/png/avatar-ea3b8ee9.png" class=""
+										data-origin="/assets/png/10-29a6603e.png" src="/assets/png/10-29a6603e.png">
+								</div>
+								<div data-v-12b85567=""><img data-v-12b85567="" class=""
+										data-origin="/assets/png/crown3-2ca02146.png"
+										src="/assets/png/crown3-2ca02146.png"><img data-v-12b85567="" class=""
+										data-origin="/assets/png/place3-d9b0be38.png"
+										src="/assets/png/place3-d9b0be38.png"></div><span
+									data-v-12b85567="">Mem***JIM</span><span data-v-12b85567="">₹93,926,655.48</span>
+							</div>
+						</div>
+						<div data-v-12b85567="" class="dailyProfitRank__content-list">
+							<div data-v-12b85567="" class="dailyProfitRank__content-list__item"><span data-v-12b85567=""
+									class="left-rank">4</span><img data-v-12b85567=""
+									data-img="/assets/png/avatar-ea3b8ee9.png" class=""
+									data-origin="/assets/png/10-29a6603e.png" src="/assets/png/10-29a6603e.png"><span
+									data-v-12b85567="" class="middle-name">Mem***OEG</span><span data-v-12b85567=""
+									class="right-box">₹70,896,277.20</span></div>
+							<div data-v-12b85567="" class="dailyProfitRank__content-list__item"><span data-v-12b85567=""
+									class="left-rank">5</span><img data-v-12b85567=""
+									data-img="/assets/png/avatar-ea3b8ee9.png" class=""
+									data-origin="/assets/png/15-80f41fc6.png" src="/assets/png/15-80f41fc6.png"><span
+									data-v-12b85567="" class="middle-name">Mem***GJG</span><span data-v-12b85567=""
+									class="right-box">₹19,598,040.00</span></div>
+						</div>
+					</div>
+				</div>
+				<div data-v-8a2fbe28="" data-v-18e39f8d="" class="changlongEnter"></div><!----><!----><!----><!---->
+				<div data-v-0e007999="" data-v-18e39f8d="" class="dialog inactive">
+					<div data-v-0e007999="" class="dialog__container" role="dialog" tabindex="0">
+						<div data-v-0e007999="" class="dialog__container-img"><img data-v-0e007999="" alt="" class=""
+								data-origin="/assets/png/superjackpotHome-72bbeb43.png"
+								src="/assets/png/superjackpotHome-72bbeb43.png"></div>
+						<div data-v-0e007999="" class="dialog__container-title">
+							<h1 data-v-0e007999="">Congratulation</h1>
+						</div>
+						<div data-v-0e007999="" class="dialog__container-content">
+							<div data-v-18e39f8d="" class="Laundry-Con">
+								<div data-v-18e39f8d="" class="Laundry-Con_tip">Get 【Super Jackpot】!</div>
+								<div data-v-18e39f8d="" class="Landty-Con-tips">Visit the [Super Jackpot] page to claim
+									your
+									reward</div>
+							</div>
+						</div>
+						<div data-v-0e007999="" class="dialog__container-footer"><!----><button
+								data-v-0e007999="">OK</button></div>
+					</div>
+					<div data-v-0e007999="" class="dialog__outside"></div>
+				</div>
+			</div>
+			<div class="customer" onclick="location.href='/kefumenu'" id="customerId"
+				style="--411bdf34: 'Roboto', 'Inter', sans-serif; --17a7a9f6: bahnschrift;"><img class=""
+					data-origin="/assets/png/icon_sevice-9f0c8455.png" src="/assets/png/icon_sevice-9f0c8455.png"></div>
+			<%- include('../nav') -%>
+				<div class="van-overlay"
+					style="z-index: 2007; --411bdf34: 'Roboto', 'Inter', sans-serif; display: none;">
+					<!---->
+				</div>
+				<div role="dialog" tabindex="0" class="van-popup van-popup--center van-dialog firstSaveDialog"
+					style="z-index: 2007; --411bdf34: 'Roboto', 'Inter', sans-serif; display: none;">
+					<div class="van-dialog__header">
+						<div data-v-c6c57f74="" class="header">
+							<div data-v-c6c57f74="" class="title">Extra first deposit bonus</div>
+							<div data-v-c6c57f74="" class="tip">Each account can only receive rewards once</div>
+						</div>
+					</div>
+					<div class="van-dialog__content">
+						<div data-v-c6c57f74="" class="container">
+							<div data-v-89e57484="" class="first_list-item">
+								<div data-v-89e57484="" class="head">
+									<div data-v-89e57484="" class="title">first deposit<span
+											data-v-89e57484="">240000</span>
+									</div>
+									<div data-v-89e57484="" class="orange">+ ₹8,888.00</div>
+								</div>
+								<div data-v-89e57484="" class="description">Deposit 240000 for the first time in your
+									account
+									and you can receive 8888</div>
+								<div data-v-89e57484="" class="foot">
+									<div data-v-c0491936="" data-v-89e57484="" class="progress"
+										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+										<div data-v-c0491936="" class="line"
+											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+										</div>
+										<div data-v-c0491936="" class="step">0/240000</div>
+									</div>
+									<div data-v-89e57484="" class="btn n2">Deposit</div>
+								</div>
+							</div>
+							<div data-v-89e57484="" class="first_list-item">
+								<div data-v-89e57484="" class="head">
+									<div data-v-89e57484="" class="title">first deposit<span
+											data-v-89e57484="">120000</span>
+									</div>
+									<div data-v-89e57484="" class="orange">+ ₹5,888.00</div>
+								</div>
+								<div data-v-89e57484="" class="description">Deposit 120000 for the first time in your
+									account
+									and you can receive 5888</div>
+								<div data-v-89e57484="" class="foot">
+									<div data-v-c0491936="" data-v-89e57484="" class="progress"
+										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+										<div data-v-c0491936="" class="line"
+											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+										</div>
+										<div data-v-c0491936="" class="step">0/120000</div>
+									</div>
+									<div data-v-89e57484="" class="btn n2">Deposit</div>
+								</div>
+							</div>
+							<div data-v-89e57484="" class="first_list-item">
+								<div data-v-89e57484="" class="head">
+									<div data-v-89e57484="" class="title">first deposit<span
+											data-v-89e57484="">24000</span>
+									</div>
+									<div data-v-89e57484="" class="orange">+ ₹1,388.00</div>
+								</div>
+								<div data-v-89e57484="" class="description">Deposit 24000 for the first time in your
+									account and
+									you can receive 1388</div>
+								<div data-v-89e57484="" class="foot">
+									<div data-v-c0491936="" data-v-89e57484="" class="progress"
+										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+										<div data-v-c0491936="" class="line"
+											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+										</div>
+										<div data-v-c0491936="" class="step">0/24000</div>
+									</div>
+									<div data-v-89e57484="" class="btn n2">Deposit</div>
+								</div>
+							</div>
+							<div data-v-89e57484="" class="first_list-item">
+								<div data-v-89e57484="" class="head">
+									<div data-v-89e57484="" class="title">first deposit<span
+											data-v-89e57484="">10000</span>
+									</div>
+									<div data-v-89e57484="" class="orange">+ ₹488.00</div>
+								</div>
+								<div data-v-89e57484="" class="description">Deposit 10000 for the first time in your
+									account and
+									you can receive 488</div>
+								<div data-v-89e57484="" class="foot">
+									<div data-v-c0491936="" data-v-89e57484="" class="progress"
+										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+										<div data-v-c0491936="" class="line"
+											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+										</div>
+										<div data-v-c0491936="" class="step">0/10000</div>
+									</div>
+									<div data-v-89e57484="" class="btn n2">Deposit</div>
+								</div>
+							</div>
+							<div data-v-89e57484="" class="first_list-item">
+								<div data-v-89e57484="" class="head">
+									<div data-v-89e57484="" class="title">first deposit<span
+											data-v-89e57484="">2000</span>
+									</div>
+									<div data-v-89e57484="" class="orange">+ ₹188.00</div>
+								</div>
+								<div data-v-89e57484="" class="description">Deposit 2000 for the first time in your
+									account and
+									you can receive 188</div>
+								<div data-v-89e57484="" class="foot">
+									<div data-v-c0491936="" data-v-89e57484="" class="progress"
+										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+										<div data-v-c0491936="" class="line"
+											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+										</div>
+										<div data-v-c0491936="" class="step">0/2000</div>
+									</div>
+									<div data-v-89e57484="" class="btn n2">Deposit</div>
+								</div>
+							</div>
+							<div data-v-89e57484="" class="first_list-item">
+								<div data-v-89e57484="" class="head">
+									<div data-v-89e57484="" class="title">first deposit<span
+											data-v-89e57484="">1000</span>
+									</div>
+									<div data-v-89e57484="" class="orange">+ ₹108.00</div>
+								</div>
+								<div data-v-89e57484="" class="description">Deposit 1000 for the first time in your
+									account and
+									you can receive 108</div>
+								<div data-v-89e57484="" class="foot">
+									<div data-v-c0491936="" data-v-89e57484="" class="progress"
+										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+										<div data-v-c0491936="" class="line"
+											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+										</div>
+										<div data-v-c0491936="" class="step">0/1000</div>
+									</div>
+									<div data-v-89e57484="" class="btn n2">Deposit</div>
+								</div>
+							</div>
+							<div data-v-89e57484="" class="first_list-item">
+								<div data-v-89e57484="" class="head">
+									<div data-v-89e57484="" class="title">first deposit<span
+											data-v-89e57484="">400</span></div>
+									<div data-v-89e57484="" class="orange">+ ₹48.00</div>
+								</div>
+								<div data-v-89e57484="" class="description">Deposit 400 for the first time in your
+									account and
+									you can receive 48</div>
+								<div data-v-89e57484="" class="foot">
+									<div data-v-c0491936="" data-v-89e57484="" class="progress"
+										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+										<div data-v-c0491936="" class="line"
+											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+										</div>
+										<div data-v-c0491936="" class="step">0/400</div>
+									</div>
+									<div data-v-89e57484="" class="btn n2">Deposit</div>
+								</div>
+							</div>
+							<div data-v-89e57484="" class="first_list-item">
+								<div data-v-89e57484="" class="head">
+									<div data-v-89e57484="" class="title">first deposit<span
+											data-v-89e57484="">200</span></div>
+									<div data-v-89e57484="" class="orange">+ ₹28.00</div>
+								</div>
+								<div data-v-89e57484="" class="description">Deposit 200 for the first time in your
+									account and
+									you can receive 28</div>
+								<div data-v-89e57484="" class="foot">
+									<div data-v-c0491936="" data-v-89e57484="" class="progress"
+										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
+										<div data-v-c0491936="" class="line"
+											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
+										</div>
+										<div data-v-c0491936="" class="step">0/200</div>
+									</div>
+									<div data-v-89e57484="" class="btn n2">Deposit</div>
+								</div>
+							</div><!----><!---->
+						</div>
+						<div data-v-c6c57f74="" class="close" onclick="closePopup()"></div>
+					</div>
+					<div data-v-c6c57f74="" class="footer">
+						<div data-v-c6c57f74="" class="active">No more reminders today</div>
+						<div data-v-c6c57f74="" class="btn">Activity</div>
+					</div><!---->
+				</div><!----><!----><!----><!---->
+		</div>
+		
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="/js/client.js"></script>
+	<script>
+		let url = window.location.pathname;
+		let check = document.querySelector(`.van-tabbar-item[data-url='${url}']`);
+		document.querySelector('#nav_checkUrl').setAttribute('data-url', url);
+		if (check) check.classList.add('block-click');
+		let pathname = document.querySelector('#nav_checkUrl').getAttribute('data-url');
+		let listNavs = document.querySelector('#nav_checkUrl .van-hairline--top-bottom').children;
+		let select = 0;
+		switch (pathname) {
+			case '/home':
+				select = 0;
+				break;
+			case '/checkIn':
+				select = 1;
+				break;
+			case '/promotion':
+				select = 2;
+				break;
+			case '/wallet':
+				select = 3;
+				break;
+			case '/mian':
+				select = 4;
+				break;
+			default:
+				break;
+		}
+
+		let arr = [
+			{ id: 1, src: '/images/home.png' },
+			{ id: 2, src: '/images/checked1.png' },
+			{ id: 3, src: '/images/invite.png' },
+			{ id: 4, src: '/images/wallet2.png' },
+			{ id: 5, src: '/images/me2.png' },
+		];
+
+		listNavs[select].children[1].children[0].children[0].setAttribute('src', arr[select].src); // img
+		listNavs[select].children[1].children[1].classList.add('action'); // name active
+	</script>
+	<script>
+		$(document).ready(function () {
+			function alertMess(text, sic) {
+				$('body').append(
+					`
+					<div data-v-1dcba851="" class="msg">
+						<div data-v-1dcba851="" class="msg-content v-enter-active v-enter-to" style=""> ${text} </div>
+					</div>
+					`
+				);
+				setTimeout(() => {
+					$('.msg .msg-content').removeClass('v-enter-active v-enter-to');
+					$('.msg .msg-content').addClass('v-leave-active v-leave-to');
+					setTimeout(() => {
+						$('.msg').remove();
+					}, 100);
+					sic.removeClass('block-click');
+				}, 1000);
+			}
+			// $('.gameList .list-games:eq(2), .testing-list-game').click(function (e) {
+			// 	e.preventDefault();
+			// 	$(this).addClass('block-click');
+			// 	alertMess('Currently under development', $(this));
+			// });
+			let getWBody = $('.navbar').width();
+			let getswipe = $('#swipe_van-swipe').width();
+			$(".list-banner .van-swipe-item").css("width", `${getWBody}px`);
+			$("#swipe_van-swipe .van-swipe__track .van-swipe-item").css("width", `${getswipe}px`);
+
+			let formSlide = document.querySelector('.van-notice-bar__content');
+			if (formSlide) {
+				formSlide.style = 'transition-duration: 44.0815s; transform: translateX(-2204.07px);';
+			}
+
+			$('#tab_support .item').click(function (e) {
+				e.preventDefault();
+				$('#tab_support .item').removeClass('action');
+				let elementThis = $(this).addClass('action');
+			});
+			$('#tab_support .item:eq(0)').click(function (e) {
+				e.preventDefault();
+				$('#show-support .van-swipe-item .van-ellipsis').text('Choose a game');
+				$('#show-support .van-swipe-item .van-multi-ellipsis--l2').text('You can choose to play lottery games every 1 minute, 3 minutes, 5 minutes, and 10 minutes.');
+			});
+
+			$('#tab_support .item:eq(1)').click(function (e) {
+				e.preventDefault();
+				let action = $(this).children().children().children();
+				action.attr('src', '/images/support2.png');
+				$('#show-support .van-swipe-item .van-ellipsis').text('Choose number');
+				$('#show-support .van-swipe-item .van-multi-ellipsis--l2').text('Choose your lucky number or color');
+			});
+
+			$('#tab_support .item:eq(2)').click(function (e) {
+				e.preventDefault();
+				let action = $(this).children().children().children();
+				action.attr('src', '/images/support3.png');
+				$('#show-support .van-swipe-item .van-ellipsis').text('Place a bet');
+				$('#show-support .van-swipe-item .van-multi-ellipsis--l2').text('Choose the amount of money you want to bet and confirm');
+			});
+
+			$('#tab_support .item:eq(3)').click(function (e) {
+				e.preventDefault();
+				let action = $(this).children().children().children();
+				action.attr('src', '/images/support4.png');
+				$('#show-support .van-swipe-item .van-ellipsis').text('Win the Prize');
+				$('#show-support .van-swipe-item .van-multi-ellipsis--l2').text('When you choose a lucky number for the current round, the system will automatically add the prize money to your balance');
+			});
+
+			let count = 0;
+			let element = document.querySelector('.van-swipe__track');
+			setInterval(() => {
+				let getWBody = $('.navbar').width();
+				$(`.van-swipe__indicator`).removeClass('van-swipe__indicator--active');
+				$(`.van-swipe__indicator`).css("backgroundColor", "");
+				$(`.van-swipe__indicator:eq(${count})`).addClass('van-swipe__indicator--active');
+				$(`.van-swipe__indicator:eq(${count})`).css("backgroundColor", "rgb(242, 65, 59)");
+				if (element) {
+					if (count == 0) {
+						element.style = `width: 1448px; transition-duration: 500ms; transform: translateX(-${getWBody}px);`;
+					} else if (count == 1) {
+						element.style = `width: 1448px; transition-duration: 500ms; transform: translateX(-${getWBody * 2}px);`;
+					} else if (count == 2) {
+						element.style = `width: 1448px; transition-duration: 500ms; transform: translateX(-${getWBody * 3}px);`;
+					} else if (count == 3) {
+						count = -1;
+						element.style = `width: 1448px; transition-duration: 0ms; transform: translateX(0px);`;
+					}
+				}
+				count++;
+			}, 2500);
+
+			function cownDownTimer() {
+				let countDownDate = new Date("2019-07-21T23:59:59.9999999+01:00").getTime();
+				setInterval(function () {
+					let now = new Date().getTime();
+					let distance = now - countDownDate;
+					let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+					let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+					let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+					let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+					$('.list-flip_nums .flip-num:eq(0) .top').text((days < 10) ? `0${days}` : days);
+					$('.list-flip_nums .flip-num:eq(0) .bottom-card').removeClass('flipX');
+					$('.list-flip_nums .flip-num:eq(0) .back .c-tc').text((days + 1 < 10) ? `0${days + 1}` : days + 1);
+					if (seconds >= 59 && minutes >= 59 && hours >= 23) {
+						setTimeout(() => {
+							$('.list-flip_nums .flip-num:eq(0) .bottom-card').addClass('flipX');
+						}, 100);
+					}
+
+					$('.list-flip_nums .flip-num:eq(1) .top').text((hours < 10) ? `0${hours}` : hours);
+					$('.list-flip_nums .flip-num:eq(1) .bottom-card').removeClass('flipX');
+					$('.list-flip_nums .flip-num:eq(1) .back .c-tc').text((hours + 1 < 10) ? `0${hours + 1}` : hours + 1);
+					if (seconds >= 59 && minutes >= 59) {
+						setTimeout(() => {
+							$('.list-flip_nums .flip-num:eq(1) .bottom-card').addClass('flipX');
+						}, 100);
+					}
+
+					$('.list-flip_nums .flip-num:eq(2) .top').text((minutes < 10) ? `0${minutes}` : minutes);
+					$('.list-flip_nums .flip-num:eq(2) .bottom-card').removeClass('flipX');
+					$('.list-flip_nums .flip-num:eq(2) .back .c-tc').text((minutes + 1 < 10) ? `0${minutes + 1}` : minutes + 1);
+					if (seconds >= 59) {
+						setTimeout(() => {
+							$('.list-flip_nums .flip-num:eq(2) .bottom-card').addClass('flipX');
+						}, 100);
+					}
+
+					$('.list-flip_nums .flip-num:eq(3) .bottom-card').removeClass('flipX');
+					$('.list-flip_nums .flip-num:eq(3) .top').text((seconds < 10) ? `0${seconds}` : seconds);
+					$('.list-flip_nums .flip-num:eq(3) .back .c-tc').text((seconds + 1 < 10) ? `0${seconds + 1}` : seconds + 1);
+					setTimeout(() => {
+						$('.list-flip_nums .flip-num:eq(3) .bottom-card').addClass('flipX');
+					}, 100);
+				}, 1000);
+			};
+			cownDownTimer();
+		});
+	</script>
+	<script>
+		$(window).on('load', function () {
+			$('.Loading').fadeOut(0);
+		});
+		function makeid(length) {
+			var result = '';
+			var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+			var charactersLength = characters.length;
+			for (var i = 0; i < length; i++) {
+				result += characters.charAt(Math.floor(Math.random() * charactersLength));
+			}
+			return result;
+		}
+
+		function randMoney(max, min) {
+			var result = Math.floor(Math.random() * (max - min + 1)) + min;
+			return result;
+		}
+
+		let wingo = '';
+		let k5d = '';
+		let k3 = '';
+		let top_nap = '';
+		let name = '';
+		let money = 0;
+		function CreatMemJoin() {
+			for (let i = 0; i < 4; i++) {
+				name = makeid(5);
+				money = randMoney(99, 1000);
+				wingo +=
+					`
+				<div data-v-39efd474="" class="van-swipe-item" style="height: 40px;">
+					<div data-v-39efd474="" class="swiper-item">
+						<div data-v-39efd474="" class="c-row c-row-between c-row-middle item">
+							<img data-v-39efd474="" src="/images/avatar.cfa8dd9d.svg" class="img">
+							<div data-v-39efd474="" class="info c-row c-row-between">
+								<div data-v-39efd474="" class="m-l-10 name">Member${name}</div>
+								<div data-v-39efd474="" class="c-row c-row-middle-center">
+									<span data-v-39efd474="" class="u-p-r-10">Bet </span>
+									<span data-v-39efd474="" class="price"> ${money}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				`;
+				name = makeid(5);
+				money = randMoney(199, 10000);
+				k5d +=
+					`
+				<div data-v-39efd474="" class="van-swipe-item" style="height: 40px;">
+					<div data-v-39efd474="" class="swiper-item">
+						<div data-v-39efd474="" class="c-row c-row-between c-row-middle item">
+							<img data-v-39efd474="" src="/images/avatar.cfa8dd9d.svg" class="img">
+							<div data-v-39efd474="" class="info c-row c-row-between">
+								<div data-v-39efd474="" class="m-l-10 name">Member${name}</div>
+								<div data-v-39efd474="" class="c-row c-row-middle-center">
+									<span data-v-39efd474="" class="u-p-r-10">Bet </span>
+									<span data-v-39efd474="" class="price"> ${money}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				`
+					;
+
+				name = makeid(5);
+				money = randMoney(199, 10000);
+				k3 +=
+					`
+				<div data-v-39efd474="" class="van-swipe-item" style="height: 40px;">
+					<div data-v-39efd474="" class="swiper-item">
+						<div data-v-39efd474="" class="c-row c-row-between c-row-middle item">
+							<img data-v-39efd474="" src="/images/avatar.cfa8dd9d.svg" class="img">
+							<div data-v-39efd474="" class="info c-row c-row-between">
+								<div data-v-39efd474="" class="m-l-10 name">Member${name}</div>
+								<div data-v-39efd474="" class="c-row c-row-middle-center">
+									<span data-v-39efd474="" class="u-p-r-10">Bet </span>
+									<span data-v-39efd474="" class="price"> ${money}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				`
+					;
+			}
+			for (let i = 0; i < 4; i++) {
+				let list_recharge = '';
+				for (let i = 0; i < 4; i++) {
+					name = makeid(5);
+					money = randMoney(199, 5000);
+					const d = new Date();
+					let hour = d.getHours();
+					let minutes = d.getMinutes();
+					list_recharge += `
+					<div data-v-e52eeae0="" class="swiper-item">
+						<div data-v-e52eeae0="" class="c-row c-row-between item">
+							<img data-v-e52eeae0="" src="/images/avatar.cfa8dd9d.svg" class="img">
+							<div data-v-e52eeae0="" class="info c-row c-row-between">
+								<div data-v-e52eeae0="" class="m-l-10 name">Member${name}</div>
+								<div data-v-e52eeae0="" class="price">
+									<span data-v-e52eeae0=""> ₹ ${money}</span>
+								</div>
+								<div data-v-e52eeae0="" class="time">${hour}:${minutes}</div>
+							</div>
+						</div>
+					</div>
+					`;
+				}
+				top_nap +=
+					`
+				<div data-v-e52eeae0="" class="item van-swipe-item" style="height: 180px; transform: translateY(360px);">
+					${list_recharge}
+				</div>
+				`;
+			}
+			$('#wingo').html(wingo);
+			$('#k5d').html(k5d);
+			$('#k3').html(k3);
+			$('#top-recharge').html(top_nap);
+		}
+
+
+		CreatMemJoin();
+		let translate = 0;
+		let count = 0;
+		let top_recharge = -358;
+		setInterval(() => {
+			count += 1;
+			translate -= 40;
+			top_recharge -= 180;
+			$('#wingo').css({
+				'transform': `translateY(${translate}px)`,
+			});
+			$('#k5d').css({
+				'transform': `translateY(${translate}px)`,
+			});
+
+			$('#k3').css({
+				'transform': `translateY(${translate}px)`,
+			});
+
+			$('#top-recharge').css({
+				'transform': `translateY(${top_recharge}px)`,
+			});
+			if (count == 3) {
+				count = 0;
+				translate = 40;
+				top_recharge = -358;
+				CreatMemJoin();
+			};
+		}, 3000);
+	</script>
+	<script>
+
+
+
+	</script>
+	<script>
+		function showPopup() {
+			document.getElementById('comingsoonpop').style.display = 'block';
+
+		}
+
+		function closePopup() {
+			document.getElementById('comingsoonpop').style.display = 'none';
+
+		}
+	</script>
+	<script>
+		// Function to handle deposit action
+		function deposit(amount, bonus) {
+			// Simulate deposit action
+			alert("You have deposited " + amount + " and received a bonus of ₹" + bonus);
+			closeDialog();
+		}
+
+		// Function to show dialog
+		function showDialog() {
+			document.querySelector('.van-overlay').style.display = 'block';
+			document.querySelector('.van-popup').style.display = 'block';
+		}
+
+		// Function to close dialog
+		function closeDialog() {
+			document.querySelector('.van-overlay').style.display = 'none';
+			document.querySelector('.van-popup').style.display = 'none';
+		}
+	</script>
+	<script>
+		function generateRandomAmount() {
+		  // Generate a random amount between 1 and 5000 (you can adjust the range as needed)
+		  return "₹" + (Math.floor(Math.random() * 5000) + 1).toFixed(2);
+		}
+	
+		// Function to generate a random user name
+		function generateRandomUserName() {
+		  var names = ['mem', 'mem', 'mem', 'mem', 'mem', 'mem', 'mem', 'mem', 'mem', 'mem'];
+		  var randomIndex = Math.floor(Math.random() * names.length);
+		  var randomName = names[randomIndex];
+		  var randomInitials = Math.floor(Math.random() * 10000); // Adding random numbers for uniqueness
+		  return randomName + '***' + randomInitials;
+		}
+	
+		// Function to generate a random image URL
+		function generateRandomImageURL() {
+		  var images = [
+			'/assets/png/8-ea087ede.png',
+			'/assets/png/9-6d772f2c.png',
+			'/assets/png/18-52955242.png',
+			'/assets/png/4-12a0d0c5.png',
+			'/assets/png/14-a397ff6b.png',
+			'/assets/png/6-7c7f5203.png'
+		  ];
+		  return images[Math.floor(Math.random() * images.length)];
+		}
+	
+		// Function to update winning amounts, user names, and images
+		function updateWinningInformation() {
+		  // Select all elements containing winning amounts, user names, and images
+		  var winAmountElements = document.querySelectorAll('.luckyWinners__container-wrapper__item-winAmount h1');
+		  var userNameElements = document.querySelectorAll('.luckyWinners__container-wrapper__item-info h1');
+		  var imageElements = document.querySelectorAll('.luckyWinners__container-wrapper__item-img img');
+	
+		  // Loop through each element and update its content
+		  for (var i = 0; i < winAmountElements.length; i++) {
+			winAmountElements[i].textContent = "Receive " + generateRandomAmount();
+			userNameElements[i].textContent = generateRandomUserName();
+			imageElements[i].setAttribute('src', generateRandomImageURL());
+		  }
+		}
+	
+		// Call the updateWinningInformation function every 2 seconds
+		setInterval(updateWinningInformation, 2000);
+	  </script>
+
+
+
+
+</body>
+
+</html>

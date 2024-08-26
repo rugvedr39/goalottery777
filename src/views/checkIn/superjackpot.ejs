@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 48.24px;">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <title>lottery</title>
+
+    <link href="/css/checkIn/activity.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: #9195a3;
+            padding: 0;
+            margin: 0;
+        }
+
+        .block-click {
+            pointer-events: none;
+        }
+
+        .navbar[data-v-2d3dc984] {
+            height: 1.22667rem;
+            z-index: 100;
+            -webkit-box-flex: 0;
+            -webkit-flex: none;
+            flex: none;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar-fixed[data-v-2d3dc984] {
+                width: 100%;
+                left: 0;
+                -webkit-transform: translateX(0);
+                transform: translate(0);
+            }
+        }
+
+        .navbar-fixed[data-v-2d3dc984] {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            width: 10rem;
+            -webkit-transform: translateX(-50%);
+            transform: translate(-50%);
+            -webkit-user-select: none;
+            user-select: none;
+            background: #f7f8ff;
+            z-index: 100;
+        }
+
+        .navbar__content[data-v-2d3dc984] {
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            height: 1.22667rem;
+        }
+
+        .navbar__content-left[data-v-2d3dc984] {
+            position: absolute;
+            left: .32rem;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            height: 100%;
+            top: 0;
+        }
+
+        .navbar__content-center[data-v-2d3dc984] {
+            color: #333;
+            font-size: .48rem;
+            line-height: .48rem;
+        }
+
+        .navbar__content-right[data-v-2d3dc984] {
+            position: absolute;
+            right: .32rem;
+        }
+
+        .navbar__content-left .van-icon[data-v-2d3dc984] {
+            color: #333;
+            font-size: .48rem;
+        }
+
+        .van-icon {
+            position: relative;
+            display: inline-block;
+            font: .18667rem / 1 vant-icon;
+            font: normal normal normal .18667rem / 1 var(--van-icon-font-family, "vant-icon");
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .van-badge__wrapper {
+            position: relative;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body style="font-size: 12px;">
+    <div id="app" data-v-app="">
+        <div data-v-1690b988="" class="ar-loading-view"
+            style="display: none; --1b8f4054: 'Roboto', 'Inter', sans-serif;">
+            <div data-v-1690b988="" class="loading-wrapper">
+                <div data-v-1690b988="" class="loading-animat"><svg xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200"
+                        preserveAspectRatio="xMidYMid meet"
+                        style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                        <defs>
+                            <clipPath id="__lottie_element_2">
+                                <rect width="200" height="200" x="0" y="0"></rect>
+                            </clipPath>
+                            <image
+                                src="/assets/png/h5setting_20230714005938hfia.png">
+                            </image>
+                            <image
+                                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAHlBMVEVHcEy/GyDCGiHCGiDBGiHBGiLBGiG/GyC/HCDBGiEYgX5lAAAACXRSTlMAFupex4emMEAHMN8rAAAEw0lEQVR42u1cy1ITQRTtYTKZsAsQLLODUsDeoVWC2YGSSHYC8ZEdolU6Owopq9gpisJOhwS5f2vPDENek2QefW5ZyF0BReZM9z3nPjrdLURimxJwM+p0Dw5SIqJl9ECaCmQO93z7pLFBvv1BjeDkPV3bJQbicZ267DcC4ySAcGsvT3+W1Q+7+iHMPR+huhr8RtQqasf4IRVEa+f6wbM17Qw2tr1RvCsiZVFwFMbCPlR6pvK4+xorb1O542IZj7FQxGIUFAY64Np1PIYXbuGJ4xEDhspNbbDPPWK10BiGQy46x4pjoi00hsXgdFX1XKAdIg7wRY/HrCV4+VbBs1fkIYVCnzl0LvADwctQ0Rfv9RK5+wweWWfwCJ6+aiDzcAyLwyMVBmrZHAOZZhC7EuIyA38vBIPb8UK0pYsXYonB7aJJL+AYBWoJBpEsccwWXiQ2x2zlMCsm/UrEc8uQLn4gFmgRq8fKtIYHcQgftwyOKJ/nIHCZgcDCcW+ISywOl0wzNFcqcOGLOlFnCPM2RwmRR35ZEdoEhxRZ/O4wJCyDw+8mh97zHFmRhVxHHORqMpBL1BmSieBgcIGDwRZHeMxzpEUWmZTpCx7kjKEM5tGi0+IQfJsBRDIIXnA0cjZsX0UPyC+O+MgAYnJk+JsDYnFEeosj0t+CxLXDIh7EkGt4kCCg3IL8SyCmX5+CY5flP/4mgUCL+pwf5ME5Pufzysb2QBPBNybYumsy6BmwLWM56N+xtfAZBVU9tMO+akya0NbhqjGpEENjcgTtGa9oNYn87i/sGXLI6s68iicWMkKGC3bQtZVwJQK6zlkOHY6UfCVciUCuFlwvElSA6x6y3T9vCJlcXtMMJpTOgh1whbsjdOB3NF2ewK3ZNjucwtFLXkQNSje5zruiGKi+636wiaqKprs7BgnyfI+zmyDPy1YPnSGNUKFHgHnM9sdcD6EKGM2f9U5QHZJS+vYrVBByNKjdl+/nEFKc7yuPzuEu8ZyiXykDzzzTrxST2gOU1p4dJwbEZ+vfuRKxiU/7vj5DtiKi8rxuAl/GcFPmMB9RaNX1NlxG5HZazfOVj5S3pXe+KtFlqdbN1caQzcda5ys3JBiaOnenDt187Oir7s2hZyY07q8+GLr52Ja6tn0YcjiJtB11KI2Qg6Xr9MlI72o6RzP6qExOD4ubIxVn1HWw2BxzwqSkI0GO449i8W72gYwLggfZh1IZq2k1lPWs1BofzQ+yaiXOAb+sh+finYtT/5Uh2dvx3lENJUMwPqbWfkzPvc1A3/W4HIz3NhGz4MRWQEGmPVt8nOAw72HKCbOIHiQJo2kOmipmJdGYKdMclG4mPPl8J8WRb+WQ58k+8YhoM9kn1Hu1k5MxmfNnZQrie7dIbCXyYhquqFdztxJgpGO9muS4KDMysQs78ZjoQ8xBp8UQ4rtCeTZeLyuU6Y6Dz+rji2M4498tsykymDcRo291+eTd9PMxW1kw4z1jcSg5Cw2iBCQcGvW82aBqZEa2V7ybfrTcLeM/iapPBiaq4V+JpOmmH3M7uGCp+uZr+Ke7314Fty4tPtTWZs7shddE3d9Q9jT8bXFV60rJTIMGrKYXwtfDSUN2ANzazr7AmDF16ttUUfyf9hdhzrd5F3WCHQAAAABJRU5ErkJggg==">
+                            </image>
+                        </defs>
+                        <g clip-path="url(#__lottie_element_2)">
+                            <g class="ai"
+                                transform="matrix(0.9999210238456726,0.012566040270030499,-0.012566040270030499,0.9999210238456726,1.264495849609375,-1.2487106323242188)"
+                                opacity="1" style="display: block;">
+                                <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice"
+                                    xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAHlBMVEVHcEy/GyDCGiHCGiDBGiHBGiLBGiG/GyC/HCDBGiEYgX5lAAAACXRSTlMAFupex4emMEAHMN8rAAAEw0lEQVR42u1cy1ITQRTtYTKZsAsQLLODUsDeoVWC2YGSSHYC8ZEdolU6Owopq9gpisJOhwS5f2vPDENek2QefW5ZyF0BReZM9z3nPjrdLURimxJwM+p0Dw5SIqJl9ECaCmQO93z7pLFBvv1BjeDkPV3bJQbicZ267DcC4ySAcGsvT3+W1Q+7+iHMPR+huhr8RtQqasf4IRVEa+f6wbM17Qw2tr1RvCsiZVFwFMbCPlR6pvK4+xorb1O542IZj7FQxGIUFAY64Np1PIYXbuGJ4xEDhspNbbDPPWK10BiGQy46x4pjoi00hsXgdFX1XKAdIg7wRY/HrCV4+VbBs1fkIYVCnzl0LvADwctQ0Rfv9RK5+wweWWfwCJ6+aiDzcAyLwyMVBmrZHAOZZhC7EuIyA38vBIPb8UK0pYsXYonB7aJJL+AYBWoJBpEsccwWXiQ2x2zlMCsm/UrEc8uQLn4gFmgRq8fKtIYHcQgftwyOKJ/nIHCZgcDCcW+ISywOl0wzNFcqcOGLOlFnCPM2RwmRR35ZEdoEhxRZ/O4wJCyDw+8mh97zHFmRhVxHHORqMpBL1BmSieBgcIGDwRZHeMxzpEUWmZTpCx7kjKEM5tGi0+IQfJsBRDIIXnA0cjZsX0UPyC+O+MgAYnJk+JsDYnFEeosj0t+CxLXDIh7EkGt4kCCg3IL8SyCmX5+CY5flP/4mgUCL+pwf5ME5Pufzysb2QBPBNybYumsy6BmwLWM56N+xtfAZBVU9tMO+akya0NbhqjGpEENjcgTtGa9oNYn87i/sGXLI6s68iicWMkKGC3bQtZVwJQK6zlkOHY6UfCVciUCuFlwvElSA6x6y3T9vCJlcXtMMJpTOgh1whbsjdOB3NF2ewK3ZNjucwtFLXkQNSje5zruiGKi+636wiaqKprs7BgnyfI+zmyDPy1YPnSGNUKFHgHnM9sdcD6EKGM2f9U5QHZJS+vYrVBByNKjdl+/nEFKc7yuPzuEu8ZyiXykDzzzTrxST2gOU1p4dJwbEZ+vfuRKxiU/7vj5DtiKi8rxuAl/GcFPmMB9RaNX1NlxG5HZazfOVj5S3pXe+KtFlqdbN1caQzcda5ys3JBiaOnenDt187Oir7s2hZyY07q8+GLr52Ja6tn0YcjiJtB11KI2Qg6Xr9MlI72o6RzP6qExOD4ubIxVn1HWw2BxzwqSkI0GO449i8W72gYwLggfZh1IZq2k1lPWs1BofzQ+yaiXOAb+sh+finYtT/5Uh2dvx3lENJUMwPqbWfkzPvc1A3/W4HIz3NhGz4MRWQEGmPVt8nOAw72HKCbOIHiQJo2kOmipmJdGYKdMclG4mPPl8J8WRb+WQ58k+8YhoM9kn1Hu1k5MxmfNnZQrie7dIbCXyYhquqFdztxJgpGO9muS4KDMysQs78ZjoQ8xBp8UQ4rtCeTZeLyuU6Y6Dz+rji2M4498tsykymDcRo291+eTd9PMxW1kw4z1jcSg5Cw2iBCQcGvW82aBqZEa2V7ybfrTcLeM/iapPBiaq4V+JpOmmH3M7uGCp+uZr+Ke7314Fty4tPtTWZs7shddE3d9Q9jT8bXFV60rJTIMGrKYXwtfDSUN2ANzazr7AmDF16ttUUfyf9hdhzrd5F3WCHQAAAABJRU5ErkJggg==">
+                                </image>
+                            </g>
+                            <g class="png"
+                                transform="matrix(0.8008000254631042,0,0,0.8008000254631042,59.959999084472656,59.959999084472656)"
+                                opacity="1" style="display: block;">
+                                <image width="100px" height="100px" preserveAspectRatio="xMidYMid slice"
+                                    src="/assets/png/h5setting_20230714005938hfia.png">
+                                </image>
+                            </g>
+                        </g>
+                    </svg></div>
+                <div data-v-1690b988="" class="com__box" style="display: none;">
+                    <div class="loading" data-v-1690b988="">
+                        <div class="shape shape-1" data-v-1690b988=""></div>
+                        <div class="shape shape-2" data-v-1690b988=""></div>
+                        <div class="shape shape-3" data-v-1690b988=""></div>
+                        <div class="shape shape-4" data-v-1690b988=""></div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-1690b988="" class="skeleton-wrapper" style="display: none;">
+                <div data-v-1690b988="" class="van-skeleton van-skeleton--animate"><!---->
+                    <div class="van-skeleton__content"><!---->
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+                    <div class="van-skeleton-avatar van-skeleton-avatar--round"></div>
+                    <div class="van-skeleton__content">
+                        <h3 class="van-skeleton-title"></h3>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div data-v-1690b988="" class="van-skeleton van-skeleton--animate"><!---->
+                    <div class="van-skeleton__content">
+                        <h3 class="van-skeleton-title"></h3>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                        <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!---->
+        <div data-v-2c009149="" class="Xg-page" style="--1b8f4054: 'Roboto', 'Inter', sans-serif;">
+            <div data-v-2d3dc984="" data-v-2c009149="" class="navbar">
+                <div data-v-2d3dc984="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
+                    <div data-v-2d3dc984="" class="navbar__content">
+                        <div data-v-2d3dc984="" class="navbar__content-left"><i data-v-2d3dc984=""
+                                class="van-badge__wrapper van-icon van-icon-arrow-left"><!----><!----><!----></i></div>
+                        <div data-v-2d3dc984="" class="navbar__content-center"><!---->
+                            <div data-v-2d3dc984="" class="navbar__content-title">Super Jackpot</div>
+                        </div>
+                        <div data-v-2d3dc984="" class="navbar__content-right"></div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-2c009149="" class="Xg-info">
+                <div data-v-2c009149="">
+                    <h3 data-v-2c009149="" class="tit">Super Jackpot</h3>
+                    <p data-v-2c009149="" class="tip">When you get the Super Jackpot in 【Slots】Can get 1 additional
+                        bonus</p>
+                    <p data-v-2c009149="" class="txt">The reward is valid for 1 day, and you will not be able to claim
+                        it after it expires!</p>
+                </div><img data-v-2c009149="" class="img" src="https://91clubin.in/assets/png/icon-9f3018f6.png" alt="">
+            </div>
+            <div data-v-2c009149="" class="Xg-page-wrap">
+                <div data-v-2c009149="" class="receive-all no-receive"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="48" height="48" viewBox="0 0 48 48" data-v-2c009149="">
+                        <g clip-path="url(#clip0_6492_262)" data-v-2c009149="">
+                            <path
+                                d="M24 48C10.7454 48 0 37.2546 0 24C0 10.7454 10.7454 0 24 0C37.2546 0 48 10.7454 48 24C48 37.2546 37.2546 48 24 48ZM15 12.6C14.0452 12.6 13.1295 12.9793 12.4544 13.6544C11.7793 14.3295 11.4 15.2452 11.4 16.2V20.7276C11.4 21.6824 11.7793 22.5981 12.4544 23.2732C13.1295 23.9483 14.0452 24.3276 15 24.3276H19.485C20.4398 24.3276 21.3555 23.9483 22.0306 23.2732C22.7057 22.5981 23.085 21.6824 23.085 20.7276V16.2C23.085 15.2452 22.7057 14.3295 22.0306 13.6544C21.3555 12.9793 20.4398 12.6 19.485 12.6H15ZM28.146 12.6C27.1912 12.6 26.2755 12.9793 25.6004 13.6544C24.9253 14.3295 24.546 15.2452 24.546 16.2V20.7276C24.546 21.6824 24.9253 22.5981 25.6004 23.2732C26.2755 23.9483 27.1912 24.3276 28.146 24.3276H32.631C33.5858 24.3276 34.5015 23.9483 35.1766 23.2732C35.8517 22.5981 36.231 21.6824 36.231 20.7276V16.2C36.231 15.2452 35.8517 14.3295 35.1766 13.6544C34.5015 12.9793 33.5858 12.6 32.631 12.6H28.146ZM15 25.7934C14.0452 25.7934 13.1295 26.1727 12.4544 26.8478C11.7793 27.5229 11.4 28.4386 11.4 29.3934V33.921C11.4 34.8758 11.7793 35.7915 12.4544 36.4666C13.1295 37.1417 14.0452 37.521 15 37.521H19.485C20.4398 37.521 21.3555 37.1417 22.0306 36.4666C22.7057 35.7915 23.085 34.8758 23.085 33.921V29.3934C23.085 28.4386 22.7057 27.5229 22.0306 26.8478C21.3555 26.1727 20.4398 25.7934 19.485 25.7934H15ZM30.3882 25.7934C27.1614 25.7934 24.546 28.4094 24.546 31.6362V31.6782C24.546 34.905 27.162 37.521 30.3882 37.521C33.615 37.521 36.231 34.905 36.231 31.6782V31.6362C36.231 28.4094 33.615 25.7934 30.3882 25.7934Z"
+                                data-v-2c009149=""></path>
+                        </g>
+                        <defs data-v-2c009149="">
+                            <clipPath id="clip0_6492_262" data-v-2c009149="">
+                                <rect width="48" height="48" fill="white" data-v-2c009149=""></rect>
+                            </clipPath>
+                        </defs>
+                    </svg><span data-v-2c009149="">Receive in batches</span></div>
+                <ul data-v-2c009149="" class="tab">
+                    <li data-v-2c009149="" class="tab-item" onclick="location.href='/sprules'"><svg data-v-2c009149="" xmlns="http://www.w3.org/2000/svg"
+                            width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path data-v-2c009149=""
+                                d="M29.7516 7.6875H17.8266C17.1422 7.6875 16.5938 7.13437 16.5938 6.45469V1.27969C16.5938 0.6 17.1469 0.046875 17.8266 0.046875H29.7469C30.4312 0.046875 30.9844 0.6 30.9844 1.27969V6.45C30.9844 7.13438 30.4313 7.6875 29.7516 7.6875Z">
+                            </path>
+                            <path data-v-2c009149=""
+                                d="M40.7952 4.64062H33.9187C33.689 4.64062 33.5062 4.82813 33.5062 5.05313V8.58281C33.5062 9.26719 32.953 9.81562 32.2733 9.81562H15.7077C15.0233 9.81562 14.4749 9.2625 14.4749 8.58281V5.05313C14.4749 4.82344 14.2874 4.64062 14.0624 4.64062H7.18115C5.49834 4.64062 4.13428 6.00469 4.13428 7.6875V44.9062C4.13428 46.5891 5.49834 47.9531 7.18115 47.9531H40.7952C42.478 47.9531 43.8421 46.5891 43.8421 44.9062V7.6875C43.8421 6.00469 42.478 4.64062 40.7952 4.64062ZM7.82803 16.9688C7.82803 16.1391 8.49834 15.4688 9.32803 15.4688H33.4218C34.2515 15.4688 34.9218 16.1391 34.9218 16.9688C34.9218 17.7984 34.2515 18.4688 33.4218 18.4688H9.32803C8.49834 18.4688 7.82803 17.7984 7.82803 16.9688ZM19.5937 39.1406C19.5937 39.9703 18.9233 40.6406 18.0937 40.6406H9.32803C8.49834 40.6406 7.82803 39.9703 7.82803 39.1406C7.82803 38.3109 8.49834 37.6406 9.32803 37.6406H18.0937C18.9233 37.6406 19.5937 38.3109 19.5937 39.1406ZM19.5937 31.7484C19.5937 32.5781 18.9233 33.2484 18.0937 33.2484H9.32803C8.49834 33.2484 7.82803 32.5781 7.82803 31.7484C7.82803 30.9187 8.49834 30.2484 9.32803 30.2484H18.0937C18.9233 30.2484 19.5937 30.9234 19.5937 31.7484ZM22.4999 25.8609H9.32803C8.49834 25.8609 7.82803 25.1906 7.82803 24.3609C7.82803 23.5312 8.49834 22.8609 9.32803 22.8609H22.4999C23.3296 22.8609 23.9999 23.5312 23.9999 24.3609C23.9999 25.1859 23.3296 25.8609 22.4999 25.8609ZM32.0155 43.7859C27.3562 43.7859 23.578 41.8453 23.578 39.45C23.578 38.85 23.8171 38.2781 24.2437 37.7578C25.528 39.3094 28.5233 40.4016 32.0155 40.4016C35.5077 40.4016 38.503 39.3141 39.7874 37.7578C40.2187 38.2781 40.453 38.85 40.453 39.45C40.453 41.8453 36.6749 43.7859 32.0155 43.7859ZM32.0155 38.9766C27.3562 38.9766 23.578 37.0359 23.578 34.6406C23.578 34.0172 23.8358 33.4266 24.2952 32.8875C25.603 34.4109 28.5702 35.4703 32.0155 35.4703C35.4608 35.4703 38.4233 34.4062 39.7358 32.8875C40.1952 33.4219 40.453 34.0172 40.453 34.6406C40.453 37.0359 36.6749 38.9766 32.0155 38.9766ZM32.0155 34.1672C27.3562 34.1672 23.578 32.2266 23.578 29.8313C23.578 27.4359 27.3562 25.4953 32.0155 25.4953C36.6749 25.4953 40.453 27.4359 40.453 29.8313C40.453 32.2266 36.6749 34.1672 32.0155 34.1672Z">
+                            </path>
+                        </svg><span data-v-2c009149="">Rule</span></li>
+                    <li data-v-2c009149="" class="tab-item"><svg xmlns="http://www.w3.org/2000/svg" width="48"
+                            height="48" viewBox="0 0 48 48" fill="none" data-v-2c009149="">
+                            <g clip-path="url(#clip0_1816_27334)" data-v-2c009149="">
+                                <path
+                                    d="M23.9955 47.9998C10.7874 48.0471 -0.23118 37.1883 0.00368673 23.5594C0.230542 10.3977 11.1372 -0.274265 24.5288 0.00537298C37.2674 0.271345 47.9986 10.6432 48 24.0104C48.0014 37.308 37.2675 47.9998 23.9955 47.9998ZM31.898 33.1019C31.9229 33.0378 31.9637 32.9372 32.0012 32.8354C33.1533 29.6991 34.3075 26.5635 35.4523 23.4244C35.536 23.1947 35.6523 23.088 35.8957 23.0243C37.2211 22.6772 38.0122 21.3663 37.7026 20.0709C37.4124 18.8567 36.2337 18.0384 34.9821 18.182C33.8198 18.3155 32.8786 19.3717 32.8533 20.572C32.8411 21.1496 33.0217 21.6654 33.3848 22.1331C32.2741 23.4385 31.1737 24.7319 30.0385 26.0661C29.6353 23.6602 29.2447 21.329 28.8523 18.9878C28.9398 18.952 29.0064 18.9252 29.0725 18.8975C30.322 18.3741 30.9078 17.1195 30.5141 15.8101C30.134 14.5463 28.8118 13.7321 27.5455 13.9871C26.5239 14.1927 25.8288 14.7962 25.5231 15.7839C25.2074 16.804 25.4546 17.7202 26.2156 18.4748C26.3696 18.6275 26.399 18.7449 26.3322 18.9462C25.6104 21.1204 24.8986 23.298 24.183 25.4742C24.1586 25.5481 24.1223 25.6181 24.0673 25.7465C23.2467 23.3546 22.4458 21.02 21.6468 18.6912C22.8623 17.9342 23.0229 16.5173 22.6448 15.5997C22.187 14.4887 21.0419 13.806 19.8796 13.9608C18.6987 14.118 17.751 15.0669 17.62 16.2404C17.5534 16.8374 17.6585 17.4066 17.9731 17.9268C18.3196 18.4997 18.8001 18.8909 19.5106 18.9992C19.0253 21.3552 18.5454 23.6849 18.0595 26.0437C17.9958 25.9875 17.9587 25.9614 17.9295 25.9282C16.8492 24.6989 15.7714 23.4675 14.6876 22.2414C14.5807 22.1205 14.601 22.0352 14.6673 21.905C14.8237 21.5976 15.0201 21.291 15.0871 20.961C15.3937 19.4526 13.9742 17.8363 12.2263 18.1747C11.1024 18.3924 10.2019 19.4713 10.2078 20.6228C10.214 21.8218 11.1066 22.8928 12.2555 23.0499C12.4471 23.0761 12.5109 23.1563 12.5678 23.3159C13.1845 25.044 13.8075 26.7699 14.4283 28.4965C14.9596 29.9743 15.491 31.4521 16.02 32.9307C16.0686 33.0664 16.1044 33.1693 16.298 33.1459C16.9872 33.0625 17.6799 33.0088 18.3697 32.9293C20.934 32.6341 23.5048 32.4656 26.0844 32.6334C28.007 32.7585 29.9258 32.9409 31.898 33.1019Z"
+                                    data-v-2c009149=""></path>
+                            </g>
+                            <defs data-v-2c009149="">
+                                <clipPath id="clip0_1816_27334" data-v-2c009149="">
+                                    <rect width="48" height="48" fill="white" data-v-2c009149=""></rect>
+                                </clipPath>
+                            </defs>
+                        </svg><span data-v-2c009149="">Winning star</span></li>
+                </ul>
+                <div data-v-1bb72b7d="" data-v-2c009149="" class="infiniteScroll"
+                    id="refresha6461a94dd7046839281cf75e7e91b68">
+                    <div data-v-2c009149="" class="Xg-list"></div>
+                    <div data-v-1bb72b7d="" class="infiniteScroll__loading"><!---->
+                        <div data-v-91f2fefc="" data-v-2c009149="" class="empty__container"><img data-v-91f2fefc=""
+                                alt="" class="" data-origin="https://91clubin.in/assets/png/empty-4ac9a431.png"
+                                src="https://91clubin.in/assets/png/empty-4ac9a431.png">
+                            <p data-v-2c009149="">You don't have a big jackpot yet, let's bet</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-v-2c009149="" class="go-bet" onclick="location.href='/home'">Go bet</div>
+            </div>
+            <div data-v-cf21bf5a="" data-v-2c009149="" class="dialog inactive">
+                <div data-v-cf21bf5a="" class="dialog__container" role="dialog" tabindex="0">
+                    <div data-v-cf21bf5a="" class="dialog__container-img"><img data-v-cf21bf5a="" alt="" class=""
+                            data-origin="assets/png/orderCancelWarn-ac58c333.png"
+                            src="assets/png/orderCancelWarn-ac58c333.png"></div>
+                    <div data-v-cf21bf5a="" class="dialog__container-title">
+                        <h1 data-v-cf21bf5a="">Successfully received!</h1>
+                    </div>
+                    <div data-v-cf21bf5a="" class="dialog__container-content">
+                        <div data-v-2c009149="" class="Laundry-Con">
+                            <div data-v-2c009149="" class="Laundry-Con_tip">Mega Jackpot Bonus!</div><!---->
+                        </div>
+                    </div>
+                    <div data-v-cf21bf5a="" class="dialog__container-footer"><!----><button
+                            data-v-cf21bf5a="">OK</button></div><!---->
+                </div>
+                <div data-v-cf21bf5a="" class="dialog__outside"></div>
+            </div>
+        </div>
+        <div class="customer" onclick="location.href='/kefumenu'" id="customerId"
+            style="--1b8f4054: 'Roboto', 'Inter', sans-serif; --17a7a9f6: bahnschrift;"><img class=""
+                data-origin="assets/png/icon_sevice-9f0c8455.png"
+                src="assets/png/icon_sevice-9f0c8455.png"></div>
+        <!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+    </div><%- include('../nav') -%>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/js/client.js"></script>
+        <script>
+            function alertMess(text, sic) {
+                $('body').append(
+                    `
+                    <div data-v-1dcba851="" class="msg">
+                        <div data-v-1dcba851="" class="msg-content v-enter-active v-enter-to" style=""> ${text} </div>
+                    </div>
+                    `
+                );
+                setTimeout(() => {
+                    $('.msg .msg-content').removeClass('v-enter-active v-enter-to');
+                    $('.msg .msg-content').addClass('v-leave-active v-leave-to');
+                    setTimeout(() => {
+                        $('.msg').remove();
+                    }, 100);
+                    sic.removeClass('block-click');
+                }, 1000);
+            }
+            $('.list .item').click(function (e) {
+                e.preventDefault();
+                $(this).addClass('block-click');
+                let data = $(this).attr('data-dpr');
+                let wd = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/checkIn",
+                    data: {
+                        data: data,
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        alertMess(response.message, wd);
+                        if (response.status === false) return;
+                        wd.removeClass('action');
+                        wd.find('.txt').text('Received');
+                    }
+                });
+            });
+            $.ajax({
+                type: "POST",
+                url: "/api/webapi/checkIn",
+                data: {
+
+                },
+                dataType: "json",
+                success: function (response) {
+                    let data = response.datas[0];
+                    if (data.total1 == 0) {
+                        $('.list .item:eq(0)').removeClass('action');
+                        $('.list .item:eq(0)').addClass('block-click');
+                        $('.list .item:eq(0) .txt').text('Received');
+                    }
+                    if (data.total2 == 0) {
+                        $('.list .item:eq(1)').removeClass('action');
+                        $('.list .item:eq(1)').addClass('block-click');
+                        $('.list .item:eq(1) .txt').text('Received');
+                    }
+                    if (data.total3 == 0) {
+                        $('.list .item:eq(2)').removeClass('action');
+                        $('.list .item:eq(2)').addClass('block-click');
+                        $('.list .item:eq(2) .txt').text('Received');
+                    }
+                    if (data.total4 == 0) {
+                        $('.list .item:eq(3)').removeClass('action');
+                        $('.list .item:eq(3)').addClass('block-click');
+                        $('.list .item:eq(3) .txt').text('Received');
+                    }
+                    if (data.total5 == 0) {
+                        $('.list .item:eq(4)').removeClass('action');
+                        $('.list .item:eq(4)').addClass('block-click');
+                        $('.list .item:eq(4) .txt').text('Received');
+                    }
+                    if (data.total6 == 0) {
+                        $('.list .item:eq(5)').removeClass('action');
+                        $('.list .item:eq(5)').addClass('block-click');
+                        $('.list .item:eq(5) .txt').text('Received');
+                    }
+                    if (data.total7 == 0) {
+                        $('.list .item:eq(6)').removeClass('action');
+                        $('.list .item:eq(6)').addClass('block-click');
+                        $('.list .item:eq(6) .txt').text('Received');
+                    }
+                    if (data.total8 == 0) {
+                        $('.list .item:eq(7)').removeClass('action');
+                        $('.list .item:eq(7)').addClass('block-click');
+                        $('.list .item:eq(7) .txt').text('Received');
+                    }
+                    if (data.total9 == 0) {
+                        $('.list .item:eq(8)').removeClass('action');
+                        $('.list .item:eq(8)').addClass('block-click');
+                        $('.list .item:eq(8) .txt').text('Received');
+                    }
+
+                }
+            });
+        </script>
+        <script>
+            $(window).on('load', function () {
+                $('.Loading').fadeOut(0);
+            });
+        </script>
+        <script>
+            // Display the loading animation
+            document.querySelector('.ar-loading-view').style.display = 'block';
+    
+            // Simulate loading delay (you can replace this with your actual loading process)
+            setTimeout(function() {
+                // Hide the loading animation after 3 seconds (you can adjust this delay)
+                document.querySelector('.ar-loading-view').style.display = 'none';
+    
+                // Show the page content
+                document.getElementById('pageContent').style.display = 'block';
+            }, 1200); // Adjust the delay time as needed (in milliseconds)
+        </script>
+</body>
+
+</html>

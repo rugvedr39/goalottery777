@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 44.64px">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport" />
+  <title>lottery</title>
+  <link rel="stylesheet" href="/css/loading.css">
+  <link rel="stylesheet" href="/css/bet/wingo/main.css" />
+  <link rel="stylesheet" href="/css/bet/wingo/chunk-4e7d3985.25c9d2c0.css" />
+  <link rel="stylesheet" href="/css/bet/wingo/chunk-4e7d3985.25c9d2c1.css" />
+  <link rel="stylesheet" href="/css/bet/wingo/chunk-4e7d3985.25c9d2c2.css" />
+  <link rel="stylesheet" href="/css/bet/wingo/chunk-4e7d3985.25c9d2c3.css" />
+  <link rel="stylesheet" href="/css/bet/wingo/chunk-4e7d3985.25c9d2c4.css" />
+  <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: #9195a3;
+      padding: 0;
+      margin: 0;
+    }
+   
+    /* The Modal (background) */
+    .modal {
+      display: blocked;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 20001;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+    }
+
+    .text-over-image {
+      position: absolute;
+      /* Position relative to the parent element */
+      top: 35%;
+      /* Center vertically */
+      left: 50%;
+      /* Center horizontally */
+      transform: translate(-50%, -50%);
+      /* Adjust the positioning */
+      color: #fff;
+      /* Text color */
+      font-size: 24px;
+      /* Text size */
+      font-weight: bold;
+      /* Text weight */
+      text-align: center;
+      /* Center text */
+    }
+
+    .text-over-image-l {
+      position: absolute;
+      /* Position relative to the parent element */
+      top: 48%;
+      /* Center vertically */
+      left: 49%;
+      /* Center horizontally */
+      transform: translate(-50%, -50%);
+      /* Adjust the positioning */
+      color: #fff;
+      /* Text color */
+      font-size: 10px;
+      /* Text size */
+      font-weight: bold;
+      /* Text weight */
+      text-align: center;
+      /* Center text */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      text-align: -webkit-center;
+      position: relative;
+      top: 20%;
+    }
+
+    .modal-content img {
+      width: 280px;
+      /* Use this to ensure the image is full width */
+      height: auto;
+      /* Adjust height automatically */
+      display: block;
+      /* Change display to block to avoid extra space */
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Circle button style */
+    .close-btn {
+      border: 2px solid #fff;
+      /* Black border */
+      border-radius: 50%;
+      /* Circle shape */
+      background-color: transparent;
+      /* Transparent background */
+      width: 30px;
+      /* Width and height should be equal for a circle */
+      height: 30px;
+      /* Width and height should be equal for a circle */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .close-btn:hover {
+      background-color: #ddd;
+      /* Light grey background on hover */
+    }
+
+    /* "X" line style */
+    .close-x {
+      font-size: 35px;
+      /* Large font size for the "X" */
+      font-family: none;
+      line-height: 1;
+      /* Tight line height for the "X" */
+      color: #fff;
+      /* Black color for the "X" */
+      padding: 0;
+      /* No padding */
+      margin: 0;
+      /* No margin */
+    }
+
+    .text-over-image-2 {
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ff850f;
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .text-over-image-3 {
+      position: absolute;
+      top: 72%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #8c4500;
+      font-size: 12px;
+      font-weight: none;
+      text-align: center;
+    }
+
+    .btn-boox {
+      background: linear-gradient(to bottom, #20d90a, #aae69d);
+      border: none;
+      color: white;
+      padding: 5px 6px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 10px;
+      margin: 4px 4px;
+      cursor: pointer;
+      font-family: monospace;
+      border-radius: 5px;
+    }
+
+    .block-click {
+      pointer-events: none;
+    }
+
+    .navbar[data-v-106b99c8] {
+      width: 100%;
+      max-width: 10.66667rem;
+      top: 0;
+      height: 1.33333rem;
+      line-height: 1.33333rem;
+      background: linear-gradient(180deg,#ff867a 0%,#f95959 100%);
+      box-shadow: inset 0rem 0rem 1rem 0rem #65006100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      color: #fff;
+      z-index: 999;
+    }
+    .van-notice-bar{
+      background-color: #ffffff;
+      color: black;
+    }
+
+    .game-head .total-box[data-v-a9660e98] {
+      min-height: 3.57333rem;
+      background: #ffffff;
+      border-radius: .26667rem;
+      padding: .46667rem;
+      position: relative;
+      z-index: 0;
+     
+      /* background-image: url(/assets/png/walletbg-1dc79077.png), linear-gradient(153deg, #374992 5.33%, #4675D2 93.42%); */
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .game-betting .content .time-box[data-v-a9660e98] {
+      border-radius: 0.26667rem;
+      /* background: #5588ff4a; */
+      background-size: auto 100%;
+      width: calc(100% - .69333rem);
+      height: 2.66667rem;
+      margin: .48rem auto 0;
+      background-image: url(/assets/png/diban99.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: .01333rem center;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      position: relative;
+      color: #fff;
+    }
+
+    .game-betting .tab[data-v-a9660e98] {
+      margin: 0 0.4rem;
+      background: white;
+      box-shadow: none;
+      border-radius: 0.4rem;
+      line-height: .3rem;
+    }
+
+    .game-betting .tab .box .item .txt[data-v-a9660e98] {
+      color: #b2b2b2;
+      font-size: 0.32rem;
+      margin-bottom: 11px;
+      margin-top: -9px;
+  }
+
+    .game-betting .tab .box .item[data-v-a9660e98] {
+      flex: 0 0 25%;
+     
+      border-radius: 0.66667rem;
+      position: relative;
+
+    }
+
+    .game-head .notice[data-v-a9660e98] {
+      border-radius: 1.21333rem;
+      overflow: hidden;
+    }
+
+    .game[data-v-a9660e98] {
+  background: #f7f8ff;
+    }
+
+    
+    .game-betting .content .box .mark-box .item[data-v-a9660e98]{
+      background-color: #22295f!important;
+    }
+    .game-betting .content .box[data-v-a9660e98] {
+      border-radius: 0.4rem;
+      background: #ffffff;
+      box-shadow: 0 0.05333rem 0.10667rem #c5c5da40;
+      
+      padding: 14 0.26667rem;
+      position: relative;
+      box-shadow: none;
+    }
+
+    .game-betting .content .box .number-box.action[data-v-a9660e98] {
+      background: #eeeeee !important;
+    }
+
+    .game-list .tab .li .txt.action[data-v-a9660e98] {
+      background-color: #0097ed; 
+  
+      font-size: .37333rem;
+     
+      box-shadow: none;
+      background: linear-gradient(180deg, #ff7777 0%, #f74d4d 100%);
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .game-list .tab .li .txt[data-v-a9660e98] {
+      
+      display: block;
+      height: 1.06667rem;
+      line-height: 1.06667rem;
+      text-align: center;
+      width: 100%;
+      font-size: .37333rem;
+      /* background: #323A7C; */
+      border: none;
+      box-shadow: none;
+      border-radius: 0.26667rem;
+      color: #ffffff;
+      overflow: hidden;
+      background-color: #0097ed;
+      font-size: .37333rem;
+      box-shadow: none;
+      background: #e8e7e8;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .game-betting .content .box .random-box .random[data-v-a9660e98] {
+      height: 0.8rem;
+      max-width: 5.6rem;
+      word-break: break-all;
+      font-size: 0.32rem;
+      display: inline-block;
+      width: 2.13333rem;
+      background: 0 0;
+      color: #61a9ff;
+      padding: 0px 0.09rem;
+      border: .02667rem solid #61A9FF;
+      border-radius: .21333rem;
+  }
+
+    .con-box {
+      padding: 0.30000rem;
+
+
+    }
+
+    .game-betting .content .box .btn-box[data-v-a9660e98] {
+      padding: 0.30000rem;
+    }
+
+    .m-t-10 {
+      border-radius: 0.4rem;
+      
+      
+
+    }
+
+    .game-list .list .hb[data-v-a9660e98] {
+          background-color: #fff
+      border-bottom: 0.02667rem solid #553434;
+      /* color: #414141; */
+      font-size: .37333rem;
+      
+  }
+ 
+    .game-list .list-fooder[data-v-a9660e98] {
+      height: 0.53333rem;
+      background-color: transparent;
+      border-bottom-right-radius: 0.53333rem;
+      border-bottom-left-radius: 0.53333rem;
+    }
+
+ 
+  .game-betting .content .box .btn-box .yellow[data-v-a9660e98] {
+    background-color: #ffa82e;
+    border-radius: .53333rem 0 0 .53333rem;
+    box-shadow: none;
+}
+.game-betting .content .box .btn-box .green[data-v-a9660e98] {
+  background-color: #6da7f4;
+  border-radius: 0 .53333rem .53333rem 0;
+  box-shadow: none;
+}
+   
+
+    .game-list .list .wrap[data-v-a9660e98] {
+      padding: 0.4rem;
+      background-color: #fd565c;
+      /* border-top-right-radius: 0.26667rem; */
+      /* border-top-left-radius: 0.26667rem; */
+      border-radius: .13333rem .13333rem 0 0;
+      font-weight: 700;
+      color: #fff;
+      font-size: .34667rem;
+  }
+
+    #app {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #ffffff;
+      position: relative;
+      font-size: .37333rem;
+    }
+  </style>
+</head>
+
+<body style="font-size: 12px">
+  <div id="app">
+    <div data-v-a9660e98="" class="mian game">
+      <div data-v-106b99c8="" data-v-a9660e98="" class="navbar">
+        <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/home'">
+          <div data-v-a9660e98="" data-v-106b99c8="" class="c-row c-row-middle-center">
+            <img data-v-a9660e98="" data-v-106b99c8="" src="/images/back.c3244ab0.png" class="navbar-back" />
+          </div>
+        </div>
+        <div data-v-106b99c8="" class="navbar-title">
+          <div data-v-a9660e98="" data-v-106b99c8="" class="c-row c-row-middle-center">
+            <img data-v-a9660e98="" data-v-106b99c8="" height="38px" width="100px" src="/assets/png/77SGlog.png"
+              class="logo" style="height: .80333rem!important;" />
+          </div>
+        </div>
+        <div data-v-106b99c8="" class="navbar-right">
+          <div data-v-a9660e98="" data-v-106b99c8="" class="c-row navbarR">
+            <div data-v-a9660e98="" data-v-106b99c8="" class="c-row item c-row-middle-center"
+              onclick="location.href='/keFuMenu'">
+              <img data-v-a9660e98="" data-v-106b99c8="" src="/images/audio.webp" class="item-audio" />
+            </div>
+            <div data-v-a9660e98="" data-v-106b99c8="" class="c-row item c-row-middle-center">
+              <img data-v-a9660e98="" data-v-106b99c8="" src="/images/volume-up-line.webp" class="item-volume" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---------->
+      <%- include('element/info.ejs') -%>
+        <!---------->
+        <div data-v-a9660e98="" class="game-betting">
+          <div data-v-a9660e98="" class="tab">
+            <%- include('element/e_tab_time.ejs') -%>
+          </div>
+          <div data-v-a9660e98="" class="content">
+            <div data-v-a9660e98="" class="time-box c-row c-row-between m-b-10">
+              <div data-v-a9660e98="" class="info">
+                <div data-v-a9660e98="" class="txt"> Period</div>
+                <div data-v-a9660e98="" class="number">0000000000000</div>
+              </div>
+              <div data-v-a9660e98="" class="out">
+                <div data-v-a9660e98="" class="txt">
+                  Time Left
+                </div>
+                <div data-v-a9660e98="" class="number c-row c-row-middle c-flew-end">
+                  <div data-v-a9660e98="" class="item">0</div>
+                  <div data-v-a9660e98="" class="item">0</div>
+                  <div data-v-a9660e98="" class="item c-row c-row-middle">
+                    :
+                  </div>
+                  <div data-v-a9660e98="" class="item">0</div>
+                  <div data-v-a9660e98="" class="item">0</div>
+                </div>
+              </div>
+            </div>
+            <%- include('element/e_bet.ejs') -%>
+          </div>
+        </div>
+        <div data-v-a9660e98="" class="game-list p-b-20">
+          <%- include('element/list-order.ejs') -%>
+            <%- include('element/join.ejs') -%>
+
+        </div>
+        <!---->
+        <!---->
+        <!---->
+        <div data-v-a9660e98="" id="moveBox" class="moveBox" style="display: none">
+          <div data-v-a9660e98="" class="moveHead c-row c-row-between c-row-middle">
+            <div data-v-a9660e98="" class="close">Close</div>
+            <div data-v-a9660e98="">
+              <span data-v-a9660e98="">Full Screen</span>
+            </div>
+          </div>
+          <div data-v-a9660e98="" class="long">
+            <div data-v-a9660e98="" class="van-tabs van-tabs--line">
+              <div class="van-tabs__wrap van-hairline--top-bottom">
+                <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
+                  <div role="tab" aria-selected="true" class="van-tab van-tab--active">
+                    <span class="van-tab__text van-tab__text--ellipsis">Bệt rồng mới nhất</span>
+                  </div>
+                  <div role="tab" class="van-tab">
+                    <span class="van-tab__text van-tab__text--ellipsis">My Bets</span>
+                  </div>
+                  <div class="van-tabs__line"></div>
+                </div>
+              </div>
+              <div class="van-tabs__content">
+                <div data-v-a9660e98="" role="tabpanel" class="van-tab__pane" style="">
+                  <div data-v-a9660e98="" class="longlist"></div>
+                </div>
+                <div data-v-a9660e98="" role="tabpanel" class="van-tab__pane" style="display: none">
+                  <!---->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div data-v-a9660e98="" id="sipachp">
+          <!-- <audio data-v-a9660e98="" id="voice1" muted="muted">
+                        <source data-v-a9660e98="" src="/audio/di1.da40b233.mp3" type="audio/mpeg" />
+                    </audio>
+                    <audio data-v-a9660e98="" id="voice2" muted="muted">
+                        <source data-v-a9660e98="" src="/audio/di2.317de251.mp3" type="audio/mpeg" />
+                    </audio> -->
+        </div>
+        <div data-v-a9660e98="" class="popup-qt van-popup van-popup--center"
+          style="width: 80%; border-radius: 10px; max-width: 340px; z-index: 2040;display: none;">
+          <div data-v-a9660e98="" class="rule-box">
+            <div data-v-a9660e98="" class="title c-row c-row-middle-center">Pre-Selling Rules</div>
+            <div data-v-a9660e98="" class="info">
+              <div data-v-a9660e98="" class="comment"> To protect users' rights - legitimate interests
+                participate in the pre-sale and maintain the normal operating sequence of the pre-sale, the rules
+                rules developed under the agreement in accordance with the relevant agreements and rules of
+                national laws and regulations. Chapter 1 Definition1.1 Definition of presale: refer to
+                A sales model in which a seller offers a bundle of products or services to collect orders
+                Consumer ordering through pre-sale and delivery product tools
+                goods and services to the seller as agreed in advance. 1.2 The pre-sale model is the "Signed ." model
+                "Deposit" is referred to as a fixed amount of pre-sold goods
+                available. The "deposit" can participate in mini games and have a chance to win a lot
+                profit. Deposits can be exchanged directly for goods but the deposit amount
+                Not for exchange.1.3 Pre-sale products: Products provided by the seller
+                By using the pre-sale product tool, only pre-sale words are highlighted on the
+                the title or on the product detail page, in addition other products do not use
+                Pre-sale product tools are not pre-sale products.1.4 Pre-sale system:
+                Access to the system of product tools provided to support sales by selling model
+                before. 1.5 Pre-sale goods price: is the price of goods before sale. The price of the goods
+                Pre-sale consists of two parts: selling price and payment. </div>
+              <div data-v-a9660e98="" class="rule-btn c-row m-t-20 c-row-center">
+                <button data-v-a9660e98=""
+                  class="btn van-button van-button--default van-button--normal van-button--block van-button--round"
+                  style="color: rgb(255, 255, 255); background: rgb(242, 65, 59); border-color: rgb(242, 65, 59);">
+                  <div data-v-a9660e98="" class="van-button__content">
+                    <span data-v-a9660e98="" class="van-button__text">
+                      <span data-v-a9660e98="">I know</span>
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%- include('element/alert.ejs') -%>
+       
+     
+    </div>
+    <div data-v-7692a079="" data-v-a9660e98="" class="Loading c-row c-row-middle-center">
+      <div data-v-7692a079="" class="van-loading van-loading--circular">
+        <span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular"
+            style="width: auto; height: auto; -webkit-animation-duration: 1s; animation-duration: 1s;">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet"
+                style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+                <defs>
+                    <clipPath id="__lottie_element_2">
+                        <rect width="200" height="200" x="0" y="0"></rect>
+                    </clipPath>
+                    <image
+                        src="/assets/png/h5setting_20230714005938hfia.png">
+                    </image>
+                    <image
+                        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAHlBMVEVHcEy/GyDCGiHCGiDBGiHBGiLBGiG/GyC/HCDBGiEYgX5lAAAACXRSTlMAFupex4emMEAHMN8rAAAEw0lEQVR42u1cy1ITQRTtYTKZsAsQLLODUsDeoVWC2YGSSHYC8ZEdolU6Owopq9gpisJOhwS5f2vPDENek2QefW5ZyF0BReZM9z3nPjrdLURimxJwM+p0Dw5SIqJl9ECaCmQO93z7pLFBvv1BjeDkPV3bJQbicZ267DcC4ySAcGsvT3+W1Q+7+iHMPR+huhr8RtQqasf4IRVEa+f6wbM17Qw2tr1RvCsiZVFwFMbCPlR6pvK4+xorb1O542IZj7FQxGIUFAY64Np1PIYXbuGJ4xEDhspNbbDPPWK10BiGQy46x4pjoi00hsXgdFX1XKAdIg7wRY/HrCV4+VbBs1fkIYVCnzl0LvADwctQ0Rfv9RK5+wweWWfwCJ6+aiDzcAyLwyMVBmrZHAOZZhC7EuIyA38vBIPb8UK0pYsXYonB7aJJL+AYBWoJBpEsccwWXiQ2x2zlMCsm/UrEc8uQLn4gFmgRq8fKtIYHcQgftwyOKJ/nIHCZgcDCcW+ISywOl0wzNFcqcOGLOlFnCPM2RwmRR35ZEdoEhxRZ/O4wJCyDw+8mh97zHFmRhVxHHORqMpBL1BmSieBgcIGDwRZHeMxzpEUWmZTpCx7kjKEM5tGi0+IQfJsBRDIIXnA0cjZsX0UPyC+O+MgAYnJk+JsDYnFEeosj0t+CxLXDIh7EkGt4kCCg3IL8SyCmX5+CY5flP/4mgUCL+pwf5ME5Pufzysb2QBPBNybYumsy6BmwLWM56N+xtfAZBVU9tMO+akya0NbhqjGpEENjcgTtGa9oNYn87i/sGXLI6s68iicWMkKGC3bQtZVwJQK6zlkOHY6UfCVciUCuFlwvElSA6x6y3T9vCJlcXtMMJpTOgh1whbsjdOB3NF2ewK3ZNjucwtFLXkQNSje5zruiGKi+636wiaqKprs7BgnyfI+zmyDPy1YPnSGNUKFHgHnM9sdcD6EKGM2f9U5QHZJS+vYrVBByNKjdl+/nEFKc7yuPzuEu8ZyiXykDzzzTrxST2gOU1p4dJwbEZ+vfuRKxiU/7vj5DtiKi8rxuAl/GcFPmMB9RaNX1NlxG5HZazfOVj5S3pXe+KtFlqdbN1caQzcda5ys3JBiaOnenDt187Oir7s2hZyY07q8+GLr52Ja6tn0YcjiJtB11KI2Qg6Xr9MlI72o6RzP6qExOD4ubIxVn1HWw2BxzwqSkI0GO449i8W72gYwLggfZh1IZq2k1lPWs1BofzQ+yaiXOAb+sh+finYtT/5Uh2dvx3lENJUMwPqbWfkzPvc1A3/W4HIz3NhGz4MRWQEGmPVt8nOAw72HKCbOIHiQJo2kOmipmJdGYKdMclG4mPPl8J8WRb+WQ58k+8YhoM9kn1Hu1k5MxmfNnZQrie7dIbCXyYhquqFdztxJgpGO9muS4KDMysQs78ZjoQ8xBp8UQ4rtCeTZeLyuU6Y6Dz+rji2M4498tsykymDcRo291+eTd9PMxW1kw4z1jcSg5Cw2iBCQcGvW82aBqZEa2V7ybfrTcLeM/iapPBiaq4V+JpOmmH3M7uGCp+uZr+Ke7314Fty4tPtTWZs7shddE3d9Q9jT8bXFV60rJTIMGrKYXwtfDSUN2ANzazr7AmDF16ttUUfyf9hdhzrd5F3WCHQAAAABJRU5ErkJggg==">
+                    </image>
+                </defs>
+                <g clip-path="url(#__lottie_element_2)">
+                    <g class="ai"
+                        transform="matrix(0.9999210238456726,0.012566040270030499,-0.012566040270030499,0.9999210238456726,1.264495849609375,-1.2487106323242188)"
+                        opacity="1" style="display: block;">
+                        <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice"
+                            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAJHpUWHRDcmVhdG9yAAAImXNMyU9KVXBMK0ktUnBNS0tNLikGAEF6Bs5qehXFAAAACXBIWXMAAAABAAAAAQBPJcTWAAAAHlBMVEVHcEy/GyDCGiHCGiDBGiHBGiLBGiG/GyC/HCDBGiEYgX5lAAAACXRSTlMAFupex4emMEAHMN8rAAAEw0lEQVR42u1cy1ITQRTtYTKZsAsQLLODUsDeoVWC2YGSSHYC8ZEdolU6Owopq9gpisJOhwS5f2vPDENek2QefW5ZyF0BReZM9z3nPjrdLURimxJwM+p0Dw5SIqJl9ECaCmQO93z7pLFBvv1BjeDkPV3bJQbicZ267DcC4ySAcGsvT3+W1Q+7+iHMPR+huhr8RtQqasf4IRVEa+f6wbM17Qw2tr1RvCsiZVFwFMbCPlR6pvK4+xorb1O542IZj7FQxGIUFAY64Np1PIYXbuGJ4xEDhspNbbDPPWK10BiGQy46x4pjoi00hsXgdFX1XKAdIg7wRY/HrCV4+VbBs1fkIYVCnzl0LvADwctQ0Rfv9RK5+wweWWfwCJ6+aiDzcAyLwyMVBmrZHAOZZhC7EuIyA38vBIPb8UK0pYsXYonB7aJJL+AYBWoJBpEsccwWXiQ2x2zlMCsm/UrEc8uQLn4gFmgRq8fKtIYHcQgftwyOKJ/nIHCZgcDCcW+ISywOl0wzNFcqcOGLOlFnCPM2RwmRR35ZEdoEhxRZ/O4wJCyDw+8mh97zHFmRhVxHHORqMpBL1BmSieBgcIGDwRZHeMxzpEUWmZTpCx7kjKEM5tGi0+IQfJsBRDIIXnA0cjZsX0UPyC+O+MgAYnJk+JsDYnFEeosj0t+CxLXDIh7EkGt4kCCg3IL8SyCmX5+CY5flP/4mgUCL+pwf5ME5Pufzysb2QBPBNybYumsy6BmwLWM56N+xtfAZBVU9tMO+akya0NbhqjGpEENjcgTtGa9oNYn87i/sGXLI6s68iicWMkKGC3bQtZVwJQK6zlkOHY6UfCVciUCuFlwvElSA6x6y3T9vCJlcXtMMJpTOgh1whbsjdOB3NF2ewK3ZNjucwtFLXkQNSje5zruiGKi+636wiaqKprs7BgnyfI+zmyDPy1YPnSGNUKFHgHnM9sdcD6EKGM2f9U5QHZJS+vYrVBByNKjdl+/nEFKc7yuPzuEu8ZyiXykDzzzTrxST2gOU1p4dJwbEZ+vfuRKxiU/7vj5DtiKi8rxuAl/GcFPmMB9RaNX1NlxG5HZazfOVj5S3pXe+KtFlqdbN1caQzcda5ys3JBiaOnenDt187Oir7s2hZyY07q8+GLr52Ja6tn0YcjiJtB11KI2Qg6Xr9MlI72o6RzP6qExOD4ubIxVn1HWw2BxzwqSkI0GO449i8W72gYwLggfZh1IZq2k1lPWs1BofzQ+yaiXOAb+sh+finYtT/5Uh2dvx3lENJUMwPqbWfkzPvc1A3/W4HIz3NhGz4MRWQEGmPVt8nOAw72HKCbOIHiQJo2kOmipmJdGYKdMclG4mPPl8J8WRb+WQ58k+8YhoM9kn1Hu1k5MxmfNnZQrie7dIbCXyYhquqFdztxJgpGO9muS4KDMysQs78ZjoQ8xBp8UQ4rtCeTZeLyuU6Y6Dz+rji2M4498tsykymDcRo291+eTd9PMxW1kw4z1jcSg5Cw2iBCQcGvW82aBqZEa2V7ybfrTcLeM/iapPBiaq4V+JpOmmH3M7uGCp+uZr+Ke7314Fty4tPtTWZs7shddE3d9Q9jT8bXFV60rJTIMGrKYXwtfDSUN2ANzazr7AmDF16ttUUfyf9hdhzrd5F3WCHQAAAABJRU5ErkJggg==">
+                        </image>
+                    </g>
+                    <g class="png"
+                        transform="matrix(0.8008000254631042,0,0,0.8008000254631042,59.959999084472656,59.959999084472656)"
+                        opacity="1" style="display: block;">
+                        <image width="100px" height="100px" preserveAspectRatio="xMidYMid slice"
+                            src="/assets/png/h5setting_20230714005938hfia.png">
+                        </image>
+                    </g>
+                </g>
+            </svg>
+        </span>
+        <div data-v-1690b988="" class="skeleton-wrapper" style="display: none;">
+            <div data-v-1690b988="" class="van-skeleton van-skeleton--animate"><!---->
+                <div class="van-skeleton__content"><!---->
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                </div>
+            </div>
+            <div data-v-1690b988="" class="van-skeleton van-skeleton--animate">
+                <div class="van-skeleton-avatar van-skeleton-avatar--round"></div>
+                <div class="van-skeleton__content">
+                    <h3 class="van-skeleton-title"></h3>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                </div>
+            </div>
+            <div data-v-1690b988="" class="van-skeleton van-skeleton--animate"><!---->
+                <div class="van-skeleton__content">
+                    <h3 class="van-skeleton-title"></h3>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+                    <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+   
+  </div>
+
+
+    <!-- The Modal -->
+<div id="myModal" class="modal" style="display: none"> 
+  <div class="modal-content"> 
+    <!-- Win Image -->
+    <img id="winImage" src="/winning_image.png" alt="Winning Image">
+    <!-- Loss Image -->
+    <img id="lossImage" src="/losing_image.png" alt="Losing Image" style="display: none">
+    
+    <!-- Rest of the modal content remains the same -->
+    
+    <div class="text-over-image"> 
+      <div id="myModal_header">Congratulations</div><br> 
+    </div> 
+    <div class="text-over-image-l"> 
+      <div id="lottery_result">Lottery Result: <span class="btn-boox">Green</span><span class="btn-boox">7</span><span class="btn-boox">Big</span></div><br> 
+    </div> 
+    <div class="text-over-image-2"> 
+      <div id="myModal_result">Win: 50</div><br> 
+    </div> 
+    <div class="text-over-image-3"> 
+      <div id="myModal_result_Period">Period: 1 Minute 1234567890</div><br> 
+    </div> 
+    <div class="close-btn"> 
+      <span class="close-x">&times;</span> 
+    </div>
+  </div>
+</div>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var modal = document.getElementById("myModal");
+      var closeBtn = document.querySelector(".close-x");
+
+      function showModal() {
+        console.log("Showing modal...");
+        modal.style.display = "block";
+      }
+
+      function hideModal() {
+        console.log("Hiding modal...");
+        modal.style.display = "none";
+      }
+
+
+      closeBtn.onclick = function () {
+        console.log("Close button clicked.");
+        hideModal(); // Hide modal when close button is clicked
+      };
+
+      // Hide modal when clicking outside of it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          console.log("Clicked outside of modal.");
+          hideModal();
+        }
+      };
+
+      console.log("Script loaded successfully.");
+    });
+  </script>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/js/client.js"></script>
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+    integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+    crossorigin="anonymous"></script>
+  <script src="/js/wingo1.js"></script>
+</body>
+
+</html>
