@@ -477,163 +477,29 @@ const userInfo = async(req, res) => {
 
 
 
-const recharge = async (req, res) => {
-    let auth = req.cookies.auth
-    let money = req.body.money
-    let type = req.body.type
-    let typeid = req.body.typeid
- 
-    const minimumMoney = process.env.MINIMUM_MONEY
- 
-    if (type != "cancel") {
-       if (!auth || !money || money < minimumMoney - 1) {
-          return res.status(200).json({
-             message: "Failed",
-             status: false,
-             timeStamp: timeNow,
-          })
-       }
+const recharge = async(req, res) => {
+    let auth = req.cookies.auth;
+    if (!auth) {
+        return res.status(200).json({
+            message: 'Failed',
+            status: false,
+            timeStamp: timeNow,
+        });
     }
-    const [user] = await connection.query("SELECT `phone`, `code`,`name_user`,`invite` FROM users WHERE `token` = ? ", [auth])
-    let userInfo = user[0]
-    if (!user) {
-       return res.status(200).json({
-          message: "Failed",
-          status: false,
-          timeStamp: timeNow,
-       })
-    }
-    if (type == "cancel") {
-       await connection.query("UPDATE recharge SET status = 2 WHERE phone = ? AND id_order = ? AND status = ? ", [userInfo.phone, typeid, 0])
-       return res.status(200).json({
-          message: "Cancelled order successfully",
-          status: true,
-          timeStamp: timeNow,
-       })
-    }
-    const [recharge] = await connection.query("SELECT * FROM recharge WHERE phone = ? AND status = ? ", [userInfo.phone, 0])
- 
-    if (recharge.length == 0) {
-       let time = new Date().getTime()
-       const date = new Date()
-       function formateT(params) {
-          let result = params < 10 ? "0" + params : params
-          return result
-       }
- 
-       function timerJoin(params = "", addHours = 0) {
-          let date = ""
-          if (params) {
-             date = new Date(Number(params))
-          } else {
-             date = new Date()
-          }
- 
-          date.setHours(date.getHours() + addHours)
- 
-          let years = formateT(date.getFullYear())
-          let months = formateT(date.getMonth() + 1)
-          let days = formateT(date.getDate())
- 
-          let hours = date.getHours() % 12
-          hours = hours === 0 ? 12 : hours
-          let ampm = date.getHours() < 12 ? "AM" : "PM"
- 
-          let minutes = formateT(date.getMinutes())
-          let seconds = formateT(date.getSeconds())
- 
-          return years + "-" + months + "-" + days + " " + hours + ":" + minutes + ":" + seconds + " " + ampm
-       }
-       let checkTime = timerJoin(time)
-       let id_time = date.getUTCFullYear() + "" + date.getUTCMonth() + 1 + "" + date.getUTCDate()
-       let id_order = Math.floor(Math.random() * (99999999999999 - 10000000000000 + 1)) + 10000000000000
-       // let vat = Math.floor(Math.random() * (2000 - 0 + 1) ) + 0;
- 
-       money = Number(money)
-       let client_transaction_id = id_time + id_order
-       const formData = {
-          username: process.env.accountBank,
-          secret_key: process.env.secret_key,
-          client_transaction: client_transaction_id,
-          amount: money,
-       }
- 
-       if (type == "momo") {
-          const sql = `INSERT INTO recharge SET 
-             id_order = ?,
-             transaction_id = ?,
-             phone = ?,
-             money = ?,
-             type = ?,
-             status = ?,
-             today = ?,
-             url = ?,
-             time = ?`
-          await connection.execute(sql, [client_transaction_id, "NULL", userInfo.phone, money, type, 0, checkTime, "NULL", time])
-          const [recharge] = await connection.query("SELECT * FROM recharge WHERE phone = ? AND status = ? ", [userInfo.phone, 0])
-          return res.status(200).json({
-             message: "Received successfully",
-             datas: recharge[0],
-             status: true,
-             timeStamp: timeNow,
-          })
-       }
- 
-       const moneyString = money.toString()
- 
-       const apiData = {
-          key: process.env.PAYMENT_KEY,
-          client_txn_id: client_transaction_id,
-          amount: moneyString,
-          p_info: process.env.PAYMENT_INFO,
-          customer_name: userInfo.name_user,
-          customer_email: process.env.PAYMENT_EMAIL,
-          customer_mobile: userInfo.phone,
-          redirect_url: `${process.env.APP_BASE_URL}/wallet/rechargerecord`,
-          udf1: process.env.APP_NAME,
-       }
- 
-       try {
-          const apiResponse = await axios.post("https://api.ekqr.in/api/create_order", apiData)
- 
-          if (apiResponse.data.status == true) {
-             const sql = `INSERT INTO recharge SET 
-                 id_order = ?,
-                 transaction_id = ?,
-                 phone = ?,
-                 money = ?,
-                 type = ?,
-                 status = ?,
-                 today = ?,
-                 url = ?,
-                 time = ?`
- 
-             await connection.execute(sql, [client_transaction_id, "0", userInfo.phone, money, type, 0, checkTime, "0", timeNow])
- 
-             const [recharge] = await connection.query("SELECT * FROM recharge WHERE phone = ? AND status = ? ", [userInfo.phone, 0])
- 
-             return res.status(200).json({
-                message: "Received successfully",
-                datas: recharge[0],
-                payment_url: apiResponse.data.data.payment_url,
-                status: true,
-                timeStamp: timeNow,
-             })
-          } else {
-             return res.status(500).json({ message: "Failed to create order", status: false })
-          }
-       } catch (error) {
-          return res.status(500).json({ message: "API request failed", status: false })
-       }
-    } else {
-       return res.status(200).json({
-          message: "Received successfully",
-          datas: recharge[0],
-          status: true,
-          timeStamp: timeNow,
-       })
-    }
- }
+
+    const [recharge] = await connection.query('SELECT * FROM recharge WHERE status = 0 ');
+    const [recharge2] = await connection.query('SELECT * FROM recharge WHERE status != 0 ');
+    const [withdraw] = await connection.query('SELECT * FROM withdraw WHERE status = 0 ');
+    const [withdraw2] = await connection.query('SELECT * FROM withdraw WHERE status != 0 ');
+    return res.status(200).json({
+        message: 'Success',
+        status: true,
+        datas: recharge,
+        datas2: recharge2,
+        datas3: withdraw,
+        datas4: withdraw2,
+    });
+}
 
 const settingGet = async(req, res) => {
     let auth = req.cookies.auth;
