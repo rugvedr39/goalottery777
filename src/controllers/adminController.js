@@ -623,24 +623,25 @@ const settingBank = async(req, res) => {
     }
 }
 
-const settingCskh = async(req, res) => {
-    let auth = req.cookies.auth;
-    let telegram = req.body.telegram;
-    let cskh = req.body.cskh;
-    let myapp_web = req.body.myapp_web;
+const settingCskh = async (req, res) => {
+    let auth = req.cookies.auth
+    let telegram = req.body.telegram
+    let cskh = req.body.cskh
+    let myapp_web = req.body.myapp_web
+    let whatsapp = req.body.whatsapp
     if (!auth || !cskh || !telegram) {
-        return res.status(200).json({
-            message: 'Failed',
-            status: false,
-            timeStamp: timeNow,
-        });
+       return res.status(200).json({
+          message: "Failed",
+          status: false,
+          timeStamp: timeNow,
+       })
     }
-    await connection.query(`UPDATE admin SET telegram = ?, cskh = ?, app = ?`, [telegram, cskh, myapp_web]);
+    await connection.query(`UPDATE admin SET telegram = ?, whatsapp = ?, cskh = ?, app = ?`, [telegram,whatsapp, cskh, myapp_web])
     return res.status(200).json({
-        message: 'Successful change',
-        status: true,
-    });
-}
+       message: "Successful change",
+       status: true,
+    })
+ }
 
 const banned = async(req, res) => {
     let auth = req.cookies.auth;

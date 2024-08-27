@@ -93,6 +93,8 @@
                                     <input type="text" class="form-control" id="telegram" placeholder="Link Telegram" value=""><br>
                                     <label for="cskh" style="color: #3498db;">Online service</label>
                                     <input type="text" class="form-control" id="cskh" placeholder="Online service" value=""><br>
+                                    <label for="cskh" style="color: #3498db;">WhatsApp</label>
+                                    <input type="text" class="form-control" id="whatsapp" placeholder="WhatsApp Link" value=""><br>
                                     <label for="myapp_web" style="color: #3498db;">App download link</label>
                                     <input type="text" class="form-control" id="myapp_web" placeholder="Link to download APP" value=""><br>
                                     <button type="submit" class="btn btn-primary telegram" style="width: 100%;">Initialize</button>
@@ -128,7 +130,7 @@
                 $('#edit-banking-name').val(bank.name_user);
                 $('#edit-banking-info').val(bank.stk);
                 $('#edit-banking-upi').val(bank.upi);
-                $('#edit-banking2-upi').val(momo2.upi);
+                // $('#edit-banking2-upi').val(momo2.upi);
 
                 $('#edit-banking2-name_bank').val(bank2.name_bank);
                 $('#edit-banking2-name').val(bank2.name_user);
@@ -136,6 +138,7 @@
                 $('#edit-banking2-upi').val(bank2.upi);
 
                 $('#telegram').val(response.settings[0].telegram);
+                $('#whatsapp').val(response.settings[0].whatsapp);
                 $('#cskh').val(response.settings[0].cskh);
                 $('#myapp_web').val(response.settings[0].app);
             }
@@ -245,6 +248,7 @@
             e.preventDefault();
             const telegram = $('#telegram').val();
             const cskh = $('#cskh').val();
+            const whatsapp = $('#whatsapp').val();
             const myapp_web = $('#myapp_web').val();
             $.ajax({
                 type: "POST",
@@ -253,6 +257,7 @@
                     telegram: telegram,
                     cskh: cskh,
                     myapp_web: myapp_web,
+                    whatsapp:whatsapp
                 },
                 dataType: "json",
                 success: function (response) {
