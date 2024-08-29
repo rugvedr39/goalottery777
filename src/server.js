@@ -6,11 +6,14 @@ import cronJobContronler from './controllers/cronJobContronler';
 import socketIoController from './controllers/socketIoController';
 require('dotenv').config();
 let cookieParser = require('cookie-parser');
+import morgan from 'morgan'; // Import morgan
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
 const port = process.env.PORT || 8099;
+
+app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
