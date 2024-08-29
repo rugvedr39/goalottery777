@@ -13,7 +13,7 @@ const io = require('socket.io')(server);
 
 const port = process.env.PORT || 8099;
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
