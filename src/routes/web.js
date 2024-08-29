@@ -9,10 +9,13 @@ import dailyController from '../controllers/dailyController';
 import k5Controller from '../controllers/k5Controller';
 import k3Controller from '../controllers/k3Controller';
 import paymentController from "../controllers/paymentController"
+import morgan from 'morgan'; // Import morgan
+
 
 let router = express.Router();
 
 const initWebRouter = (app) => {
+    app.use(morgan('dev'));
     router.get("/wallet/recharge", middlewareController, homeController.rechargePage)
     router.get("/wallet/withdrawal", middlewareController, homeController.withdrawalPage)
     router.get("/wallet/rechargerecord", middlewareController, homeController.rechargerecordPage)
