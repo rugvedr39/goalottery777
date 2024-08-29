@@ -768,27 +768,23 @@ const recharge = async (req, res) => {
     }
  }
 
-const addBank = async (req, res) => {
+ const addBank = async (req, res) => {
     let auth = req.cookies.auth;
     let name_bank = req.body.name_bank;
     let name_user = req.body.name_user;
     let stk = req.body.stk;
-    let account = req.body.account;
-    let ifsc = req.body.ifsc;
-    let tp = req.body.tp;
     let email = req.body.email;
-    let sdt = req.body.sdt;
-    let Tinh = req.body.tinh;
-    let chi_nhanh = req.body.chi_fast;
+    let tinh = req.body.tinh;
+    let time = new Date().getTime();
 
-    if (!auth || !name_bank || !name_user) {
+    if (!auth || !name_bank || !name_user || !stk || !email || !tinh) {
         return res.status(200).json({
             message: 'Failed',
             status: false,
             timeStamp: timeNow,
         })
     }
-    const [user] = await connection.query('SELECT `phone`, `code`,`invite` FROM users WHERE `token` = ?', [auth]);
+    const [user] = await connection.query('SELECT `phone`, `code`,`invite` FROM users WHERE `token` = ? ', [auth]);
     let userInfo = user[0];
     if (!user) {
         return res.status(200).json({
@@ -797,55 +793,38 @@ const addBank = async (req, res) => {
             timeStamp: timeNow,
         });
     };
-    const [user_bank] = await connection.query('SELECT * FROM user_bank WHERE name_bank = ? ', [name_bank]);
-    const [user_bankcount] = await connection.query('SELECT * FROM user_bank WHERE phone = ? ', [userInfo.phone]);
-    if (user_bankcount.length == 0) {
-        if (user_bank.length == 0) {
-            let time = new Date().getTime();
-            const sql = `INSERT INTO user_bank SET
-            phone = ?,
-            account = ?,
-            ifsc = ?,
-            name_bank = ?,
-            name_user = ?,
-            time = ?`;
-            await connection.execute(sql, [userInfo.phone, account, ifsc, name_bank, name_user, time]);
-            return res.status(200).json({
-                message: 'Add bank successfully',
-                status: true,
-                timeStamp: timeNow,
-            });
-        } else if (user_bank.length > 0) {
-            return res.status(200).json({
-                message: 'This account number already exists in the system',
-                status: false,
-                timeStamp: timeNow,
-            });
-        }
-    } else {
-        if (user_bank.length == 0) {
-            let time = new Date().getTime();
-            const sql = `UPDATE user_bank SET
-            account = ?,
-            ifsc = ?,
-            name_bank = ?,
-            name_user = ?,
-            time = ? WHERE phone=?`;
-            await connection.execute(sql, [account, ifsc, name_bank, name_user, time, userInfo.phone]);
-            return res.status(200).json({
-                message: 'Add bank successfully',
-                status: true,
-                timeStamp: timeNow,
-            });
-        } else if (user_bank.length > 0) {
-            return res.status(200).json({
-                message: 'This account number already exists in the system',
-                status: false,
-                timeStamp: timeNow,
-            });
-        }
+    const [user_bank] = await connection.query('SELECT * FROM user_bank WHERE stk = ? ', [stk]);
+    const [user_bank2] = await connection.query('SELECT * FROM user_bank WHERE phone = ? ', [userInfo.phone]);
+    if (user_bank.length == 0 && user_bank2.length == 0) {
+        const sql = `INSERT INTO user_bank SET 
+        phone = ?,
+        name_bank = ?,
+        name_user = ?,
+        stk = ?,
+        email = ?,
+        tinh = ?,
+        time = ?`;
+        await connection.execute(sql, [userInfo.phone, name_bank, name_user, stk, email, tinh, time]);
+        return res.status(200).json({
+            message: 'Successfully added bank',
+            status: true,
+            timeStamp: timeNow,
+        });
+    } else if (user_bank.length > 0) {
+        await connection.query('UPDATE user_bank SET stk = ? WHERE phone = ? ', [stk, userInfo.phone]);
+        return res.status(200).json({
+            message: 'Account number updated in the system',
+            status: false,
+            timeStamp: timeNow,
+        });
+    } else if (user_bank2.length > 0) {
+        await connection.query('UPDATE user_bank SET name_bank = ?, name_user = ?, stk = ?, email = ?, tinh = ?, time = ? WHERE phone = ?', [name_bank, name_user, stk, email, tinh, time, userInfo.phone]);
+        return res.status(200).json({
+            message: 'your account is updated',
+            status: false,
+            timeStamp: timeNow,
+        });
     }
-
 
 }
 
