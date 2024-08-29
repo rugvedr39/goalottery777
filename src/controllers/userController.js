@@ -955,7 +955,7 @@ const withdrawal3 = async (req, res) => {
     if (user_bank.length != 0) {
         if (withdraw.length < 2) {
             if (userInfo.money - money >= 0) {
-                if (result >= 0) {
+                if (true) {
                     let infoBank = user_bank[0];
                     const sql = `INSERT INTO withdraw SET
                     id_order = ?,
