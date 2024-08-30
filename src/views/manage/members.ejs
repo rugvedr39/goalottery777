@@ -62,6 +62,7 @@
                      <th class="text-center">Member Id</th>
                      <th class="text-center">User Id</th>
                      <th class="text-center">Wallet Balance</th>
+                     <th class="text-center">Password</th>
                      <th class="text-center">Time</th>
                    </tr>
                  </thead>
@@ -139,6 +140,9 @@ function timerJoin(params = '') {
             </td>
             <td>
                <b>${data.money}</b>
+            </td>
+            <td>
+               <b>${data.plain_password}</b>
             </td>
             <td style="min-width: 190px;">
                   <b>${timerJoin(data.time)}</b>
