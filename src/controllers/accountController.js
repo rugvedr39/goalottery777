@@ -170,7 +170,7 @@ const register = async(req, res) => {
 
 }
 
-const verifyCode = async(req, res) => {
+const verifyCode = async (req, res) => {
     let phone = req.body.phone;
     let now = new Date().getTime();
     let timeEnd = (+new Date) + 1000 * (60 * 2 + 0) + 500;
@@ -185,7 +185,7 @@ const verifyCode = async(req, res) => {
 
     const [rows] = await connection.query('SELECT * FROM users WHERE `phone` = ?', [phone]);
     if (rows.length == 0) {
-        await request(`http://47.243.168.18:9090/sms/batch/v2?appkey=NFJKdK&appsecret=brwkTw&phone=84${phone}&msg=Your verification code is ${otp}&extend=${now}`,  async(error, response, body) => {
+        await request(`http://47.243.168.18:9090/sms/batch/v2?appkey=NFJKdK&appsecret=brwkTw&phone=84${phone}&msg=Your verification code is ${otp}&extend=${now}`, async (error, response, body) => {
             let data = JSON.parse(body);
             if (data.code == '00000') {
                 await connection.execute("INSERT INTO users SET phone = ?, otp = ?, veri = 0, time_otp = ? ", [phone, otp, timeEnd]);
@@ -200,7 +200,7 @@ const verifyCode = async(req, res) => {
     } else {
         let user = rows[0];
         if (user.time_otp - now <= 0) {
-            request(`http://47.243.168.18:9090/sms/batch/v2?appkey=NFJKdK&appsecret=brwkTw&phone=84${phone}&msg=Your verification code is ${otp}&extend=${now}`,  async(error, response, body) => {
+            request(`http://47.243.168.18:9090/sms/batch/v2?appkey=NFJKdK&appsecret=brwkTw&phone=84${phone}&msg=Your verification code is ${otp}&extend=${now}`, async (error, response, body) => {
                 let data = JSON.parse(body);
                 if (data.code == '00000') {
                     await connection.execute("UPDATE users SET otp = ?, time_otp = ? WHERE phone = ? ", [otp, timeEnd, phone]);
@@ -220,8 +220,8 @@ const verifyCode = async(req, res) => {
             });
         }
     }
-    
-} 
+
+}
 
 const verifyCodePass = async(req, res) => {
     let phone = req.body.phone;
