@@ -67,7 +67,7 @@ const initWebRouter = (app) => {
     router.get('/wallet/withdrawalrecord', middlewareController, homeController.withdrawalrecordPage);
     router.get('/wallet/addBank', middlewareController, homeController.addBank);
 
-    router.get('/keFuMenu', middlewareController, homeController.keFuMenu);
+    router.get('/keFuMenu', homeController.keFuMenu);
 
     router.get('/mian', middlewareController, homeController.mianPage);
 

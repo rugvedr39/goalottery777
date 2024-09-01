@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="noindex,nofollow">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <title>24lottery</title>
+    <title>Goa lottery 777</title>
     <link href="/css/account/login.css" rel="stylesheet" />
     <link href="/css/account/chunk-vendors.css" rel="stylesheet" />
     <link href="/css/account/app.css" rel="stylesheet" />
@@ -473,28 +473,31 @@
 
         });
 
-        $('.otp').click(function (e) {
-            e.preventDefault();
-            let phone = $('#username').val().trim();
-            $(this).addClass('block-click');
-            setTimeout(() => {
-                $(this).removeClass('block-click');
-            }, 1600);
-            if (phone) {
-                $.ajax({
-                    type: "POST",
-                    url: "/api/sent/otp/verify/reset",
-                    data: {
-                        phone: phone,
-                    },
-                    dataType: "json",
-                    success: function (response) {
-                        alertMess(response.message);
-                    }
-                });
-            } else {
-                alertMess('Please fill in the required fields');
-            }
+        $(document).ready(function() {
+            $('.otp').click(function (e) {
+                console.log("hello")
+                e.preventDefault();
+                let phone = $('#username').val().trim();
+                $(this).addClass('block-click');
+                setTimeout(() => {
+                    $(this).removeClass('block-click');
+                }, 1600);
+                if (phone) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/api/sent/otp/verify/reset",
+                        data: {
+                            phone: phone,
+                        },
+                        dataType: "json",
+                        success: function (response) {
+                            alertMess(response.message);
+                        }
+                    });
+                } else {
+                    alertMess('Please fill in the required fields');
+                }
+            });
         });
     </script>
     <script>
