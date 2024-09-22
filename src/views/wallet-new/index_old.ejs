@@ -18,60 +18,9 @@
         body {
             height: 100%;
             width: 100%;
-            background-color: #fff6f6;
+            background-color: #090909;
             padding: 0;
             margin: 0;
-        }
-
-        #image_box {
-            width: 100%;
-            gap: 0.28rem;
-        }
-
-        #image_box .images_21 {
-            width: 25%;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -webkit-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-align: center;
-            -webkit-align-items: center;
-            align-items: stretch;
-            -webkit-box-pack: start;
-            -webkit-justify-content: flex-start;
-            gap: 0.13333rem;
-        }
-
-        #image_box .images_21 img {
-            width: 1rem;
-            margin-left: 1.5vw;
-            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 0.3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #image_box .images_21 p {
-            text-align: center;
-            color: rgb(255, 246, 246);
-            font-weight: 600;
-            font-family: math;
-        }
-
-        @media (max-width:600px) {
-            #image_box .images_21 img {
-                width: 1rem;
-                margin-left: 5vw;
-                box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
-                border-radius: 0.3rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -80,17 +29,11 @@
     <div id="app">
         <div data-v-7b283485="" class="mian">
             <div data-v-106b99c8="" data-v-7b283485="" class="navbar">
-                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/home'">
-                    <div data-v-a9660e98="" data-v-106b99c8="" class="c-row c-row-middle-center">
-                        <i class="fa-light fa-angle-left fa-fade fa-xl center" style="color: #FFF"></i>
-                    </div>
-                </div>
+                <div data-v-106b99c8="" class="navbar-left"></div>
                 <div data-v-106b99c8="" class="navbar-title"> Wallet </div>
                 <div data-v-106b99c8="" class="navbar-right" onclick="location.href='/keFuMenu'">
                     <div data-v-7b283485="" data-v-106b99c8="" class="c-row">
-                        <i class="fa-fade fa center" style="color: #FFF">
-                            <img data-v-7b283485="" data-v-106b99c8="" src="/images/audio.webp" class="audio">
-                        </i>
+                        <img data-v-7b283485="" data-v-106b99c8="" src="/images/audio.webp" class="audio">
                     </div>
                 </div>
             </div>
@@ -99,21 +42,20 @@
                     <div data-v-7b283485="" class="c-row c-row-center img">
                         <div data-v-7b283485="" class="van-image" border-radius="60px"
                             style="width: 60px; height: 60px;">
-                            <img src="/images/wallet.png" class="van-image__img">
+                            <img src="/images/avatar.svg" class="van-image__img">
                         </div>
                     </div>
-                    <!--<div data-v-7b283485="" class="name"></div>-->
-                    <div data-v-7b283485="" class="title" style="color: #8f5206">Total Balance</div>
+                    <div data-v-7b283485="" class="name"></div>
                 </div>
                 <div data-v-7b283485="" class="wallet-box">
                     <div data-v-7b283485="" class="box">
                         <div data-v-7b283485="" class="icon1"></div>
-                        <!--<div data-v-7b283485="" class="title">Wallet</div>-->
+                        <div data-v-7b283485="" class="title">Wallet</div>
                         <div data-v-7b283485="" class="balance m-t-10">
-                            <!--<div data-v-7b283485="" class="txt c-row c-row-middle">
+                            <div data-v-7b283485="" class="txt c-row c-row-middle">
                                 <img data-v-7b283485="" width="22px" height="18px" src="/images/king (2).png"
                                     class="m-r-5 img"> My balance：
-                            </div>-->
+                            </div>
                             <div data-v-7b283485="" class="c-row balanceMoney c-row-middle-center">
                                 <div data-v-7b283485="" class="money">
                                     <!---->
@@ -142,32 +84,45 @@
                         </div>
                         <div data-v-7b283485="" class="c-row c-row-between total-btn m-t-30">
                             <div data-v-7b283485="" class="item c-row c-row-center"
-                                onclick="location.href='/wallet/transfer'">
-                                <div data-v-7b283485="" class="li"> MAIN WALLET TRANSFER </div>
+                                onclick="location.href='/wallet/withdrawal'">
+                                <div data-v-7b283485="" class="li"> WITHDRAW </div>
+                            </div>
+                            <div data-v-7b283485="" class="item c-row c-row-center"
+                                onclick="location.href='/wallet/recharge'">
+                                <div data-v-7b283485="" class="li"> RECHARGE </div>
                             </div>
                         </div>
-                        <div data-v-7b283485="" class="c-row c-row-between total-btn m-t-30" id="image_box">
-                            <div class="images_21" onclick="location.href='/wallet/recharge'">
-                                <img src="/images/recharge.png">
-                                <p>Recharge</p>
-                            </div>
-                            <div class="images_21" onclick="location.href='/wallet/withdrawal'">
-                                <img src="/images/withdraw.png">
-                                <p>Withdraw</p>
-                            </div>
-                            <div class="images_21" onclick="location.href='/wallet/rechargerecord'">
-                                <img src="/images/rechargeHistory.png">
-                                <p>Recharge History</p>
-                            </div>
-                            <div class="images_21" onclick="location.href='/wallet/withdrawalrecord'">
-                                <img src="/images/withdrawHistory.png">
-                                <p>Withdraw History</p>
-                            </div>
-
-                        </div>
-
                     </div>
-
+                    <div data-v-7b283485="" class="list m-t-15">
+                        <div data-v-7b283485="" class="item c-row c-row-between"
+                            onclick="location.href='/wallet/rechargerecord'">
+                            <div data-v-7b283485="" class="c-row c-row-middle">
+                                <img data-v-7b283485="" width="35px" height="35px" src="/images/recharge.png"
+                                    class="chackImg">
+                                <span data-v-7b283485="" class="name">Recharge history</span>
+                            </div>
+                            <div data-v-7b283485="">
+                                <i data-v-7b283485="" class="van-icon van-icon-arrow"
+                                    style="color: rgb(84, 94, 104); font-size: 16px;">
+                                    <!---->
+                                </i>
+                            </div>
+                        </div>
+                        <div data-v-7b283485="" class="item c-row c-row-between"
+                            onclick="location.href='/wallet/withdrawalrecord'">
+                            <div data-v-7b283485="" class="c-row c-row-middle">
+                                <img data-v-7b283485="" width="35px" height="35px" src="/images/withdraw.png"
+                                    class="chackImg">
+                                <span data-v-7b283485="" class="name">Withdrawal History</span>
+                            </div>
+                            <div data-v-7b283485="">
+                                <i data-v-7b283485="" class="van-icon van-icon-arrow"
+                                    style="color: rgb(84, 94, 104); font-size: 16px;">
+                                    <!---->
+                                </i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <%- include('../nav') -%>
