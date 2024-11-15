@@ -2,18 +2,18 @@ import axios from "axios";
 import connection from "../config/connectDB.js";
 
 export const GAME_CATEGORIES_MAP = {
-  SLOT: 1,
-  POKER: 2,
-  LOBBY: 3,
-  FISHING: 5,
-  CASINO: 8,
+  SLOT: 1000,
+  POKER: 2000,
+  LOBBY: 3000,
+  FISHING: 4000,
+  CASINO: 5000,
 };
 
 const gameCategoriesPage = (GameCategoriesId) => async (req, res) => {
   try {
     const response = await axios({
       method: "GET",
-      url: "https://24xclubsgame.com/api/neo_jili/game_list",
+      url: "https://webghost.api-jetx.online/api/neo_jili/game_list",
       data: {
         agentId: process.env.JILI_AGENT_ID,
         agentKey: process.env.JILI_AGENT_KEY,
@@ -44,7 +44,7 @@ const gameSlotsPage = (GameCategoriesId) => async (req, res) => {
   try {
     const response = await axios({
       method: "GET",
-      url: "https://24xclubsgame.com/api/neo_jili/game_list",
+      url: "https://webghost.api-jetx.online/api/neo_jili/game_list",
       data: {
         agentId: process.env.JILI_AGENT_ID,
         agentKey: process.env.JILI_AGENT_KEY,
@@ -80,13 +80,14 @@ const getGameLink = async (req, res) => {
     let gameId = req.query.game_id;
 
     const [rows] = await connection.execute(
-      "SELECT `token`, `status` FROM `users` WHERE `token` = ? AND `veri` = 1",
-      [token],
+      "SELECT token, status, phone FROM users WHERE token = ? AND veri = 1",
+      [token]
     );
 
-    if (auth !== rows[0].token && rows[0].status !== 1) {
+    // Ensure that the token and status are checked correctly
+    if (!rows.length || rows[0].token !== token || rows[0].status !== 1) {
       return res.status(400).json({
-        message: "Login is required to access this api",
+        message: "Login is required to access this API",
         isAuthorized: false,
       });
     }
@@ -98,51 +99,39 @@ const getGameLink = async (req, res) => {
       });
     }
 
-    console.log({
-      gameId: gameId,
-      agentId: process.env.JILI_AGENT_ID,
-      agentKey: process.env.JILI_AGENT_KEY,
-      gameBaseUrl: process.env.JILI_GAME_BASE_URL,
-      token: token,
-      secretKey: process.env.BYTE_FUSION_SECRET_KEY,
-    });
-
+    // Call external API to get the game link
     const response = await axios({
       method: "POST",
-      url: "https://24xclubsgame.com/api/neo_jili/generate_link",
+      url: "https://webghost.api-jetx.online/posts",
       data: {
-        gameId: gameId,
-        agentId: process.env.JILI_AGENT_ID,
-        agentKey: process.env.JILI_AGENT_KEY,
-        gameBaseUrl: process.env.JILI_GAME_BASE_URL,
-        token: token,
-        secretKey: process.env.BYTE_FUSION_SECRET_KEY,
-      },
-      headers: {
-        "Content-Type": "application/json",
+        Mobile: rows[0].phone,
+        ReferrerUrl: process.env.JILI_GAME_BASE_URL,
+        GameId: gameId,
+        AgentId: process.env.JILI_AGENT_ID,
+        AgentKey: process.env.JILI_AGENT_KEY, 
       },
     });
 
-    // return res.status(200).json({
-    //    message: "Game link generated successfully!",
-    //    gameLink: response?.data?.gameLink,
-    //    isAuthorized: true,
-    // })
-    return res.redirect(response?.data?.gameLink);
+    console.log("Generated URL:", response.data.generatedUrl);
+
+    // Redirect to the generated URL
+    return res.redirect(response.data.generatedUrl);
+    
   } catch (error) {
-    console.log(error);
-    console.log(error?.response?.data);
+    console.error("Error generating game link:", error);
     return res.status(500).json({
-      message: "Something went wrong!",
+      message: "An error occurred while generating the game link",
+      error: error.message,
     });
   }
 };
+      
 
 const gameList = async (req, res) => {
   try {
     const response = await axios({
       method: "GET",
-      url: "https://24xclubsgame.com/api/neo_jili/game_list",
+      url: "https://webghost.api-jetx.online/api/neo_jili/game_list",
       data: {
         agentId: process.env.JILI_AGENT_ID,
         agentKey: process.env.JILI_AGENT_KEY,
@@ -418,9 +407,9 @@ const sessionBet = async (req, res) => {
   // const currency = req.body?.currency
   // const game = req.body?.game
   // const wagersTime = req.body?.wagersTime
-  const betAmount = req.body?.betAmount;
+  const betAmount = Number(req.body?.betAmount);
   // const round = req.body?.["round(*)"]
-  const winloseAmount = req.body?.winloseAmount;
+  const winloseAmount = Number(req.body?.winloseAmount);
   const preserve = req.body?.preserve;
   // const isFreeRound = req.body?.isFreeRound
   // const userId = req.body?.userId
@@ -471,7 +460,7 @@ const sessionBet = async (req, res) => {
       // console.log(rows[0]?.status, 1)
       // Get user details from the database
       const username = rows[0]?.phone;
-      const balance = rows[0]?.money;
+      const balance = Number(rows[0]?.money);
       const token = rows[0]?.token;
 
       if (balance <= betAmount) {
@@ -481,28 +470,34 @@ const sessionBet = async (req, res) => {
         });
       }
 
-      // // console.log(balance, betAmount, winloseAmount)
+      console.log(balance, betAmount, winloseAmount);
 
-      let finalAmount;
+      let finalAmount = 0;
 
       if (preserve === 0 && betAmount > 0 && winloseAmount === 0) {
         finalAmount = Number(balance - betAmount);
+        console.log("finalAmount = Number(balance - betAmount);");
       } else if (preserve === 0 && betAmount === 0 && winloseAmount >= 0) {
         finalAmount = Number(balance + winloseAmount);
-      } else if ((preserve > 0, betAmount === 0, winloseAmount === 0)) {
+        console.log("finalAmount = Number(balance + winloseAmount);");
+      } else if (preserve > 0 && betAmount === 0 && winloseAmount === 0) {
         finalAmount = Number(balance - preserve);
+        console.log("finalAmount = Number(balance - preserve);");
       } else if (preserve > 0 && betAmount >= 0 && winloseAmount >= 0) {
         finalAmount = Number(balance + preserve - betAmount + winloseAmount);
+        console.log(
+          "finalAmount = Number(balance + preserve - betAmount + winloseAmount);",
+        );
       }
 
       console.log(finalAmount);
+      console.log(Number(balance + winloseAmount));
 
       await connection.query(
         "UPDATE users SET money = ?, total_money = ? WHERE `phone` = ?",
         [finalAmount, finalAmount, username],
       );
 
-      // Return the user details as the response
       return res.status(200).json({
         errorCode: 0,
         message: "success",
