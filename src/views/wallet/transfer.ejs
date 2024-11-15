@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html translate="no" data-dpr="1" style="font-size: 48.16px;">
+<html translate="no" data-dpr="1" style="font-size: 37.16px;">
 
 <head>
     <meta charset="utf-8">
@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="noindex,nofollow">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <title> DELHIWIN </title>
+    <title>91club</title>
     <link rel="stylesheet" href="./index_files/index-96409872.css">
     <link rel="stylesheet" href="../index_files/index-96409872.css">
     <link href="/css/wallet/main.css" rel="stylesheet" />
     <link href="/css/wallet/chunk_2-1.css" rel="stylesheet" />
     <link href="/css/wallet/chunk_2-2.css" rel="stylesheet" />
     <link href="/css/wallet/chunk_2-3.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
     <style>
         html,
         body {
@@ -24,6 +24,40 @@
             padding: 0;
             margin: 0;
         }
+
+        .mian .wallet-box .box .balance[data-v-7b283485] {
+            /* background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%) !important; */
+            box-shadow: 1px 1rem 3rem #b180547d !important;
+            background: linear-gradient(90deg, #b1835a 0%, #d9b38c 100%);
+
+        }
+
+
+        .mian .wallet-user[data-v-7b283485] {
+            background: linear-gradient(90deg, #b1835a 0%, #d9b38c 100%);
+        }
+
+        .van-row {
+            display: -webkit-box !important;
+            display: -webkit-flex !important;
+            display: flex !important;
+            -webkit-flex-wrap: wrap !important;
+            flex-wrap: wrap !important;
+        }
+
+        .navbar[data-v-106b99c8] {
+            background: linear-gradient(90deg, #b1835a 0%, #d9b38c 100%);
+        }
+
+
+        .c-tc {
+            text-align: center;
+            color: #0a1846;
+        }
+
+        .reload_img {
+            filter: brightness(6.5);
+        }
     </style>
 </head>
 
@@ -31,10 +65,9 @@
     <div id="app">
         <div data-v-7b283485="" class="mian">
             <div data-v-106b99c8="" data-v-7b283485="" class="navbar">
-                <div data-v-106b99c8="" class="navbar-left" onclick="location.href='/wallet'">
-                    <div data-v-106b99c8="" class="bank c-row c-row-middle-center">
-                        <i class="fa-light fa-angle-left fa-fade fa-xl center" style="color: #FFF"></i>
-                    </div>
+                <div data-v-19888208="" class="navbar__content-left" onclick="history.back()">
+                    <i data-v-19888208="" class="van-badge__wrapper van-icon van-icon-arrow-left">
+                    </i>
                 </div>
                 <div data-v-106b99c8="" class="navbar-title"> Fund Transfer </div>
                 <div data-v-106b99c8="" class="navbar-right" onclick="location.href='/keFuMenu'">
@@ -73,7 +106,7 @@
                                 <div data-v-7b283485="" id="reload">
                                     <div data-v-7b283485="" class="van-image img m-l-15"
                                         style="width: 25px; height: 25px;">
-                                        <img src="/images/reload.png" class="van-image__img">
+                                        <img src="/images/reload.png" class="van-image__img reload_img">
                                     </div>
                                 </div>
                             </div>
@@ -104,7 +137,7 @@
                                     <div data-v-a0753f48="" class="p-l-5">+91</div>
                                 </div>
                                 <input data-v-a0753f48="" maxlength="16" type="text" placeholder="Phone Number"
-                                    style="background: #484848; outline: none">
+                                    style="background: #ffffff; outline: none">
                                 <!-- oninput="value=value.replace(/\D/g,'')" -->
                             </div>
                             <div data-v-a0753f48="" class="item c-row c-row-center">
@@ -112,7 +145,15 @@
                                     <img data-v-a0753f48="" src="/images/wallet2.png" class="" width="20" height="20" />
                                 </span>
                                 <input data-v-d8986e5e="" data-v-a0753f48="" placeholder="Enter Amount"
-                                    style="background: #484848; outline: none">
+                                    style="background: #ffffff; outline: none">
+                            </div>
+
+                            <div data-v-a0753f48="" class="item c-row c-row-center">
+                                <span data-v-a0753f48="" class="img c-row c-row-middle-center">
+                                    <img data-v-a0753f48="" src="/images/wallet2.png" class="" width="20" height="20" />
+                                </span>
+                                <input data-v-d8986e5e="" data-v-a0753f48="" placeholder="Password"
+                                    style="background: #ffffff; outline: none">
                             </div>
 
 
@@ -143,7 +184,7 @@
                                 <div data-v-7c8bbbf4="" class="c-tc van-ellipsis van-col van-col--8">Amount</div>
                                 <div data-v-7c8bbbf4="" class="c-tc van-ellipsis van-col van-col--8">Status</div>
                             </div>
-                            <div class="bd van-row lisys">
+                            <div class="bd van-row2 lisys">
                                 <!-- Transaction history data will be dynamically populated here -->
                             </div>
                         </div>
@@ -183,9 +224,9 @@
                         </div>
 
                     </div>
-                    <%- include('../nav') -%>
                 </div>
             </div>
+
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script src="/js/client.js"></script>
             <script>
@@ -208,7 +249,7 @@
                         $('.alert-toast').append(
                             `
                     <div data-v-1dcba851="" class="msg">
-                        <div data-v-1dcba851="" class="msg-content" style=""> ${text} </div>
+                        <div data-v-1dcba851="" class="msg-content"  > ${text} </div>
                     </div>
                     `
                         );
@@ -229,6 +270,7 @@
                         return true;
                     }
                 }
+
                 $('button').click(async (e) => {
                     e.preventDefault();
                     let phone = $('input:eq(0)').val().trim();
@@ -265,12 +307,12 @@
                 function loadTransactionHistory(datas) {
                     let html = datas.map((data) => {
                         return `
-            <div data-v-7c8bbbf4="" class="bd van-row">
-                <div data-v-7c8bbbf4="" class="c-tc van-ellipsis van-col van-col--8">${data.receiver_phone}</div> 
-                <div data-v-7c8bbbf4="" class="c-tc van-col van-col--8">${data.amount}</div>
-                <div data-v-7c8bbbf4="" class="c-tc van-col van-col--8">${data.datetime.slice(0, 10)}</div>
-            </div>
-            `;
+                            <div data-v-7c8bbbf4="" class="bd van-row">
+                                <div data-v-7c8bbbf4="" class="c-tc van-ellipsis van-col van-col--8">${data.receiver_phone}</div> 
+                                <div data-v-7c8bbbf4="" class="c-tc van-col van-col--8">${data.amount}</div>
+                                <div data-v-7c8bbbf4="" class="c-tc van-col van-col--8">${data.datetime.slice(0, 10)}</div>
+                            </div>
+                        `;
                     }).join('');
 
                     $('.promotion .bd.lisys').html(html);

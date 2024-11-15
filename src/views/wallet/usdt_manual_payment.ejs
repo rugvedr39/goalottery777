@@ -19,12 +19,24 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             height: 100%;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        @font-face {
+            font-family: bahnschrift;
+            font-weight: 500;
+            src: url(/assets/woff2/bahnschrift-610d57ac.woff2)
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: bahnschrift
         }
 
         main {
@@ -41,7 +53,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: #f2f2f2;
+            background: #f0f0f5;
             padding: 6px;
             margin-left: auto;
             margin-right: auto;
@@ -50,7 +62,7 @@
         }
 
         footer {
-            background-color: #f2f2f2;
+            background-color: #f0f0f5;
             padding: 6px;
             text-align: center;
             border-top-left-radius: 12px;
@@ -63,7 +75,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: #f2f2f2;
+            background: #f0f0f5;
             padding: 0px 25px 20px;
             margin-left: auto;
             margin-right: auto;
@@ -90,7 +102,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: #f2f2f2;
+            background: #f0f0f5;
             padding: 0px 25px 20px;
             margin-left: auto;
             margin-right: auto;
@@ -133,7 +145,7 @@
             flex-direction: column;
             gap: 6px;
             /* align-items: center; */
-            background: #f2f2f2;
+            background: #f0f0f5;
             padding: 10px 25px 25px;
             margin-left: auto;
             margin-right: auto;
@@ -161,16 +173,15 @@
         .verification_form__root button {
             margin-top: 10px;
             padding: 10px;
-            border-radius: 9px;
-            border: 1px solid #ccc;
-            background-color: #1c4ff7;
-            background: linear-gradient(90deg,
-                    rgba(172, 10, 154, 1) 0%,
-                    rgba(0, 39, 255, 1) 100%);
-
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
+            user-select: none;
+            font: inherit;
+            color: #896646;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: .01333rem;
+            border: none;
+            border-radius: 99rem;
+            background: linear-gradient(131deg, #f2d5b2 0%, #d9b38c 100%);
         }
 
         .upi_pay_now {
@@ -179,11 +190,9 @@
             border-radius: 9px;
             border: 1px solid #ccc;
             background-color: #1c4ff7;
-            background: linear-gradient(40deg,
-                    rgba(172, 10, 154, 1) 0%,
-                    rgba(0, 39, 255, 1) 100%);
+            background: linear-gradient(180deg, #CCF2F4 0%, #A4EBF3 100%);
             font-weight: 500;
-            color: white;
+            color: #ffffff;
             font-size: 16px;
             cursor: pointer;
             text-decoration: none;

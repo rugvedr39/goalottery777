@@ -1,48 +1,174 @@
 <div data-v-42f27458="" class="game-list">
-    <div data-v-42f27458="" class="tab c-row c-row-between">
+   <div data-v-42f27458="" class="tab c-row c-row-between">
       <div data-v-42f27458="" class="li c-row c-row-center block-click" id="GetNoaverageEmerdList">
-        <span data-v-42f27458="" class="txt action"> Game History </span>
+         <span data-v-42f27458="" class="txt action"> Game History </span>
+      </div>
+      <div data-v-42f27458="" class="li c-row c-row-center" id="trend_tab_button">
+         <span data-v-42f27458="" class="txt"> Chart </span>
       </div>
       <div data-v-42f27458="" class="li c-row c-row-center" id="GetMyEmerdList">
-        <span data-v-42f27458="" class="txt"> My Bets </span>
+         <span data-v-42f27458="" class="txt"> My History </span>
       </div>
-    </div>
-    <div data-v-42f27458="" class="con-boxp-b-20">
-      <div data-v-42f27458="" class="list m-t-10 " id="all">
-        <div data-v-42f27458="" class="wrap">
-          <div data-v-42f27458="" class="c-tc van-row">
-            <div data-v-42f27458="" class="van-col van-col--8"> Periods </div>
-            <div data-v-42f27458="" class="van-col van-col--12"> Result </div>
-            <div data-v-42f27458="" class="van-col van-col--4">  Sum </div>
-          </div>
-        </div>
-        <div data-v-42f27458="">
-          <div data-v-42f27458="" class="hb" id="list_order">
-            <!---->
-          </div>
-        </div>
-        <div data-v-42f27458="" class="list-fooder"></div>
+   </div>
+   <style>
+      .info_data__root {
+         margin-left: 10px;
+         margin-right: 10px;
+         border-radius: 0.25rem;
+         overflow: hidden;
+      }
+   </style>
+   <div data-v-42f27458="" class="con-boxp-b-20">
+      <div data-v-42f27458="" class="list m-t-10 info_data__root" id="all">
+         <div data-v-42f27458="" class="wrap">
+            <div data-v-42f27458="" class="c-tc van-row">
+               <div data-v-42f27458="" class="van-col van-col--8">Periods</div>
+               <div data-v-42f27458="" class="van-col van-col--12">Result</div>
+               <div data-v-42f27458="" class="van-col van-col--4">Total</div>
+            </div>
+         </div>
+         <div data-v-42f27458="">
+            <div data-v-42f27458="" class="hb" id="list_order"></div>
+         </div>
+         <!-- <div data-v-42f27458="" class="list-fooder"></div> -->
       </div>
-      <div data-v-42f27458="" class="list m-t-10 " id="me" style="display: none;">
-        <div data-v-42f27458="">
-          <div data-v-42f27458="" class="hb" id="showJoinMe">
-            <!---->
-          </div>
-        </div>
-        <div data-v-42f27458="" class="list-fooder"></div>
+      <div data-v-42f27458="" class="list m-t-10" id="trend" style="display: none">
+         <div data-v-c53b15fb="" data-v-3f742540="" selected-tab="A" class="Trend__C" apifun="e=>r(g.WinTxrGetTRXMyEmerdList,e).then(s=>s.data)" gopathname="AllLotteryGames-BettingRecordWinTrx">
+            <div data-v-c53b15fb="" class="Trend__C-body1">
+               <div data-v-c53b15fb="" class="Trend__C-nav">
+                  <div data-v-c53b15fb="" class="statistic_tab_a active" onclick="openChartStatisticsTab('A')">A</div>
+                  <div data-v-c53b15fb="" class="statistic_tab_b" onclick="openChartStatisticsTab('B')">B</div>
+                  <div data-v-c53b15fb="" class="statistic_tab_c" onclick="openChartStatisticsTab('C')">C</div>
+                  <div data-v-c53b15fb="" class="statistic_tab_d" onclick="openChartStatisticsTab('D')">D</div>
+                  <div data-v-c53b15fb="" class="statistic_tab_e" onclick="openChartStatisticsTab('E')">E</div>
+               </div>
+               <div data-v-c53b15fb="" class="Trend__C-body1-line">Statistic (last 100 Periods)</div>
+               <div data-v-c53b15fb="" class="Trend__C-body1-line">
+                  <div data-v-c53b15fb="">Missing</div>
+                  <div data-v-c53b15fb="" class="Trend__C-body1-line-num" id="chart_missing_box">
+                     <div data-v-c53b15fb="">13</div>
+                     <div data-v-c53b15fb="">1</div>
+                     <div data-v-c53b15fb="">2</div>
+                     <div data-v-c53b15fb="">14</div>
+                     <div data-v-c53b15fb="">41</div>
+                     <div data-v-c53b15fb="">3</div>
+                     <div data-v-c53b15fb="">6</div>
+                     <div data-v-c53b15fb="">0</div>
+                     <div data-v-c53b15fb="">12</div>
+                     <div data-v-c53b15fb="">9</div>
+                  </div>
+               </div>
+               <div data-v-c53b15fb="" class="Trend__C-body1-line">
+                  <div data-v-c53b15fb="">Avg missing</div>
+                  <div data-v-c53b15fb="" class="Trend__C-body1-line-num" id="chart_avg_missing_box">
+                     <div data-v-c53b15fb="">9</div>
+                     <div data-v-c53b15fb="">6</div>
+                     <div data-v-c53b15fb="">5</div>
+                     <div data-v-c53b15fb="">6</div>
+                     <div data-v-c53b15fb="">15</div>
+                     <div data-v-c53b15fb="">11</div>
+                     <div data-v-c53b15fb="">8</div>
+                     <div data-v-c53b15fb="">15</div>
+                     <div data-v-c53b15fb="">8</div>
+                     <div data-v-c53b15fb="">13</div>
+                  </div>
+               </div>
+               <div data-v-c53b15fb="" class="Trend__C-body1-line">
+                  <div data-v-c53b15fb="">Frequency</div>
+                  <div data-v-c53b15fb="" class="Trend__C-body1-line-num" id="chart_frequency_box">
+                     <div data-v-c53b15fb="">11</div>
+                     <div data-v-c53b15fb="">13</div>
+                     <div data-v-c53b15fb="">17</div>
+                     <div data-v-c53b15fb="">12</div>
+                     <div data-v-c53b15fb="">6</div>
+                     <div data-v-c53b15fb="">7</div>
+                     <div data-v-c53b15fb="">10</div>
+                     <div data-v-c53b15fb="">7</div>
+                     <div data-v-c53b15fb="">10</div>
+                     <div data-v-c53b15fb="">7</div>
+                  </div>
+               </div>
+               <div data-v-c53b15fb="" class="Trend__C-body1-line">
+                  <div data-v-c53b15fb="">Max consecutive</div>
+                  <div data-v-c53b15fb="" class="Trend__C-body1-line-num" id="chart_max_consecutive_box">
+                     <div data-v-c53b15fb="">2</div>
+                     <div data-v-c53b15fb="">2</div>
+                     <div data-v-c53b15fb="">2</div>
+                     <div data-v-c53b15fb="">1</div>
+                     <div data-v-c53b15fb="">2</div>
+                     <div data-v-c53b15fb="">1</div>
+                     <div data-v-c53b15fb="">1</div>
+                     <div data-v-c53b15fb="">1</div>
+                     <div data-v-c53b15fb="">1</div>
+                     <div data-v-c53b15fb="">2</div>
+                  </div>
+               </div>
+            </div>
+            <div data-v-c53b15fb="" class="Trend__C-body2" id="chart_container"></div>
+            <div data-v-c53b15fb="" class="Trend__C-foot" id="chart__bottom_nav">
+               <div data-v-c53b15fb="" class="Trend__C-foot-previous disabled previous_page">
+                  <i data-v-c53b15fb="" class="van-badge__wrapper van-icon van-icon-arrow-left Trend__C-icon" style="font-size: 20px"></i>
+               </div>
+               <div data-v-c53b15fb="" class="Trend__C-foot-page" id="number_result__chart">1/1670</div>
+               <div data-v-c53b15fb="" class="Trend__C-foot-next next_page">
+                  <i data-v-c53b15fb="" class="van-badge__wrapper van-icon van-icon-arrow Trend__C-icon" style="font-size: 20px"></i>
+               </div>
+            </div>
+         </div>
       </div>
-      <div data-v-42f27458="" class="page-nav c-row c-row-center c-tc">
-        <div data-v-42f27458="" class="arr c-row c-row-middle-center block-click" id="previous"><i data-v-42f27458=""
-            class="van-icon van-icon-arrow-left icon" style="font-size: 20px;">
-            <!---->
-          </i></div>
-        <div data-v-42f27458="" class="number" id="number_result" data-select="all">
-          <!---->
-        </div>
-        <div data-v-42f27458="" class="arr c-row c-row-middle-center action" id="next"><i data-v-42f27458=""
-            class="van-icon van-icon-arrow icon action" style="font-size: 20px;">
-            <!---->
-          </i></div>
+      <div data-v-42f27458="" class="list m-t-10" id="me" style="display: none">
+         <!-- <div data-v-42f27458="">
+            <div data-v-42f27458="" class="hb" id="showJoinMe"></div>
+         </div> -->
+         <div data-v-223ff8ce="" class="MyGameRecord__C-body">
+            <div data-v-b4b99df8="" data-v-223ff8ce="" class="MyGameRecordList__C" id="showJoinMe">
+               <div data-v-b4b99df8="" class="MyGameRecordList__C-item">
+                  <div data-v-b4b99df8="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-8">8</div>
+                  <div data-v-b4b99df8="" class="MyGameRecordList__C-item-m">
+                     <div data-v-b4b99df8="" class="MyGameRecordList__C-item-m-top">20240601070178</div>
+                     <div data-v-b4b99df8="" class="MyGameRecordList__C-item-m-bottom">2024-06-01 14:45:28</div>
+                  </div>
+                  <div data-v-b4b99df8="" class="MyGameRecordList__C-item-r">
+                     <div data-v-b4b99df8="" class="">Failed</div>
+                     <span data-v-b4b99df8="">-₹0.98</span>
+                  </div>
+               </div>
+
+               <div data-v-b4b99df8="" class="MyGameRecordList__C-item">
+                  <div data-v-b4b99df8="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-7">7</div>
+                  <div data-v-b4b99df8="" class="MyGameRecordList__C-item-m">
+                     <div data-v-b4b99df8="" class="MyGameRecordList__C-item-m-top">20240601070178</div>
+                     <div data-v-b4b99df8="" class="MyGameRecordList__C-item-m-bottom">2024-06-01 14:45:19</div>
+                  </div>
+                  <div data-v-b4b99df8="" class="MyGameRecordList__C-item-r">
+                     <div data-v-b4b99df8="" class="">Failed</div>
+                     <span data-v-b4b99df8="">-₹0.98</span>
+                  </div>
+               </div>
+
+               <div data-v-b4b99df8="" class="MyGameRecordList__C-item">
+                  <div data-v-b4b99df8="" class="MyGameRecordList__C-item-l MyGameRecordList__C-item-l-1">1</div>
+                  <div data-v-b4b99df8="" class="MyGameRecordList__C-item-m">
+                     <div data-v-b4b99df8="" class="MyGameRecordList__C-item-m-top">20240601070178</div>
+                     <div data-v-b4b99df8="" class="MyGameRecordList__C-item-m-bottom">2024-06-01 14:45:13</div>
+                  </div>
+                  <div data-v-b4b99df8="" class="MyGameRecordList__C-item-r">
+                     <div data-v-b4b99df8="" class="">Failed</div>
+                     <span data-v-b4b99df8="">-₹0.98</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- <div data-v-42f27458="" class="list-fooder"></div> -->
       </div>
-    </div>
-  </div>
+      <div data-v-42f27458="" class="page-nav c-row c-row-center c-tc" id="pagination_nav">
+         <div data-v-42f27458="" class="arr c-row c-row-middle-center block-click" id="previous">
+            <i data-v-42f27458="" class="van-icon van-icon-arrow-left icon" style="font-size: 20px"> </i>
+         </div>
+         <div data-v-42f27458="" class="number" id="number_result" data-select="all"></div>
+         <div data-v-42f27458="" class="arr c-row c-row-middle-center action" id="next">
+            <i data-v-42f27458="" class="van-icon van-icon-arrow icon action" style="font-size: 20px"> </i>
+         </div>
+      </div>
+   </div>
+</div>

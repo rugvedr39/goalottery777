@@ -1,58 +1,157 @@
 <div data-v-03b808c2="" class="game-list p-b-20">
-    <div data-v-03b808c2="" class="tab c-row c-row-between">
-        <div data-v-03b808c2="" class="li c-row c-row-center">
-            <span data-v-03b808c2="" class="txt action block-click" id="history"> Game History </span>
+    <div data-v-a9660e98="" class="tab_nav">
+        <div data-v-a9660e98="" class="tab_nav_button" id="game_history_tab_button">
+            <span data-v-a9660e98="" class="tab_nav_button_inner action"> Game History </span>
         </div>
-        <div data-v-03b808c2="" class="li c-row c-row-center">
-            <span data-v-03b808c2="" class="txt" id="myBet"> My Bet</span>
+        <!-- <div data-v-a9660e98="" class="tab_nav_button" id="trend_tab_button">
+            <span data-v-a9660e98="" class="tab_nav_button_inner"> Trend </span>
+        </div> -->
+        <div data-v-a9660e98="" class="tab_nav_button" id="my_bets_tab_button">
+            <span data-v-a9660e98="" class="tab_nav_button_inner"> My History </span>
         </div>
     </div>
-    <div data-v-03b808c2="" class="con-box">
-        <div data-v-03b808c2="" class="list m-t-10">
+
+    <style>
+        .tab_panel {
+            display: none;
+        }
+
+        .tab_panel.active {
+            display: block;
+        }
+
+        .tab_nav {
+            font-family: Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: .37333rem;
+            color: #000000;
+            margin: 0;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            display: flex;
+            justify-content: space-between;
+            touch-action: pan-y;
+            padding: 10px 10px;
+        }
+
+        .tab_nav_button {
+            font-family: Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: .37333rem;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            display: flex;
+            justify-content: center;
+            touch-action: pan-y;
+            width: 32%;
+        }
+
+        .tab_nav_button_inner {
+            font-family: Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            touch-action: pan-y;
+            display: block;
+            text-align: center;
+            width: 100%;
+            background: rgb(63 147 104 / 8%);
+            color: #6e6e6e;
+            overflow: hidden;
+            font-size: 0.305rem;
+            border-radius: 9px;
+            padding: 12px 4px;
+            line-height: 1;
+        }
+
+        .tab_nav_button_inner.action {
+            font-weight: 600;
+            background: rgb(63 147 104);
+            color: #fff;
+            /* background-color: #fbedf3; */
+            /* border: 0.02667rem solid #fb4e4e; */
+            /* box-shadow: 0.02667rem 0.02667rem 0.13333rem 0.13333rem #fbedf3; */
+        }
+
+        .info_data__root {
+            box-shadow: 0px 3px 90px #00000021;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: .25rem;
+            overflow: hidden;
+        }
+
+        #my_bets__root {
+            box-shadow: 0px 3px 90px #00000021;
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: .25rem;
+            overflow: hidden;
+        }
+    </style>
+    <div data-v-03b808c2="" class="tab_panel active" id="game_history_tab">
+        <div data-v-03b808c2="" class="list m-t-10 info_data__root">
             <div data-v-03b808c2="" class="wrap header-history">
                 <div data-v-03b808c2="" class="c-tc van-row">
-                    <div data-v-03b808c2="" class="van-col van-col--6"> Draw Period</div>
-                    <div data-v-03b808c2="" class="van-col van-col--4"> Number </div>
+                    <div data-v-03b808c2="" class="van-col van-col--6"> Period</div>
+                    <div data-v-03b808c2="" class="van-col van-col--4"> Sum </div>
                     <div data-v-03b808c2="" class="van-col van-col--5"> Big/Small </div>
                     <div data-v-03b808c2="" class="van-col van-col--4"> Odd/Even </div>
-                    <div data-v-03b808c2="" class="van-col van-col--5"> Result </div>
+                    <div data-v-03b808c2="" class="van-col van-col--5"> Results </div>
                 </div>
             </div>
             <div data-v-03b808c2="">
                 <div data-v-03b808c2="" class="hb" id="list_order">
                     <!---->
                 </div>
-                <div data-v-03b808c2="" class="hb" id="list_mybet">
-                    <!---->
-                </div>
+
             </div>
-            <div data-v-03b808c2="" class="list-fooder"></div>
         </div>
-        <div data-v-03b808c2="" class="page-nav c-row c-row-center c-tc">
-            <div data-v-03b808c2="" class="arr c-row c-row-middle-center block-click" id="previous">
+        <div data-v-03b808c2="" class="page-nav c-row c-row-center c-tc" id="game_history__bottom_nav">
+            <div data-v-03b808c2="" class="arr c-row c-row-middle-center previous_page">
                 <i data-v-03b808c2="" class="van-icon van-icon-arrow-left icon" style="font-size: 20px;"></i>
             </div>
-            <div data-v-03b808c2="" class="number" id="number_result" data-select="all">1/1</div>
-            <div data-v-03b808c2="" class="arr c-row c-row-middle-center action" id="next">
+            <div data-v-03b808c2="" class="number" id="number_result__gameHistory" data-select="all">1</div>
+            <div data-v-03b808c2="" class="arr c-row c-row-middle-center action next_page">
                 <i data-v-03b808c2="" class="van-icon van-icon-arrow icon action" style="font-size: 20px;"></i>
             </div>
         </div>
     </div>
-    <div data-v-03b808c2="" class="con-box p-b-20" style="display: none;">
-        <div data-v-03b808c2="" class="c-row c-flew-end p-r-20">
-            <div data-v-03b808c2="" class="bettingMore c-tc c-row c-row-middle-center">
-                Hơn
-                <i data-v-03b808c2="" class="van-icon van-icon-arrow" style="color: rgb(84, 94, 104); font-size: 15px;"></i>
-            </div>
-        </div>
+    <div data-v-03b808c2="" class="tab_panel" id="my_bets_tab">
+
         <div data-v-03b808c2="" class="list m-t-10">
             <div data-v-03b808c2="" class="p-t-5 p-b-5">
-                <div data-v-03b808c2="" class="van-empty">
-                    <div class="van-empty__image"><img src="https://img.yzcdn.cn/vant/empty-image-default.png"></div>
-                    <p class="van-empty__description">No data</p>
+                <div data-v-03b808c2="" class="hb" id="my_bets__root">
+
+                    <div data-v-03b808c2="" class="van-empty">
+                        <div class="van-empty__image">
+                            <img src="https://img.yzcdn.cn/vant/empty-image-default.png">
+                        </div>
+                        <p class="van-empty__description">No data</p>
+                    </div>
                 </div>
             </div>
-            <div data-v-03b808c2="" class="list-fooder"></div>
+
+            <div data-v-03b808c2="" class="page-nav c-row c-row-center c-tc" id="my_bets__bottom_nav">
+                <div data-v-03b808c2="" class="arr c-row c-row-middle-center previous_page">
+                    <i data-v-03b808c2="" class="van-icon van-icon-arrow-left icon" style="font-size: 20px;"></i>
+                </div>
+                <div data-v-03b808c2="" class="number" id="number_result__myBet" data-select="all">1</div>
+                <div data-v-03b808c2="" class="arr c-row c-row-middle-center action next_page">
+                    <i data-v-03b808c2="" class="van-icon van-icon-arrow icon action" style="font-size: 20px;"></i>
+                </div>
+            </div>
+            <!-- <div data-v-03b808c2="" class="list-fooder"></div> -->
         </div>
 
     </div>

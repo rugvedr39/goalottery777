@@ -29,7 +29,7 @@
       </section>
 
       <div class="form-group" style="text-align: center;">
-        <input type="text" id="search" placeholder="Enter account to search">
+        <input type="text" id="search" placeholder="Enter the account you are looking for">
       </div>
 
       <!-- Main content -->
@@ -51,39 +51,33 @@
             <table class="table table-striped projects" id="table1">
               <thead>
                 <tr>
-                  <th class="text-center">S no.</th>
-                  <th class="text-center">Mobile</th>
-                  <th class="text-center">UPI ID</th>
-                  <th class="text-center">Amount</th>
+                  <th class="text-center">ID</th>
                   <th class="text-center">Account</th>
-                  <th class="text-center">IFSC</th>
-                  <th class="text-center">Transaction ID</th>
+                  <th class="text-center">Bank</th>
+                   <th class="text-center">UPI ID</th>
+                  <th class="text-center">Amount</th>
+                  <th class="text-center">Transaction Id</th>
                   <th class="text-center">Time</th>
                   <th class="text-center">Status</th>
                   <!-- <th class="text-center"></th> -->
                 </tr>
               </thead>
               <tbody>
-               
+                
               </tbody>
             </table>
           </div>
-        </div>
-        <nav aria-label="Page navigation example" style="margin-top: 20px; display: flex; justify-content: center">
-         <ul class="pagination table1">
-             <li class="page-item previous" id="previous">
-                 <a class="page-link" href="#" tabindex="-1">Previous</a>
-             </li>
-             <div id="numbers" style="display: flex">
-                 <li class="page-item">
-                     <a class="page-link active text-white" id="text-page"></a>
-                 </li>
-             </div>
-             <li class="page-item next" id="next">
-                 <a class="page-link" href="#">Next</a>
-             </li>
-         </ul>
-     </nav>
+          <nav aria-label="Page navigation example" style="margin-top: 20px;display: flex;justify-content: center;">
+            <ul class="pagination table1">
+              <li class="page-item previous">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+              </li>
+              <div id="numbers" style="display: flex;"></div>
+              <li class="page-item next">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
       </section>
@@ -96,27 +90,38 @@
   <script src="/js/admin/tables.js"></script>
   <script>
     function formateT(params) {
-        let result = (params < 10) ? "0" + params : params;
-        return result;
+    let result = (params < 10) ? "0" + params : params;
+    return result;
     }
     
-    function timerJoin(params = '') {
+    function timerJoin(params = '', addHours = 0) {
         let date = '';
         if (params) {
             date = new Date(Number(params));
         } else {
             date = new Date();
         }
+    
+        date.setHours(date.getHours() + addHours);
+    
         let years = formateT(date.getFullYear());
         let months = formateT(date.getMonth() + 1);
         let days = formateT(date.getDate());
-        return years + '-' + months + '-' + days;
+    
+        let hours = date.getHours() % 12;
+        hours = hours === 0 ? 12 : hours;
+        let ampm = date.getHours() < 12 ? "AM" : "PM";
+    
+        let minutes = formateT(date.getMinutes());
+        let seconds = formateT(date.getSeconds());
+    
+        return years + '-' + months + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds + ' ' + ampm;
     }
     function show(params) {
       if (params.length == 0) {
         $('tbody').html(`
             <tr class="text-center">
-              <td colspan="7">No data found.......</td>
+              <td colspan="7">No More Data...</td>
             </tr>
           `);
         return;
@@ -133,14 +138,11 @@
                   <td>
                     <b style="color: #3498db">${data.name_bank}</b>
                   </td>
-                  <td>
-                    <b>${formatMoney(data.money)}</b>
+                  <td style="min-width: 190px;">
+                    <b>${data.sdt}</b>
                   </td>
-                  <td style="min-width: 190px;">
-                    <b>${data.account}</b>
-                  </td> 
-                  <td style="min-width: 190px;">
-                    <b>${data.ifsc}</b>
+                  <td>
+                    <b>${(data.money)}</b>
                   </td>
                   <td style="min-width: 190px;">
                     <b>${data.id_order}</b>
@@ -155,9 +157,9 @@
                     <a class="btn btn-success btn-sm confirm-btn" href="" data="${data.id}"><i class="fa fa-check"></i></a>
                     <!-- <a class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a> -->
                     <a class="btn btn-danger btn-sm delete-btn" href="#" data="${data.id}"><i class="fas fa-trash"></i></a>
-                   </td> -->
-                 </tr>`;
-               })
+                  </td> -->
+                </tr>`;
+              })
           $('tbody').html(html);
           $('.btn-success').click(function (e) { 
             e.preventDefault();
@@ -218,64 +220,6 @@
       }
     });
   </script>
-  <script>
-    const itemsPerPage = 50; 
-let currentPage = 1;
-let dataList = [];
-
-function updateTableData() {
-    const totalPages = Math.ceil(dataList.length / itemsPerPage);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const displayedData = dataList.slice(Math.max(0, dataList.length - endIndex), dataList.length - startIndex).reverse();
-
-    show(displayedData);
-    updatePaginationButtons();
-}
-
-function renderPaginationNumbers() {
-    const totalPages = Math.ceil(dataList.length / itemsPerPage);
-
-    $("#numbers").empty(); // Clear existing pagination numbers
-
-    for (let i = totalPages; i >= 1; i--) {
-        const liClass = (i === currentPage) ? "page-item active" : "page-item";
-        $("#numbers").append(`<li class="${liClass}"><a class="page-link" href="#" onclick="changePage(${i})">${i}</a></li>`);
-    }
-}
-
-function updatePaginationButtons() {
-    const totalPages = Math.ceil(dataList.length / itemsPerPage);
-
-    $("#text-page").text(`${currentPage} / ${totalPages}`);
-
-    $("#previous").prop("disabled", currentPage === 1);
-    $("#next").prop("disabled", currentPage === totalPages);
-}
-
-
-
-function changePage(page) {
-    currentPage = page;
-    updateTableData();
-    renderPaginationNumbers();
-}
-
-$(document).ready(function () {
-    $.ajax({
-        type: "POST",
-        url: "/api/webapi/admin/recharge",
-        data: {},
-        dataType: "json",
-        success: function (response) {
-            dataList = response.datas4;
-            updateTableData();
-            renderPaginationNumbers();
-        }
-    });
-});
-  </script>
-  
 </body>
 
 </html>

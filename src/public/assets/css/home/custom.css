@@ -1,0 +1,396 @@
+.van-tabbar .name {
+  white-space: nowrap;
+}
+.gameList[data-v-3cd01dad] {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  /*height: 15.68rem;*/
+  margin-top: 0.4rem;
+}
+.gameList .mySideBar[data-v-3cd01dad] {
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  width: 2.06rem;
+}
+.gameList .mySideBar .van-sidebar-item[data-v-3cd01dad] {
+  width: 1.89667rem;
+  height: 1.82667rem;
+  margin-bottom: 0.17333rem;
+  padding: 0;
+  font-weight: 500;
+  background: URL(https://91club.club/assets/png/bg-edc23a85.png);
+  background-size: 100% 100%;
+  margin-right: 0 !important;
+  text-align: center;
+  border-radius: 5px;
+}
+.gameList .mySideBar .van-sidebar-item[data-v-3cd01dad]:before {
+  display: none;
+}
+.gameList .mySideBar .van-sidebar-item--select[data-v-3cd01dad] {
+  background-color: unset;
+  background: linear-gradient(90deg, #f95959 0%, #ff9a8e 100%);
+  background-size: 100% 100%;
+  color: #fff !important;
+}
+.gameList
+  .mySideBar
+  .van-sidebar-item
+  .van-badge__wrapper
+  > div[data-v-3cd01dad] {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  font-size: 0.34667rem;
+}
+.gameList
+  .mySideBar
+  .van-sidebar-item
+  .van-badge__wrapper
+  > div
+  > div[data-v-3cd01dad] {
+  width: 1.06667rem;
+  height: 1.2rem;
+  background-position: center center;
+  background-size: 1.06667rem auto;
+  background-repeat: no-repeat;
+}
+.gameListGrid__container[data-v-80925079] {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2.45333rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  width: 7.6852rem;
+  height: -webkit-min-content;
+  height: min-content;
+  padding-left: 0.16667rem;
+}
+.gameListGrid__container[data-v-80925079] > div {
+  display: none;
+}
+.gameListGrid__container[data-v-80925079] > div.active {
+  display: block;
+}
+.lotterySlotItem[data-v-27d220ab] {
+  position: relative;
+  width: 100%;
+  height: 2.26667rem;
+  text-align: end;
+  background: linear-gradient(90deg, #f95959 0%, #ff9a8e 100%);
+  box-shadow: 0 -0.05333rem 0.13333rem #fff6f4 inset,
+    0 0.10667rem 0.21333rem 0.05333rem #d0d0ed5c;
+  margin-bottom: 0.26667rem;
+  border-radius: 0.53333rem;
+}
+.lotterySlotItem img[data-v-27d220ab] {
+  height: 100%;
+}
+.lotterySlotItem span[data-v-27d220ab] {
+  position: absolute;
+  top: 0.26667rem;
+  left: 0.4rem;
+  color: #fff;
+  white-space: break-spaces;
+  font-weight: 700;
+  font-size: 0.46667rem;
+}
+.lotterySlotItem h4[data-v-27d220ab] {
+  color: #f4f5f8;
+  font-weight: 400;
+  font-size: 0.29333rem;
+  position: absolute;
+  bottom: 0.26667rem;
+  left: 0.4rem;
+  white-space: pre-wrap;
+  text-align: left;
+  line-height: 0.5;
+  height: 1rem;
+}
+.look_all[data-v-80925079] {
+  width: 100%;
+  height: 1.06667rem;
+  border: 0.01333rem solid #b1835a;
+  border-radius: 0.53333rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: #eefffa;
+  font-size: 0.34667rem;
+  color: #000000;
+}
+.look_all img[data-v-80925079] {
+  width: 0.64rem;
+  height: 0.64rem;
+  margin-right: 0.18667rem;
+  filter: hue-rotate(42deg) saturate(1.5) brightness(1.1);
+}
+.gameType-popular .platform[data-v-ba8588c1],
+.gameType-popular .popular[data-v-ba8588c1] {
+  margin-bottom: 0.34667rem;
+}
+.gameType-popular .platform .title[data-v-ba8588c1],
+.gameType-popular .popular .title[data-v-ba8588c1] {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: 0.21333rem;
+}
+.gameRec[data-v-ba8588c1],
+.hotGames[data-v-ba8588c1] {
+  width: 0.48rem;
+  height: 0.48rem;
+  margin-right: 0.16rem;
+}
+.gameType-popular .platform .title span[data-v-ba8588c1],
+.gameType-popular .popular .title span[data-v-ba8588c1] {
+  font-size: 0.32rem;
+  line-height: 0.4rem;
+}
+.gameType-popular .platform .list[data-v-ba8588c1],
+.gameType-popular .popular .list[data-v-ba8588c1] {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.18667rem;
+}
+.gameType-popular .platform .list .item[data-v-ba8588c1],
+.gameType-popular .popular .list .item[data-v-ba8588c1] {
+  width: 2.21333rem;
+  position: relative;
+  height: 2.21333rem;
+  box-shadow: 0 0.10667rem 0.21333rem #d0d0ed5c,
+    inset 0 -0.05333rem 0.13333rem #fff6f4;
+  border-radius: 0.21333rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: 0.16rem;
+}
+.gameType-popular .platform .list .item .hot_bage[data-v-ba8588c1],
+.gameType-popular .popular .list .item .hot_bage[data-v-ba8588c1] {
+  position: absolute;
+  right: -0.08rem;
+  top: -0.10667rem;
+  width: 0.50667rem;
+  height: 0.48rem;
+}
+.gameType-popular .platform .list .item img[data-v-ba8588c1],
+.gameType-popular .popular .list .item img[data-v-ba8588c1] {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.21333rem;
+}
+.gameListGrid__container[data-v-80925079]
+  > .gameType-slot[data-v-80925079].active {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.21333rem;
+  margin-bottom: 0.82667rem;
+}
+.gameType-slot .item[data-v-9864b2e9] {
+  width: 3.36rem;
+  height: 4.26667rem;
+  background: -webkit-linear-gradient(
+    324.57deg,
+    #2b3270 12.38%,
+    #87e27a 87.13%
+  );
+  background: linear-gradient(125.43deg,#ff8e89 12.38%,#ffc3a2 87.13%);
+  box-shadow: 0 0.10667rem 0.21333rem #d0d0ed5c,
+    inset 0 -0.05333rem 0.13333rem #fff6f4;
+  border-radius: 0.26667rem;
+  aspect-ratio: 0.65;
+}
+.gameType-slot .item .gameImg[data-v-9864b2e9] {
+  width: 3.36rem;
+  height: 4.26667rem;
+  border-radius: 0.26667rem;
+}
+.lotterySlotItem__container[data-v-2bb1d048] {
+  width: 100%;
+  height: 76px;
+  border-radius: 0.53333rem;
+  background: -webkit-linear-gradient(
+    324.57deg,
+    #2b3270 12.38%,
+    #87e27a 87.13%
+  );
+  background: linear-gradient(90deg, #f95959 0%, #ff9a8e 100%);
+  box-shadow: 0 -0.05333rem 0.13333rem #fff6f4 inset,
+    0 0.10667rem 0.21333rem 0.05333rem #d0d0ed5c;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 0.26667rem;
+}
+.lotterySlotItem__container .title[data-v-2bb1d048] {
+  margin-left: 0.48rem;
+  margin-top: 0.29333rem;
+  position: relative;
+  height: 100%;
+}
+.lotterySlotItem__container .game_img[data-v-2bb1d048] {
+  height: 67px;
+  max-width: 4rem;
+  object-fit: contain;
+  margin-top: 1px;
+}
+.lotterySlotItem__container .title .desc[data-v-2bb1d048] {
+  font-size: 0.39333rem;
+}
+.lotterySlotItem__container .title .tit[data-v-2bb1d048] {
+  padding-top: 0.53333rem;
+  font-size: 0.47333rem;
+  font-weight: 700;
+  margin-bottom: 0.17333rem;
+  position: relative;
+  text-indent: 0.18667rem;
+}
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+}
+.lotterySlotItem__container .title svg[data-v-2bb1d048] {
+  position: absolute;
+  width: 1.46667rem;
+  height: 1.46667rem;
+  top: -0.26667rem;
+}
+.lotterySlotItem__container .title .tit[data-v-2bb1d048]:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0.61333rem;
+  width: 0.08rem;
+  height: 0.34667rem;
+  background: #fff;
+}
+.minGame_container[data-v-92730648] {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.45333rem;
+  margin-bottom: 0.4rem;
+}
+.onlineGamesItem[data-v-92730648] {
+  width: 3.25333rem;
+  height: 3.25333rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  background: -webkit-linear-gradient(
+    324.57deg,
+    #2b3270 12.38%,
+    #87e27a 87.13%
+  );
+  background: linear-gradient(
+    125.43deg,
+    #2b3270 12.38%,
+    rgb(43 50 112 / 77%) 87.13%
+  );
+  box-shadow: 0 0.10667rem 0.21333rem 0.05333rem #d0d0ed5c,
+    0 -0.05333rem 0.13333rem #fff6f4 inset;
+  grid-gap: 0.18667rem;
+  margin-bottom: 0.3rem;
+}
+.onlineGamesItem .min_game_img[data-v-92730648] {
+  width: 3.25333rem;
+  height: 3.25333rem;
+}
+.alGames__container-sticky {
+  display: block !important;
+  margin: 0 !important;
+  white-space: nowrap;
+  width: 100% !important;
+}
+.alGames__container-sticky .van-sidebar-item[data-v-3cd01dad] {
+  display: inline-block;
+}
+.allGames__container-list .gameType-popular .platform .list[data-v-ba8588c1] {
+  grid-gap: 0.25rem;
+}
+.allGames__container-list
+  .gameType-popular
+  .platform
+  .list
+  .item[data-v-ba8588c1] {
+  width: 100%;
+  height: auto;
+}
+.allGames__container-list
+  .gameType-popular
+  .platform
+  .list
+  .item
+  img[data-v-ba8588c1] {
+  height: auto;
+  width: 85%;
+  aspect-ratio: 1;
+}
+.allGames__container-list.gameListGrid__container[data-v-80925079]
+  > .gameType-slot[data-v-80925079].active {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.25rem;
+}
+.allGames__container-list .gameType-slot .item[data-v-9864b2e9],
+.allGames__container-list .gameType-slot .item .gameImg[data-v-9864b2e9] {
+  width: 100%;
+  height: 179px;
+}

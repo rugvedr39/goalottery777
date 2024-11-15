@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Management page</title>
+  <title>5D | Management page</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -168,9 +168,9 @@
                 <span class="info-box-icon bg-danger elevation-1">
                   <i class="fas fa-shopping-cart"></i>
                 </span>
-
+ 
                 <div class="info-box-content">
-                  <span class="info-box-text">Big Join</span>
+                  <span class="info-box-text">Join Red</span>
                   <span totalMoney="0" class="info-box-number" id="b">0</span>
                 </div>
               </div>
@@ -181,7 +181,7 @@
               <div class="info-box mb-3">
                 <span class="info-box-icon elevation-1" style="background-color: #8e44ad;"><i class="fas fa-shopping-cart"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Small Join</span>
+                  <span class="info-box-text">Join Violet</span>
                   <span totalMoney="0" class="info-box-number"id="s">0</span>
                 </div>
               </div>
@@ -193,7 +193,7 @@
                 </span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Participate Odd</span>
+                  <span class="info-box-text">Join Green</span>
                   <span totalMoney="0" class="info-box-number" id="l">0</span>
                 </div>
               </div>
@@ -205,7 +205,7 @@
                 </span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Even join</span>
+                  <span class="info-box-text">Overall Amount</span>
                   <span totalMoney="0" class="info-box-number" id="c">0</span>
                 </div>
               </div>
@@ -332,7 +332,7 @@
                 <div class="col-md-12">
                   <div class="card direct-chat direct-chat-warning">
                     <div class="card-header">
-                      <h3 class="card-title">Bet stats</h3>
+                      <h3 class="card-title">Bet Statistics</h3>
 
                       <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -356,7 +356,7 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <div class="card-card-primary">
+                  <div class="card card-primary">
                     <div class="card-header" style="text-align: center;">
                       <div data-v-04e3b381="" class="reservation-chunk-sub-num"> Loading... </div>
                       <div data-v-7d40872f="" class="time" style="font-size: 23px;border-radius: none;">
@@ -371,10 +371,10 @@
                       <div class="form-group">
                         <div data-v-a9660e98="" class="wrap">
                           <div data-v-a9660e98="" class="c-tc van-row" style="text-align: center;border-bottom: 1px solid;padding: 6px">
-                            <div data-v-a9660e98="" class="van-col van-col--8">Stage</div>
+                            <div data-v-a9660e98="" class="van-col van-col--8">Periods</div>
                             <div data-v-a9660e98="" class="van-col van-col--5">Result</div>
-                            <div data-v-a9660e98="" class="van-col van-col--5">Large and small</div>
-                            <div data-v-a9660e98="" class="van-col van-col--5">Parent</div>
+                            <div data-v-a9660e98="" class="van-col van-col--5">Big/Small</div>
+                            <div data-v-a9660e98="" class="van-col van-col--5">Even/Odd</div>
                           </div>
                         </div>
                         <div id="list-orders">
@@ -387,20 +387,19 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <div class="card-card-primary">
+                  <div class="card card-primary">
                     <div class="card-header">
-                      <h3 class="card-title">Adjust results</h3>
+                      <h3 class="card-title">Adjust Results</h3>
                     </div>
                     <div class="card-body">
                       <div class="form-group">
-                        <b>Enter 5 numbers (eg: 15267) Then A will be 1, B will be 5, Sum will be 1 + 5 + ... + 7 = 21 (21 is odd) (Sum <= 22 will be small and vice versa again)</p>
+                        <b> Enter 5 numbers (eg 15267) Then A will be 1, B will be 5, Sum will be 1 + 5 + ... + 7 = 21 (21 is odd) (Total <= 22 will be small and vice versa)</p>
                           <label for="editResult" id="ketQua">next result: Random</label>
-                          <input type="text" class="form-control" id="editResult" value="" placeholder="Enter results (eg: 15267|12048|86936)">
+                          <input type="text" class="form-control" id="editResult" value="" placeholder="Enter The Result (eg: 15267|12048|86936)">
                       </div>
                     </div>
                     <div class="card-footer" style="text-align: center;">
-                      <button type="submit" class="btn btn-primary start-order">Develop
-                        declare</button>
+                      <button type="submit" class="btn btn-primary start-order">Submit</button>
                     </div>
                   </div>
                 </div>
@@ -412,7 +411,7 @@
     </div>
     <a id="back-to-tops" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
       <i class="fas fa-chevron-up"></i>
-    </a>
+    </a> 
   </div>
   <script src="/plugins/jquery/jquery.min.js"></script>
   <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -423,7 +422,7 @@
   <script src="/plugins/raphael/raphael.min.js"></script>
   <script src="/5d/admin/main.js"></script>
   <script>
-    $(".start-order").click(function (e) {
+    $(".start-order").click(function (e) { 
       e.preventDefault();
       let game = $('html').attr('data-change');
       let value = $('#editResult').val().trim();
@@ -439,7 +438,7 @@
         type: "POST",
         url: "/api/webapi/admin/5d/editResult",
         data: {
-          games: games,
+          game: game,
           list: value,
         },
         dataType: "json",

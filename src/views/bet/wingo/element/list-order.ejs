@@ -1,279 +1,255 @@
-<script>
-    let labels1;
-    let amounts1;
-    let data;
-    let canvas;
-    let ctx;
-    let gradient;
-    let padding;
-    let spaceBetween;
-    let x;
-    let y;
-    let prevX;
-    let prevY;
-    let value;
-    let index;
-    
-    </script>
-
-
-<div data-v-a9660e98="" class="tab c-row c-row-between">
-    <div data-v-a9660e98="" class="li c-row c-row-center">
-        <span data-v-a9660e98="" class="txt action">
-            Game History
-        </span>
-    </div>
-    <!-- <div data-v-a9660e98="" class="li c-row c-row-center">
-        <span data-v-a9660e98="" class="txt"> Trend </span>
-    </div> -->
-    <div data-v-a9660e98="" class="li c-row c-row-center">
-        <span data-v-a9660e98="" class="txt"> My Bets </span>
-    </div>
-    <div data-v-a9660e98="" class="li c-row c-row-center">
-        <span data-v-a9660e98="" class="txt "> Trend </span>
-    </div>
+<div data-v-a9660e98="" class="tab_nav">
+   <div data-v-a9660e98="" class="tab_nav_button" id="game_history_tab_button">
+      <span data-v-a9660e98="" class="tab_nav_button_inner action"> Game History </span>
+   </div>
+   <div data-v-a9660e98="" class="tab_nav_button" id="trend_tab_button">
+      <span data-v-a9660e98="" class="tab_nav_button_inner"> Chart </span>
+   </div>
+   <div data-v-a9660e98="" class="tab_nav_button" id="my_bets_tab_button">
+      <span data-v-a9660e98="" class="tab_nav_button_inner"> My History </span>
+   </div>
 </div>
-<div data-v-a9660e98="" class="con-box">
-    <div data-v-a9660e98="" class="list m-t-10">
-        <div data-v-a9660e98="" class="wrap">
-            <div data-v-a9660e98="" class="c-tc van-row">
-                <div data-v-a9660e98="" class="van-col van-col--8">Period</div>
-                <div data-v-a9660e98="" class="van-col van-col--5">
-                    Number
-                </div>
-                <div data-v-a9660e98="" class="van-col van-col--5">
-                    Big/Small
-                </div>
-                <div data-v-a9660e98="" class="van-col van-col--6">
-                    Colour
-                </div>
+
+<style>
+   .tab_panel {
+      display: none;
+   }
+
+   .tab_panel.active {
+      display: block;
+   }
+
+   .tab_nav {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 0.37333rem;
+      color: #000000;
+      margin: 0;
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+      box-sizing: border-box;
+      -webkit-user-select: none;
+      display: flex;
+      justify-content: space-between;
+      touch-action: pan-y;
+      padding: 10px 10px;
+   }
+
+   .tab_nav_button {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 0.37333rem;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+      box-sizing: border-box;
+      -webkit-user-select: none;
+      display: flex;
+      justify-content: center;
+      touch-action: pan-y;
+      width: 32%;
+   }
+
+   .tab_nav_button_inner {
+      font-family: Avenir, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+      box-sizing: border-box;
+      -webkit-user-select: none;
+      touch-action: pan-y;
+      display: block;
+      text-align: center;
+      width: 100%;
+      background: rgb(63 147 104 / 8%);
+      color: #6e6e6e;
+      overflow: hidden;
+      font-size: 0.305rem;
+      border-radius: 9px;
+      padding: 12px 4px;
+      line-height: 1;
+      background: #e8e7e8;
+      color: #333;
+
+      background: var(--bg_color_L2);
+      border-radius: .21333rem;
+      font-size: .37333rem;
+      color: var(--text_color_L2);
+      text-align: center;
+      overflow: hidden;
+   }
+
+   .tab_nav_button_inner.action {
+      font-weight: 600;
+      background: rgb(63 147 104);
+      color: #fff;
+      background: -webkit-linear-gradient(top, #d9ad82 0%, #b1835a 100%);
+      background: linear-gradient(180deg, #d9ad82 0%, #b1835a 100%);
+      font-weight: 600;
+      color: #fff;
+      background: var(--main_gradient-color, var(--main_gradient-color));
+      font-weight: 600;
+      color: var(--text_color_L4);
+   }
+
+   .info_data__root {
+      box-shadow: 0px 3px 90px #00000021;
+      margin-left: 10px;
+      margin-right: 10px;
+      border-radius: 0.25rem;
+      overflow: hidden;
+   }
+</style>
+
+<div data-v-a9660e98="" class="tab_panel active" id="game_history_tab">
+   <div data-v-c52f94a7="" data-v-40958d9a="" class="GameRecord__C">
+      <div data-v-c52f94a7="" class="GameRecord__C-head">
+         <div data-v-c52f94a7="" class="van-row">
+            <div data-v-c52f94a7="" class="van-col van-col--8">Period</div>
+            <div data-v-c52f94a7="" class="van-col van-col--5">Number</div>
+            <div data-v-c52f94a7="" class="van-col van-col--5">Big Small</div>
+            <div data-v-c52f94a7="" class="van-col van-col--6">Color</div>
+         </div>
+      </div>
+      <div data-v-c52f94a7="" class="GameRecord__C-body" id="game_history_data_container"></div>
+      <div data-v-c52f94a7="" class="GameRecord__C-foot" id="game_history__bottom_nav">
+         <div data-v-c52f94a7="" class="GameRecord__C-foot-previous disabled previous_page">
+            <i data-v-c52f94a7="" class="van-badge__wrapper van-icon van-icon-arrow-left GameRecord__C-icon"
+               style="font-size: 20px"></i>
+         </div>
+         <div data-v-c52f94a7="" class="GameRecord__C-foot-page" id="number_result__gameHistory">1/1710</div>
+         <div data-v-c52f94a7="" class="GameRecord__C-foot-next next_page">
+            <i data-v-c52f94a7="" class="van-badge__wrapper van-icon van-icon-arrow GameRecord__C-icon"
+               style="font-size: 20px"></i>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div data-v-a9660e98="" class="tab_panel" id="trend_tab">
+   <div data-v-a9660e98="" class="list m-t-10">
+      <div data-v-54016b1c="" data-v-3f742540="" class="Trend__C"
+         apifun="e=>r(g.WinTxrGetTRXMyEmerdList,e).then(s=>s.data)" gopathname="AllLotteryGames-BettingRecordWinTrx">
+         <div data-v-54016b1c="" class="Trend__C-head">
+            <div data-v-54016b1c="" class="van-row">
+               <div data-v-54016b1c="" class="van-col van-col--8">Period</div>
+               <div data-v-54016b1c="" class="van-col van-col--16">Number</div>
             </div>
-        </div>
+         </div>
+         <div data-v-54016b1c="" class="Trend__C-body1">
+            <div data-v-54016b1c="" class="Trend__C-body1-line">Statistic (last 100 Periods)</div>
+            <div data-v-54016b1c="" class="Trend__C-body1-line lottery">
+               <div data-v-54016b1c="">Winning number</div>
+               <div data-v-54016b1c="" class="Trend__C-body1-line-num">
+                  <div data-v-54016b1c="">0</div>
+                  <div data-v-54016b1c="">1</div>
+                  <div data-v-54016b1c="">2</div>
+                  <div data-v-54016b1c="">3</div>
+                  <div data-v-54016b1c="">4</div>
+                  <div data-v-54016b1c="">5</div>
+                  <div data-v-54016b1c="">6</div>
+                  <div data-v-54016b1c="">7</div>
+                  <div data-v-54016b1c="">8</div>
+                  <div data-v-54016b1c="">9</div>
+               </div>
+            </div>
+            <div data-v-54016b1c="" class="Trend__C-body1-line">
+               <div data-v-54016b1c="">Missing</div>
+               <div data-v-54016b1c="" class="Trend__C-body1-line-num">
+                  <div data-v-54016b1c="">5</div>
+                  <div data-v-54016b1c="">13</div>
+                  <div data-v-54016b1c="">0</div>
+                  <div data-v-54016b1c="">2</div>
+                  <div data-v-54016b1c="">14</div>
+                  <div data-v-54016b1c="">4</div>
+                  <div data-v-54016b1c="">23</div>
+                  <div data-v-54016b1c="">3</div>
+                  <div data-v-54016b1c="">1</div>
+                  <div data-v-54016b1c="">7</div>
+               </div>
+            </div>
+            <div data-v-54016b1c="" class="Trend__C-body1-line">
+               <div data-v-54016b1c="">Avg missing</div>
+               <div data-v-54016b1c="" class="Trend__C-body1-line-num">
+                  <div data-v-54016b1c="">9</div>
+                  <div data-v-54016b1c="">5</div>
+                  <div data-v-54016b1c="">8</div>
+                  <div data-v-54016b1c="">11</div>
+                  <div data-v-54016b1c="">10</div>
+                  <div data-v-54016b1c="">10</div>
+                  <div data-v-54016b1c="">13</div>
+                  <div data-v-54016b1c="">11</div>
+                  <div data-v-54016b1c="">7</div>
+                  <div data-v-54016b1c="">15</div>
+               </div>
+            </div>
+            <div data-v-54016b1c="" class="Trend__C-body1-line">
+               <div data-v-54016b1c="">Frequency</div>
+               <div data-v-54016b1c="" class="Trend__C-body1-line-num">
+                  <div data-v-54016b1c="">9</div>
+                  <div data-v-54016b1c="">19</div>
+                  <div data-v-54016b1c="">11</div>
+                  <div data-v-54016b1c="">7</div>
+                  <div data-v-54016b1c="">10</div>
+                  <div data-v-54016b1c="">9</div>
+                  <div data-v-54016b1c="">8</div>
+                  <div data-v-54016b1c="">8</div>
+                  <div data-v-54016b1c="">13</div>
+                  <div data-v-54016b1c="">6</div>
+               </div>
+            </div>
+            <div data-v-54016b1c="" class="Trend__C-body1-line">
+               <div data-v-54016b1c="">Max consecutive</div>
+               <div data-v-54016b1c="" class="Trend__C-body1-line-num">
+                  <div data-v-54016b1c="">1</div>
+                  <div data-v-54016b1c="">3</div>
+                  <div data-v-54016b1c="">1</div>
+                  <div data-v-54016b1c="">1</div>
+                  <div data-v-54016b1c="">2</div>
+                  <div data-v-54016b1c="">2</div>
+                  <div data-v-54016b1c="">2</div>
+                  <div data-v-54016b1c="">2</div>
+                  <div data-v-54016b1c="">3</div>
+                  <div data-v-54016b1c="">2</div>
+               </div>
+            </div>
+         </div>
 
-
-        
-        <div data-v-a9660e98="">
-            <div data-v-a9660e98="" class="hb"></div>
-        </div>
-        <div data-v-a9660e98="" class="list-fooder"></div>
-    </div>
-    <div data-v-a9660e98="" class="page-nav c-row c-row-center c-tc">
-        <div data-v-a9660e98="" class="arr c-row c-row-middle-center block-click">
-            <i data-v-a9660e98="" class="van-icon van-icon-arrow-left icon" style="font-size: 20px">
-                <!---->
-            </i>
-        </div>
-        <div data-v-a9660e98="" class="number"></div>
-        <div data-v-a9660e98="" class="arr c-row c-row-middle-center action">
-            <i data-v-a9660e98="" class="van-icon van-icon-arrow icon action" style="font-size: 20px">
-                <!---->
-            </i>
-        </div>
-    </div>
+         <div data-v-54016b1c="" class="Trend__C-body2" id="chart_container"></div>
+         <div data-v-54016b1c="" class="Trend__C-foot" id="chart__bottom_nav">
+            <div data-v-54016b1c="" class="Trend__C-foot-previous disabled previous_page">
+               <i data-v-54016b1c="" class="van-badge__wrapper van-icon van-icon-arrow-left Trend__C-icon"
+                  style="font-size: 20px"></i>
+            </div>
+            <div data-v-54016b1c="" class="Trend__C-foot-page" id="number_result__chart">1/1670</div>
+            <div data-v-54016b1c="" class="Trend__C-foot-next next_page">
+               <i data-v-54016b1c="" class="van-badge__wrapper van-icon van-icon-arrow Trend__C-icon"
+                  style="font-size: 20px"></i>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 
-<div data-v-a9660e98="" class="con-box p-b-20" style="display: none">
-    <div data-v-a9660e98="" class="c-row c-flew-end p-r-20">
-        <div data-v-a9660e98="" class="bettingMore c-tc c-row c-row-middle-center">
-            More<i data-v-a9660e98="" class="van-icon van-icon-arrow"
-                style="color: rgb(84, 94, 104); font-size: 15px">
-                <!---->
-            </i>
-        </div>
-    </div>
-    <div data-v-a9660e98="" class="list m-t-10">
-        <div data-v-a9660e98="" class="p-t-5 p-b-5" id="history-order">
-            
-        </div>
-        <div data-v-a9660e98="" class="list-fooder"></div>
-    </div>
-    <!---->
-    <div data-v-a9660e98="" class="page-nav c-row c-row-center c-tc">
-        <div data-v-a9660e98="" class="arr c-row c-row-middle-center">
-            <i data-v-a9660e98="" class="van-icon van-icon-arrow-left icon" style="font-size: 20px">
-                <!----> 
-            </i>
-        </div>
-        <div data-v-a9660e98="" class="number"></div>
-        <div data-v-a9660e98="" class="arr c-row c-row-middle-center action">
-            
-        </div>
-    </div>
+<div data-v-a9660e98="" class="tab_panel" id="my_bets_tab">
+   <div data-v-a9660e98="" class="list m-t-10">
+      <div data-v-3c1f9720="" class="MyGameRecord__C-body">
+         <div data-v-373b3197="" data-v-3c1f9720="" class="MyGameRecordList__C" id="my_bets_data_container"></div>
+      </div>
+
+      <div data-v-3c1f9720="" class="MyGameRecord__C-foot" id="my_bets__bottom_nav">
+         <div data-v-3c1f9720="" class="MyGameRecord__C-foot-previous disabled previous_page">
+            <i data-v-3c1f9720="" class="van-badge__wrapper van-icon van-icon-arrow-left MyGameRecord__C-icon"
+               style="font-size: 20px"></i>
+         </div>
+         <div data-v-3c1f9720="" class="MyGameRecord__C-foot-page" id="number_result__myBet">1/1</div>
+         <div data-v-3c1f9720="" class="MyGameRecord__C-foot-next disabled next_page">
+            <i data-v-3c1f9720="" class="van-badge__wrapper van-icon van-icon-arrow MyGameRecord__C-icon"
+               style="font-size: 20px"></i>
+         </div>
+      </div>
+   </div>
 </div>
-<div data-v-a9660e98="" class="con-box p-b-20" style="display: none">
-    <div data-v-a9660e98="" class="list m-t-10">
-      <style>
-        .stat-table {
-          background: #333;
-          /* Fallback for browsers that do not support gradients */
-          background: -webkit-linear-gradient(to right, #444, #555);
-          /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to right, #444, #555);
-          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          border-radius: 8px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-          width: 100%;
-          max-width: 600px;
-        }
-  
-        .stat-table th,
-        .stat-table td {
-          padding: 8px 0px;
-          text-align: center;
-          font-size: xx-small;
-        }
-  
-        .stat-table th {
-          background: #555;
-          border-bottom: 1px solid #666;
-        }
-  
-        .stat-table th:first-child {
-          border-radius: 5px 0 0 0;
-        }
-  
-        .stat-table th:last-child {
-          border-radius: 0 5px 0 0;
-        }
-  
-        .stat-row {
-          background: #444;
-          /* Fallback for browsers that do not support gradients */
-          background: -webkit-linear-gradient(to right, #555, #666);
-          /* Chrome 10-25, Safari 5.1-6 */
-          background: linear-gradient(to right, #555, #666);
-          /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          margin-bottom: 4px;
-          border-radius: 4px;
-        }
-  
-        .number-cell {
-          display: inline-block;
-          width: 24px;
-          height: 24px;
-          line-height: 24px;
-          border-radius: 50%;
-          background: #666;
-          border: 1px solid #777;
-          /* Slight border for definition */
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-          /* Soft shadow for depth */
-        }
-  
-        .stat-header {
-          font-weight: bold;
-          text-align: left;
-          padding-left: 12px;
-        }
-  
-        #app {
-          color: #ffffff;
-        }
-      </style>
-      <table class="stat-table">
-        <thead>
-          <tr>
-            <th>Period</th>
-            <th>Statistic (last 100 Periods)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="stat-row">
-            <td class="stat-header">Total Number</td>
-            <td>
-              <div class="number-cell">0</div>
-              <div class="number-cell">1</div>
-              <div class="number-cell">2</div>
-              <div class="number-cell">3</div>
-              <div class="number-cell">4</div>
-              <div class="number-cell">5</div>
-              <div class="number-cell">6</div>
-              <div class="number-cell">7</div>
-              <div class="number-cell">8</div>
-              <div class="number-cell">9</div>
-            </td>
-          </tr>
-          <tr class="stat-row">
-            <td class="stat-header">Winning </td>
-            <td>
-              <div id="Winning_0" class="number-cell">0</div>
-              <div id="Winning_1" class="number-cell">1</div>
-              <div id="Winning_2" class="number-cell">2</div>
-              <div id="Winning_3" class="number-cell">3</div>
-              <div id="Winning_4" class="number-cell">4</div>
-              <div id="Winning_5" class="number-cell">5</div>
-              <div id="Winning_6" class="number-cell">6</div>
-              <div id="Winning_7" class="number-cell">7</div>
-              <div id="Winning_8" class="number-cell">8</div>
-              <div id="Winning_9" class="number-cell">9</div>
-            </td>
-          </tr>
-          <tr class="stat-row">
-            <td class="stat-header">Average Missing</td>
-            <td>
-              <span class="number-cell">0</span>
-              <span class="number-cell">1</span>
-              <span class="number-cell">2</span>
-              <span class="number-cell">3</span>
-              <span class="number-cell">4</span>
-              <span class="number-cell">5</span>
-              <span class="number-cell">6</span>
-              <span class="number-cell">7</span>
-              <span class="number-cell">8</span>
-              <span class="number-cell">9</span>
-            </td>
-          </tr>
-          <tr class="stat-row">
-            <td class="stat-header">Frequency</td>
-            <td>
-              <span class="number-cell">0</span>
-              <span class="number-cell">1</span>
-              <span class="number-cell">2</span>
-              <span class="number-cell">3</span>
-              <span class="number-cell">4</span>
-              <span class="number-cell">5</span>
-              <span class="number-cell">6</span>
-              <span class="number-cell">7</span>
-              <span class="number-cell">8</span>
-              <span class="number-cell">9</span>
-            </td>
-          </tr>
-          <tr class="stat-row">
-            <td class="stat-header">Max consecutive</td>
-            <td>
-              <span class="number-cell">0</span>
-              <span class="number-cell">1</span>
-              <span class="number-cell">2</span>
-              <span class="number-cell">3</span>
-              <span class="number-cell">4</span>
-              <span class="number-cell">5</span>
-              <span class="number-cell">6</span>
-              <span class="number-cell">7</span>
-              <span class="number-cell">8</span>
-              <span class="number-cell">9</span>
-            </td>
-          </tr>
-          <!-- ... More rows for Winning number, Missing, etc. ... -->
-        </tbody>
-      </table>
-      <div data-v-a9660e98="">
-        <div data-v-a9660e98="" class="hb">
-        </div>
-  
-      </div>
-      <div data-v-a9660e98="" class="list-fooder"></div>
-    </div>
-    <div data-v-a9660e98="" class="page-nav c-row c-row-center c-tc">
-      <div data-v-a9660e98="" class="arr c-row c-row-middle-center block-click">
-        <i data-v-a9660e98="" class="van-icon van-icon-arrow-left icon" style="font-size: 20px">
-          <!---->
-        </i>
-      </div>
-      <div data-v-a9660e98="" class="number"></div>
-      <div data-v-a9660e98="" class="arr c-row c-row-middle-center action">
-        <i data-v-a9660e98="" class="van-icon van-icon-arrow icon action" style="font-size: 20px">
-          <!---->
-        </i>
-      </div>
-    </div>
-  </div>

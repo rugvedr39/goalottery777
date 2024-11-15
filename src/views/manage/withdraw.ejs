@@ -4,101 +4,339 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>withdraw</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <title>Withdraw money</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
   <link rel="stylesheet" href="/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="/css/admin.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
+    integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <%- include('nav') %>
-    <div class="content-wrapper">
-      <section class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1>Approve withdrawal</h1>
+      <div class="content-wrapper">
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Browse withdrawals <img data-v-7b283485="" width="35px" height="35px" src="/images/withdraw.png"
+                    class="chackImg"></h1>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+
+        <style>
+          .withdraw_tab_button {
+            margin-left: 10px;
+            border: 1px solid #343a40;
+            border-radius: 6px;
+            background: #fff;
+            color: #343a40;
+          }
+
+          .withdraw_tab_button.active {
+            margin-left: 10px;
+            border: 1px solid #343a40;
+            border: 0px;
+            border-radius: 6px;
+            background: #343a40;
+            color: #fff;
+          }
+        </style>
+
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">withdrawals Requests</h3>
+
+              <button class="withdraw_tab_button active" id="inr_w_tab" type="BANK_CARD">
+                BANK CARD
+              </button>
+
+              <button class="withdraw_tab_button" id="usdt_w_tab" type="USDT_ADDRESS">
+                USDT ADDRESS
+              </button>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body p-0" style="overflow-y: hidden;">
+              <table class="table table-striped projects">
+                <thead id="table_columns">
+                  <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Phone Number</th>
+                    <th class="text-center">Bank Name</th>
+                    <th class="text-center">Recipient Name</th>
+                    <th class="text-center">Bank Account Number</th>
+                    <th class="text-center">IFSC</th>
+                    <th class="text-center">UPI Id</th>
+                    <th class="text-center">Amount</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">Status</th>
+                    <th class="text-center">Accept/Reject</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+      </div>
+
+
+      <div class="popup_root">
+        <div class="popup_main">
+          <div class="popup_content">
+            <div class="popup_heading">
+              <h3>
+                Please confirm your action
+              </h3>
+
+              <h6>
+                Are you sure you want to <span id="popup_action_label">Approve</span> this withdrawal request of <span
+                  id="popup_phone_label">435346457567</span>?
+              </h6>
+            </div>
+            <div class="popup_form">
+
+              <label for="remarks_field">Remarks</label>
+
+              <textarea name="remarks" id="remarks_field" placeholder="Enter your remarks">
+
+              </textarea>
+
+            </div>
+            <div class="popup_nav">
+              <button type="button" id="cancel_btn">Cancel</button>
+              <button type="button" id="submit_btn">Submit</button>
             </div>
           </div>
         </div>
-        <!-- /.container-fluid -->
-      </section>
+      </div>
 
-      <!-- Main content -->
-      <section class="content">
+      <style>
+        .popup_root {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 9999;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.5);
 
-        <!-- Default box -->
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Withdrawal approval</h3>
+          display: none;
+          justify-content: center;
+          align-items: center;
+        }
 
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-          </div>
-          <div class="card-body p-0" style="overflow-y: hidden;">
-            <table class="table table-striped projects">
-              <thead>
-                <tr>
-                  <th class="text-center">#</th>
-                  <th class="text-center">Account</th>
-                  <th class="text-center">Profile</th>
-                  <th class="text-center">Name</th>
-                  <th class="text-center">Banking</th>
-                  <th class="text-center">Account number</th>
-                  <th class="text-center">IFSC code</th>
-                  <th class="text-center">Amount</th>
-                  <th class="text-center">Time</th>
-                  <th class="text-center">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-               
-              </tbody>
-            </table>
-          </div>
-        </div>
+        .popup_main {
+          max-width: 500px;
+          max-height: 600px;
+          overflow: auto;
+          width: 93%;
+          padding: 20px 20px;
+          border-radius: 10px;
+          background: #fff;
+        }
 
-      </section>
-    </div>
+        .popup_content {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .popup_heading h3 {
+          font-weight: 500;
+        }
+
+        .popup_heading h6 span {
+          font-weight: 600;
+          color: #007bff;
+        }
+
+        .popup_form {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+        }
+
+        .popup_form label {
+          font-size: 16px;
+        }
+
+        .popup_form textarea {
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          outline: none;
+        }
+
+        .popup_nav {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+        }
+
+        .popup_nav button {
+          padding: 10px 20px;
+          border-radius: 9px;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+
+        .popup_nav button:nth-child(1) {
+          background: #990303;
+          color: #fff;
+        }
+
+        .popup_nav button:nth-child(2) {
+          background: #003d7f;
+          color: #fff;
+        }
+
+        .popup_nav button:hover {
+          opacity: 0.8;
+        }
+
+        .popup_nav button:active {
+          opacity: 0.6;
+        }
+
+        .popup_nav button:focus {
+          outline: none;
+        }
+      </style>
+
+
   </div>
   <script src="/plugins/jquery/jquery.min.js"></script>
   <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/dist/js/adminlte.min.js"></script>
   <script src="/js/admin/admin.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
+
   <script>
-            function formateT(params) {
-            let result = (params < 10) ? "0" + params : params;
-            return result;
-        }
+    const WITHDRAWAL_METHODS_MAP = {
+      USDT_ADDRESS: "USDT_ADDRESS",
+      BANK_CARD: "BANK_CARD",
+    }
 
-        function timerJoin(params = '') {
-            let date = '';
-            if (params) {
-                date = new Date(Number(params));
-            } else {
-                date = new Date();
-            }
-            let years = formateT(date.getFullYear());
-            let months = formateT(date.getMonth() + 1);
-            let days = formateT(date.getDate());
+    const WITHDRAWAL_STATUS_MAP = {
+      PENDING: 0,
+      APPROVED: 1,
+      DENIED: 2,
+    }
 
-            let hours = formateT(date.getHours());
-            let minutes = formateT(date.getMinutes());
-            let seconds = formateT(date.getSeconds());
-            return years + '-' + months + '-' + days + ' ' + hours + '-' + minutes + '-' + seconds;
-        }
-    function show(params) {
+    function formateT(params) {
+      let result = (params < 10) ? "0" + params : params;
+      return result;
+    }
+
+    function timerJoin(params = '', addHours = 0) {
+      let date = '';
+      if (params) {
+        date = new Date(Number(params));
+      } else {
+        date = new Date();
+      }
+
+      date.setHours(date.getHours() + addHours);
+
+      let years = formateT(date.getFullYear());
+      let months = formateT(date.getMonth() + 1);
+      let days = formateT(date.getDate());
+
+      let hours = date.getHours() % 12;
+      hours = hours === 0 ? 12 : hours;
+      let ampm = date.getHours() < 12 ? "AM" : "PM";
+
+      let minutes = formateT(date.getMinutes());
+      let seconds = formateT(date.getSeconds());
+
+      return years + '-' + months + '-' + days + ' ' + hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+    }
+
+
+    let ActiveTab = document.querySelector(".withdraw_tab_button.active").getAttribute("type")
+
+    const INR_TAB_BUTTON = document.querySelector("#inr_w_tab")
+    const USDT_TAB_BUTTON = document.querySelector("#usdt_w_tab")
+
+    const Table_Columns = document.querySelector("#table_columns")
+
+    INR_TAB_BUTTON.addEventListener("click", () => {
+      INR_TAB_BUTTON.classList.add("active")
+      USDT_TAB_BUTTON.classList.remove("active")
+      ActiveTab = document.querySelector(".withdraw_tab_button.active").getAttribute("type")
+      // <th class="text-center">Status</th>
+      // <th class="text-center">Order Id</th>
+      Table_Columns.innerHTML = `
+      <tr>
+        <th class="text-center">#</th>
+        <th class="text-center">Phone Number</th>
+        <th class="text-center">Bank Name</th>
+        <th class="text-center">Recipient Name</th>
+        <th class="text-center">Bank Account Number</th>
+        <th class="text-center">IFSC</th>
+        <th class="text-center">UPI Id</th>
+        <th class="text-center">Amount</th>
+        <th class="text-center">Date</th>
+        <th class="text-center">Status</th>
+        <th class="text-center">Accept/Reject</th>
+      </tr>
+        `
+
+      initTableData()
+    })
+
+    USDT_TAB_BUTTON.addEventListener("click", () => {
+      INR_TAB_BUTTON.classList.remove("active")
+      USDT_TAB_BUTTON.classList.add("active")
+      ActiveTab = document.querySelector(".withdraw_tab_button.active").getAttribute("type")
+      // <th class="text-center">Order Id</th>
+      Table_Columns.innerHTML = `
+      <tr>
+        <th class="text-center">#</th>
+        <th class="text-center">Phone Number</th>
+        <th class="text-center">Main Network</th>
+        <th class="text-center">USDT Address</th>
+        <th class="text-center">Address Alias</th>
+        <th class="text-center">Amount</th>
+        <th class="text-center">Date</th>
+        <th class="text-center">Status</th>
+        <th class="text-center">Accept/Reject</th>
+      </tr>
+      `
+
+      initTableData()
+    })
+
+    function showWithDrawals(params) {
       if (params.length == 0) {
         $('tbody').html(`
             <tr class="text-center">
@@ -107,115 +345,199 @@
           `);
         return;
       }
-      let html = '';
-      let show = params.map((data) => {
-        html += `<tr class="text-center">
-                  <td id="${data.id}">
-                    ${data.id}
-                  </td>
-                  <td>
-                    <b>${data.phone}</b>
-                  </td>
-                  <td>
-                  <a class="btn btn-info btn-sm profile-btn" href="https://lottery.com/admin/member/info/${data.phone}" target="_blank">
-                    <i class="fas fa-user"></i> Profile
-                  </a>
+
+
+      let html;
+
+      if (ActiveTab === WITHDRAWAL_METHODS_MAP.BANK_CARD) {
+        const fParams = params.filter((item) => item.type === WITHDRAWAL_METHODS_MAP.BANK_CARD)
+        html = fParams.map((data) => {
+          return `
+            <tr class="text-center">
+              <td id="${data.id}">
+                ${data.id}
+              </td>
+              <td>
+                <b>${data.phoneNumber}</b>
+              </td>
+              <td>
+                <b>${data.bankName}</b>
+              </td>
+              <td style="min-width: 190px;">
+                <b>${data.recipientName}</b>
+              </td>
+              <td style="min-width: 190px;">
+                <b>${data.bankAccountNumber}</b>
+              </td>
+              <td style="min-width: 190px;">
+                <b>${data.IFSC}</b>
+              </td>
+              <td style="min-width: 190px;">
+                <b>${data.upiId}</b>
+              </td>
+              <td>
+                <b>${data.amount}</b>
+              </td>
+              <td style="min-width: 190px;">
+                <b>${timerJoin(data.time)}</b>
+              </td>
+              <td class="project-state">
+                <span class="badge badge-warning">Waiting...</span>
+              </td>
+              <td class="project-actions text-center" style="min-width: 160px;">
+                <button class="btn btn-success btn-sm confirm-btn" data="${data.id}"><i class="fa fa-check-circle"></i></button>
+                <button class="btn btn-danger btn-sm delete-btn" data="${data.id}"><i class="fas fa-times-circle"></i></button>
+              </td>
+            </tr>`;
+        }).join("")
+      }
+      else {
+        const fParams = params.filter((item) => item.type === WITHDRAWAL_METHODS_MAP.USDT_ADDRESS)
+        html = fParams.map((data) => {
+          return `
+              <tr class="text-center">
+                <td id="${data.id}">
+                  ${data.id}
                 </td>
-                  <td>
-                  <b>${data.name_user}</b>
-                  </td>
-                  <td>
-                    <b>${data.name_bank}</b>
-                  </td>
-                  <td style="min-width: 190px;">
-                    <b>${data.account}</b>
-                  </td>
-                  <td style="min-width: 190px;">
-                    <b>${data.ifsc}</b>
-                  </td>
-                  <td>
-                    <b>${formatMoney(data.money)}</b>
-                  </td>
-                  <td style="min-width: 190px;">
+                <td>
+                  <b>${data.phoneNumber}</b>
+                </td>
+                <td>
+                  <b>${data.mainNetwork}</b>
+                </td>
+                <td style="min-width: 190px;">
+                  <b>${data.usdtAddress}</b>
+                </td>
+                <td style="min-width: 190px;">
+                  <b>${data.addressAlias}</b>
+                </td>
+                <td>
+                  <b>${data.amount}</b>
+                </td>
+                <td style="min-width: 190px;">
                   <b>${timerJoin(data.time)}</b>
                 </td>
-                  <td class="project-actions text-center" style="min-width: 160px;">
-                    <!-- confirm -->
-                    <a class="btn btn-success btn-sm confirm-btn" href="" data="${data.id}"><i class="fa fa-check"></i></a>
-                    <!-- ? -->
-                    <!-- <a class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a> -->
-                    <span style="margin-right: 20px;"></span>
-                    <!-- Delete -->
-                    <a class="btn btn-danger btn-sm delete-btn" href="#" data="${data.id}"><i class="fas fa-trash"></i></a >
-                  </td>
-                </tr>`;
-              })
-          $('tbody').html(html);
-          $('.profile-btn').click(function (e) {
-      e.preventDefault();
-      // Open the profile URL in a new tab/window
-      window.open($(this).attr('href'), '_blank');
-    });
-  
-          $('.btn-success').click(function (e) {
-            e.preventDefault();
-            let id = $(this).attr('data');
-            $.ajax({
-              type: "POST",
-              url: "/api/webapi/admin/withdraw",
+                <td class="project-state">
+                  <span class="badge badge-warning">Waiting...</span>
+                </td>
+                <td class="project-actions text-center" style="min-width: 160px;">
+                  <button class="btn btn-success btn-sm confirm-btn" data="${data.id}"><i class="fa fa-check-circle"></i></button>
+                  <button class="btn btn-danger btn-sm delete-btn" data="${data.id}"><i class="fas fa-times-circle"></i></button>
+                </td>
+              </tr>`;
+        }).join("")
+      }
+
+
+      // <!-- <a class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a> -->
+
+      $('tbody').html(html);
+
+      $('.btn-success').click(async function (e) {
+        $('.popup_root').css('display', 'flex')
+        const id = $(this).attr('data');
+
+        const phone = $(this).parent().parent().find('td').eq(1).text()
+
+        $('#popup_phone_label').text(phone)
+        $('#popup_action_label').text('Approve')
+
+        $('#submit_btn').off("click.submit")
+        $('#submit_btn').on("click.submit", async function () {
+          try {
+            const response = await axios({
+              method: "POST",
+              url: "/api/webapi/admin/withdraw/status",
               data: {
                 id: id,
-                type: 'confirm'
-              },
-              dataType: "json",
-              success: function (response) {
-                Swal.fire(
-                  'Good job!',
-                  'You clicked the button!',
-                  'success'
-                )
-                setTimeout(() => {
-                  location.reload();
-                }, 100);
+                status: WITHDRAWAL_STATUS_MAP.APPROVED,
+                remarks: $('#remarks_field').val()
               }
-            });
-          });
-          $('.btn-danger').click(function (e) {
-            e.preventDefault();
-            let id = $(this).attr('data');
-            $.ajax({
-              type: "POST",
-              url: "/api/webapi/admin/withdraw",
+            })
+
+            await initTableData()
+
+            Swal.fire(
+              'Good job!',
+              response.data.message,
+              'success'
+            )
+
+            $('.popup_root').css('display', 'none')
+          } catch (error) {
+            Swal.fire(
+              'Failed job!',
+              error.response.data.message,
+              'error'
+            )
+          } finally {
+            $('#remarks_field').val('')
+          }
+        })
+      });
+
+      $('.btn-danger').click(async function (e) {
+        $('.popup_root').css('display', 'flex')
+        const id = $(this).attr('data');
+
+        const phone = $(this).parent().parent().find('td').eq(1).text()
+
+        $('#popup_phone_label').text(phone)
+        $('#popup_action_label').text('Deny')
+
+        $('#submit_btn').off("click.submit")
+        $('#submit_btn').on("click.submit", async function () {
+          try {
+            const response = await axios({
+              method: "POST",
+              url: "/api/webapi/admin/withdraw/status",
               data: {
                 id: id,
-                type: 'delete'
-              },
-              dataType: "json",
-              success: function (response) {
-                setTimeout(() => {
-                   location.reload();
-                 }, 100);
-                 Swal.fire(
-                   'Good job!',
-                   'You clicked the button!',
-                   'success'
-                 )
-               }
-             });
-           });
-     }
-     $.ajax({
-       type: "POST",
-       url: "/api/webapi/admin/recharge",
-       data: {
-        
-       },
-       dataType: "json",
-       success: function (response) {
-         show(response.datas3)
-       }
-     });
-   </script>
+                status: WITHDRAWAL_STATUS_MAP.DENIED,
+                remarks: $('#remarks_field').val()
+              }
+            })
+            await initTableData()
+
+            Swal.fire(
+              'Good job!',
+              response.data.message,
+              'success'
+            )
+
+            $('.popup_root').css('display', 'none')
+          } catch (error) {
+            Swal.fire(
+              'Failed job!',
+              error.response.data.message,
+              'error'
+            )
+          } finally {
+            $('#remarks_field').val('')
+          }
+        })
+      });
+
+    }
+
+    $('#cancel_btn').click(function () {
+      $('.popup_root').css('display', 'none')
+    })
+
+
+    const initTableData = async () => {
+      try {
+        const response = await axios.get("/api/webapi/withdraw/pending")
+
+        showWithDrawals(response.data.withdrawList)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    initTableData()
+
+  </script>
 </body>
 
 </html>

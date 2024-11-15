@@ -1,84 +1,400 @@
-<div data-v-03b808c2="" class="game-betting">
-    <div data-v-03b808c2="" class="tab">
-        <div data-v-03b808c2="" class="box c-row game-minutes">
-            <div data="1" data-v-03b808c2="" class="item c-tc action" style="background: linear-gradient(180deg, #ff8080 0%, rgba(255, 128, 128, 0) 100%);
-            box-shadow: inset 0 -0.02667rem 0.08rem #ffdfdb, inset 0 0.02667rem 0.08rem #ea6b66;
-            border-radius: .26667rem;">
-                <div data-v-03b808c2="" class="circular c-row c-row-middle-center c-tc">
-                    <span data-v-03b808c2="" class="li">?</span>
-                </div>
-                <div data="1" data-v-03b808c2="" class="img c-row c-row-center p-b-10">
-                    <div data-v-03b808c2="" class="van-image van-image-1" style="width: 30px; height: 30px;">
-                        <img src="/assets/png/time_a-f83ed4c71.png" class="van-image__img">
-                    </div>
-                    <div data-v-03b808c2="" class="van-image van-image-2" style="width: 30px; height: 30px; display: none;">
-                        <img src="/assets/png/time-5d4e96a3.png" class="van-image__img">
-                    </div>
-                    <i data-v-03b808c2="" class="triangle"></i>
-                </div>
-                <div data="1" data-v-03b808c2="" class="txt c-tc">1 min</div>
+<div data-v-b108ab4b="" data-v-40958d9a="" class="GameList__C">
+    <div data-v-b108ab4b="" class="GameList__C-item min_t_1" onclick="location.href='/k3/?game_type=1'">
+        <div data-v-b108ab4b="">K3 1Min</div>
+    </div>
+    <div data-v-b108ab4b="" class="GameList__C-item min_t_3" onclick="location.href='/k3/?game_type=3'">
+        <div data-v-b108ab4b="">K3 3Min</div>
+    </div>
+    <div data-v-b108ab4b="" class="GameList__C-item min_t_5" onclick="location.href='/k3/?game_type=5'">
+        <div data-v-b108ab4b="">K3 5Min</div>
+    </div>
+    <div data-v-b108ab4b="" class="GameList__C-item min_t_10" onclick="location.href='/k3/?game_type=10'">
+        <div data-v-b108ab4b="">K3 10Min</div>
+    </div>
+</div>
+
+<script>
+    let selectedPageTime = Number(new URLSearchParams(window.location.search).get('game_type'))
+    console.log(selectedPageTime)
+    switch (selectedPageTime) {
+        case 1:
+            document.querySelector(".min_t_1").classList.add("active")
+            break;
+        case 3:
+            document.querySelector(".min_t_3").classList.add("active")
+            break;
+        case 5:
+            document.querySelector(".min_t_5").classList.add("active")
+            break;
+        case 10:
+            document.querySelector(".min_t_10").classList.add("active")
+            break;
+        default:
+            document.querySelector(".min_t_1").classList.add("active")
+            break;
+    }
+
+</script>
+
+
+<style>
+    .close {
+        display: none !important;
+    }
+</style>
+
+<div data-v-72d1481f="" class="K3TL__C">
+    <div data-v-72d1481f="" class="K3TL__C-l1">
+        <div data-v-72d1481f="" class="left">
+            <div data-v-72d1481f="">Period</div>
+            <div data-v-72d1481f="" class="K3TL__C-rule">How to play</div>
+        </div>
+        <div data-v-72d1481f="">Time remaining</div>
+    </div>
+    <div data-v-72d1481f="" class="K3TL__C-l2">
+        <div data-v-72d1481f="" id="period">20240524100268</div>
+        <div data-v-72d1481f="" class="K3TL__C-time">
+            <div data-v-72d1481f="" class="count_down_d">0</div>
+            <div data-v-72d1481f="" class="count_down_d">2</div>
+            <div data-v-72d1481f="" notime="">:</div>
+            <div data-v-72d1481f="" class="count_down_d">1</div>
+            <div data-v-72d1481f="" class="count_down_d">4</div>
+        </div>
+    </div>
+    <div data-v-72d1481f="" class="K3TL__C-l3">
+        <div data-v-72d1481f="" class="box">
+            <div data-v-72d1481f="" class="slot-num-d num3"></div>
+            <div data-v-72d1481f="" class="slot-num-d num1"></div>
+            <div data-v-72d1481f="" class="slot-num-d num4"></div>
+        </div>
+    </div>
+</div>
+<div data-v-67c1f5a3="" data-v-644e12f7="" class="K3B__C" voicetype="1" typeid="10">
+    <div data-v-67c1f5a3="" class="K3B__C-mark" style="display: none;">
+        <div data-v-67c1f5a3="">2</div>
+        <div data-v-67c1f5a3="">4</div>
+    </div>
+    <div data-v-67c1f5a3="" class="K3B__C-nav">
+        <div data-v-67c1f5a3="" class="active" tab-type="1">Total</div>
+        <div data-v-67c1f5a3="" class="" tab-type="2">2 same</div>
+        <div data-v-67c1f5a3="" class="" tab-type="3">3 same</div>
+        <div data-v-67c1f5a3="" class="" tab-type="4">Different</div>
+    </div>
+    <div data-v-01cf71e0="" data-v-67c1f5a3="" class="K3B__C-bettingList"
+        numlist="[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]"
+        numtow="" numone="" numchack="false">
+        <div data-v-01cf71e0="" class="bet_btn num num3" data="3" data-join="3">
+            <div data-v-01cf71e0="" class="ball rball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num3">3</div>
             </div>
-            <div data="3" data-v-03b808c2="" class="item c-tc">
-                <div data-v-03b808c2="" class="circular c-row c-row-middle-center c-tc">
-                    <span data-v-03b808c2="" class="li">?</span>
-                </div>
-                <div data="3" data-v-03b808c2="" class="img c-row c-row-center p-b-10">
-                    <div data-v-03b808c2="" class="van-image van-image-1" style="width: 30px; height: 30px; display: none;">
-                        <img src="/assets/png/time_a-f83ed4c71.png" class="van-image__img">
-                    </div>
-                    <div data-v-03b808c2="" class="van-image van-image-2" style="width: 30px; height: 30px;">
-                        <img src="/assets/png/time-5d4e96a3.png" class="van-image__img">
-                    </div>
-                    <i data-v-03b808c2="" class="triangle"></i>
-                </div>
-                <div data="3" data-v-03b808c2="" class="txt c-tc">3 min</div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">207.36X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num4" data="4" data-join="4">
+            <div data-v-01cf71e0="" class="ball gball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num4">4</div>
             </div>
-            <div data="5" data-v-03b808c2="" class="item c-tc">
-                <div data-v-03b808c2="" class="circular c-row c-row-middle-center c-tc">
-                    <span data-v-03b808c2="" class="li">?</span>
-                </div>
-                <div data="5" data-v-03b808c2="" class="img c-row c-row-center p-b-10">
-                    <div data-v-03b808c2="" class="van-image van-image-1" style="width: 30px; height: 30px; display: none;">
-                        <img src="/assets/png/time_a-f83ed4c71.png" class="van-image__img">
-                    </div>
-                    <div data-v-03b808c2="" class="van-image van-image-2" style="width: 30px; height: 30px;">
-                        <img src="/assets/png/time-5d4e96a3.png" class="van-image__img">
-                    </div>
-                    <i data-v-03b808c2="" class="triangle"></i>
-                </div>
-                <div data="5" data-v-03b808c2="" class="txt c-tc">5 min</div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">69.12X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num5" data="5" data-join="5">
+            <div data-v-01cf71e0="" class="ball rball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num5">5</div>
             </div>
-            <div data="10" data-v-03b808c2="" class="item c-tc">
-                <div data-v-03b808c2="" class="circular c-row c-row-middle-center c-tc">
-                    <span data-v-03b808c2="" class="li">?</span>
-                </div>
-                <div data="10" data-v-03b808c2="" class="img c-row c-row-center p-b-10">
-                    <div data-v-03b808c2="" class="van-image van-image-1" style="width: 30px; height: 30px; display: none;">
-                        <img src="/assets/png/time_a-f83ed4c71.png" class="van-image__img">
-                    </div>
-                    <div data-v-03b808c2="" class="van-image van-image-2" style="width: 30px; height: 30px;">
-                        <img src="/assets/png/time-5d4e96a3.png" class="van-image__img">
-                    </div>
-                    <i data-v-03b808c2="" class="triangle"></i>
-                </div>
-                <div data="10" data-v-03b808c2="" class="txt c-tc">10 min</div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">34.56X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num6" data="6" data-join="6">
+            <div data-v-01cf71e0="" class="ball gball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num6">6</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">20.74X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num7" data="7" data-join="7">
+            <div data-v-01cf71e0="" class="ball rball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num7">7</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">13.83X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num8" data="8" data-join="8">
+            <div data-v-01cf71e0="" class="ball gball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num8">8</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">9.88X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num9" data="9" data-join="9">
+            <div data-v-01cf71e0="" class="ball rball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num9">9</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">8.3X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num10" data="10" data-join="10">
+            <div data-v-01cf71e0="" class="ball gball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num10">10</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">7.68X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num11" data="11" data-join="11">
+            <div data-v-01cf71e0="" class="ball rball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num11">11</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">7.68X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num12" data="12" data-join="12">
+            <div data-v-01cf71e0="" class="ball gball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num12">12</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">8.3X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num13" data="13" data-join="13">
+            <div data-v-01cf71e0="" class="ball rball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num13">13</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">9.88X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num14" data="14" data-join="14">
+            <div data-v-01cf71e0="" class="ball gball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num14">14</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">13.83X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num15" data="15" data-join="15">
+            <div data-v-01cf71e0="" class="ball rball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num15">15</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">20.74X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num16" data="16" data-join="16">
+            <div data-v-01cf71e0="" class="ball gball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num16">16</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">34.56X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num17" data="17" data-join="17">
+            <div data-v-01cf71e0="" class="ball rball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num17">17</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">69.12X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num num18" data="18" data-join="18">
+            <div data-v-01cf71e0="" class="ball gball">
+                <div data-v-01cf71e0="" class="K3B__C-odds-bet num18">18</div>
+            </div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">207.36X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num numA" data="b" data-join="Big">
+            <div data-v-01cf71e0="" class="">Big</div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">1.92X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num numB" data="s" data-join="Small">
+            <div data-v-01cf71e0="" class="">Small</div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">1.92X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num numC" data="l" data-join="lẻ">
+            <div data-v-01cf71e0="" class="">Odd</div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">1.92X </div>
+        </div>
+        <div data-v-01cf71e0="" class="bet_btn num numD" data="c" data-join="chẵn">
+            <div data-v-01cf71e0="" class="">Even</div>
+            <div data-v-01cf71e0="" class="K3B__C-odds-rate">1.92X </div>
+        </div>
+    </div>
+    <div data-v-279c5cea="" data-v-67c1f5a3="" class="K3B__C-betting2 close">
+        <div data-v-279c5cea="" class="K3B__C-betting2-tip1">2 matching numbers: odds<span
+                data-v-279c5cea="">(13.83)</span><i data-v-279c5cea=""
+                class="van-badge__wrapper van-icon van-icon-question icon"
+                style="color: rgb(250, 87, 74); font-size: 16px;"></i></div>
+        <div data-v-279c5cea="" class="K3B__C-betting2-line1 mb30">
+            <div data-v-279c5cea="" class="" game="2_1" data="11">
+                <div data-v-279c5cea="">11</div>
+            </div>
+            <div data-v-279c5cea="" class="" game="2_1" data="22">
+                <div data-v-279c5cea="">22</div>
+            </div>
+            <div data-v-279c5cea="" class="" game="2_1" data="33">
+                <div data-v-279c5cea="">33</div>
+            </div>
+            <div data-v-279c5cea="" class="" game="2_1" data="44">
+                <div data-v-279c5cea="">44</div>
+            </div>
+            <div data-v-279c5cea="" class="" game="2_1" data="55">
+                <div data-v-279c5cea="">55</div>
+            </div>
+            <div data-v-279c5cea="" class="" game="2_1" data="66">
+                <div data-v-279c5cea="">66</div>
+            </div>
+        </div>
+        <div data-v-279c5cea="" class="K3B__C-betting2-tip1">A pair of unique numbers: odds<span
+                data-v-279c5cea="">(69.12)</span><i data-v-279c5cea=""
+                class="van-badge__wrapper van-icon van-icon-question icon"
+                style="color: rgb(250, 87, 74); font-size: 16px;"></i></div>
+        <div data-v-279c5cea="" class="K3B__C-betting2-line2">
+            <div data-v-279c5cea="" class="" data="11" number="1" game="2_2">
+                <div data-v-279c5cea="" class="">11</div>
+            </div>
+            <div data-v-279c5cea="" class="" data="22" number="2" game="2_2">
+                <div data-v-279c5cea="" class="">22</div>
+            </div>
+            <div data-v-279c5cea="" class="" data="33" number="3" game="2_2">
+                <div data-v-279c5cea="" class="">33</div>
+            </div>
+            <div data-v-279c5cea="" class="" data="44" number="4" game="2_2">
+                <div data-v-279c5cea="" class="">44</div>
+            </div>
+            <div data-v-279c5cea="" class="" data="55" number="5" game="2_2">
+                <div data-v-279c5cea="" class="">55</div>
+            </div>
+            <div data-v-279c5cea="" class="" data="66" number="6" game="2_2">
+                <div data-v-279c5cea="" class="">66</div>
+            </div>
+        </div>
+        <div data-v-279c5cea="" class="K3B__C-betting2-line3">
+            <div data-v-279c5cea="" class="" data="1" number="1" game="2_2">
+                <div data-v-279c5cea="" class="">1</div>
+            </div>
+            <div data-v-279c5cea="" class="" data="2" number="2" game="2_2">
+                <div data-v-279c5cea="" class="">2</div>
+            </div>
+            <div data-v-279c5cea="" class="" data="3" number="3" game="2_2">
+                <div data-v-279c5cea="" class="">3</div>
+            </div>
+            <div data-v-279c5cea="" class="" data="4" number="4" game="2_2">
+                <div data-v-279c5cea="" class="">4</div>
+            </div>
+            <div data-v-279c5cea="" class="" data="5" number="5" game="2_2">
+                <div data-v-279c5cea="" class="">5</div>
+            </div>
+            <div data-v-279c5cea="" class="" data="6" number="6" game="2_2">
+                <div data-v-279c5cea="" class="">6</div>
             </div>
         </div>
     </div>
-    <div data-v-03b808c2="" class="content">
-        <div data-v-03b808c2="" class="page-box">
-            <div data-v-03b808c2="" class="flex-row-between period-title"><span data-v-03b808c2=""> Lottery Period</span><span
-                    data-v-03b808c2=""> Time Left</span></div>
-            <div data-v-03b808c2="" class="flex-row-between flex-center period-span"><span
-                    data-v-03b808c2="" id="period"></span>
-                <div data-v-03b808c2="" class="flex-row-end">
-                    <div data-v-03b808c2="" class="li-item">0</div>
-                    <div data-v-03b808c2="" class="li-item">0</div><span data-v-03b808c2="" class="li-symbol">:</span>
-                    <div data-v-03b808c2="" class="li-item">4</div>
-                    <div data-v-03b808c2="" class="li-item">4</div>
-                </div> 
+    <div data-v-ef8ad3e9="" data-v-67c1f5a3="" class="K3B__C-betting3 close">
+        <div data-v-ef8ad3e9="" class="K3B__C-betting3-tip1">3 of the same number: odds <span
+                data-v-ef8ad3e9="">(207.36)</span><i data-v-ef8ad3e9=""
+                class="van-badge__wrapper van-icon van-icon-question icon"
+                style="color: rgb(250, 87, 74); font-size: 16px;"></i></div>
+        <div data-v-ef8ad3e9="" class="K3B__C-betting3-line1 mb30">
+            <div data-v-ef8ad3e9="" class="" data="111">
+                <div data-v-ef8ad3e9="">111</div>
+            </div>
+            <div data-v-ef8ad3e9="" class="" data="222">
+                <div data-v-ef8ad3e9="">222</div>
+            </div>
+            <div data-v-ef8ad3e9="" class="" data="333">
+                <div data-v-ef8ad3e9="">333</div>
+            </div>
+            <div data-v-ef8ad3e9="" class="" data="444">
+                <div data-v-ef8ad3e9="">444</div>
+            </div>
+            <div data-v-ef8ad3e9="" class="" data="555">
+                <div data-v-ef8ad3e9="">555</div>
+            </div>
+            <div data-v-ef8ad3e9="" class="" data="666">
+                <div data-v-ef8ad3e9="">666</div>
             </div>
         </div>
+        <div data-v-ef8ad3e9="" class="K3B__C-betting3-tip1">Any 3 of the same number: odds <span
+                data-v-ef8ad3e9="">(34.56)</span><i data-v-ef8ad3e9=""
+                class="van-badge__wrapper van-icon van-icon-question icon"
+                style="color: rgb(250, 87, 74); font-size: 16px;"></i></div>
+        <div data-v-ef8ad3e9="" class="K3B__C-betting3-btn">Any 3 of the same number: odds</div>
+    </div>
+    <div data-v-f4e1a453="" data-v-67c1f5a3="" class="K3B__C-betting4 close">
+        <div data-v-f4e1a453="" class="K3B__C-betting4-tip1">3 different numbers: odds <span
+                data-v-f4e1a453="">(34.56)</span><i data-v-f4e1a453=""
+                class="van-badge__wrapper van-icon van-icon-question icon"
+                style="color: rgb(250, 87, 74); font-size: 16px;"></i></div>
+        <div data-v-f4e1a453="" class="K3B__C-betting4-line1 mb30">
+            <div data-v-f4e1a453="" data="1" class="">
+                <div data-v-f4e1a453="">1</div>
+            </div>
+            <div data-v-f4e1a453="" data="2" class="">
+                <div data-v-f4e1a453="">2</div>
+            </div>
+            <div data-v-f4e1a453="" data="3" class="">
+                <div data-v-f4e1a453="">3</div>
+            </div>
+            <div data-v-f4e1a453="" data="4" class="">
+                <div data-v-f4e1a453="">4</div>
+            </div>
+            <div data-v-f4e1a453="" data="5" class="">
+                <div data-v-f4e1a453="">5</div>
+            </div>
+            <div data-v-f4e1a453="" data="6" class="">
+                <div data-v-f4e1a453="">6</div>
+            </div>
+        </div>
+        <div data-v-f4e1a453="" class="K3B__C-betting4-tip1">3 continuous numbers: odds <span
+                data-v-f4e1a453="">(8.64)</span><i data-v-f4e1a453=""
+                class="van-badge__wrapper van-icon van-icon-question icon"
+                style="color: rgb(250, 87, 74); font-size: 16px;"></i></div>
+        <div data-v-f4e1a453="" class="K3B__C-betting4-btn">3 continuous numbers</div>
+        <div data-v-f4e1a453="" class="K3B__C-betting4-tip1">2 different numbers: odds <span
+                data-v-f4e1a453="">(6.91)</span><i data-v-f4e1a453=""
+                class="van-badge__wrapper van-icon van-icon-question icon"
+                style="color: rgb(250, 87, 74); font-size: 16px;"></i></div>
+        <div data-v-f4e1a453="" class="K3B__C-betting4-line1">
+            <div data-v-f4e1a453="" class="" data="1">
+                <div data-v-f4e1a453="">1</div>
+            </div>
+            <div data-v-f4e1a453="" class="" data="2">
+                <div data-v-f4e1a453="">2</div>
+            </div>
+            <div data-v-f4e1a453="" class="" data="3">
+                <div data-v-f4e1a453="">3</div>
+            </div>
+            <div data-v-f4e1a453="" class="" data="4">
+                <div data-v-f4e1a453="">4</div>
+            </div>
+            <div data-v-f4e1a453="" class="" data="5">
+                <div data-v-f4e1a453="">5</div>
+            </div>
+            <div data-v-f4e1a453="" class="" data="6">
+                <div data-v-f4e1a453="">6</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(`.K3B__C-nav div`).click(function (params) {
+        console.log($(`.K3B__C-bettingList`))
+        $(`.K3B__C-bettingList`).addClass('close')
+        $(`.K3B__C-betting2`).addClass('close')
+        $(`.K3B__C-betting3`).addClass('close')
+        $(`.K3B__C-betting4`).addClass('close')
+
+        const selectedTab = parseInt($(this).attr('tab-type'))
+
+        switch (selectedTab) {
+            case 1:
+                console.log(selectedTab)
+                $(`.K3B__C-bettingList`).removeClass('close')
+                break;
+            case 2:
+                console.log(selectedTab)
+                $(`.K3B__C-betting2`).removeClass('close')
+                break;
+            case 3:
+                console.log(selectedTab)
+                $(`.K3B__C-betting3`).removeClass('close')
+                break;
+            case 4:
+                console.log(selectedTab)
+                $(`.K3B__C-betting4`).removeClass('close')
+                break;
+            default:
+                break;
+        }
+
+        $(`.K3B__C-nav div`).removeClass('active')
+        $(this).addClass('active')
+    })
+</script>
+
+<!-- <div data-v-03b808c2="" data-v-67c1f5a3="" data-v-644e12f7="" class="game-betting K3B__C">
+    <div data-v-a9660e98="" class="box c-row">
+    </div>
+    <div data-v-a9660e98="" class="content">
+
         <div data-v-03b808c2="" style="text-align: center;">
             <div data-v-03b808c2="" class="slot-inner">
                 <div data-v-03b808c2="" class="d5-slot-box">
@@ -100,352 +416,396 @@
                 </div>
             </div>
         </div>
-        <div data-v-03b808c2="" class="bet-box">
+        <style>
+            .foo_options_box {
+                margin-top: 37px !important;
+            }
+        </style>
+        <div data-v-03b808c2="" class="bet-box foo_options_box">
+
             <div data-v-03b808c2="" class="bet-mark">
                 <div data-v-03b808c2="" class="mark-box c-row c-row-middle-center" style="display: none;">
                     <span data-v-03b808c2="" class="item m-r-20">0</span>
                     <span data-v-03b808c2="" class="item m-l-20">0</span>
                 </div>
-                <div data-v-03b808c2="" game="1" class="bet-con">
-                    <div data-v-03b808c2="" class="check-box c-row c-flex-warp c-row-between list-join-total">
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="3" data-join="3">
-                                <div data-v-03b808c2="" class="name">3</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">207.36</span>
-                                </div>
-                            </div>
+                <div data-v-03b808c2="" class="bet-tab">
+                    <ul data-v-67c1f5a3="" data-v-03b808c2="" class="K3B__C-nav c-row c-row-between foo_bottom_tab">
+                        <div data-v-67c1f5a3="" data-v-03b808c2="" game="1"
+                            class="item foo_bottom_tab_buttons  action block-click">Total
                         </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="4" data-join="4">
-                                <div data-v-03b808c2="" class="name">4</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">69.12</span>
-                                </div>
-                            </div>
+                        <div data-v-67c1f5a3="" data-v-03b808c2="" game="2" class="item foo_bottom_tab_buttons">2 Same
                         </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data-join="5">
-                                <div data-v-03b808c2="" class="name">5</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">34.56</span>
-                                </div>
-                            </div>
+                        <div data-v-67c1f5a3="" data-v-03b808c2="" game="3" class="item foo_bottom_tab_buttons">3 Same
                         </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data-join="6">
-                                <div data-v-03b808c2="" class="name">6</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">20.74</span>
-                                </div>
-                            </div>
+                        <div data-v-67c1f5a3="" data-v-03b808c2="" game="4" class="item foo_bottom_tab_buttons">
+                            Different
                         </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data-join="7">
-                                <div data-v-03b808c2="" class="name">7</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">13.83</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data-join="8">
-                                <div data-v-03b808c2="" class="name">8</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">9.88</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data-join="9">
-                                <div data-v-03b808c2="" class="name">9</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">8.3</span></div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data-join="10">
-                                <div data-v-03b808c2="" class="name">10</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">7.68</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data-join="11">
-                                <div data-v-03b808c2="" class="name">11</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">7.68</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="12" data-join="12">
-                                <div data-v-03b808c2="" class="name">12</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">8.3</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="13" data-join="13">
-                                <div data-v-03b808c2="" class="name">13</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">9.88</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="14" data-join="14">
-                                <div data-v-03b808c2="" class="name">14</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">13.83</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="15" data-join="15">
-                                <div data-v-03b808c2="" class="name">15</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">20.74</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="16" data-join="16">
-                                <div data-v-03b808c2="" class="name">16</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">34.56</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="17" data-join="17">
-                                <div data-v-03b808c2="" class="name">17</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">69.12</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="18" data-join="18">
-                                <div data-v-03b808c2="" class="name">18</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">207.36</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="b" data-join="Big">
-                                <div data-v-03b808c2="" class="name">Big</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">1.92</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="s" data-join="Small">
-                                <div data-v-03b808c2="" class="name">Small</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">1.92</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="l" data-join="odd">
-                                <div data-v-03b808c2="" class="name">Odd</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">1.92</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-v-03b808c2="" class="item">
-                            <div data-v-03b808c2="" class="li" data="c" data-join="even">
-                                <div data-v-03b808c2="" class="name">Even</div>
-                                <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">1.92</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div data-v-03b808c2="" game="2" class="bet-con num d-none">
-                    <div data-v-03b808c2="" class="title">Choose 2 suitable numbers：Odds <span data-v-03b808c2="">13.83</span></div>
-                    <div data-v-03b808c2="" data="chon-2-so-phu-hop" class="num-box purple c-row c-flex-warp c-row-between">
-                        <div data-v-03b808c2="" game="2_1" data="11" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">11</div>
-                        </div>
-                        <div data-v-03b808c2="" game="2_1" data="22" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">22</div>
-                        </div>
-                        <div data-v-03b808c2="" game="2_1" data="33" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">33</div>
-                        </div>
-                        <div data-v-03b808c2="" game="2_1" data="44" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">44</div>
-                        </div>
-                        <div data-v-03b808c2="" game="2_1" data="55" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">55</div>
-                        </div>
-                        <div data-v-03b808c2="" game="2_1" data="66" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">66</div>
-                        </div>
-                    </div>
-                    <div data-v-03b808c2="" class="des">If the lottery result matches 2 numbers you bet, you will win the prize. (Except for three identical numbers).</div>
-                    <div data-v-03b808c2="" class="title">Choose a unique pair of numbers：Odds <span data-v-03b808c2="">69.12</span></div>
-                    <div data-v-03b808c2="" hang="1" data="Select 1 unique pair" class="num-box red c-row c-flex-warp c-row-between">
-                        <div data-v-03b808c2="" data="11" number="1" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">11</div>
-                        </div>
-                        <div data-v-03b808c2="" data="22" number="2" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">22</div>
-                        </div>
-                        <div data-v-03b808c2="" data="33" number="3" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">33</div>
-                        </div>
-                        <div data-v-03b808c2="" data="44" number="4" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">44</div>
-                        </div>
-                        <div data-v-03b808c2="" data="55" number="5" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">55</div>
-                        </div>
-                        <div data-v-03b808c2="" data="66" number="6" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">66</div>
-                        </div>
-                    </div>
-                    <div data-v-03b808c2="" hang="2" data="chon-1-cap-duy-nhat" class="num-box green c-row c-flex-warp c-row-between">
-                        <div data-v-03b808c2="" data="1" number="1" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">1</div>
-                        </div>
-                        <div data-v-03b808c2="" data="2" number="2" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">2</div>
-                        </div>
-                        <div data-v-03b808c2="" data="3" number="3" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">3</div>
-                        </div>
-                        <div data-v-03b808c2="" data="4" number="4" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">4</div>
-                        </div>
-                        <div data-v-03b808c2="" data="5" number="5" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">5</div>
-                        </div>
-                        <div data-v-03b808c2="" data="6" number="6" game="2_2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">6</div>
-                        </div>
-                    </div>
-                    <div data-v-03b808c2="" class="des">*Select at least 1 pair of identical numbers and 1 different number to place a bet. If the lottery result matches the numbers you bet, you will win the prize.</div>
-                </div>
-                <div data-v-03b808c2="" game="3" class="bet-con num d-none">
-                    <div data-v-03b808c2="" class="title">Choose 3 unique numbers：odds <span data-v-03b808c2="">207.36</span></div>
-                    <div data-v-03b808c2="" class="num-box purple c-row c-flex-warp c-row-between">
-                        <div data-v-03b808c2="" data="111" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">111</div>
-                        </div>
-                        <div data-v-03b808c2="" data="222" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">222</div>
-                        </div>
-                        <div data-v-03b808c2="" data="333" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">333</div>
-                        </div>
-                        <div data-v-03b808c2="" data="444" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">444</div>
-                        </div>
-                        <div data-v-03b808c2="" data="555" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">555</div>
-                        </div>
-                        <div data-v-03b808c2="" data="666" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">666</div>
-                        </div>
-                    </div>
-                    <div data-v-03b808c2="" class="des">* If the lottery result matches the 3 numbers you bet, you will win the prize.</div>
-                    <div data-v-03b808c2="" class="title">Choose 3 identical numbers: Odds <span data-v-03b808c2="">34.56</span></div>
-                    <div data-v-03b808c2="" class="chon-3-so-giong-nhau num-box red c-row c-flex-warp c-row-between">
-                        <div data-v-03b808c2="" class="li">
-                            <!---->
-                            <div data-v-03b808c2="">Choose 3 identical numbers</div>
-                        </div>
-                    </div>
-                    <div data-v-03b808c2="" class="des">*If the winning numbers are any three identical numbers, you will win the prize.</div>
-                </div>
-                <div data-v-03b808c2="" game="4" class="bet-con num d-none">
-                    <div data-v-03b808c2="" class="title">Choose 3 different numbers: Odds<span data-v-03b808c2="">34.56</span></div>
-                    <div data-v-03b808c2="" class="num-box purple c-row c-flex-warp c-row-between">
-                        <div data-v-03b808c2="" data="1" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">1</div>
-                        </div>
-                        <div data-v-03b808c2="" data="2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">2</div>
-                        </div>
-                        <div data-v-03b808c2="" data="3" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">3</div>
-                        </div>
-                        <div data-v-03b808c2="" data="4" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">4</div>
-                        </div>
-                        <div data-v-03b808c2="" data="5" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">5</div>
-                        </div>
-                        <div data-v-03b808c2="" data="6" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">6</div>
-                        </div>
-                    </div>
-                    <div data-v-03b808c2="" class="des">Choose 3 or more numbers. If the three numbers in the lottery result are different and match the numbers you've chosen, then you win the prize.</div>
-                    <div data-v-03b808c2="" class="title">Choose 3 consecutive numbers: Odds <span data-v-03b808c2="">8.64</span></div>
-                    <div data-v-03b808c2="" class="chon-3-so-lien-tiep num-box red c-row c-flex-warp c-row-between">
-                        <div data-v-03b808c2="" class="li">
-                            <!---->
-                            <div data-v-03b808c2="">Choose 3 consecutive numbers.</div>
-                        </div>
-                    </div>
-                    <div data-v-03b808c2="" class="des">*If the winning numbers are any three consecutive numbers, then you win the prize.</div>
-                    <div data-v-03b808c2="" class="title">Choose 2 different numbers: Odd<span data-v-03b808c2="">6.91</span></div>
-                    <div data-v-03b808c2="" class="num-box purple c-row c-flex-warp c-row-between">
-                        <div data-v-03b808c2="" data="1" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">1</div>
-                        </div>
-                        <div data-v-03b808c2="" data="2" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">2</div>
-                        </div>
-                        <div data-v-03b808c2="" data="3" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">3</div>
-                        </div>
-                        <div data-v-03b808c2="" data="4" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">4</div>
-                        </div>
-                        <div data-v-03b808c2="" data="5" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">5</div>
-                        </div>
-                        <div data-v-03b808c2="" data="6" class="item">
-                            <!---->
-                            <div data-v-03b808c2="">6</div>
-                        </div>
-                    </div>
-                    <div data-v-03b808c2="" class="des">*Choose 2 or more numbers, if two numbers in the lottery result are different and match the numbers you've chosen, then you win the prize.</div>
                 </div>
             </div>
-            <div data-v-03b808c2="" class="bet-tab">
-                <ul data-v-03b808c2="" class="c-row c-row-between">
-                    <li data-v-03b808c2="" game="1" class="item action block-click">Sum</li>
-                    <li data-v-03b808c2="" game="2" class=" item">2 Matching</li>
-                    <li data-v-03b808c2="" game="3" class=" item">3 Matching</li>
-                    <li data-v-03b808c2="" game="4" class=" item">Different</li>
-                </ul>
+            <div data-v-03b808c2="" game="1" class="bet-con">
+                <div data-v-03b808c2="" class="check-box c-row c-flex-warp c-row-between list-join-total">
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="3" data-join="3">
+                            <div data-v-03b808c2="" class="name">3</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">207.36</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="4" data-join="4">
+                            <div data-v-03b808c2="" class="name">4</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">69.12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data-join="5">
+                            <div data-v-03b808c2="" class="name">5</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">34.56</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data-join="6">
+                            <div data-v-03b808c2="" class="name">6</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">20.74</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data-join="7">
+                            <div data-v-03b808c2="" class="name">7</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">13.83</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data-join="8">
+                            <div data-v-03b808c2="" class="name">8</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">9.88</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data-join="9">
+                            <div data-v-03b808c2="" class="name">9</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">8.3</span></div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data-join="10">
+                            <div data-v-03b808c2="" class="name">10</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">7.68</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data-join="11">
+                            <div data-v-03b808c2="" class="name">11</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">7.68</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="12" data-join="12">
+                            <div data-v-03b808c2="" class="name">12</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">8.3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="13" data-join="13">
+                            <div data-v-03b808c2="" class="name">13</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">9.88</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="14" data-join="14">
+                            <div data-v-03b808c2="" class="name">14</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">13.83</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="15" data-join="15">
+                            <div data-v-03b808c2="" class="name">15</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">20.74</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="16" data-join="16">
+                            <div data-v-03b808c2="" class="name">16</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">34.56</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="17" data-join="17">
+                            <div data-v-03b808c2="" class="name">17</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">69.12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="18" data-join="18">
+                            <div data-v-03b808c2="" class="name">18</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">207.36</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="b" data-join="Big">
+                            <div data-v-03b808c2="" class="name">Big</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">1.92</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="s" data-join="Small">
+                            <div data-v-03b808c2="" class="name">Small</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">1.92</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="l" data-join="lẻ">
+                            <div data-v-03b808c2="" class="name">Odd</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">1.92</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-03b808c2="" class="item">
+                        <div data-v-03b808c2="" class="li" data="c" data-join="chẵn">
+                            <div data-v-03b808c2="" class="name">Even</div>
+                            <div data-v-03b808c2="" class="odds">Odds<span data-v-03b808c2="">1.92</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-03b808c2="" game="2" class="bet-con num d-none">
+                <div data-v-03b808c2="" class="title">Choose 2 suitable numbers：Odds <span
+                        data-v-03b808c2="">13.83</span></div>
+                <div data-v-03b808c2="" data="chon-2-so-phu-hop" class="num-box purple c-row c-flex-warp c-row-between">
+                    <div data-v-03b808c2="" game="2_1" data="11" class="item">
+
+                        <div data-v-03b808c2="">11</div>
+                    </div>
+                    <div data-v-03b808c2="" game="2_1" data="22" class="item">
+
+                        <div data-v-03b808c2="">22</div>
+                    </div>
+                    <div data-v-03b808c2="" game="2_1" data="33" class="item">
+
+                        <div data-v-03b808c2="">33</div>
+                    </div>
+                    <div data-v-03b808c2="" game="2_1" data="44" class="item">
+
+                        <div data-v-03b808c2="">44</div>
+                    </div>
+                    <div data-v-03b808c2="" game="2_1" data="55" class="item">
+
+                        <div data-v-03b808c2="">55</div>
+                    </div>
+                    <div data-v-03b808c2="" game="2_1" data="66" class="item">
+
+                        <div data-v-03b808c2="">66</div>
+                    </div>
+                </div>
+                <div data-v-03b808c2="" class="des">If the lottery result matches 2 numbers you bet, you will
+                    win
+                    the prize. (Except for three identical numbers).</div>
+                <div data-v-03b808c2="" class="title">Choose a unique pair of numbers：Odds <span
+                        data-v-03b808c2="">69.12</span></div>
+                <div data-v-03b808c2="" hang="1" data="Select 1 unique pair"
+                    class="num-box red c-row c-flex-warp c-row-between">
+                    <div data-v-03b808c2="" data="11" number="1" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">11</div>
+                    </div>
+                    <div data-v-03b808c2="" data="22" number="2" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">22</div>
+                    </div>
+                    <div data-v-03b808c2="" data="33" number="3" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">33</div>
+                    </div>
+                    <div data-v-03b808c2="" data="44" number="4" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">44</div>
+                    </div>
+                    <div data-v-03b808c2="" data="55" number="5" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">55</div>
+                    </div>
+                    <div data-v-03b808c2="" data="66" number="6" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">66</div>
+                    </div>
+                </div>
+                <div data-v-03b808c2="" hang="2" data="chon-1-cap-duy-nhat"
+                    class="num-box green c-row c-flex-warp c-row-between">
+                    <div data-v-03b808c2="" data="1" number="1" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">1</div>
+                    </div>
+                    <div data-v-03b808c2="" data="2" number="2" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">2</div>
+                    </div>
+                    <div data-v-03b808c2="" data="3" number="3" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">3</div>
+                    </div>
+                    <div data-v-03b808c2="" data="4" number="4" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">4</div>
+                    </div>
+                    <div data-v-03b808c2="" data="5" number="5" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">5</div>
+                    </div>
+                    <div data-v-03b808c2="" data="6" number="6" game="2_2" class="item">
+
+                        <div data-v-03b808c2="">6</div>
+                    </div>
+                </div>
+                <div data-v-03b808c2="" class="des">*Select at least 1 pair of identical numbers and 1 different
+                    number to place a bet. If the lottery result matches the numbers you bet, you will win the
+                    prize.</div>
+            </div>
+            <div data-v-03b808c2="" game="3" class="bet-con num d-none">
+                <div data-v-03b808c2="" class="title">Choose 3 unique numbers：odds <span
+                        data-v-03b808c2="">207.36</span></div>
+                <div data-v-03b808c2="" class="num-box purple c-row c-flex-warp c-row-between">
+                    <div data-v-03b808c2="" data="111" class="item">
+
+                        <div data-v-03b808c2="">111</div>
+                    </div>
+                    <div data-v-03b808c2="" data="222" class="item">
+
+                        <div data-v-03b808c2="">222</div>
+                    </div>
+                    <div data-v-03b808c2="" data="333" class="item">
+
+                        <div data-v-03b808c2="">333</div>
+                    </div>
+                    <div data-v-03b808c2="" data="444" class="item">
+
+                        <div data-v-03b808c2="">444</div>
+                    </div>
+                    <div data-v-03b808c2="" data="555" class="item">
+
+                        <div data-v-03b808c2="">555</div>
+                    </div>
+                    <div data-v-03b808c2="" data="666" class="item">
+
+                        <div data-v-03b808c2="">666</div>
+                    </div>
+                </div>
+                <div data-v-03b808c2="" class="des">* If the lottery result matches the 3 numbers you bet, you
+                    will
+                    win the prize.</div>
+                <div data-v-03b808c2="" class="title">Choose 3 identical numbers: Odds <span
+                        data-v-03b808c2="">34.56</span></div>
+                <div data-v-03b808c2="" class="chon-3-so-giong-nhau num-box red c-row c-flex-warp c-row-between">
+                    <div data-v-03b808c2="" class="li">
+
+                        <div data-v-03b808c2="">Choose 3 identical numbers</div>
+                    </div>
+                </div>
+                <div data-v-03b808c2="" class="des">*If the winning numbers are any three identical numbers, you
+                    will win the prize.</div>
+            </div>
+            <div data-v-03b808c2="" game="4" class="bet-con num d-none">
+                <div data-v-03b808c2="" class="title">Choose 3 different numbers: Odds<span
+                        data-v-03b808c2="">34.56</span></div>
+                <div data-v-03b808c2="" class="num-box purple c-row c-flex-warp c-row-between">
+                    <div data-v-03b808c2="" data="1" class="item">
+
+                        <div data-v-03b808c2="">1</div>
+                    </div>
+                    <div data-v-03b808c2="" data="2" class="item">
+
+                        <div data-v-03b808c2="">2</div>
+                    </div>
+                    <div data-v-03b808c2="" data="3" class="item">
+
+                        <div data-v-03b808c2="">3</div>
+                    </div>
+                    <div data-v-03b808c2="" data="4" class="item">
+
+                        <div data-v-03b808c2="">4</div>
+                    </div>
+                    <div data-v-03b808c2="" data="5" class="item">
+
+                        <div data-v-03b808c2="">5</div>
+                    </div>
+                    <div data-v-03b808c2="" data="6" class="item">
+
+                        <div data-v-03b808c2="">6</div>
+                    </div>
+                </div>
+                <div data-v-03b808c2="" class="des">Choose 3 or more numbers. If the three numbers in the
+                    lottery
+                    result are different and match the numbers you've chosen, then you win the prize.</div>
+                <div data-v-03b808c2="" class="title">Choose 3 consecutive numbers: Odds <span
+                        data-v-03b808c2="">8.64</span></div>
+                <div data-v-03b808c2="" class="chon-3-so-lien-tiep num-box red c-row c-flex-warp c-row-between">
+                    <div data-v-03b808c2="" class="li">
+
+                        <div data-v-03b808c2="">Choose 3 consecutive numbers.</div>
+                    </div>
+                </div>
+                <div data-v-03b808c2="" class="des">*If the winning numbers are any three consecutive numbers,
+                    then
+                    you win the prize.</div>
+                <div data-v-03b808c2="" class="title">Choose 2 different numbers: Odd<span
+                        data-v-03b808c2="">6.91</span></div>
+                <div data-v-03b808c2="" class="num-box purple c-row c-flex-warp c-row-between">
+                    <div data-v-03b808c2="" data="1" class="item">
+
+                        <div data-v-03b808c2="">1</div>
+                    </div>
+                    <div data-v-03b808c2="" data="2" class="item">
+
+                        <div data-v-03b808c2="">2</div>
+                    </div>
+                    <div data-v-03b808c2="" data="3" class="item">
+
+                        <div data-v-03b808c2="">3</div>
+                    </div>
+                    <div data-v-03b808c2="" data="4" class="item">
+
+                        <div data-v-03b808c2="">4</div>
+                    </div>
+                    <div data-v-03b808c2="" data="5" class="item">
+
+                        <div data-v-03b808c2="">5</div>
+                    </div>
+                    <div data-v-03b808c2="" data="6" class="item">
+
+                        <div data-v-03b808c2="">6</div>
+                    </div>
+                </div>
+                <div data-v-03b808c2="" class="des">*Choose 2 or more numbers, if two numbers in the lottery
+                    result
+                    are different and match the numbers you've chosen, then you win the prize.</div>
             </div>
         </div>
+        <style>
+            .foo_bottom_tab {
+                gap: 10px;
+            }
+
+            .foo_bottom_tab_buttons {
+                flex: 1 !important;
+                border-radius: .13333rem;
+            }
+        </style>
     </div>
 </div>
+</div> -->

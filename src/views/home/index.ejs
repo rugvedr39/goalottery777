@@ -5,1433 +5,1895 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="robots" content="noindex,nofollow">
+	<link rel="icon" type="image/svg+xml" href="/damangame.png">
 	<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-	<title>lottery</title>
-	<link href="/css/home/new.css" rel="stylesheet" />
-	<link href="/css/home/chunk-vendors.css" rel="stylesheet" />
-	<link href="/css/home/app.css" rel="stylesheet" />
-
-	<link href="/css/home/chunk.css" rel="stylesheet" />
-	<link href="/css/home/chunk2.css" rel="stylesheet" />
-	<link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="/css/wallet/chunk-6e8d5c6e.0fc0ae11.css">
-	<style>
-		@media screen and (max-width: 500px) {
-			.mian {
-				width:100%;
-				min-height: 100vh
-			}
-		}
-		html,
-		body {
-			height: 100%;
-			width: 100%;
-
-			padding: 0;
-			margin: 0;
-		}
-
-
-
-
-
-		#popup-container {
-
-			display: none;
-			position: fixed;
-			top: 45%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 8.29333rem;
-			height: 12.4rem;
-			/* padding: 35px; */
-			border: 1px solid rgb(151, 151, 151);
-			border-radius: .2rem;
-			box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-			z-index: 1000;
-			text-align: center;
-			 background: linear-gradient(90deg,#f95959 0%,#ff9a8e 100%);
-			backface-visibility: hidden;
-			border-top-left-radius: 23px;
-		}
-
-
-		#popup-content {
-			height: 9.33333rem;
-			padding: .4rem .26667rem;
-			overflow-y: auto;
-			color: #fff;
-
-		}
-
-		#close-btn {
-
-			color: #fff;
-			width: 80%;
-			height: .93333rem;
-			text-align: center;
-			line-height: .93333rem;
-			background: #3C9CF6;
-			border-radius: 1.06667rem;
-			z-index: 100;
-			font-weight: 700;
-			font-size: .42667rem;
-			font-family: Inter;
-			font-style: normal;
-			letter-spacing: .06667rem;
-			border: none;
-		}
-
-
-
-		#popup-header {
-
-			text-align: center;
-			border-radius: 7px;
-
-			height: 1.17333rem;
-			line-height: 1.17333rem;
-			color: #fff;
-			font-weight: 700;
-			font-size: .48rem;
-			background-image: url(/images/PreSaleBg-6b500601.png);
-		}
-	</style>
-	<style>
-		#comingsoonpop {
-			display: none;
-			position: fixed;
-			top: 54%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 6.29333rem;
-			height: 6.4rem;
-			/* padding: 35px; */
-			/* border: 1px solid rgb(151, 151, 151); */
-			border-radius: 1.2rem;
-			box-shadow: 0 0 10px rgb(255 134 82 / 20%);
-			z-index: 1000;
-			text-align: center;
-			/*  background: linear-gradient(90deg,#f95959 0%,#ff9a8e 100%); */
-			background: linear-gradient(125.43deg, #ff8e89 12.38%, #ffc3a2 87.13%);
-			backface-visibility: hidden;
-			/* border-top-left-radius: 23px; */
-		}
-
-
-		#comingsoonpop-content {
-			height: 4.03333rem;
-			padding: .4rem .26667rem;
-			overflow-y: auto;
-			color: #fff;
-		}
-
-		#comingsoonpop-btn {
-			color: #fff;
-			width: 55%;
-			height: .93333rem;
-			text-align: center;
-			line-height: .93333rem;
-			background: #d75353;
-			border-radius: 1.06667rem;
-			z-index: 100;
-			font-weight: 700;
-			font-size: .42667rem;
-			font-family: Inter;
-			font-style: normal;
-			letter-spacing: .06667rem;
-			border: none;
-		}
-
-		.van-dialog {
-			top: 46% !important;
-			width: 8rem !important;
-			border-radius: .26667rem !important;
-		}
-
-
-		#comingsoonpop-header {
-
-			text-align: center;
-			border-radius: 7px;
-
-			height: 1.17333rem;
-			line-height: 1.17333rem;
-			color: #fff;
-			font-weight: 700;
-			font-size: .48rem;
-			background-image: url(/images/PreSaleBg-6b500601.png);
-		}
-
-		.dialog__container-img[data-v-cf21bf5a] {
-			width: 2.13333rem;
-			height: 2.13333rem;
-		}
-
-		.dialog__container-img img[data-v-cf21bf5a] {
-			width: 100%;
-			height: 100%;
-		}
-
-		.dialog__container-title[data-v-cf21bf5a] {
-			margin-top: .34667rem;
-			font-size: .48rem;
-			font-weight: 700;
-		}
-
-		.dialog__container-footer[data-v-cf21bf5a] {
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: flex;
-			-webkit-box-align: center;
-			-webkit-align-items: center;
-			align-items: center;
-			-webkit-box-pack: center;
-			-webkit-justify-content: center;
-			justify-content: center;
-			gap: .28rem;
-			width: 100%;
-			height: 1.06667rem;
-			margin-top: auto;
-			padding: 0 .26667rem;
-		}
-
-		.dialog__container-footer button[data-v-cf21bf5a]:last-of-type {
-			width: 4.34667rem;
-			color: #fff;
-			text-shadow: 0 0.05333rem 0.02667rem rgba(231, 65, 65, .5019607843);
-			background: -webkit-linear-gradient(top, #ff867a 0%, #f95959 100%);
-			background: linear-gradient(180deg, #ff867a 0%, #f95959 100%);
-			box-shadow: 0 0.05333rem #e74141;
-		}
-
-		.dialog__container-footer button[data-v-cf21bf5a] {
-			width: 3.12rem;
-			height: 1.06667rem;
-			color: #f95959;
-			font-size: .42667rem;
-			text-align: center;
-			border-radius: 9rem;
-			border: .01333rem solid #f95959;
-			background: transparent;
-		}
-	</style>
-
+	<title>91club</title>
+	<link rel="stylesheet" href="/assets/css/home/chunk-vendors.css">
+	<link rel="stylesheet" href="/assets/css/home/app.css">
+	<link rel="stylesheet" href="/assets/css/home/chunk.css">
+	<link rel="stylesheet" href="/assets/css/home/chunk2.css">
+	<link rel="stylesheet" href="/assets/css/home/custom.css">
+	<link rel="stylesheet" href="/assets/Tclottery/assets/css/page-home-5716c41f.css">
+	<link rel="stylesheet" href="/assets/css/home/index-08abe1f5.css">
+	<link rel="stylesheet" href="/assets/css/home/page-home-684a3a25.css">
+	<link rel="stylesheet" href="/assets/css/home/imp.css">
 </head>
 
-<body style="font-size: 12px;" class="">
+<style>
+#loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5000; /* Ensure it's above everything else */
+}
+</style>
+<body style="font-size: 12px;">
 
-	<div id="comingsoonpop">
+<body style="font-size: 12px;">
+    <div id="app" data-v-app="">
+        <div data-v-94f8731b="" class="content" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
+            <!-- Navbar -->
+            <div data-v-4c21fa9e="" data-v-94f8731b="" class="navbar">
+                <div data-v-4c21fa9e="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
+                    <div data-v-4c21fa9e="" class="navbar__content">
+                        <div data-v-4c21fa9e="" class="navbar__content-left"><img data-v-94f8731b=""
+                                onclick="window.location.href='//#/';" src="/redlogo.png" alt="" style="width: 136px;height: 30px;margin-top: 11px;
+                                margin-left: 0px;"></div>
+                        <div data-v-4c21fa9e="" class="navbar__content-center">
+                        <div id="loading-screen" style="display: none;">
+    <img src="/images/loader.jpg" alt="Loading Image" id="loading-image">
+  </div>
+                            <!---->
+                            <div data-v-4c21fa9e="" class="navbar__content-title"></div>
+                        </div>
 
-		<div data-v-cf21bf5a="" class="dialog__container" role="dialog" tabindex="0">
-			<div data-v-cf21bf5a="" class="dialog__container-img"><img data-v-cf21bf5a="" alt="" class=""
-					data-origin="assets/png/orderCancelWarn-ac58c333.png"
-					src="assets/png/orderCancelWarn-ac58c333.png"></div>
-			<div data-v-cf21bf5a="" class="dialog__container-title">
-				<h1 data-v-cf21bf5a="">Coming Soon !!</h1>
-			</div>
-			<div data-v-cf21bf5a="" class="dialog__container-content"></div>
-			<div data-v-cf21bf5a="" class="dialog__container-footer"><button data-v-cf21bf5a=""
-					onclick="closePopup()">ok</button></div><!---->
-		</div>
+                        <div data-v-4c21fa9e="" class="navbar__content-right">
+                            <div data-v-94f8731b="" class="content__right">
+                                <div data-v-94f8731b="" class="message">
+                                <svg data-v-94f8731b="" onclick="window.location.href='/promotion/promotionDes'" width="48" height="48" viewBox="0 0 48 48" fill="none" 
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.4"
+                                            d="M34 41H14C8 41 4 38 4 31V17C4 10 8 7 14 7H34C40 7 44 10 44 17V31C44 38 40 41 34 41Z"
+                                            fill="#F95959"></path>
+                                                <path d="M23.9981 25.744C22.3181 25.744 20.6181 25.224 19.3181 24.164L13.0581 19.164C12.767 18.9112 12.5848 18.5558 12.5493 18.1719C12.5139 17.788 12.628 17.4053 12.8679 17.1035C13.1078 16.8017 13.4549 16.6042 13.8369 16.5521C14.2189 16.5 14.6062 16.5974 14.9181 16.824L21.1781 21.824C22.6981 23.044 25.2781 23.044 26.7981 21.824L33.0581 16.824C33.6981 16.304 34.6581 16.404 35.1581 17.064C35.6781 17.704 35.5781 18.664 34.9181 19.164L28.6581 24.164C27.3781 25.224 25.6781 25.744 23.9981 25.744Z"
+                                            fill="#F95959"></path>
+                                        </svg>
+                                    <div data-v-d6fe61e8="" data-v-94f8731b="" class="point point-flicker point"></div>
+                                </div>
+                                <div data-v-94f8731b="" class="message">
+                                    <svg onclick="window.location.href='/9xclubs.apk'"  xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="#f07575" d="M16.59 9H15V4c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v5H7.41c-.89 0-1.34 1.08-.71 1.71l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.63-.63.19-1.71-.7-1.71M5 19c0 .55.45 1 1 1h12c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<!-- Banner -->
+			<div data-v-f1a9c278="" data-v-94f8731b=""
+				class="swiper swiper-initialized swiper-horizontal swiper-pointer-events my-swipe"
+				style="border-radius:0.26667rem;">
 
-	</div>
-	<div class="van-overlay" style="z-index: 2001; --411bdf34: 'Roboto', 'Inter', sans-serif;" onclick="closeDialog()">
-	</div>
-	<div role="dialog" tabindex="0" class="van-popup van-popup--center van-dialog firstSaveDialog"
-		style="z-index: 2001; --411bdf34: 'Roboto', 'Inter', sans-serif;">
-		<div class="van-dialog__header">
-			<div data-v-c6c57f74="" class="header">
-				<div data-v-c6c57f74="" class="title">Extra first deposit bonus</div>
-				<div data-v-c6c57f74="" class="tip">Each account can only receive rewards once</div>
-			</div>
-
-
-		</div>
-		<div class="van-dialog__content">
-			<div data-v-c6c57f74="" class="container">
-				<div data-v-89e57484="" class="first_list-item">
-					<div data-v-89e57484="" class="head">
-						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">240000</span>
-						</div>
-						<div data-v-89e57484="" class="orange">+ ₹8,888.00</div>
+				<div class="slideshow-container">
+					<div class="mySlides fade">
+						<img src="/Banner/b1.jpg" style="width:100%;height:100%">
 					</div>
-					<div data-v-89e57484="" class="description">Deposit 240000 for the first time in your account
-						and you can receive 8888</div>
-					<div data-v-89e57484="" class="foot">
-						<div data-v-c0491936="" data-v-89e57484="" class="progress"
-							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-							<div data-v-c0491936="" class="line"
-								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-							</div>
-							<div data-v-c0491936="" class="step">0/240000</div>
-						</div>
-						<div data-v-89e57484="" class="btn n2">Deposit</div>
+
+					<div class="mySlides fade">
+						<img src="/Banner/b2.jpg" style="width:100%;height:100%">
 					</div>
+
+					<div class="mySlides fade">
+						<img src="/Banner/b3.jpg" style="width:100%;height:100%">
+					</div>
+
+					<div class="mySlides fade">
+						<img src="/Banner/b4.jpg" style="width:100%;height:100%">
+					</div>
+
+					<div class="mySlides fade">
+						<img src="/Banner/b5.jpg" style="width:100%;height:100%">
+					</div>
+
 				</div>
-				<div data-v-89e57484="" class="first_list-item">
-					<div data-v-89e57484="" class="head">
-						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">120000</span>
-						</div>
-						<div data-v-89e57484="" class="orange">+ ₹5,888.00</div>
-					</div>
-					<div data-v-89e57484="" class="description">Deposit 120000 for the first time in your account
-						and you can receive 5888</div>
-					<div data-v-89e57484="" class="foot">
-						<div data-v-c0491936="" data-v-89e57484="" class="progress"
-							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-							<div data-v-c0491936="" class="line"
-								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-							</div>
-							<div data-v-c0491936="" class="step">0/120000</div>
-						</div>
-						<div data-v-89e57484="" class="btn n2">Deposit</div>
-					</div>
-				</div>
-				<div data-v-89e57484="" class="first_list-item">
-					<div data-v-89e57484="" class="head">
-						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">24000</span>
-						</div>
-						<div data-v-89e57484="" class="orange">+ ₹1,388.00</div>
-					</div>
-					<div data-v-89e57484="" class="description">Deposit 24000 for the first time in your account and
-						you can receive 1388</div>
-					<div data-v-89e57484="" class="foot">
-						<div data-v-c0491936="" data-v-89e57484="" class="progress"
-							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-							<div data-v-c0491936="" class="line"
-								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-							</div>
-							<div data-v-c0491936="" class="step">0/24000</div>
-						</div>
-						<div data-v-89e57484="" class="btn n2">Deposit</div>
-					</div>
-				</div>
-				<div data-v-89e57484="" class="first_list-item">
-					<div data-v-89e57484="" class="head">
-						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">10000</span>
-						</div>
-						<div data-v-89e57484="" class="orange">+ ₹488.00</div>
-					</div>
-					<div data-v-89e57484="" class="description">Deposit 10000 for the first time in your account and
-						you can receive 488</div>
-					<div data-v-89e57484="" class="foot">
-						<div data-v-c0491936="" data-v-89e57484="" class="progress"
-							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-							<div data-v-c0491936="" class="line"
-								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-							</div>
-							<div data-v-c0491936="" class="step">0/10000</div>
-						</div>
-						<div data-v-89e57484="" class="btn n2">Deposit</div>
-					</div>
-				</div>
-				<div data-v-89e57484="" class="first_list-item">
-					<div data-v-89e57484="" class="head">
-						<div data-v-89e57484="" class="title">first deposit<span data-v-89e57484="">2000</span>
-						</div>
-						<div data-v-89e57484="" class="orange">+ ₹188.00</div>
-					</div>
-					<div data-v-89e57484="" class="description">Deposit 2000 for the first time in your account and
-						you can receive 188</div>
-					<div data-v-89e57484="" class="foot">
-						<div data-v-c0491936="" data-v-89e57484="" class="progress"
-							style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-							<div data-v-c0491936="" class="line"
-								style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-							</div>
-							<div data-v-c0491936="" class="step">0/2000</div>
-						</div>
-						<div data-v-89e57484="" class="btn n2">Deposit</div>
-					</div>
+				<br>
+
+				<div style="text-align:center;display:none;">
+					<span class="dot"></span>
+					<span class="dot"></span>
+					<span class="dot"></span>
 				</div>
 			</div>
-			<div data-v-c6c57f74="" class="close"></div>
-		</div>
-		<div data-v-c6c57f74="" class="footer">
-
-			<div data-v-c6c57f74="" class="btn ">Activity</div>
-		</div><!---->
-	</div>
-
-
-
-	<div id="app" data-v-app="">
-
-		<div data-v-432e6ed0="" class="home mian game">
-
-			<div data-v-18e39f8d="" class="content" style="--411bdf34: 'Roboto', 'Inter', sans-serif;">
-				<div data-v-4c21fa9e="" data-v-18e39f8d="" class="navbar">
-					<div data-v-4c21fa9e="" class="navbar-fixed" style="background: rgb(247, 248, 255);">
-						<div data-v-4c21fa9e="" class="navbar__content">
-							<div data-v-4c21fa9e="" class="navbar__content-left"><img data-v-18e39f8d=""
-									src="/assets/png/h5setting_20230714005938hfia.png" alt=""></div>
-							<div data-v-4c21fa9e="" class="navbar__content-center"><!---->
-								<div data-v-4c21fa9e="" class="navbar__content-title"></div>
-							</div>
-							<div data-v-4c21fa9e="" class="navbar__content-right">
-								<div data-v-18e39f8d="" class="content__right">
-									<div data-v-18e39f8d="" class="message"><svg data-v-18e39f8d="" width="48"
-											height="48" viewBox="0 0 48 48" fill="none"
-											xmlns="http://www.w3.org/2000/svg">
-											<path opacity="0.4"
-												d="M34 41H14C8 41 4 38 4 31V17C4 10 8 7 14 7H34C40 7 44 10 44 17V31C44 38 40 41 34 41Z"
-												fill="#F95959"></path>
-											<path
-												d="M23.9981 25.744C22.3181 25.744 20.6181 25.224 19.3181 24.164L13.0581 19.164C12.767 18.9112 12.5848 18.5558 12.5493 18.1719C12.5139 17.788 12.628 17.4053 12.8679 17.1035C13.1078 16.8017 13.4549 16.6042 13.8369 16.5521C14.2189 16.5 14.6062 16.5974 14.9181 16.824L21.1781 21.824C22.6981 23.044 25.2781 23.044 26.7981 21.824L33.0581 16.824C33.6981 16.304 34.6581 16.404 35.1581 17.064C35.6781 17.704 35.5781 18.664 34.9181 19.164L28.6581 24.164C27.3781 25.224 25.6781 25.744 23.9981 25.744Z"
-												fill="#F95959"></path>
-										</svg>
-										<div data-v-d6fe61e8="" data-v-18e39f8d="" class="point point-flicker point"
-											style=""></div>
-									</div><svg data-v-18e39f8d="" class="svg-icon icon-down down down"
-										style="color: rgb(251, 87, 85);">
-										<use xlink:href="#icon-down"></use>
-									</svg>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				
-					
-						<div data-v-432e6ed0="" class="banner" >
-							<div data-v-432e6ed0="" class="van-swipe" style="border-radius: 20px;">
-								<div class="van-swipe__track list-banner"
-									style="width: 1448px; transition-duration: 0ms; transform: translateX(0px);">
-									<div data-v-432e6ed0="" class="van-swipe-item" style="width: 482px;">
-										<img data-v-432e6ed0=""
-											src="/assets/png/Banner_20240131163932lnmf.jpg"
-											class="img">
-									</div>
-									<div data-v-432e6ed0="" class="van-swipe-item" style="width: 482px;">
-										<img data-v-432e6ed0=""
-											src="/assets/png/Banner_20240204130106kabs.png"
-											class="img">
-									</div>
-									<div data-v-432e6ed0="" class="van-swipe-item" style="width: 482px;">
-										<img data-v-432e6ed0=""
-											src="/assets/png/Banner_20240327152703xq8d.jpg"
-											class="img">
-									</div>
-									<div data-v-432e6ed0="" class="van-swipe-item" style="width: 482px;">
-										<img data-v-432e6ed0=""
-											src="src/public/assets/png/Banner_202404022208094k2d.jpg"
-											class="img">
-									</div>
-								</div>
-								<div class="van-swipe__indicators">
-									<i class="van-swipe__indicator" style=""></i>
-									<i class="van-swipe__indicator" style=""></i>
-									<i class="van-swipe__indicator" style=""></i>
-									<i class="van-swipe__indicator"></i>
-								</div>
-							</div>
-						</div>
-					
-				
-				<div data-v-b4633b52="" data-v-18e39f8d="" class="noticeBar__container"><svg data-v-b4633b52=""
-						width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<g clip-path="url(#clip0_589_37747)">
+			<!-- Notice Bar -->
+			<div data-v-b4633b52="" data-v-94f8731b="" class="noticeBar__container"><svg data-v-b4633b52="" width="32"
+					height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g clip-path="url(#clip0_589_37747)">
+						<path
+							d="M15.9993 4V28C11.3327 28 7.86502 21.8927 7.86502 21.8927H3.99935C3.26297 21.8927 2.66602 21.2958 2.66602 20.5594V11.3405C2.66602 10.6041 3.26297 10.0072 3.99935 10.0072H7.86502C7.86502 10.0072 11.3327 4 15.9993 4Z"
+							fill="url(#paint0_linear_589_37747)"></path>
+						<path
+							d="M21.334 10C21.7495 10.371 22.1261 10.7865 22.4567 11.2392C23.4265 12.5669 24.0007 14.2149 24.0007 16C24.0007 17.7697 23.4363 19.4045 22.4819 20.7262C22.1452 21.1923 21.7601 21.6195 21.334 22"
+							stroke="url(#paint1_linear_589_37747)" stroke-width="1.8" stroke-linecap="round"
+							stroke-linejoin="round"></path>
+						<path
+							d="M22.8242 27.4571C26.7227 25.1302 29.3336 20.87 29.3336 16C29.3336 11.2057 26.8031 7.00234 23.005 4.65271"
+							stroke="url(#paint2_linear_589_37747)" stroke-width="1.8" stroke-linecap="round"></path>
+					</g>
+					<defs>
+						<linearGradient id="paint0_linear_589_37747" x1="9.33268" y1="4" x2="9.33268" y2="28"
+							gradientUnits="userSpaceOnUse">
+							<stop stop-color="#FF7C7C"></stop>
+							<stop offset="0.74876" stop-color="#F54545"></stop>
+						</linearGradient>
+						<linearGradient id="paint1_linear_589_37747" x1="22.6673" y1="10" x2="22.6673" y2="22"
+							gradientUnits="userSpaceOnUse">
+							<stop stop-color="#FF7C7C"></stop>
+							<stop offset="0.74876" stop-color="#F54545"></stop>
+						</linearGradient>
+						<linearGradient id="paint2_linear_589_37747" x1="26.0789" y1="4.65271" x2="26.0789" y2="27.4571"
+							gradientUnits="userSpaceOnUse">
+							<stop stop-color="#FF7C7C"></stop>
+							<stop offset="0.74876" stop-color="#F54545"></stop>
+						</linearGradient>
+						<clipPath id="clip0_589_37747">
+							<rect width="32" height="32" fill="white"></rect>
+						</clipPath>
+					</defs>
+				</svg>
+				<div data-v-b4633b52="" class="noticeBar__container-body">
+					<div data-v-b4633b52="" class="noticeBar__container-body-text" style="font-weight:500;">Welcome to
+						9x Clubs! Wish all of customers have good experience playing game.</div>
+				</div><button data-v-b4633b52=""><svg data-v-b4633b52="" width="24" height="24" viewBox="0 0 24 24"
+						fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g clip-path="url(#clip0_589_37755)">
+							<path d="M24 0H0V24H24V0Z" fill="white" fill-opacity="0.01"></path>
 							<path
-								d="M15.9993 4V28C11.3327 28 7.86502 21.8927 7.86502 21.8927H3.99935C3.26297 21.8927 2.66602 21.2958 2.66602 20.5594V11.3405C2.66602 10.6041 3.26297 10.0072 3.99935 10.0072H7.86502C7.86502 10.0072 11.3327 4 15.9993 4Z"
-								fill="url(#paint0_linear_589_37747)"></path>
-							<path
-								d="M21.334 10C21.7495 10.371 22.1261 10.7865 22.4567 11.2392C23.4265 12.5669 24.0007 14.2149 24.0007 16C24.0007 17.7697 23.4363 19.4045 22.4819 20.7262C22.1452 21.1923 21.7601 21.6195 21.334 22"
-								stroke="url(#paint1_linear_589_37747)" stroke-width="1.8" stroke-linecap="round"
-								stroke-linejoin="round"></path>
-							<path
-								d="M22.8242 27.4571C26.7227 25.1302 29.3336 20.87 29.3336 16C29.3336 11.2057 26.8031 7.00234 23.005 4.65271"
-								stroke="url(#paint2_linear_589_37747)" stroke-width="1.8" stroke-linecap="round"></path>
+								d="M12 22C16.1173 22 19.4999 18.7371 19.4999 14.5491C19.4999 13.5209 19.4476 12.4187 18.8778 10.7058C18.3079 8.9929 18.1931 8.7718 17.5905 7.71395C17.333 9.8727 15.9555 10.7724 15.6055 11.0413C15.6055 10.7615 14.7722 7.66795 13.5088 5.81695C12.2685 4 10.5817 2.80796 9.59265 2C9.59265 3.53489 9.16095 5.81695 8.5427 6.9797C7.92445 8.14245 7.80835 8.1848 7.0361 9.0501C6.2639 9.9154 5.90945 10.1826 5.2637 11.2325C4.61798 12.2825 4.5 13.6809 4.5 14.7091C4.5 18.8971 7.88265 22 12 22Z"
+								fill="white"></path>
 						</g>
 						<defs>
-							<linearGradient id="paint0_linear_589_37747" x1="9.33268" y1="4" x2="9.33268" y2="28"
-								gradientUnits="userSpaceOnUse">
-								<stop stop-color="#FF7C7C"></stop>
-								<stop offset="0.74876" stop-color="#F54545"></stop>
-							</linearGradient>
-							<linearGradient id="paint1_linear_589_37747" x1="22.6673" y1="10" x2="22.6673" y2="22"
-								gradientUnits="userSpaceOnUse">
-								<stop stop-color="#FF7C7C"></stop>
-								<stop offset="0.74876" stop-color="#F54545"></stop>
-							</linearGradient>
-							<linearGradient id="paint2_linear_589_37747" x1="26.0789" y1="4.65271" x2="26.0789"
-								y2="27.4571" gradientUnits="userSpaceOnUse">
-								<stop stop-color="#FF7C7C"></stop>
-								<stop offset="0.74876" stop-color="#F54545"></stop>
-							</linearGradient>
-							<clipPath id="clip0_589_37747">
-								<rect width="32" height="32" fill="white"></rect>
+							<clipPath id="clip0_589_37755">
+								<rect width="24" height="24" fill="white"></rect>
 							</clipPath>
 						</defs>
-					</svg>
-					<div data-v-b4633b52="" class="noticeBar__container-body">
-						<div data-v-b4633b52="" class="noticeBar__container-body-text">Welcome to OUR GAME! We have a
-							variety
-							of games, promos and bonus for you to enjoy, so why wait? Go register and enjoy the variety
-							reward awaits you.</div>
-					</div><button data-v-b4633b52=""><svg data-v-b4633b52="" width="24" height="24" viewBox="0 0 24 24"
-							fill="none" xmlns="http://www.w3.org/2000/svg">
-							<g clip-path="url(#clip0_589_37755)">
-								<path d="M24 0H0V24H24V0Z" fill="white" fill-opacity="0.01"></path>
-								<path
-									d="M12 22C16.1173 22 19.4999 18.7371 19.4999 14.5491C19.4999 13.5209 19.4476 12.4187 18.8778 10.7058C18.3079 8.9929 18.1931 8.7718 17.5905 7.71395C17.333 9.8727 15.9555 10.7724 15.6055 11.0413C15.6055 10.7615 14.7722 7.66795 13.5088 5.81695C12.2685 4 10.5817 2.80796 9.59265 2C9.59265 3.53489 9.16095 5.81695 8.5427 6.9797C7.92445 8.14245 7.80835 8.1848 7.0361 9.0501C6.2639 9.9154 5.90945 10.1826 5.2637 11.2325C4.61798 12.2825 4.5 13.6809 4.5 14.7091C4.5 18.8971 7.88265 22 12 22Z"
-									fill="white"></path>
-							</g>
-							<defs>
-								<clipPath id="clip0_589_37755">
-									<rect width="24" height="24" fill="white"></rect>
-								</clipPath>
-							</defs>
-						</svg> Detail</button>
-				</div>
-				<div data-v-05b1316f="" data-v-18e39f8d="" class="gameList">
-					<div data-v-05b1316f="" role="tablist" class="van-sidebar mySideBar">
-						<div data-v-05b1316f="" role="tab" class="van-sidebar-item van-sidebar-item--select"
-							tabindex="0" aria-selected="true" id="gameType-lottery">
+					</svg> Detail</button>
+			</div>
+			<!-- Game List -->
+			<div class="home-com">
+				<div data-v-3cd01dad="" data-v-210ad278="" class="gameList">
+					<div data-v-3cd01dad="" role="tablist" class="van-sidebar mySideBar">
+						<div data-v-3cd01dad="" role="tab" class="van-sidebar-item van-sidebar-item--select"
+							tabindex="0" id="gameType-lottery">
 							<div class="van-badge__wrapper van-sidebar-item__text">
-								<div data-v-05b1316f="" class="whiteColor">
-									<div data-v-05b1316f=""
-										style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141426883l.png&quot;);">
+								<div data-v-3cd01dad="" class="">
+									<div data-v-3cd01dad=""
+										style="background-image: url(/images/gamecategory/gamecategory_2023070602173828ii.png);">
 									</div> Lottery
-								</div><!---->
+								</div>
 							</div>
 						</div>
-						<button onclick="showPopup()" style="border: none;">
-							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
-								aria-selected="false" id="gameType-flash">
-								<div class="van-badge__wrapper van-sidebar-item__text">
-									<div data-v-05b1316f="" class="">
-										<div data-v-05b1316f=""
-											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141435wkxx.png&quot;);">
-										</div> Mini games
-									</div><!---->
+						<div data-v-3cd01dad="" role="tab" class="van-sidebar-item" tabindex="0" id="gameType-flash">
+							<div class="van-badge__wrapper van-sidebar-item__text">
+								<div data-v-3cd01dad="" class="">
+									<div data-v-3cd01dad=""
+										style="background-image: url(https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141435wkxx.png);">
+									</div> Mini Games
 								</div>
 							</div>
-						</button>
-						<button onclick="showPopup()" style="border: none;">
-							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
-								aria-selected="false" id="gameType-popular">
-								<div class="van-badge__wrapper van-sidebar-item__text">
-									<div data-v-05b1316f="" class="">
-										<div data-v-05b1316f=""
-											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141445b3ka.png&quot;);">
-										</div> Popular
-									</div><!---->
+						</div>
+						<div data-v-3cd01dad="" role="tab" class="van-sidebar-item" tabindex="0" id="gameType-slot">
+							<div class="van-badge__wrapper van-sidebar-item__text">
+								<div data-v-3cd01dad="" class="">
+									<div data-v-3cd01dad=""
+										style="background-image: url(https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_202403111415086ujt.png);">
+									</div> PVC
 								</div>
 							</div>
-						</button>
-						<button onclick="showPopup()" style="border: none;">
-							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
-								aria-selected="false" id="gameType-slot">
-								<div class="van-badge__wrapper van-sidebar-item__text">
-									<div data-v-05b1316f="" class="">
-										<div data-v-05b1316f=""
-											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141457h3ts.png&quot;);">
-										</div> Slots
-									</div><!---->
+						</div>
+						<div data-v-3cd01dad="" role="tab" class="van-sidebar-item" tabindex="0" id="gameType-popular">
+							<div class="van-badge__wrapper van-sidebar-item__text">
+								<div data-v-3cd01dad="" class="">
+									<div data-v-3cd01dad=""
+										style="background-image: url(/images/gamecategory/banca.png);"></div> Fishing
 								</div>
 							</div>
-						</button>
-						<button onclick="showPopup()" style="border: none;">
-							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
-								aria-selected="false" id="gameType-fish">
-								<div class="van-badge__wrapper van-sidebar-item__text">
-									<div data-v-05b1316f="" class="">
-										<div data-v-05b1316f=""
-											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141515owja.png&quot;);">
-										</div> Fishing
-									</div><!---->
+						</div>
+						<div data-v-3cd01dad="" role="tab" class="van-sidebar-item" tabindex="0" id="gameType-video">
+							<div class="van-badge__wrapper van-sidebar-item__text">
+								<div data-v-3cd01dad="" class="">
+									<div data-v-3cd01dad=""
+										style="background-image: url(/images/gamecategory/gamecategory_20230706021715g6yw.png);">
+									</div> Casino
 								</div>
 							</div>
-						</button>
-						<button onclick="showPopup()" style="border: none;">
-							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
-								aria-selected="false" id="gameType-chess">
-								<div class="van-badge__wrapper van-sidebar-item__text">
-									<div data-v-05b1316f="" class="">
-										<div data-v-05b1316f=""
-											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_202403111415086ujt.png&quot;);">
-										</div> PVC
-									</div><!---->
+						</div>
+						<!-- <div data-v-3cd01dad="" role="tab" class="van-sidebar-item" tabindex="0" id="gameType-chess">
+							<div class="van-badge__wrapper van-sidebar-item__text">
+								<div data-v-3cd01dad="" class="">
+									<div data-v-3cd01dad=""
+										style="background-image: url(https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141445b3ka.png);">
+									</div> Popular
 								</div>
 							</div>
-						</button>
-						<button onclick="showPopup()" style="border: none;">
-							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
-								aria-selected="false" id="gameType-video">
-								<div class="van-badge__wrapper van-sidebar-item__text">
-									<div data-v-05b1316f="" class="">
-										<div data-v-05b1316f=""
-											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141522uvco.png&quot;);">
-										</div> Casino
-									</div><!---->
+						</div> -->
+						<!-- <div data-v-3cd01dad="" role="tab" class="van-sidebar-item" tabindex="0" id="gameType-sport">
+							<div class="van-badge__wrapper van-sidebar-item__text">
+								<div data-v-3cd01dad="" class="">
+									<div data-v-3cd01dad=""
+										style="background-image: url(/images/gamecategory/gamecategory_20230706021704tvu5.png);">
+									</div> Sports
 								</div>
 							</div>
-						</button>
-						<button onclick="showPopup()" style="border: none;">
-							<div data-v-05b1316f="" role="tab" class="van-sidebar-item" tabindex="0"
-								aria-selected="false" id="gameType-sport">
-								<div class="van-badge__wrapper van-sidebar-item__text">
-									<div data-v-05b1316f="" class="">
-										<div data-v-05b1316f=""
-											style="background-image: url(&quot;https://ossimg.91admin123admin.com/91club/gamecategory/gamecategory_20240311141531fugo.png&quot;);">
-										</div> Sports
-									</div><!---->
+						</div> -->
+						<!-- <div data-v-3cd01dad="" role="tab" class="van-sidebar-item" tabindex="0" id="gameType-abgta">
+							<div class="van-badge__wrapper van-sidebar-item__text">
+								<div data-v-3cd01dad="" class="">
+									<div data-v-3cd01dad="" style="background-image: url(/images/aviator.png);">
+									</div> AB UPP
 								</div>
 							</div>
-						</button>
+						</div> -->
 					</div>
-					<div data-v-4cdf76da="" data-v-05b1316f="" class="gameListGrid__container" style="">
-						<!----><!----><!---->
-						<div data-v-95fbb1e8="" data-v-4cdf76da="" class="lottery_container" onclick="location.href='win'">
-							<div data-v-95fbb1e8="" class="lotterySlotItem"><img data-v-95fbb1e8="" class=""
-									data-origin="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_202307140102511fow.png"
+						<div data-v-80925079="" data-v-3cd01dad="" class="gameListGrid__container allGames__container-list">
+						<!-- Lottery -->
+						<div data-v-27d220ab="" data-v-80925079="" class="gameType-lottery active">
+							<div data-v-27d220ab="" class="lotterySlotItem" onclick="location.href='/wingo'"><img
+									data-v-27d220ab="" class=""
 									src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_202307140102511fow.png"><span
-									data-v-95fbb1e8="">Win Go</span>
-								<h4 data-v-95fbb1e8="">
-									<div data-v-95fbb1e8="">Guess Number</div>
-									<div >Green/Red/Purple to win</div>
+									data-v-27d220ab="">Win Go</span>
+								<h4 data-v-27d220ab="">
+									<div data-v-27d220ab="">Guess Number</div>
+									<div data-v-27d220ab="">Green/Red/Purple to Win</div>
 								</h4>
 							</div>
-							<div data-v-95fbb1e8="" class="lotterySlotItem"><img data-v-95fbb1e8="" class=""
-									data-origin="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010227swu2.png"
+							<div data-v-27d220ab="" class="lotterySlotItem" onclick="location.href='/k3'"><img
+									data-v-27d220ab="" class=""
 									src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010227swu2.png"><span
-									data-v-95fbb1e8="">K3</span>
-								<h4 data-v-95fbb1e8="">
-									<div data-v-95fbb1e8="">Guess Number</div>
-									<div data-v-95fbb1e8="">Big/Small/Odd/Even</div>
+									data-v-27d220ab="">K3</span>
+								<h4 data-v-27d220ab="">
+									<div data-v-27d220ab="">Guess Number</div>
+									<div data-v-27d220ab="">Big/Small/Odd/Even to Win</div>
 								</h4>
 							</div>
-							<div data-v-95fbb1e8="" class="lotterySlotItem"><img data-v-95fbb1e8="" class=""
-									data-origin="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_2023071401023322dy.png"
+							<div data-v-27d220ab="" class="lotterySlotItem" onclick="location.href='/5d'"><img
+									data-v-27d220ab="" class=""
 									src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_2023071401023322dy.png"><span
-									data-v-95fbb1e8="">5D</span>
-								<h4 data-v-95fbb1e8="">
-									<div data-v-95fbb1e8="">Guess Number</div>
-									<div data-v-95fbb1e8="">Big/Small/Odd/Even</div>
+									data-v-27d220ab="">5D</span>
+								<h4 data-v-27d220ab="">
+									<div data-v-27d220ab="">Guess Number</div>
+									<div data-v-27d220ab="">Big/Small/Odd/Even to Win</div>
 								</h4>
 							</div>
-							<div data-v-95fbb1e8="" class="lotterySlotItem"><img data-v-95fbb1e8="" class=""
-									data-origin="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010246lyuc.png"
-									src="https://ossimg.91admin123admin.com/91club/lotterycategory/lotterycategory_20230714010246lyuc.png"><span
-									data-v-95fbb1e8="">Trx Win(<strong>Coming soon</strong>)</span>
-								<h4 data-v-95fbb1e8="">
-									<div data-v-95fbb1e8="">Guess Number</div>
-									<div data-v-95fbb1e8="">Green/Red/Purple to win</div>
+							<div data-v-27d220ab="" class="lotterySlotItem" onclick="location.href='/trx_wingo?game_type=1'"><img
+									data-v-27d220ab="" class="" src="/assets/png/lotterycategory_20230714010246lyuc.png" style=" width: 100px"
+									;><span data-v-27d220ab="">TRX WINGO</span>
+								<h4 data-v-27d220ab="">
+									<div data-v-27d220ab="">Guess Number</div>
+									<div data-v-27d220ab="">Green/Red/Violet to win</div>
 								</h4>
 							</div>
-						</div><!----><button data-v-4cdf76da="" class="look_all"><img data-v-4cdf76da=""
+							<!-- <div data-v-27d220ab="" class="lotterySlotItem" onclick="openGameById(229)"><img
+									data-v-27d220ab="" class="" src="https://9987co.in/Tclottery/assets/png/mines.png"
+									style=" width: 100px" ;><span data-v-27d220ab="">Mines</span>
+								<h4 data-v-27d220ab="">
+									<div data-v-27d220ab="">Open Box Win</div>
+									<div data-v-27d220ab="">Tap/Open/Box to Win</div>
+								</h4>
+							</div>
+							<div data-v-27d220ab="" class="lotterySlotItem" onclick="openGameById(224)"><img
+									data-v-27d220ab="" class="" src="https://gujratgames.in/images/aviator.png"><span
+									data-v-27d220ab="">Aviator</span>
+								<h4 data-v-27d220ab="">
+									<div data-v-27d220ab="">Airplane Multiplier</div>
+									<div data-v-27d220ab="">Win the Championship</div>
+								</h4>
+							</div> -->
+						</div>
+						
+						
+						<!-- Fishing -->
+						<div data-v-ba8588c1="" data-v-80925079="" class="gameType-popular">
+							<div data-v-ba8588c1="" class="platform">
+								<div data-v-ba8588c1="" class="list" style="grid-template-columns:repeat(2,1fr)">
+									<div data-v-ba8588c1="" class="item launch-game" onclick="openGameById(1)"><img
+											data-v-ba8588c1=""
+											src="/jili_games/GAMEID_01.png"
+											alt=""></div>
+
+									<div data-v-ba8588c1="" class="item launch-game" onclick="openGameById(20)"><img
+											data-v-ba8588c1=""
+											src="/jili_games/GAMEID_20.png"
+											alt=""></div>
+
+									<div data-v-ba8588c1="" class="item launch-game" onclick="openGameById(32)"><img
+											data-v-ba8588c1=""
+											src="/jili_games/GAMEID_32.png"
+											alt=""></div>
+
+									<div data-v-ba8588c1="" class="item launch-game" onclick="openGameById(42)"><img
+											data-v-ba8588c1=""
+											src="/jili_games/GAMEID_42.png"
+											alt=""></div>
+
+									<div data-v-ba8588c1="" class="item launch-game" onclick="openGameById(60)"><img
+											data-v-ba8588c1=""
+											src="/jili_games/GAMEID_60.png"
+											alt=""></div>
+
+									<div data-v-ba8588c1="" class="item launch-game" onclick="openGameById(71)"><img
+											data-v-ba8588c1=""
+											src="/jili_games/GAMEID_71.png"
+											alt=""></div>
+
+									<div data-v-ba8588c1="" class="item launch-game" onclick="openGameById(74)"><img
+											data-v-ba8588c1=""
+											src="/jili_games/GAMEID_74.png"
+											alt=""></div>
+
+									<div data-v-ba8588c1="" class="item launch-game" onclick="openGameById(82)"><img
+											data-v-ba8588c1=""
+											src="/jili_games/GAMEID_82.png"
+											alt=""></div>
+
+									<div data-v-ba8588c1="" class="item launch-game" onclick="openGameById(119)"><img
+											data-v-ba8588c1=""
+											src="/jili_games/GAMEID_119.png"
+											alt=""></div>	
+
+									<div data-v-ba8588c1="" class="item launch-game" onclick="openGameById(212)"><img
+											data-v-ba8588c1=""
+											src="/jili_games/GAMEID_212.png"
+											alt=""></div>		
+								</div>
+							</div>
+						</div>
+						<div data-v-9864b2e9="" data-v-80925079="" class="gameType-slot"
+							style="grid-template-columns:repeat(2,1fr)">
+							<div data-v-9864b2e9=""
+								class="item launch-game" onclick="openGameById(79)">
+								<img data-v-9864b2e9="" class="gameImg"
+									src="/jili_games/GAMEID_79.png">
+							</div>
+							<div data-v-9864b2e9=""
+							class="item launch-game" onclick="openGameById(75)">
+							<img data-v-9864b2e9="" class="gameImg"
+								src="/jili_games/GAMEID_75.png">
+							</div>
+							<div data-v-9864b2e9=""
+							class="item launch-game" onclick="openGameById(132)">
+							<img data-v-9864b2e9="" class="gameImg"
+								src="/jili_games/GAMEID_132.png">
+							</div>
+							<div data-v-9864b2e9=""
+							class="item launch-game" onclick="openGameById(161)">
+							<img data-v-9864b2e9="" class="gameImg"
+								src="/jili_games/GAMEID_161.png">
+							</div>
+							<div data-v-9864b2e9=""
+							class="item launch-game" onclick="openGameById(159)">
+							<img data-v-9864b2e9="" class="gameImg"
+								src="/jili_games/GAMEID_159.png">
+							</div>
+							<div data-v-9864b2e9=""
+							class="item launch-game" onclick="openGameById(127)">
+							<img data-v-9864b2e9="" class="gameImg"
+								src="/jili_games/GAMEID_127.png">
+							</div>
+							<div data-v-9864b2e9=""
+							class="item launch-game" onclick="openGameById(175)">
+							<img data-v-9864b2e9="" class="gameImg"
+								src="/jili_games/GAMEID_175.png">
+							</div>
+							<div data-v-9864b2e9=""
+							class="item launch-game" onclick="openGameById(72)">
+							<img data-v-9864b2e9="" class="gameImg"
+								src="/jili_games/GAMEID_72.png">
+							</div>
+						</div>
+						<!-- Casino -->
+						<div data-v-80925079="" class="gameType-video">
+							<div data-v-2bb1d048="" data-v-80925079="" onclick="openGameById(147)"
+								class="lotterySlotItem__container session-item launch-game" data="BBB694" type="79"
+								style="height: 101px !important;">
+								<div data-v-2bb1d048="" class="title">
+									<div data-v-2bb1d048="" class="tit">Bingo</div>
+									<div data-v-2bb1d048="" class="desc">Empire</div>
+								</div><img data-v-2bb1d048="" class="game_img" src="https://gujratgames.in/evo.png"
+									style="height: 106px; margin-top: 16px;">
+							</div>
+							<div data-v-2bb1d048="" data-v-80925079="" onclick="openGameById(139)"
+								class="lotterySlotItem__container session-item launch-game" data="BBB694" type="79"
+								style="height: 101px !important;">
+								<div data-v-2bb1d048="" class="title">
+									<div data-v-2bb1d048="" class="tit">Fortune</div>
+									<div data-v-2bb1d048="" class="desc">Bingo</div>
+								</div><img data-v-2bb1d048="" class="game_img" src="https://gujratgames.in/ag.png"
+									style="height: 106px; margin-top: 16px;">
+							</div>
+							<div data-v-2bb1d048="" data-v-80925079="" onclick="openGameById(111)"
+								class="lotterySlotItem__container session-item launch-game" data="BBB694" type="79"
+								style="height: 101px !important;">
+								<div data-v-2bb1d048="" class="title">
+									<div data-v-2bb1d048="" class="tit">Number</div>
+									<div data-v-2bb1d048="" class="desc">Casino</div>
+								</div><img data-v-2bb1d048="" class="game_img" src="https://gujratgames.in/grand.png"
+									style="height: 106px; margin-top: 16px;">
+							</div>
+						</div>
+						<!-- Sports -->
+						<!-- <div data-v-80925079="" class="gameType-sport">
+							<div data-v-2bb1d048="" data-v-80925079="" onclick="location.href='/jili/jili/allgame'"
+								class="lotterySlotItem__container session-item launch-game" data="BBB432" type="79"
+								style="height: 101px !important;">
+								<div data-v-2bb1d048="" class="title">
+									<div data-v-2bb1d048="" class="tit">Sports</div>
+									<div data-v-2bb1d048="" class="desc">9 Sports</div>
+								</div><img data-v-2bb1d048="" class="game_img" src="https://gujratgames.in/sport.png"
+									style="height: 104px; margin-top: -12px;">
+							</div>
+						</div> -->
+						<!-- Popular -->
+						<!-- <div data-v-80925079="" class="gameType-chess">
+							<div data-v-2bb1d048="" data-v-80925079="" onclick="openGameById(224)"
+								class="lotterySlotItem__container">
+								<div data-v-2bb1d048="" class="title">
+									<div data-v-2bb1d048="" class="tit">Aviator</div>
+								</div>
+								<img data-v-2bb1d048="" class="game_img"
+									src="/jili_games/GAMEID_224.png">
+							</div>
+							<div data-v-2bb1d048="" data-v-80925079="" onclick="openGameById(235)"
+								class="lotterySlotItem__container">
+								<div data-v-2bb1d048="" class="title">
+									<div data-v-2bb1d048="" class="tit">Limbo</div>
+								</div>
+								<img data-v-2bb1d048="" class="game_img" src=https://gujratgames.in"/limbo.png" style="height: 108px;">
+							</div>
+							<div data-v-2bb1d048="" data-v-80925079="" onclick="openGameById(229)"
+								class="lotterySlotItem__container">
+								<div data-v-2bb1d048="" class="title">
+									<div data-v-2bb1d048="" class="tit"> Mines</div>
+								</div>
+								<img data-v-2bb1d048="" class="game_img"
+									src="https://9987co.in/Tclottery/assets/png/mines.png">
+							</div>
+							<div data-v-2bb1d048="" data-v-80925079="" onclick="openGameById(123)"
+								class="lotterySlotItem__container">
+								<div data-v-2bb1d048="" class="title">
+									<div data-v-2bb1d048="" class="tit">Tiger & Diger</div>
+								</div>
+								<img data-v-2bb1d048="" class="game_img" src="https://ossimg.91admin123admin.com/91club/gamelogo/TB_Chess/114.png">
+							</div>
+							<div data-v-2bb1d048="" data-v-80925079="" onclick="openGameById(112)"
+								class="lotterySlotItem__container">
+								<div data-v-2bb1d048="" class="title">
+									<div data-v-2bb1d048="" class="tit">Dice</div>
+								</div>
+								<img data-v-2bb1d048="" class="game_img" src="https://gujratgames.in/dice.png" style="height: 108px;">
+							</div>
+							<div data-v-2bb1d048="" data-v-80925079="" onclick="openGameById(118)"
+								class="lotterySlotItem__container">
+								<div data-v-2bb1d048="" class="title">
+									<div data-v-2bb1d048="" class="tit">Hotline</div>
+								</div>
+								<img data-v-2bb1d048="" class="game_img" src="https://gujratgames.in/hotline.png" style="height: 108px;">
+							</div>
+						</div> -->
+						<!-- Mini games -->
+						<div data-v-92730648="" data-v-80925079="" class="gameType-flash">
+							<div style="display:flex;justify-content:space-evenly;">
+								<div data-v-92730648="" class="onlineGamesItem"><img data-v-92730648=""
+										onclick="openGameById(224)" class="min_game_img"
+										src="/jili_games/GAMEID_224.png">
+								</div>
+								<div data-v-92730648="" class="onlineGamesItem"><img data-v-92730648=""
+										onclick="openGameById(235)" class="min_game_img"
+										src="/jili_games/GAMEID_235.png">
+								</div>
+							</div>
+							<div style="display:flex;justify-content:space-evenly;">
+								<div data-v-92730648="" class="onlineGamesItem"><img data-v-92730648=""
+										onclick="openGameById(114)" class="min_game_img"
+										src="/jili_games/GAMEID_114.png">
+								</div>
+								<div data-v-92730648="" class="onlineGamesItem"><img data-v-92730648=""
+										onclick="openGameById(122)" class="min_game_img"
+										src="/jili_games/GAMEID_122.png">
+								</div>
+							</div>
+							<div style="display:flex;justify-content:space-evenly;">
+								<div data-v-92730648="" class="onlineGamesItem"><img data-v-92730648=""
+										onclick="openGameById(128)" class="min_game_img"
+										src="/jili_games/GAMEID_128.png">
+								</div>
+								<div data-v-92730648="" class="onlineGamesItem"><img data-v-92730648=""
+										onclick="openGameById(118)" class="min_game_img"
+										src="/jili_games/GAMEID_118.png">
+								</div>
+							</div>
+							<div style="display:flex;justify-content:space-evenly;">
+								<div data-v-92730648="" class="onlineGamesItem"><img data-v-92730648=""
+										onclick="openGameById(123)" class="min_game_img"
+										src="/jili_games/GAMEID_123.png">
+								</div>
+								<div data-v-92730648="" class="onlineGamesItem"><img data-v-92730648=""
+										onclick="openGameById(124)" class="min_game_img" src="/jili_games/GAMEID_124.png">
+								</div>
+							</div>
+						</div>
+						<!-- View All -->
+						<button data-v-80925079="" class="look_all" onclick="location.href='/jili/slots'">
+							<img data-v-80925079=""
 								src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAIVBMVEUAAAD5Wlr3WFj6WVn6WFj5V1f6WVn5WVn5WVn4V1f5WVnpXZn/AAAACnRSTlMA72C/v1DP329wWe0twgAAAKNJREFUOMtjoA/gMFwFAkkgdrMUiLlMASyhtQoCGhgYmKDMFWCJLCivgIGBDcpcDpZYBQULGBi4YOwRLlEF5SQwMLBDmcvAErOgPGBYc0KZi8ASTI4g9kIjEFsFHB/CCgyDF7AaIpwbjHAuIvkEIJLPUrCEF5RnwMDAAmUuBktIQXkCDAyMUObCgY9BGkvg9Dn+sIpCJB9WbMnHFCn5BDDQBQAAbjlnhYlIhpEAAAAASUVORK5CYII="
-								alt=""> View All</button>
+								alt="">
+							View All
+						</button>
 					</div>
-				</div>
-				<div data-v-d256944b="" data-v-18e39f8d="" class="luckyWinners__container">
-					<h1 data-v-d256944b="">Winning information</h1>
-					<div data-v-d256944b="" class="luckyWinners__container-wrapper">
-						<div data-v-d256944b="" style="position: relative;">
-							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
-										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
-										class="ar-lazyload" data-origin="/assets/png/19-2ac9fd83.png">
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
-									<h1 data-v-d256944b="">Mem***HMX</h1>
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
-										data-v-d256944b="" class="ar-lazyload"
-										data-origin="/assets/png/AG_Electronic-e10bfdc0.png"></div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
-									<h1 data-v-d256944b="">Receive ₹3,800.00</h1><span data-v-d256944b="">Winning
-										amount</span>
-								</div>
-							</div>
-							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
-										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
-										class="ar-lazyload" data-origin="/assets/png/19-2ac9fd83.png">
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
-									<h1 data-v-d256944b="">Mem***UKX</h1>
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
-										data-v-d256944b="" class="ar-lazyload"
-										data-origin="/assets/png/JDB-1ae3283b.png"></div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
-									<h1 data-v-d256944b="">Receive ₹17.50</h1><span data-v-d256944b="">Winning
-										amount</span>
-								</div>
-							</div>
-							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
-										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
-										class="ar-lazyload" data-origin="/assets/png/18-52955242.png">
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
-									<h1 data-v-d256944b="">Mem***FZG</h1>
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
-										data-v-d256944b="" class="ar-lazyload"
-										data-origin="/assets/png/AG_Electronic-e10bfdc0.png"></div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
-									<h1 data-v-d256944b="">Receive ₹40.00</h1><span data-v-d256944b="">Winning
-										amount</span>
-								</div>
-							</div>
-							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
-										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
-										class="ar-lazyload" data-origin="/assets/png/1-a6662edb.png">
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
-									<h1 data-v-d256944b="">Mem***CMK</h1>
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
-										data-v-d256944b="" class="ar-lazyload"
-										data-origin="/assets/png/AG_Electronic-e10bfdc0.png"></div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
-									<h1 data-v-d256944b="">Receive ₹16.00</h1><span data-v-d256944b="">Winning
-										amount</span>
-								</div>
-							</div>
-							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
-										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
-										class="ar-lazyload" data-origin="/assets/png/2-58c8a9bc.png">
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
-									<h1 data-v-d256944b="">Mem***GTL</h1>
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
-										data-v-d256944b="" class="ar-lazyload"
-										data-origin="/assets/png/TrxHash-1ff152ae.png"></div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
-									<h1 data-v-d256944b="">Receive ₹117.60</h1><span data-v-d256944b="">Winning
-										amount</span>
-								</div>
-							</div>
-							<div data-v-d256944b="" class="luckyWinners__container-wrapper__item">
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-img"><img
-										data-v-d256944b="" data-img="/assets/png/avatar-ea3b8ee9.png"
-										class="ar-lazyload" data-origin="/assets/png/9-6d772f2c.png">
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-info">
-									<h1 data-v-d256944b="">Mem***RSK</h1>
-								</div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winType"><img
-										data-v-d256944b="" class="ar-lazyload"
-										data-origin="/assets/png/TrxHash-1ff152ae.png"></div>
-								<div data-v-d256944b="" class="luckyWinners__container-wrapper__item-winAmount">
-									<h1 data-v-d256944b="">Receive ₹392.00</h1><span data-v-d256944b="">Winning
-										amount</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div data-v-12b85567="" data-v-18e39f8d="" class="dailyProfitRank">
-					<h1 data-v-12b85567="">Today's earnings chart</h1>
-					<div data-v-12b85567="" class="dailyProfitRank__content">
-						<div data-v-12b85567="" class="dailyProfitRank__content-topThree">
-							<div data-v-12b85567="" class="dailyProfitRank__content-topThree__item"
-								style="order: 2; top: -45px;">
-								<div data-v-12b85567=""
-									style="background: url(&quot;/assets/png/border1-3b6518ec.png&quot;) center center / 100% 100% no-repeat;">
-									<img data-v-12b85567="" data-img="/assets/png/avatar-ea3b8ee9.png" class=""
-										data-origin="/assets/png/3-abfcc056.png" src="/assets/png/3-abfcc056.png">
-								</div>
-								<div data-v-12b85567=""><img data-v-12b85567="" class=""
-										data-origin="/assets/png/crown1-3912fd85.png"
-										src="/assets/png/crown1-3912fd85.png"><img data-v-12b85567="" class=""
-										data-origin="/assets/png/place1-fe39c3f3.png"
-										src="/assets/png/place1-fe39c3f3.png"></div><span
-									data-v-12b85567="">Mem***EVT</span><span data-v-12b85567="">₹412,156,618.44</span>
-							</div>
-							<div data-v-12b85567="" class="dailyProfitRank__content-topThree__item"
-								style="order: 1; top: -30px;">
-								<div data-v-12b85567=""
-									style="background: url(&quot;/assets/png/border2-7a806be7.png&quot;) center center / 100% 100% no-repeat;">
-									<img data-v-12b85567="" data-img="/assets/png/avatar-ea3b8ee9.png" class=""
-										data-origin="/assets/png/10-29a6603e.png" src="/assets/png/10-29a6603e.png">
-								</div>
-								<div data-v-12b85567=""><img data-v-12b85567="" class=""
-										data-origin="/assets/png/crown2-c8aced52.png"
-										src="/assets/png/crown2-c8aced52.png"><img data-v-12b85567="" class=""
-										data-origin="/assets/png/place2-8189be28.png"
-										src="/assets/png/place2-8189be28.png"></div><span
-									data-v-12b85567="">Mem***HWP</span><span data-v-12b85567="">₹147,762,048.00</span>
-							</div>
-							<div data-v-12b85567="" class="dailyProfitRank__content-topThree__item"
-								style="order: 3; top: -30px;">
-								<div data-v-12b85567=""
-									style="background: url(&quot;/assets/png/border3-cfec4a7d.png&quot;) center center / 100% 100% no-repeat;">
-									<img data-v-12b85567="" data-img="/assets/png/avatar-ea3b8ee9.png" class=""
-										data-origin="/assets/png/10-29a6603e.png" src="/assets/png/10-29a6603e.png">
-								</div>
-								<div data-v-12b85567=""><img data-v-12b85567="" class=""
-										data-origin="/assets/png/crown3-2ca02146.png"
-										src="/assets/png/crown3-2ca02146.png"><img data-v-12b85567="" class=""
-										data-origin="/assets/png/place3-d9b0be38.png"
-										src="/assets/png/place3-d9b0be38.png"></div><span
-									data-v-12b85567="">Mem***JIM</span><span data-v-12b85567="">₹93,926,655.48</span>
-							</div>
-						</div>
-						<div data-v-12b85567="" class="dailyProfitRank__content-list">
-							<div data-v-12b85567="" class="dailyProfitRank__content-list__item"><span data-v-12b85567=""
-									class="left-rank">4</span><img data-v-12b85567=""
-									data-img="/assets/png/avatar-ea3b8ee9.png" class=""
-									data-origin="/assets/png/10-29a6603e.png" src="/assets/png/10-29a6603e.png"><span
-									data-v-12b85567="" class="middle-name">Mem***OEG</span><span data-v-12b85567=""
-									class="right-box">₹70,896,277.20</span></div>
-							<div data-v-12b85567="" class="dailyProfitRank__content-list__item"><span data-v-12b85567=""
-									class="left-rank">5</span><img data-v-12b85567=""
-									data-img="/assets/png/avatar-ea3b8ee9.png" class=""
-									data-origin="/assets/png/15-80f41fc6.png" src="/assets/png/15-80f41fc6.png"><span
-									data-v-12b85567="" class="middle-name">Mem***GJG</span><span data-v-12b85567=""
-									class="right-box">₹19,598,040.00</span></div>
-						</div>
-					</div>
-				</div>
-				<div data-v-8a2fbe28="" data-v-18e39f8d="" class="changlongEnter"></div><!----><!----><!----><!---->
-				<div data-v-0e007999="" data-v-18e39f8d="" class="dialog inactive">
-					<div data-v-0e007999="" class="dialog__container" role="dialog" tabindex="0">
-						<div data-v-0e007999="" class="dialog__container-img"><img data-v-0e007999="" alt="" class=""
-								data-origin="/assets/png/superjackpotHome-72bbeb43.png"
-								src="/assets/png/superjackpotHome-72bbeb43.png"></div>
-						<div data-v-0e007999="" class="dialog__container-title">
-							<h1 data-v-0e007999="">Congratulation</h1>
-						</div>
-						<div data-v-0e007999="" class="dialog__container-content">
-							<div data-v-18e39f8d="" class="Laundry-Con">
-								<div data-v-18e39f8d="" class="Laundry-Con_tip">Get 【Super Jackpot】!</div>
-								<div data-v-18e39f8d="" class="Landty-Con-tips">Visit the [Super Jackpot] page to claim
-									your
-									reward</div>
-							</div>
-						</div>
-						<div data-v-0e007999="" class="dialog__container-footer"><!----><button
-								data-v-0e007999="">OK</button></div>
-					</div>
-					<div data-v-0e007999="" class="dialog__outside"></div>
 				</div>
 			</div>
-			<div class="customer" onclick="location.href='/kefumenu'" id="customerId"
-				style="--411bdf34: 'Roboto', 'Inter', sans-serif; --17a7a9f6: bahnschrift;"><img class=""
-					data-origin="/assets/png/icon_sevice-9f0c8455.png" src="/assets/png/icon_sevice-9f0c8455.png"></div>
-			<%- include('../nav') -%>
-				<div class="van-overlay"
-					style="z-index: 2007; --411bdf34: 'Roboto', 'Inter', sans-serif; display: none;">
-					<!---->
+			<!-- Win Information -->
+			<!-- <div data-v-8672ccbd="" data-v-f5b7f7ac="" class="luckyWinners__container">
+				<h1 data-v-8672ccbd="">Winning information</h1>
+				<div data-v-8672ccbd="" class="luckyWinners__container-wrapper">
+					<div data-v-8672ccbd="" id="main_container" style="position: relative;">
+						<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-img"><img
+									data-v-8672ccbd="" class="ar-lazyload" src="/assets/css/Tclottery/assets/png/14-a397ff6b.png">
+							</div>
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-info">
+								<h1 data-v-8672ccbd="">Mem***UUQ</h1>
+							</div><img data-v-8672ccbd="" class="gameTypeImg ar-lazyload"
+								src="/assets/css/Tclottery/ossimg.mravi/TC/vendorlogo/vendorlogo_20231215053732l6fa.png">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-winAmount">
+								<h1 data-v-8672ccbd="">Receive ₹600.00</h1><span data-v-8672ccbd="">Winning
+									amount</span>
+							</div>
+						</div>
+						<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-img"><img
+									data-v-8672ccbd="" class="ar-lazyload" src="/assets/css/Tclottery/assets/png/13-5676d43f.png">
+							</div>
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-info">
+								<h1 data-v-8672ccbd="">Mem***CQF</h1>
+							</div><img data-v-8672ccbd="" class="gameTypeImg ar-lazyload"
+								src="/assets/css/Tclottery/ossimg.mravi/TC/vendorlogo/vendorlogo_20231215053732l6fa.png">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-winAmount">
+								<h1 data-v-8672ccbd="">Receive ₹600.00</h1><span data-v-8672ccbd="">Winning
+									amount</span>
+							</div>
+						</div>
+						<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-img"><img
+									data-v-8672ccbd="" class="ar-lazyload" src="/assets/css/Tclottery/assets/png/13-5676d43f.png">
+							</div>
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-info">
+								<h1 data-v-8672ccbd="">Mem***CDM</h1>
+							</div><img data-v-8672ccbd="" class="gameTypeImg ar-lazyload"
+								src="/assets/css/Tclottery/ossimg.mravi/TC/vendorlogo/vendorlogo_20231215034022ak6f.png">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-winAmount">
+								<h1 data-v-8672ccbd="">Receive ₹95.00</h1><span data-v-8672ccbd="">Winning
+									amount</span>
+							</div>
+						</div>
+						<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-img"><img
+									data-v-8672ccbd="" class="ar-lazyload" src="/assets/css/Tclottery/assets/png/3-abfcc056.png">
+							</div>
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-info">
+								<h1 data-v-8672ccbd="">Mem***MKE</h1>
+							</div><img data-v-8672ccbd="" class="gameTypeImg ar-lazyload"
+								src="/assets/css/Tclottery/ossimg.mravi/TC/vendorlogo/vendorlogo_202312150339081ra6.png">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-winAmount">
+								<h1 data-v-8672ccbd="">Receive ₹80.00</h1><span data-v-8672ccbd="">Winning
+									amount</span>
+							</div>
+						</div>
+						<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-img"><img
+									data-v-8672ccbd="" class="ar-lazyload" src="/assets/css/Tclottery/assets/png/11-925c456e.png">
+							</div>
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-info">
+								<h1 data-v-8672ccbd="">Mem***JWV</h1>
+							</div><img data-v-8672ccbd="" class="gameTypeImg ar-lazyload"
+								src="/assets/css/Tclottery/ossimg.mravi/TC/vendorlogo/vendorlogo_20231215053732l6fa.png">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-winAmount">
+								<h1 data-v-8672ccbd="">Receive ₹540.00</h1><span data-v-8672ccbd="">Winning
+									amount</span>
+							</div>
+						</div>
+						<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-img"><img
+									data-v-8672ccbd="" class="ar-lazyload" src="/assets/css/Tclottery/assets/png/7-00479cfa.png">
+							</div>
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-info">
+								<h1 data-v-8672ccbd="">Mem***QGS</h1>
+							</div><img data-v-8672ccbd="" class="gameTypeImg ar-lazyload"
+								src="/assets/css/Tclottery/ossimg.mravi/TC/vendorlogo/vendorlogo_20231215033931hy14.png">
+							<div data-v-8672ccbd="" class="luckyWinners__container-wrapper__item-winAmount">
+								<h1 data-v-8672ccbd="">Receive ₹170.00</h1><span data-v-8672ccbd="">Winning
+									amount</span>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div role="dialog" tabindex="0" class="van-popup van-popup--center van-dialog firstSaveDialog"
-					style="z-index: 2007; --411bdf34: 'Roboto', 'Inter', sans-serif; display: none;">
-					<div class="van-dialog__header">
-						<div data-v-c6c57f74="" class="header">
-							<div data-v-c6c57f74="" class="title">Extra first deposit bonus</div>
-							<div data-v-c6c57f74="" class="tip">Each account can only receive rewards once</div>
+			</div> -->
+			<!-- Earnning Chart -->
+			<div data-v-643c1a0c="" data-v-94f8731b="" class="dailyProfitRank">
+				<h1 data-v-643c1a0c="">Today's earnings chart</h1>
+				<div data-v-643c1a0c="" class="dailyProfitRank__content">
+					<div data-v-643c1a0c="" class="dailyProfitRank__content-topThree">
+						<div data-v-643c1a0c="" class="dailyProfitRank__content-topThree__item"
+							style="order: 2; top: -45px;">
+							<div data-v-643c1a0c=""
+								style="background: url(&quot;https://91dreamclub.com/assets/png/border1-3b6518ec.png&quot;) center center / 100% 100% no-repeat;">
+								<img data-v-643c1a0c="" data-img="https://91dreamclub.com/assets/png/avatar-ea3b8ee9.png"
+									class="" src="https://91dreamclub.com/assets/png/10-29a6603e.png"
+									src="https://91dreamclub.com/assets/png/10-29a6603e.png">
+							</div>
+							<div data-v-643c1a0c=""><img data-v-643c1a0c="" class=""
+									src="https://91dreamclub.com/assets/png/crown1-3912fd85.png"
+									src="https://91dreamclub.com/assets/png/crown1-3912fd85.png"><img data-v-643c1a0c=""
+									class="" src="https://91dreamclub.com/assets/png/place1-fe39c3f3.png"
+									src="https://91dreamclub.com/assets/png/place1-fe39c3f3.png"></div><span
+								data-v-643c1a0c="">Mem***387</span><span data-v-643c1a0c="">₹2,853,503.00</span>
+						</div>
+						<div data-v-643c1a0c="" class="dailyProfitRank__content-topThree__item"
+							style="order: 1; top: -30px;">
+							<div data-v-643c1a0c=""
+								style="background: url(&quot;https://91dreamclub.com/assets/png/border2-7a806be7.png&quot;) center center / 100% 100% no-repeat;">
+								<img data-v-643c1a0c="" data-img="https://91dreamclub.com/assets/png/5-ab77b716.png"
+									class="" src="https://91dreamclub.com/assets/png/5-ab77b716.png">
+							</div>
+							<div data-v-643c1a0c=""><img data-v-643c1a0c="" class=""
+									src="https://91dreamclub.com/assets/png/crown2-c8aced52.png"
+									src="https://91dreamclub.com/assets/png/crown2-c8aced52.png"><img data-v-643c1a0c=""
+									class="" src="https://91dreamclub.com/assets/png/place2-8189be28.png"
+									src="https://91dreamclub.com/assets/png/place2-8189be28.png"></div><span
+								data-v-643c1a0c="">Mem***566</span><span data-v-643c1a0c="">₹588,900.00</span>
+						</div>
+						<div data-v-643c1a0c="" class="dailyProfitRank__content-topThree__item"
+							style="order: 3; top: -30px;">
+							<div data-v-643c1a0c=""
+								style="background: url(&quot;https://91dreamclub.com/assets/png/border3-cfec4a7d.png&quot;) center center / 100% 100% no-repeat;">
+								<img data-v-643c1a0c="" data-img="https://91dreamclub.com/assets/png/avatar-ea3b8ee9.png"
+									class="" src="https://91dreamclub.com/assets/png/8-ea087ede.png">
+							</div>
+							<div data-v-643c1a0c=""><img data-v-643c1a0c="" class=""
+									src="https://91dreamclub.com/assets/png/crown3-2ca02146.png"
+									src="https://91dreamclub.com/assets/png/crown3-2ca02146.png"><img data-v-643c1a0c=""
+									class="" src="https://91dreamclub.com/assets/png/place3-d9b0be38.png"
+									src="https://91dreamclub.com/assets/png/8-ea087ede.png"></div><span
+								data-v-643c1a0c="">Mem***453</span><span data-v-643c1a0c="">₹240,438.00</span>
 						</div>
 					</div>
-					<div class="van-dialog__content">
-						<div data-v-c6c57f74="" class="container">
-							<div data-v-89e57484="" class="first_list-item">
-								<div data-v-89e57484="" class="head">
-									<div data-v-89e57484="" class="title">first deposit<span
-											data-v-89e57484="">240000</span>
-									</div>
-									<div data-v-89e57484="" class="orange">+ ₹8,888.00</div>
-								</div>
-								<div data-v-89e57484="" class="description">Deposit 240000 for the first time in your
-									account
-									and you can receive 8888</div>
-								<div data-v-89e57484="" class="foot">
-									<div data-v-c0491936="" data-v-89e57484="" class="progress"
-										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-										<div data-v-c0491936="" class="line"
-											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-										</div>
-										<div data-v-c0491936="" class="step">0/240000</div>
-									</div>
-									<div data-v-89e57484="" class="btn n2">Deposit</div>
-								</div>
-							</div>
-							<div data-v-89e57484="" class="first_list-item">
-								<div data-v-89e57484="" class="head">
-									<div data-v-89e57484="" class="title">first deposit<span
-											data-v-89e57484="">120000</span>
-									</div>
-									<div data-v-89e57484="" class="orange">+ ₹5,888.00</div>
-								</div>
-								<div data-v-89e57484="" class="description">Deposit 120000 for the first time in your
-									account
-									and you can receive 5888</div>
-								<div data-v-89e57484="" class="foot">
-									<div data-v-c0491936="" data-v-89e57484="" class="progress"
-										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-										<div data-v-c0491936="" class="line"
-											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-										</div>
-										<div data-v-c0491936="" class="step">0/120000</div>
-									</div>
-									<div data-v-89e57484="" class="btn n2">Deposit</div>
-								</div>
-							</div>
-							<div data-v-89e57484="" class="first_list-item">
-								<div data-v-89e57484="" class="head">
-									<div data-v-89e57484="" class="title">first deposit<span
-											data-v-89e57484="">24000</span>
-									</div>
-									<div data-v-89e57484="" class="orange">+ ₹1,388.00</div>
-								</div>
-								<div data-v-89e57484="" class="description">Deposit 24000 for the first time in your
-									account and
-									you can receive 1388</div>
-								<div data-v-89e57484="" class="foot">
-									<div data-v-c0491936="" data-v-89e57484="" class="progress"
-										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-										<div data-v-c0491936="" class="line"
-											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-										</div>
-										<div data-v-c0491936="" class="step">0/24000</div>
-									</div>
-									<div data-v-89e57484="" class="btn n2">Deposit</div>
-								</div>
-							</div>
-							<div data-v-89e57484="" class="first_list-item">
-								<div data-v-89e57484="" class="head">
-									<div data-v-89e57484="" class="title">first deposit<span
-											data-v-89e57484="">10000</span>
-									</div>
-									<div data-v-89e57484="" class="orange">+ ₹488.00</div>
-								</div>
-								<div data-v-89e57484="" class="description">Deposit 10000 for the first time in your
-									account and
-									you can receive 488</div>
-								<div data-v-89e57484="" class="foot">
-									<div data-v-c0491936="" data-v-89e57484="" class="progress"
-										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-										<div data-v-c0491936="" class="line"
-											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-										</div>
-										<div data-v-c0491936="" class="step">0/10000</div>
-									</div>
-									<div data-v-89e57484="" class="btn n2">Deposit</div>
-								</div>
-							</div>
-							<div data-v-89e57484="" class="first_list-item">
-								<div data-v-89e57484="" class="head">
-									<div data-v-89e57484="" class="title">first deposit<span
-											data-v-89e57484="">2000</span>
-									</div>
-									<div data-v-89e57484="" class="orange">+ ₹188.00</div>
-								</div>
-								<div data-v-89e57484="" class="description">Deposit 2000 for the first time in your
-									account and
-									you can receive 188</div>
-								<div data-v-89e57484="" class="foot">
-									<div data-v-c0491936="" data-v-89e57484="" class="progress"
-										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-										<div data-v-c0491936="" class="line"
-											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-										</div>
-										<div data-v-c0491936="" class="step">0/2000</div>
-									</div>
-									<div data-v-89e57484="" class="btn n2">Deposit</div>
-								</div>
-							</div>
-							<div data-v-89e57484="" class="first_list-item">
-								<div data-v-89e57484="" class="head">
-									<div data-v-89e57484="" class="title">first deposit<span
-											data-v-89e57484="">1000</span>
-									</div>
-									<div data-v-89e57484="" class="orange">+ ₹108.00</div>
-								</div>
-								<div data-v-89e57484="" class="description">Deposit 1000 for the first time in your
-									account and
-									you can receive 108</div>
-								<div data-v-89e57484="" class="foot">
-									<div data-v-c0491936="" data-v-89e57484="" class="progress"
-										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-										<div data-v-c0491936="" class="line"
-											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-										</div>
-										<div data-v-c0491936="" class="step">0/1000</div>
-									</div>
-									<div data-v-89e57484="" class="btn n2">Deposit</div>
-								</div>
-							</div>
-							<div data-v-89e57484="" class="first_list-item">
-								<div data-v-89e57484="" class="head">
-									<div data-v-89e57484="" class="title">first deposit<span
-											data-v-89e57484="">400</span></div>
-									<div data-v-89e57484="" class="orange">+ ₹48.00</div>
-								</div>
-								<div data-v-89e57484="" class="description">Deposit 400 for the first time in your
-									account and
-									you can receive 48</div>
-								<div data-v-89e57484="" class="foot">
-									<div data-v-c0491936="" data-v-89e57484="" class="progress"
-										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-										<div data-v-c0491936="" class="line"
-											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-										</div>
-										<div data-v-c0491936="" class="step">0/400</div>
-									</div>
-									<div data-v-89e57484="" class="btn n2">Deposit</div>
-								</div>
-							</div>
-							<div data-v-89e57484="" class="first_list-item">
-								<div data-v-89e57484="" class="head">
-									<div data-v-89e57484="" class="title">first deposit<span
-											data-v-89e57484="">200</span></div>
-									<div data-v-89e57484="" class="orange">+ ₹28.00</div>
-								</div>
-								<div data-v-89e57484="" class="description">Deposit 200 for the first time in your
-									account and
-									you can receive 28</div>
-								<div data-v-89e57484="" class="foot">
-									<div data-v-c0491936="" data-v-89e57484="" class="progress"
-										style="background: rgb(216, 216, 216); height: 16px; border-radius: 16px;">
-										<div data-v-c0491936="" class="line"
-											style="background: rgb(250, 93, 93); width: 0%; height: 16px; border-radius: 16px;">
-										</div>
-										<div data-v-c0491936="" class="step">0/200</div>
-									</div>
-									<div data-v-89e57484="" class="btn n2">Deposit</div>
-								</div>
-							</div><!----><!---->
+					<div data-v-643c1a0c="" class="dailyProfitRank__content-list">
+						<div data-v-643c1a0c="" class="dailyProfitRank__content-list__item"><span data-v-643c1a0c=""
+								class="left-rank">4</span><img data-v-643c1a0c=""
+								data-img="https://91dreamclub.com/assets/png/avatar-ea3b8ee9.png" class=""
+								src="https://91dreamclub.com/assets/png/17-bedde42f.png"
+								src="https://91dreamclub.com/assets/png/1-a6662edb.png"><span data-v-643c1a0c=""
+								class="middle-name">Mem***879</span><span data-v-643c1a0c=""
+								class="right-box">₹895,467.00</span></div>
+						<div data-v-643c1a0c="" class="dailyProfitRank__content-list__item"><span data-v-643c1a0c=""
+								class="left-rank">5</span><img data-v-643c1a0c=""
+								data-img="https://91dreamclub.com/assets/png/avatar-ea3b8ee9.png" class=""
+								src="https://91dreamclub.com/assets/png/13-5676d43f.png"><span data-v-643c1a0c=""
+								class="middle-name">Mem***113</span>
+							<span data-v-643c1a0c="" class="right-box">₹940,928.00</span>
 						</div>
-						<div data-v-c6c57f74="" class="close" onclick="closePopup()"></div>
 					</div>
-					<div data-v-c6c57f74="" class="footer">
-						<div data-v-c6c57f74="" class="active">No more reminders today</div>
-						<div data-v-c6c57f74="" class="btn">Activity</div>
-					</div><!---->
-				</div><!----><!----><!----><!---->
+				</div>
+			</div>
+			<div data-v-8a2fbe28="" data-v-94f8731b="" class=""></div>
+			<!-- Customer Support -->
+			<div class="customer" id="customerId"
+				style="--36a344b0: 'Roboto', 'Inter', sans-serif; --17a7a9f6: bahnschrift;">
+				<img class="" onclick="window.location.href='/keFuMenu#/';"
+					src="https://91dreamclub.com/assets/png/icon_sevice-9f0c8455.png"
+					src="https://91dreamclub.com/assets/png/icon_sevice-9f0c8455.png">
+			</div>
+			<!-- Bottom Navbar -->
+			<div data-v-67fe8f9c="" class="tabbar__container" style="--36a344b0: 'Roboto', 'Inter', sans-serif;">
+				<!-- Home -->
+				<div data-v-67fe8f9c="" onclick="window.location.href='/home';" class="tabbar__container-item active">
+					<svg data-v-67fe8f9c="" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+						viewBox="0 0 46 44" class="">
+						<circle cx="27" cy="28" r="18" fill="#FFF4F4"></circle>
+						<path fill="#FFCDCB" fill-rule="evenodd"
+							d="m23.66 5.278-17.9 12.08v25.507h10.08v-10.44a5.04 5.04 0 0 1 5.04-5.04h6.36a5.04 5.04 0 0 1 5.04 5.04v4.38h-3.36v-4.38a1.68 1.68 0 0 0-1.68-1.68h-6.36a1.68 1.68 0 0 0-1.68 1.68v11.16a2.64 2.64 0 0 1-2.64 2.64H5.04a2.64 2.64 0 0 1-2.64-2.64v-26.61a2.64 2.64 0 0 1 1.163-2.188L22.437 2.05a2.16 2.16 0 0 1 2.382-.023L44.514 14.77a2.64 2.64 0 0 1 1.206 2.217v26.598a2.64 2.64 0 0 1-2.64 2.64H30.6v-3.36h11.76V17.379l-18.7-12.1Z"
+							clip-rule="evenodd"></path>
+						<path fill="#FFCDCB"
+							d="M32.4 44.545a1.68 1.68 0 1 1-3.36 0 1.68 1.68 0 0 1 3.36 0ZM32.28 36.745a1.68 1.68 0 1 1-3.36 0 1.68 1.68 0 0 1 3.36 0Z">
+						</path>
+					</svg>
+					<span data-v-67fe8f9c="">Home</span>
+				</div>
+				<!-- Actvity -->
+				<div data-v-67fe8f9c="" onclick="window.location.href='/Activity';" class="tabbar__container-item">
+					<svg data-v-67fe8f9c="" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+						viewBox="0 0 46 44" class="">
+						<circle cx="27" cy="24" r="18" fill="#FFF4F4"></circle>
+						<path fill="#FFCDCB" fill-rule="evenodd"
+							d="M10.512 5.2h26.975a4.8 4.8 0 0 1 4.796 4.6l.51 12.2h3.203L45.48 9.666A8 8 0 0 0 37.489 2H10.511A8 8 0 0 0 2.52 9.666l-1.17 28A8 8 0 0 0 9.34 46h29.317a8 8 0 0 0 7.993-8.334L46.331 30h-3.203l.326 7.8a4.8 4.8 0 0 1-4.796 5H9.341a4.8 4.8 0 0 1-4.795-5l1.17-28a4.8 4.8 0 0 1 4.796-4.6Z"
+							clip-rule="evenodd"></path>
+						<path fill="#FFCDCB" fill-rule="evenodd"
+							d="M13.92 16.64c.466 5.158 4.8 9.2 10.08 9.2 5.279 0 9.614-4.042 10.078-9.2h-3.522a6.621 6.621 0 0 1-13.113 0h-3.522Z"
+							clip-rule="evenodd"></path>
+						<path fill="#FFCDCB"
+							d="M34.092 16.65a1.75 1.75 0 0 1-1.75 1.75c-.967 0-1.795-.784-1.795-1.75 0-.967.828-1.75 1.795-1.75.966 0 1.75.783 1.75 1.75ZM17.449 16.648c0 .966-.766 1.75-1.733 1.75-.966 0-1.795-.784-1.795-1.75 0-.967.829-1.75 1.795-1.75.967 0 1.733.783 1.733 1.75ZM46 22a1.6 1.6 0 1 1-3.2 0 1.6 1.6 0 0 1 3.2 0ZM46.33 30.044a1.6 1.6 0 1 1-3.2 0 1.6 1.6 0 0 1 3.2 0Z">
+						</path>
+					</svg>
+					<span data-v-67fe8f9c="">Activity</span>
+				</div>
+				<!-- Promotion -->
+				<div data-v-67fe8f9c="" onclick="window.location.href='/promotion';" class="tabbar__container-item">
+					<svg data-v-67fe8f9c="" xmlns="http://www.w3.org/2000/svg" width="57" height="49" fill="none"
+						viewBox="0 0 57 49" class="">
+						<path fill="#fff" fill-rule="evenodd"
+							d="M8.939 1.501A4 4 0 0 1 12.062 0h32.155a4 4 0 0 1 3.124 1.501l7.738 9.673c.427.533.749 1.12.968 1.735H.233a5.99 5.99 0 0 1 .967-1.735L8.94 1.501ZM0 16.091h56.28a5.985 5.985 0 0 1-1.277 2.673l-23.79 28.549a4 4 0 0 1-6.146 0l-23.79-28.55A5.984 5.984 0 0 1 0 16.092Zm20.556 5.936 7.195 10.102a.5.5 0 0 0 .816-.002l7.118-10.093a2.44 2.44 0 0 1 4.435 1.406v.2h-.223c-.326 0-.782.248-1.304.93-.506.663-6.466 8.724-9.651 13.035a.975.975 0 0 1-1.563.007L17.32 24.26s-.394-.62-1.06-.62h-.14v-.195a2.445 2.445 0 0 1 4.436-1.418Z"
+							clip-rule="evenodd"></path>
+					</svg>
+					<div data-v-67fe8f9c="" class="promotionBg"></div>
+					<span data-v-67fe8f9c="">Promotion</span>
+				</div>
+				<!-- Wallet -->
+				<div data-v-67fe8f9c="" onclick="window.location.href='./wallet'" class="tabbar__container-item">
+					<svg data-v-67fe8f9c="" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+						viewBox="0 0 46 44" class="wallet">
+						<circle cx="28" cy="24" r="18" fill="#FFF4F4"></circle>
+						<path stroke="#FFCDCB" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2"
+							d="M3 23c0-5.984 3.526-10.164 9.008-10.868.56-.088 1.14-.132 1.742-.132h21.5c.559 0 1.096.022 1.612.11C42.41 12.77 46 16.972 46 23v11c0 6.6-4.3 11-10.75 11h-21.5C7.3 45 3 40.6 3 34v-2.178">
+						</path>
+						<path stroke="#FFCDCB" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2"
+							d="M46 23.724h-6.452c-2.366 0-4.301 1.862-4.301 4.138S37.182 32 39.548 32H46m-9-20c-.516-.083-1.194 0-1.753 0H14c-.602 0-1.44-.083-2 0 0 0 .731-.648 1.247-1.145l6.99-6.745A7.737 7.737 0 0 1 25.571 2c1.997 0 3.914.758 5.333 2.11l3.764 3.662C36.045 9.076 39.548 12 37 12Z">
+						</path>
+					</svg>
+					<span data-v-67fe8f9c="">Wallet</span>
+				</div>
+				<!-- Mian -->
+				<div data-v-67fe8f9c="" onclick="window.location.href='/mian';" class="tabbar__container-item">
+					<svg data-v-67fe8f9c="" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+						viewBox="0 0 46 44" class="">
+						<circle cx="28" cy="24" r="18" fill="#FFF4F4"></circle>
+						<path fill="#FFCDCB" fill-rule="evenodd"
+							d="M24.08 5.28C13.741 5.28 5.36 13.661 5.36 24c0 10.339 8.381 18.72 18.72 18.72 10.339 0 18.72-8.381 18.72-18.72v-8.76h3.36V24c0 12.194-9.886 22.08-22.08 22.08C11.886 46.08 2 36.194 2 24 2 11.806 11.886 1.92 24.08 1.92h20.28v3.36H24.08Z"
+							clip-rule="evenodd"></path>
+						<path fill="#FFCDCB"
+							d="M46.16 3.6a1.68 1.68 0 1 1-3.36 0 1.68 1.68 0 0 1 3.36 0ZM46.16 15.12a1.68 1.68 0 1 1-3.36 0 1.68 1.68 0 0 1 3.36 0Z">
+						</path>
+						<path fill="#FFCDCB" fill-rule="evenodd"
+							d="M15.806 29.582a1.68 1.68 0 0 1 2.372.144c1.15 1.298 2.748 2.794 5.462 2.794 2.872 0 4.857-1.428 5.805-2.533a1.68 1.68 0 0 1 2.55 2.186c-1.451 1.695-4.314 3.707-8.355 3.707-4.198 0-6.647-2.424-7.977-3.926a1.68 1.68 0 0 1 .143-2.372Z"
+							clip-rule="evenodd">
+						</path>
+					</svg>
+					<span data-v-67fe8f9c="">Account</span>
+				</div>
+			</div>
 		</div>
-		
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="/js/client.js"></script>
-	<script>
-		let url = window.location.pathname;
-		let check = document.querySelector(`.van-tabbar-item[data-url='${url}']`);
-		document.querySelector('#nav_checkUrl').setAttribute('data-url', url);
-		if (check) check.classList.add('block-click');
-		let pathname = document.querySelector('#nav_checkUrl').getAttribute('data-url');
-		let listNavs = document.querySelector('#nav_checkUrl .van-hairline--top-bottom').children;
-		let select = 0;
-		switch (pathname) {
-			case '/home':
-				select = 0;
-				break;
-			case '/checkIn':
-				select = 1;
-				break;
-			case '/promotion':
-				select = 2;
-				break;
-			case '/wallet':
-				select = 3;
-				break;
-			case '/mian':
-				select = 4;
-				break;
-			default:
-				break;
-		}
-
-		let arr = [
-			{ id: 1, src: '/images/home.png' },
-			{ id: 2, src: '/images/checked1.png' },
-			{ id: 3, src: '/images/invite.png' },
-			{ id: 4, src: '/images/wallet2.png' },
-			{ id: 5, src: '/images/me2.png' },
-		];
-
-		listNavs[select].children[1].children[0].children[0].setAttribute('src', arr[select].src); // img
-		listNavs[select].children[1].children[1].classList.add('action'); // name active
-	</script>
-	<script>
-		$(document).ready(function () {
-			function alertMess(text, sic) {
-				$('body').append(
-					`
-					<div data-v-1dcba851="" class="msg">
-						<div data-v-1dcba851="" class="msg-content v-enter-active v-enter-to" style=""> ${text} </div>
-					</div>
-					`
-				);
-				setTimeout(() => {
-					$('.msg .msg-content').removeClass('v-enter-active v-enter-to');
-					$('.msg .msg-content').addClass('v-leave-active v-leave-to');
-					setTimeout(() => {
-						$('.msg').remove();
-					}, 100);
-					sic.removeClass('block-click');
-				}, 1000);
+		<div class="splash_root" style="display: none;">
+			<div class="splash_screen">
+			   <div class="main_box">
+				  <img src="/favicon.png" alt="" class="splash_img">
+				  <h2 class="splash__text">Withdraw fast, safe and stable</h2>
+			   </div>
+	  
+			   <div class="logo_box">
+				  <img class="logo__image" src="/h5setting_202308141709544lm1.png" alt="">
+			   </div>
+			</div>
+		 </div>
+		 <script>
+			if (sessionStorage.getItem("notification_popup") === "true") {
+			   $(`.van-overlay`).hide();
+			   $(`.van-popup`).hide();
 			}
-			// $('.gameList .list-games:eq(2), .testing-list-game').click(function (e) {
-			// 	e.preventDefault();
-			// 	$(this).addClass('block-click');
-			// 	alertMess('Currently under development', $(this));
-			// });
-			let getWBody = $('.navbar').width();
-			let getswipe = $('#swipe_van-swipe').width();
-			$(".list-banner .van-swipe-item").css("width", `${getWBody}px`);
-			$("#swipe_van-swipe .van-swipe__track .van-swipe-item").css("width", `${getswipe}px`);
-
-			let formSlide = document.querySelector('.van-notice-bar__content');
-			if (formSlide) {
-				formSlide.style = 'transition-duration: 44.0815s; transform: translateX(-2204.07px);';
+			$(`.van-dialog__confirm`).click(function () {
+			   $(`.van-overlay`).hide();
+			   $(`.van-popup`).hide();
+			   sessionStorage.setItem("notification_popup", "true");
+			});
+		 </script>
+		 <style>
+			.top_game {
+			   display: grid;
+			   grid-template-columns: 1fr 1fr 1fr;
+			   gap: 10px;
 			}
+	  
+			.top_list {
+			   display: flex;
+			   flex-direction: column;
+			   align-items: center;
+			   gap: 5px;
+			}
+	  
+			.splash_root {
+			   width: 100vw;
+			   height: 100vh;
+			   top: 0px;
+			   bottom: 0px;
+			   left: 0px;
+			   right: 0px;
+			   position: fixed;
+			   z-index: 100000;
+			   display: flex;
+			   align-items: center;
+			   justify-content: center;
+			}
+	  
+			.splash_screen {
+			   width: 100vw;
+			   height: 100vh;
+			   background: #f3f3f8;
+			   background-image: radial-gradient(ellipse at top, #f3f3f8, #e4e7f2);
+			   max-width: 420px;
+			   display: flex;
+			   align-items: center;
+			   justify-content: center;
+			   flex-direction: column;
+			}
+	  
+			.splash__text {
+			   font-size: 22px;
+			   text-align: center;
+			   font-weight: 700;
+			   color: #b1835a;
+			}
+	  
+			.main_box {
+			   width: 80%;
+			   flex-direction: column;
+			   display: flex;
+			   align-items: center;
+			   justify-content: center;
+			   gap: 30px;
+			}
+	  
+			.splash_img {
+			   width: 100%;
+			}
+	  
+			.logo_box {
+			   margin-top: 150px;
+			}
+	  
+			.logo__image {
+			   max-width: 200px;
+			   height: auto;
+			}
+		 </style>
+		 <div data-v-f52c66fe="" data-v-17ed3a84="" class="game_container">
 
-			$('#tab_support .item').click(function (e) {
-				e.preventDefault();
-				$('#tab_support .item').removeClass('action');
-				let elementThis = $(this).addClass('action');
-			});
-			$('#tab_support .item:eq(0)').click(function (e) {
-				e.preventDefault();
-				$('#show-support .van-swipe-item .van-ellipsis').text('Choose a game');
-				$('#show-support .van-swipe-item .van-multi-ellipsis--l2').text('You can choose to play lottery games every 1 minute, 3 minutes, 5 minutes, and 10 minutes.');
-			});
-
-			$('#tab_support .item:eq(1)').click(function (e) {
-				e.preventDefault();
-				let action = $(this).children().children().children();
-				action.attr('src', '/images/support2.png');
-				$('#show-support .van-swipe-item .van-ellipsis').text('Choose number');
-				$('#show-support .van-swipe-item .van-multi-ellipsis--l2').text('Choose your lucky number or color');
-			});
-
-			$('#tab_support .item:eq(2)').click(function (e) {
-				e.preventDefault();
-				let action = $(this).children().children().children();
-				action.attr('src', '/images/support3.png');
-				$('#show-support .van-swipe-item .van-ellipsis').text('Place a bet');
-				$('#show-support .van-swipe-item .van-multi-ellipsis--l2').text('Choose the amount of money you want to bet and confirm');
-			});
-
-			$('#tab_support .item:eq(3)').click(function (e) {
-				e.preventDefault();
-				let action = $(this).children().children().children();
-				action.attr('src', '/images/support4.png');
-				$('#show-support .van-swipe-item .van-ellipsis').text('Win the Prize');
-				$('#show-support .van-swipe-item .van-multi-ellipsis--l2').text('When you choose a lucky number for the current round, the system will automatically add the prize money to your balance');
-			});
-
-			let count = 0;
-			let element = document.querySelector('.van-swipe__track');
+		 </div>
+		 <script>
+			const initFunc = () => {
+			   if (sessionStorage.getItem("splash") === "true") {
+				  $(".splash_root").fadeOut(0);
+				  return;
+			   }
+			   $(".splash_root").css("display", "flex");
+			   setTimeout(function () {
+				  $(".splash_root").fadeOut(300);
+				  sessionStorage.setItem("splash", "true");
+			   }, 1200);
+			};
+			initFunc();
+		 </script>
+		 <script>
+			const swiperWidth = $(".swiper").width();
+	  
+			$(".swiper-slide").css("width", swiperWidth);
+	  
 			setInterval(() => {
-				let getWBody = $('.navbar').width();
-				$(`.van-swipe__indicator`).removeClass('van-swipe__indicator--active');
-				$(`.van-swipe__indicator`).css("backgroundColor", "");
-				$(`.van-swipe__indicator:eq(${count})`).addClass('van-swipe__indicator--active');
-				$(`.van-swipe__indicator:eq(${count})`).css("backgroundColor", "rgb(242, 65, 59)");
-				if (element) {
-					if (count == 0) {
-						element.style = `width: 1448px; transition-duration: 500ms; transform: translateX(-${getWBody}px);`;
-					} else if (count == 1) {
-						element.style = `width: 1448px; transition-duration: 500ms; transform: translateX(-${getWBody * 2}px);`;
-					} else if (count == 2) {
-						element.style = `width: 1448px; transition-duration: 500ms; transform: translateX(-${getWBody * 3}px);`;
-					} else if (count == 3) {
-						count = -1;
-						element.style = `width: 1448px; transition-duration: 0ms; transform: translateX(0px);`;
-					}
-				}
-				count++;
-			}, 2500);
+			   const swiperWidth = $(".swiper").width();
+			   $(".swiper-slide").css("width", swiperWidth);
+			}, 1000);
+	  
+			const swiper = new Swiper(".swiper", {
+			   slidesPerView: 1,
+			   spaceBetween: 20,
+			   loop: true,
+			   autoplay: {
+				  delay: 3000,
+				  disableOnInteraction: false,
+			   },
+			});
+		 </script>
+		 <script>
 
-			function cownDownTimer() {
-				let countDownDate = new Date("2019-07-21T23:59:59.9999999+01:00").getTime();
-				setInterval(function () {
-					let now = new Date().getTime();
-					let distance = now - countDownDate;
-					let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-					let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-					let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-					let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-					$('.list-flip_nums .flip-num:eq(0) .top').text((days < 10) ? `0${days}` : days);
-					$('.list-flip_nums .flip-num:eq(0) .bottom-card').removeClass('flipX');
-					$('.list-flip_nums .flip-num:eq(0) .back .c-tc').text((days + 1 < 10) ? `0${days + 1}` : days + 1);
-					if (seconds >= 59 && minutes >= 59 && hours >= 23) {
-						setTimeout(() => {
-							$('.list-flip_nums .flip-num:eq(0) .bottom-card').addClass('flipX');
-						}, 100);
-					}
-
-					$('.list-flip_nums .flip-num:eq(1) .top').text((hours < 10) ? `0${hours}` : hours);
-					$('.list-flip_nums .flip-num:eq(1) .bottom-card').removeClass('flipX');
-					$('.list-flip_nums .flip-num:eq(1) .back .c-tc').text((hours + 1 < 10) ? `0${hours + 1}` : hours + 1);
-					if (seconds >= 59 && minutes >= 59) {
-						setTimeout(() => {
-							$('.list-flip_nums .flip-num:eq(1) .bottom-card').addClass('flipX');
-						}, 100);
-					}
-
-					$('.list-flip_nums .flip-num:eq(2) .top').text((minutes < 10) ? `0${minutes}` : minutes);
-					$('.list-flip_nums .flip-num:eq(2) .bottom-card').removeClass('flipX');
-					$('.list-flip_nums .flip-num:eq(2) .back .c-tc').text((minutes + 1 < 10) ? `0${minutes + 1}` : minutes + 1);
-					if (seconds >= 59) {
-						setTimeout(() => {
-							$('.list-flip_nums .flip-num:eq(2) .bottom-card').addClass('flipX');
-						}, 100);
-					}
-
-					$('.list-flip_nums .flip-num:eq(3) .bottom-card').removeClass('flipX');
-					$('.list-flip_nums .flip-num:eq(3) .top').text((seconds < 10) ? `0${seconds}` : seconds);
-					$('.list-flip_nums .flip-num:eq(3) .back .c-tc').text((seconds + 1 < 10) ? `0${seconds + 1}` : seconds + 1);
-					setTimeout(() => {
-						$('.list-flip_nums .flip-num:eq(3) .bottom-card').addClass('flipX');
-					}, 100);
-				}, 1000);
+			function openJDBGame(g_type, m_type) {
+			   try {
+				  window.location.href = window.location.href = `/jdb/launch?g_type=${g_type}&m_type=${m_type}`
+			   } catch (error) {
+				  console.log(error)
+			   }
+			}
+	  
+			const GAME_TYPE_MAP = {
+			   LOTTERY: "LOTTERY",
+			   MINI_GAMES: "MINI_GAMES",
+			   SLOTS: "SLOTS",
+			   POPULAR: "POPULAR",
+			   PVC: "PVC",
+			   FISHING: "FISHING",
+			   CASINO: "CASINO",
+			   SPORTS: "SPORTS",
 			};
-			cownDownTimer();
-		});
-	</script>
-	<script>
-		$(window).on('load', function () {
-			$('.Loading').fadeOut(0);
-		});
-		function makeid(length) {
-			var result = '';
-			var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-			var charactersLength = characters.length;
-			for (var i = 0; i < length; i++) {
-				result += characters.charAt(Math.floor(Math.random() * charactersLength));
-			}
-			return result;
-		}
-
-		function randMoney(max, min) {
-			var result = Math.floor(Math.random() * (max - min + 1)) + min;
-			return result;
-		}
-
-		let wingo = '';
-		let k5d = '';
-		let k3 = '';
-		let top_nap = '';
-		let name = '';
-		let money = 0;
-		function CreatMemJoin() {
-			for (let i = 0; i < 4; i++) {
-				name = makeid(5);
-				money = randMoney(99, 1000);
-				wingo +=
-					`
-				<div data-v-39efd474="" class="van-swipe-item" style="height: 40px;">
-					<div data-v-39efd474="" class="swiper-item">
-						<div data-v-39efd474="" class="c-row c-row-between c-row-middle item">
-							<img data-v-39efd474="" src="/images/avatar.cfa8dd9d.svg" class="img">
-							<div data-v-39efd474="" class="info c-row c-row-between">
-								<div data-v-39efd474="" class="m-l-10 name">Member${name}</div>
-								<div data-v-39efd474="" class="c-row c-row-middle-center">
-									<span data-v-39efd474="" class="u-p-r-10">Bet </span>
-									<span data-v-39efd474="" class="price"> ${money}</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				`;
-				name = makeid(5);
-				money = randMoney(199, 10000);
-				k5d +=
-					`
-				<div data-v-39efd474="" class="van-swipe-item" style="height: 40px;">
-					<div data-v-39efd474="" class="swiper-item">
-						<div data-v-39efd474="" class="c-row c-row-between c-row-middle item">
-							<img data-v-39efd474="" src="/images/avatar.cfa8dd9d.svg" class="img">
-							<div data-v-39efd474="" class="info c-row c-row-between">
-								<div data-v-39efd474="" class="m-l-10 name">Member${name}</div>
-								<div data-v-39efd474="" class="c-row c-row-middle-center">
-									<span data-v-39efd474="" class="u-p-r-10">Bet </span>
-									<span data-v-39efd474="" class="price"> ${money}</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				`
-					;
-
-				name = makeid(5);
-				money = randMoney(199, 10000);
-				k3 +=
-					`
-				<div data-v-39efd474="" class="van-swipe-item" style="height: 40px;">
-					<div data-v-39efd474="" class="swiper-item">
-						<div data-v-39efd474="" class="c-row c-row-between c-row-middle item">
-							<img data-v-39efd474="" src="/images/avatar.cfa8dd9d.svg" class="img">
-							<div data-v-39efd474="" class="info c-row c-row-between">
-								<div data-v-39efd474="" class="m-l-10 name">Member${name}</div>
-								<div data-v-39efd474="" class="c-row c-row-middle-center">
-									<span data-v-39efd474="" class="u-p-r-10">Bet </span>
-									<span data-v-39efd474="" class="price"> ${money}</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				`
-					;
-			}
-			for (let i = 0; i < 4; i++) {
-				let list_recharge = '';
-				for (let i = 0; i < 4; i++) {
-					name = makeid(5);
-					money = randMoney(199, 5000);
-					const d = new Date();
-					let hour = d.getHours();
-					let minutes = d.getMinutes();
-					list_recharge += `
-					<div data-v-e52eeae0="" class="swiper-item">
-						<div data-v-e52eeae0="" class="c-row c-row-between item">
-							<img data-v-e52eeae0="" src="/images/avatar.cfa8dd9d.svg" class="img">
-							<div data-v-e52eeae0="" class="info c-row c-row-between">
-								<div data-v-e52eeae0="" class="m-l-10 name">Member${name}</div>
-								<div data-v-e52eeae0="" class="price">
-									<span data-v-e52eeae0=""> ₹ ${money}</span>
-								</div>
-								<div data-v-e52eeae0="" class="time">${hour}:${minutes}</div>
-							</div>
-						</div>
-					</div>
-					`;
-				}
-				top_nap +=
-					`
-				<div data-v-e52eeae0="" class="item van-swipe-item" style="height: 180px; transform: translateY(360px);">
-					${list_recharge}
-				</div>
-				`;
-			}
-			$('#wingo').html(wingo);
-			$('#k5d').html(k5d);
-			$('#k3').html(k3);
-			$('#top-recharge').html(top_nap);
-		}
-
-
-		CreatMemJoin();
-		let translate = 0;
-		let count = 0;
-		let top_recharge = -358;
-		setInterval(() => {
-			count += 1;
-			translate -= 40;
-			top_recharge -= 180;
-			$('#wingo').css({
-				'transform': `translateY(${translate}px)`,
-			});
-			$('#k5d').css({
-				'transform': `translateY(${translate}px)`,
-			});
-
-			$('#k3').css({
-				'transform': `translateY(${translate}px)`,
-			});
-
-			$('#top-recharge').css({
-				'transform': `translateY(${top_recharge}px)`,
-			});
-			if (count == 3) {
-				count = 0;
-				translate = 40;
-				top_recharge = -358;
-				CreatMemJoin();
+	  
+			const LOTTERY_TAB_MAP = {
+			   ALL: "ALL",
+			   WINGO: "WINGO",
+			   Wingo: "Wingo",
+			   G5D: "G5D",
+			   TRX: "TRX",
 			};
-		}, 3000);
-	</script>
-	<script>
-
-
-
-	</script>
-	<script>
-		function showPopup() {
-			document.getElementById('comingsoonpop').style.display = 'block';
-
-		}
-
-		function closePopup() {
-			document.getElementById('comingsoonpop').style.display = 'none';
-
-		}
-	</script>
-	<script>
-		// Function to handle deposit action
-		function deposit(amount, bonus) {
-			// Simulate deposit action
-			alert("You have deposited " + amount + " and received a bonus of ₹" + bonus);
-			closeDialog();
-		}
-
-		// Function to show dialog
-		function showDialog() {
-			document.querySelector('.van-overlay').style.display = 'block';
-			document.querySelector('.van-popup').style.display = 'block';
-		}
-
-		// Function to close dialog
-		function closeDialog() {
-			document.querySelector('.van-overlay').style.display = 'none';
-			document.querySelector('.van-popup').style.display = 'none';
-		}
-	</script>
-	<script>
-		function generateRandomAmount() {
-		  // Generate a random amount between 1 and 5000 (you can adjust the range as needed)
-		  return "₹" + (Math.floor(Math.random() * 5000) + 1).toFixed(2);
-		}
+	  
+			const queryParams = new URLSearchParams(window.location.search);
+			const GameType = queryParams.get("game_type") || GAME_TYPE_MAP.LOTTERY;
+			const LotteryTab = queryParams.get("lottery_tab") || LOTTERY_TAB_MAP.ALL;
+			const MainGameContainer = document.querySelector(".game_container");
+			const LotteryGameContainer = document.querySelector(".lottery_container");
+	  
+			$(`.gamen_item`).click(function (params) {
+			   const selectedGameType = $(this).attr("data-game-type");
+			   $(".gamen_item").removeClass("active");
+			   $(this).addClass("active");
+			   window.history.pushState({}, "", selectedGameType === GAME_TYPE_MAP.LOTTERY ? `/home?game_type=${selectedGameType}&lottery_tab=${LOTTERY_TAB_MAP.ALL}` : `/home?game_type=${selectedGameType}`);
+			   setTimeout(() => {
+				  initGameData({ LotteryTab: LOTTERY_TAB_MAP.ALL, GameType: selectedGameType });
+			   }, 30);
+			});
+	  
+			const initGameData = ({ LotteryTab, GameType }) => {
+			   switch (GameType) {
+				  case GAME_TYPE_MAP.LOTTERY:
+					 let lotteryTabContent = ``;
+					 switch (LotteryTab) {
+						case LOTTERY_TAB_MAP.ALL:
+						   lotteryTabContent = `
+				  <div data-v-13364130="" class="lotterySlotItem wingo" onclick="window.location.href='/wingo?game_type=1'"><img
+					  data-v-13364130="" src="/assets/png/wingo1-26adecc4.png" alt="">
+					<div data-v-13364130="">Win Go 1Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem wingo" onclick="window.location.href='/wingo?game_type=3'"><img
+					  data-v-13364130="" src="/assets/png/wingo2-7620426f.png" alt="">
+					<div data-v-13364130="">Win Go 3Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem wingo" onclick="window.location.href='/wingo?game_type=5'"><img
+					  data-v-13364130="" src="/assets/png/wingo3-af2ecabf.png" alt="">
+					<div data-v-13364130="">Win Go 5Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem wingo" onclick="window.location.href='/wingo?game_type=10'"><img
+					  data-v-13364130="" src="/assets/png/wingo4-c325a189.png" alt="">
+					<div data-v-13364130="">Win Go 10Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem d5" onclick="window.location.href='/5d'"><img
+					  data-v-13364130="" src="/assets/png/d55-92bf4299.png" alt="">
+					<div data-v-13364130="">5D 1Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem d5" onclick="window.location.href='/5d/?game_type=3'"><img
+					  data-v-13364130="" src="/assets/png/d56-381350f2.png" alt="">
+					<div data-v-13364130="">5D 3Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem d5" onclick="window.location.href='/5d/?game_type=5'"><img
+					  data-v-13364130="" src="/assets/png/d57-59e91e51.png" alt="">
+					<div data-v-13364130="">5D 5Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem d5" onclick="window.location.href='/5d/?game_type=10'"><img
+					  data-v-13364130="" src="/assets/png/d58-b02f0617.png" alt="">
+					<div data-v-13364130="">5D 10Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem Wingo" onclick="window.location.href='/Wingo'"><img
+					  data-v-13364130="" src="/assets/png/Wingo9-707408c6.png" alt="">
+					<div data-v-13364130="">Wingo 1Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem Wingo" onclick="window.location.href='/wingo/?game_type=3'"><img
+					  data-v-13364130="" src="/assets/png/Wingo10-1fc41fc4.png" alt="">
+					<div data-v-13364130="">Wingo 3Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem Wingo" onclick="window.location.href='/wingo/?game_type=5'"><img
+					  data-v-13364130="" src="/assets/png/Wingo11-2acf4e28.png" alt="">
+					<div data-v-13364130="">Wingo 5Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem Wingo" onclick="window.location.href='/wingo/?game_type=10'"><img
+					  data-v-13364130="" src="/assets/png/Wingo12-126dcbfe.png" alt="">
+					<div data-v-13364130="">Wingo 10Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem trx" onclick="window.location.href='/trx_wingo?game_type=1'"><img data-v-13364130=""
+					  src="/assets/png/trx13-30f132be.png" alt="">
+					<div data-v-13364130="">Trx Win Go 1Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem trx" onclick="window.location.href='/trx_wingo?game_type=3'"><img data-v-13364130=""
+					  src="/assets/png/trx14-af832a85.png" alt="">
+					<div data-v-13364130="">Trx Win Go 3Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem trx" onclick="window.location.href='/trx_wingo?game_type=5'"><img data-v-13364130=""
+					  src="/assets/png/trx15-5500af52.png" alt="">
+					<div data-v-13364130="">Trx Win Go 5Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem trx" onclick="window.location.href='/trx_wingo?game_type=10'"><img data-v-13364130=""
+					  src="/assets/png/trx16-27318f43.png" alt="">
+					<div data-v-13364130="">Trx Win Go 10Min</div>
+				  </div>
+				  `;
+						   break;
+						case LOTTERY_TAB_MAP.WINGO:
+						   lotteryTabContent = `<div data-v-13364130="" class="lotterySlotItem wingo" onclick="window.location.href='/wingo?game_type=1'"><img
+					  data-v-13364130="" src="/assets/png/wingo1-26adecc4.png" alt="">
+					<div data-v-13364130="">Win Go 1Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem wingo" onclick="window.location.href='/wingo?game_type=3'"><img
+					  data-v-13364130="" src="/assets/png/wingo2-7620426f.png" alt="">
+					<div data-v-13364130="">Win Go 3Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem wingo" onclick="window.location.href='/wingo?game_type=5'"><img
+					  data-v-13364130="" src="/assets/png/wingo3-af2ecabf.png" alt="">
+					<div data-v-13364130="">Win Go 5Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem wingo" onclick="window.location.href='/wingo?game_type=10'"><img
+					  data-v-13364130="" src="/assets/png/wingo4-c325a189.png" alt="">
+					<div data-v-13364130="">Win Go 10Min</div>
+				  </div>`;
+						   break;
+						case LOTTERY_TAB_MAP.Wingo:
+						   lotteryTabContent = ` <div data-v-13364130="" class="lotterySlotItem Wingo" onclick="window.location.href='/Wingo'"><img
+					  data-v-13364130="" src="/assets/png/Wingo9-707408c6.png" alt="">
+					<div data-v-13364130="">Wingo 1Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem Wingo" onclick="window.location.href='/wingo/?game_type=3'"><img
+					  data-v-13364130="" src="/assets/png/Wingo10-1fc41fc4.png" alt="">
+					<div data-v-13364130="">Wingo 3Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem Wingo" onclick="window.location.href='/wingo/?game_type=5'"><img
+					  data-v-13364130="" src="/assets/png/Wingo11-2acf4e28.png" alt="">
+					<div data-v-13364130="">Wingo 5Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem Wingo" onclick="window.location.href='/wingo/?game_type=10'"><img
+					  data-v-13364130="" src="/assets/png/Wingo12-126dcbfe.png" alt="">
+					<div data-v-13364130="">Wingo 10Min</div>
+				  </div>`;
+						   break;
+						case LOTTERY_TAB_MAP.G5D:
+						   lotteryTabContent = `  <div data-v-13364130="" class="lotterySlotItem d5" onclick="window.location.href='/5d'"><img
+					  data-v-13364130="" src="/assets/png/d55-92bf4299.png" alt="">
+					<div data-v-13364130="">5D 1Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem d5" onclick="window.location.href='/5d/?game_type=3'"><img
+					  data-v-13364130="" src="/assets/png/d56-381350f2.png" alt="">
+					<div data-v-13364130="">5D 3Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem d5" onclick="window.location.href='/5d/?game_type=5'"><img
+					  data-v-13364130="" src="/assets/png/d57-59e91e51.png" alt="">
+					<div data-v-13364130="">5D 5Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem d5" onclick="window.location.href='/5d/?game_type=10'"><img
+					  data-v-13364130="" src="/assets/png/d58-b02f0617.png" alt="">
+					<div data-v-13364130="">5D 10Min</div>
+				  </div>`;
+						   break;
+						case LOTTERY_TAB_MAP.TRX:
+						   lotteryTabContent = `
+					<div data-v-13364130="" class="lotterySlotItem trx" onclick="window.location.href='/trx_wingo?game_type=1'"><img data-v-13364130=""
+					  src="/assets/png/trx13-30f132be.png" alt="">
+					<div data-v-13364130="">Trx Win Go 1Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem trx" onclick="window.location.href='/trx_wingo?game_type=3'"><img data-v-13364130=""
+					  src="/assets/png/trx14-af832a85.png" alt="">
+					<div data-v-13364130="">Trx Win Go 3Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem trx" onclick="window.location.href='/trx_wingo?game_type=5'"><img data-v-13364130=""
+					  src="/assets/png/trx15-5500af52.png" alt="">
+					<div data-v-13364130="">Trx Win Go 5Min</div>
+				  </div>
+				  <div data-v-13364130="" class="lotterySlotItem trx" onclick="window.location.href='/trx_wingo?game_type=10'"><img data-v-13364130=""
+					  src="/assets/png/trx16-27318f43.png" alt="">
+					<div data-v-13364130="">Trx Win Go 10Min</div>
+				  </div>`;
+						   break;
+						default:
+						   break;
+					 }
+					 MainGameContainer.innerHTML = `<div data-v-f52c66fe="" class="game_title">Lottery</div>
+				<div data-v-f52c66fe="" class="van-tabs van-tabs--card lottery_tabbar">
+				  <div class="van-tabs__wrap">
+					<div role="tablist" class="van-tabs__nav van-tabs__nav--card van-tabs__nav--complete"
+					  aria-orientation="horizontal" style="background: transparent;">
+					  <div id="van-tabs-1-0" role="tab" data-lottery-tab='ALL' class="lottry-tab-btn van-tab van-tab--card van-tab--grow van-tab--active"
+						tabindex="0" aria-selected="true" aria-controls="van-tab-2"><span class="van-tab__text"><span
+							data-v-f52c66fe="">All</span></span></div>
+					  <div id="van-tabs-1-1" role="tab" data-lottery-tab='WINGO' class="lottry-tab-btn van-tab van-tab--card van-tab--grow" tabindex="-1"
+						aria-selected="false" aria-controls="van-tab-3"><span class="van-tab__text"><span
+							data-v-f52c66fe="">Win Go</span></span></div>
+					  <div id="van-tabs-1-2" role="tab" data-lottery-tab='Wingo' class="lottry-tab-btn van-tab van-tab--card van-tab--grow" tabindex="-1"
+						aria-selected="false" aria-controls="van-tab-4"><span class="van-tab__text"><span
+							data-v-f52c66fe="">Wingo</span></span></div>
+					  <div id="van-tabs-1-3" role="tab" data-lottery-tab='G5D' class="lottry-tab-btn van-tab van-tab--card van-tab--grow" tabindex="-1"
+						aria-selected="false" aria-controls="van-tab-5"><span class="van-tab__text"><span
+							data-v-f52c66fe="">5D</span></span></div>
+					  <div id="van-tabs-1-4" role="tab" data-lottery-tab='TRX' class="lottry-tab-btn van-tab van-tab--card van-tab--grow" tabindex="-1"
+						aria-selected="false" aria-controls="van-tab-6"><span class="van-tab__text"><span
+							data-v-f52c66fe="">Trx Win Go</span></span></div>
+					</div>
+				  </div>
+				  <div class="van-tabs__content"></div>
+				</div>
+				<div data-v-f52c66fe="" class="driver"></div>
+				<div data-v-13364130="" data-v-f52c66fe="" class="lottery_container">
+				  ${lotteryTabContent}
+				</div>`;
+	  
+					 $(`.lottry-tab-btn`).click(function (params) {
+						const selectedLotteryTab = $(this).attr("data-lottery-tab");
+	  
+						window.history.pushState({}, "", `/home?game_type=${GAME_TYPE_MAP.LOTTERY}&lottery_tab=${selectedLotteryTab}`);
+	  
+						setTimeout(() => {
+						   initGameData({ LotteryTab: selectedLotteryTab, GameType: GAME_TYPE_MAP.LOTTERY });
+						}, 30);
+					 });
+					 break;
+				  case GAME_TYPE_MAP.MINI_GAMES:
+					 MainGameContainer.innerHTML = `
+					 <div data-v-f52c66fe="" class="game_title">Mini games</div>
+					 <div data-v-f52c66fe="" class="driver"></div>
+					 <div data-v-a28fe468="" data-v-f52c66fe="" class="hot_container">
+						<div data-v-79f66658="" class="top_list" onclick="openGameById(224)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_224.png">
+						</div>
+						<div data-v-79f66658="" class="top_list" onclick="openGameById(72)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_72.png">
+						</div>
+						<div data-v-79f66658="" class="top_list" onclick="openGameById(79)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_79.png">
+						</div>
+						<div data-v-79f66658="" class="top_list" onclick="openGameById(32)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_32.png">
+						</div>
+						<div data-v-79f66658="" class="top_list" onclick="openGameById(61)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_61.png">
+						</div>
+						<div data-v-79f66658="" class="top_list" onclick="openGameById(235)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_235.png">
+						</div>
+						<div data-v-79f66658="" class="top_list" onclick="openGameById(229)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_229.jpg">
+						</div>
+						<div data-v-a28fe468="" class="hot_container-item" onclick="openGameById(118)">
+							<img data-v-a28fe468="" class="" src="/jili_games/GAMEID_118.png">
+						</div>
+						<div data-v-a28fe468="" class="hot_container-item" onclick="openGameById(124)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_124.png">
+						</div>
+						<div data-v-a28fe468="" class="hot_container-item" onclick="openGameById(111)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_111.png">
+						</div>
+						<div data-v-a28fe468="" class="hot_container-item" onclick="openGameById(163)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_163.png">
+						</div>
+						<div data-v-a28fe468="" class="hot_container-item" onclick="openGameById(46)">
+						   <img data-v-a28fe468="" class="" src="/jili_games/GAMEID_46.png">
+						</div>
+					 </div>`;
+					 break;
+				  case GAME_TYPE_MAP.SLOTS:
+					 MainGameContainer.innerHTML = `
+					 <div data-v-f52c66fe="" class="game_title">Slots</div>
+					 <div data-v-f52c66fe="" class="driver"></div>
+					 <div data-v-c2791131="" data-v-f52c66fe="" class="other_box">
+						<div data-v-c2791131="" class="other_item" onclick="location.href='/jili/slots'"><img data-v-c2791131="" class=""
+							  src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230822181743ytsp.png">
+						</div>
+						<div data-v-c2791131="" class="other_item" onclick="location.href='/jdb/slots'"><img data-v-c2791131="" class=""
+							  src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171251mwfm.png">
+						</div>
+						<div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class=""
+							  src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171226u65b.png">
+						</div>
+						<div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class=""
+							  src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20230814171237qp9g.png">
+						</div>
+						<div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class=""
+							  src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_2024030619024971kk.png">
+						</div>
+						<div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class=""
+							  src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20240402192155nahy.png">
+						</div>
+						<div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class=""
+							  src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_2023081417112382w9.png">
+						</div>
+						<div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class=""
+							  src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_202308141711471fix.png">
+						</div>
+						<div data-v-c2791131="" class="other_item"><img data-v-c2791131="" class=""
+							  src="https://ossimg.Big-Mumadmin888.com/bigmumbai/vendorlogo/vendorlogo_20240508175049up4n.png">
+						</div>
+					 </div>
+					 `;
+					 break;
+				  case GAME_TYPE_MAP.POPULAR:
+					 MainGameContainer.innerHTML = `
+			  <div data-v-79f66658="" class="top_game">
+						  <div data-v-79f66658="" class="top_list" onclick="openGameById(224)">
+							  <div data-v-79f66658="" class="img_box"><img data-v-79f66658="" src="/jili_games/GAMEID_224.png" alt="">
+							  </div>
+							  <div data-v-79f66658="" class="bottom">
+								  <div data-v-79f66658="" class="left">
+									  <div data-v-79f66658="" class="name uni-ellipsis-1">
+										  Go rush</div>
+								  </div>
+							  </div>
+						  </div>
+						  <div data-v-79f66658="" class="top_list" onclick="openGameById(32)">
+							  <div data-v-79f66658="" class="img_box"><img data-v-79f66658="" src="/jili_games/GAMEID_32.png" alt=""></div>
+							  <div data-v-79f66658="" class="bottom">
+								  <div data-v-79f66658="" class="left">
+									  <div data-v-79f66658="" class="name uni-ellipsis-1">
+										  Jackpot Fishing
+									  </div>
+								  </div>
+							  </div>
+						  </div>
+						  <div data-v-79f66658="" class="top_list" onclick="openGameById(82)">
+							  <div data-v-79f66658="" class="img_box"><img data-v-79f66658="" src="/jili_games/GAMEID_82.png" alt=""></div>
+							  <div data-v-79f66658="" class="bottom">
+								  <div data-v-79f66658="" class="left">
+									  <div data-v-79f66658="" class="name uni-ellipsis-1">
+										  Happy Fishing
+									  </div>
+								  </div>
+							  </div>
+						  </div>
+						  <div data-v-79f66658="" class="top_list" onclick="openGameById(235)">
+							  <div data-v-79f66658="" class="img_box"><img data-v-79f66658="" src="/jili_games/GAMEID_235.png" alt="">
+							  </div>
+							  <div data-v-79f66658="" class="bottom">
+								  <div data-v-79f66658="" class="left">
+									  <div data-v-79f66658="" class="name uni-ellipsis-1">
+										  Limbo</div>
+								  </div>
+							  </div>
+						  </div>
+						  <div data-v-79f66658="" class="top_list" onclick="openGameById(229)">
+							  <div data-v-79f66658="" class="img_box"><img data-v-79f66658="" src="/jili_games/GAMEID_229.jpg" alt=""></div>
+							  <div data-v-79f66658="" class="bottom">
+								  <div data-v-79f66658="" class="left">
+									  <div data-v-79f66658="" class="name uni-ellipsis-1">
+										  Mines</div>
+								  </div>
+							  </div>
+						  </div>
+						  <div data-v-79f66658="" class="top_list" onclick="openGameById(2)">
+							  <div data-v-79f66658="" class="img_box"><img data-v-79f66658="" src="/jili_games/GAMEID_02.png" alt=""></div>
+							  <div data-v-79f66658="" class="bottom">
+								  <div data-v-79f66658="" class="left">
+									  <div data-v-79f66658="" class="name uni-ellipsis-1">
+										  Chin Shi Huang</div>
+								  </div>
+							  </div>
+						  </div>
+						  <div data-v-79f66658="" class="top_list" onclick="openGameById(4)">
+							  <div data-v-79f66658="" class="img_box"><img data-v-79f66658="" src="/jili_games/GAMEID_04.png" alt="">
+							  </div>
+							  <div data-v-79f66658="" class="bottom">
+								  <div data-v-79f66658="" class="left">
+									  <div data-v-79f66658="" class="name uni-ellipsis-1">
+										  God Of Martial</div>
+								  </div>
+							  </div>
+						  </div>
+						  <div data-v-79f66658="" class="top_list" onclick="openGameById(5)">
+							  <div data-v-79f66658="" class="img_box"><img data-v-79f66658="" src="/jili_games/GAMEID_05.png" alt="">
+							  </div>
+							  <div data-v-79f66658="" class="bottom">
+								  <div data-v-79f66658="" class="left">
+									  <div data-v-79f66658="" class="name uni-ellipsis-1">
+										  Hot Chilli</div>
+								  </div>
+							  </div>
+						  </div>
+						  <div data-v-79f66658="" class="top_list" onclick="openGameById(6)">
+							  <div data-v-79f66658="" class="img_box"><img data-v-79f66658="" src="/jili_games/GAMEID_06.png" alt="">
+							  </div>
+							  <div data-v-79f66658="" class="bottom">
+								  <div data-v-79f66658="" class="left">
+									  <div data-v-79f66658="" class="name uni-ellipsis-1">
+										  Fortune Tree</div>
+								  </div>
+							  </div>
+						  </div>
+					  </div>
+			  `;
+					 break;
+				  case GAME_TYPE_MAP.PVC:
+					 MainGameContainer.innerHTML = `
+		  <div data-v-a277d3cc="" class="top_game" id="poker_quick_root">
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(72)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_72.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  TeenPatti
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(75)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_75.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  AK47
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(79)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_79.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Andar Bahar
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(94)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_94.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Rummy
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(127)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_127.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  CallBreak
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(128)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_128.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Ludo
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(132)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_132.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Pool Rummy
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(159)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_159.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  TeenPatti Joker
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(160)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_160.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  CallbreakQuick
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(161)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_161.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Teenpatti 20-20
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(163)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_163.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Ludo Quick
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(175)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_175.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Tongits
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+			  `;
+					 break;
+				  case GAME_TYPE_MAP.FISHING:
+					 MainGameContainer.innerHTML = `
+			<div data-v-a277d3cc="" class="top_game" id="fishing_quick_root">
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(1)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_01.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  Royal Fishing
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(20)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_20.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  Bombing Fishing
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(32)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_32.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  Jack Pot Fishing
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(42)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_42.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  Dinosaur Tycoon
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(60)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_60.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  Dragon Fortune
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(71)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_71.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  Boom Legend
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(74)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_74.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  Mega Fishing
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(82)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_82.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  Happy Fishing
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(119)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_119.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  All-star Fishing
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(212)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_212.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  Dinosaur Tycoon II
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(289)">
+					 <img data-v-a277d3cc="" src="/jili_games/GAMEID_289.png" alt="">
+					 <div data-v-a277d3cc="" class="bottom">
+						<div data-v-a277d3cc="" class="left">
+						   <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+							  Ocean King Jackpot
+						   </div>
+						</div>
+					 </div>
+				  </div>
+			   </div>
+			  `;
+					 break;
+				  case GAME_TYPE_MAP.CASINO:
+					 MainGameContainer.innerHTML = `
+		  <div data-v-a277d3cc="" class="top_game" id="live_quick_root">
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(111)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_111.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Number King
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(112)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_112.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Joumey West M
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(113)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_113.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Poker King
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(114)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_114.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  European Roulette
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(118)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_118.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Big Small
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(122)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_122.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  iRich Bingo
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(123)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_123.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Dragon &amp; Tiger
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(124)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_124.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  7 UP 7 DOWN
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(125)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_125.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Sic Bo
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(139)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_139.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Fortune Bingo
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(143)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_143.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Bonus Bingo
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  
+				  <div data-v-a277d3cc="" class="top_list" onclick="openGameById(147)">
+					  <img data-v-a277d3cc="" src="/jili_games/GAMEID_147.png" alt="">
+					  <div data-v-a277d3cc="" class="bottom">
+						  <div data-v-a277d3cc="" class="left">
+							  <div data-v-a277d3cc="" class="name uni-ellipsis-1">
+								  Bingo Empire
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+			  `;
+					 break;
+				  case GAME_TYPE_MAP.SPORTS:
+					 MainGameContainer.innerHTML = ``;
+					 break;
+				  default:
+					 break;
+			   }
+			};
+	  
+			initGameData({ LotteryTab, GameType });
+		 </script>
 	
-		// Function to generate a random user name
-		function generateRandomUserName() {
-		  var names = ['mem', 'mem', 'mem', 'mem', 'mem', 'mem', 'mem', 'mem', 'mem', 'mem'];
-		  var randomIndex = Math.floor(Math.random() * names.length);
-		  var randomName = names[randomIndex];
-		  var randomInitials = Math.floor(Math.random() * 10000); // Adding random numbers for uniqueness
-		  return randomName + '***' + randomInitials;
-		}
 	
-		// Function to generate a random image URL
-		function generateRandomImageURL() {
-		  var images = [
-			'/assets/png/8-ea087ede.png',
-			'/assets/png/9-6d772f2c.png',
-			'/assets/png/18-52955242.png',
-			'/assets/png/4-12a0d0c5.png',
-			'/assets/png/14-a397ff6b.png',
-			'/assets/png/6-7c7f5203.png'
-		  ];
-		  return images[Math.floor(Math.random() * images.length)];
-		}
 	
-		// Function to update winning amounts, user names, and images
-		function updateWinningInformation() {
-		  // Select all elements containing winning amounts, user names, and images
-		  var winAmountElements = document.querySelectorAll('.luckyWinners__container-wrapper__item-winAmount h1');
-		  var userNameElements = document.querySelectorAll('.luckyWinners__container-wrapper__item-info h1');
-		  var imageElements = document.querySelectorAll('.luckyWinners__container-wrapper__item-img img');
 	
-		  // Loop through each element and update its content
-		  for (var i = 0; i < winAmountElements.length; i++) {
-			winAmountElements[i].textContent = "Receive " + generateRandomAmount();
-			userNameElements[i].textContent = generateRandomUserName();
-			imageElements[i].setAttribute('src', generateRandomImageURL());
-		  }
-		}
 	
-		// Call the updateWinningInformation function every 2 seconds
-		setInterval(updateWinningInformation, 2000);
-	  </script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+      
+      <script>
+       const userInfoTypes = {
+            phoneNumber: "phone_user",
+        };
+
+        const 
+            spribe: {
+                gType22: [
+                    '22009', '22008', '22007', '22006', '22005', '22004', '22003', '22002', '22001'
+                ]
+            }
+            ;
+
+        let phoneNumber = '';
+
+        const fetchUser = async () => {
+            try {
+                const response = await fetch('/api/webapi/GetUserInfo');
+                const data = await response.json();
+                if (!data || !data.data) throw new Error("User data not found!");
+
+                phoneNumber = encodeURIComponent(data.data[userInfoTypes.phoneNumber]);
+
+                displayGames('all'); // Initially display all games
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+
+        const displayGames = (category) => {
+            const container = document.getElementById('game-container');
+            container.innerHTML = '';
+            let gamesToDisplay = [];
+
+            if (category === 'all') {
+                gamesToDisplay = [
+                    ...mTypes.slots.gType0.map(mType => ({ mType, gType: 0 })),
+                    ...mTypes.slots.gType32.map(mType => ({ mType, gType: 32 })),
+                    ...mTypes.spribe.gType22.map(mType => ({ mType, gType: 22 })),
+                    ...mTypes.casino.map(mType => ({ mType, gType: 18 })),
+                ];
+            } else if (category === 'slots') {
+                gamesToDisplay = [
+                    ...mTypes.slots.gType0.map(mType => ({ mType, gType: 0 })),
+                    ...mTypes.slots.gType32.map(mType => ({ mType, gType: 32 }))
+                ];
+            } else if (category === 'spribe') {
+                gamesToDisplay = mTypes.spribe.gType22.map(mType => ({ mType, gType: 22 }));
+            } else if (category === 'casino') {
+                gamesToDisplay = mTypes.casino.map(mType => ({ mType, gType: 18 }));
+            }
+
+            	gamesToDisplay.forEach(game => {
+                    const gameUrl = `https://fluxapis.live/jdb/post?iv=05bae19880a21dd1&key=3467d9770b6bdd41&uid=${phoneNumber}&serverUrl=https://apijdb.Mumbai Club.in&parent=abcoders&gType=${game.gType}&mType=${game.mType}`;
+                const imageUrl = `https://fluxapis.live/jdbimages/${game.mType}.png`;
+
+                const gameItem = document.createElement('div');
+                gameItem.className = 'game-item';
+
+                const img = new Image();
+                img.src = imageUrl;
+                img.className = 'game-image';
+                img.onerror = () => {
+                    img.src = 'https://via.placeholder.com/100x100';
+                };
+
+                const gameLink = document.createElement('a');
+                gameLink.href = gameUrl;
+                gameLink.className = 'game-link';
+                gameLink.appendChild(img);
+
+                gameLink.appendChild(img);
 
 
+                gameItem.appendChild(gameLink);
+                container.appendChild(gameItem);
 
+                // Event listener for opening the game in an iframe
+                gameLink.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent the default link behavior
+                    openInIframe(gameUrl); // Open the game in an iframe
+                });
+            });
+        };
 
+        const openInIframe = (url) => {
+            // Create a new div to hold the iframe
+            const iframeContainer = document.createElement('div');
+            iframeContainer.style.position = 'fixed';
+            iframeContainer.style.top = '0';
+            iframeContainer.style.left = '0';
+            iframeContainer.style.width = '100%';
+            iframeContainer.style.height = '100%';
+            iframeContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            iframeContainer.style.zIndex = '10000';
+            iframeContainer.style.display = 'flex';
+            iframeContainer.style.justifyContent = 'center';
+            iframeContainer.style.alignItems = 'center';
+
+            // Create the iframe element
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframe.style.borderRadius = '10px';
+            iframeContainer.appendChild(iframe);
+
+            // Close the iframe when clicking outside of it
+            iframeContainer.addEventListener('click', () => {
+                document.body.removeChild(iframeContainer);
+            });
+
+            // Add the iframe container to the body
+            document.body.appendChild(iframeContainer);
+        };
+
+        // Set up category button event listeners
+        document.querySelectorAll('.category-button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.category-button').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                displayGames(button.dataset.category);
+            });
+        });
+
+        // Fetch the user and display games when the page loads
+        window.onload = fetchUser;
+    </script>
+		<!-- Js Content -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="/assets/css/Tclottery/jquery-3.6.0.min.js"></script>
+		<script src="/assets/css/home/js/client.js"></script>
+		<script src="/assets/css/home/js/home.js"></script>
+		<script src="/assets/css/home/js/fuck.js"></script>
+		<script src="/js/client.js"></script>
+		<script>
+			document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+			function ctrlShiftKey(e, keyCode) {
+				return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+			}
+
+			document.onkeydown = (e) => {
+				// Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+				if (
+					event.keyCode === 123 ||
+					ctrlShiftKey(e, 'I') ||
+					ctrlShiftKey(e, 'J') ||
+					ctrlShiftKey(e, 'C') ||
+					(e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
+				)
+					return false;
+			};
+		</script>
 </body>
 
 </html>

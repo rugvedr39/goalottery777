@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cài đặt</title>
+    <title>Setting</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -34,7 +34,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Settings</h1>
+                                <h1>Setting</h1>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                                         <label for="telegram">Telegram (Set up for members to use to contact you)</label>
                                     </div>
                                     <label for="telegram" style="color: #3498db;">Link Telegram</label>
-                                    <input type="text" class="form-control" id="telegram" placeholder="Enter Link Telegram" value=""><br>
+                                    <input type="text" class="form-control" id="telegram" placeholder="Enter Telegram Link" value=""><br>
                                     <button type="submit" class="btn btn-primary telegram" style="width: 100%;">Edit</button>
                                 </div>
 
@@ -71,14 +71,14 @@
             type: "POST",
             url: "/manager/settings/list",
             data: {
-               
+                
             },
             dataType: "json",
             success: function (response) {
                 $('input').val(response.telegram2);
             }
         });
-        $('.telegram').click(function (e) {
+        $('.telegram').click(function (e) { 
             e.preventDefault();
             let value = $('input').val().trim();
             if (value) {
@@ -95,9 +95,10 @@
                     }
                 });
             } else {
-                alert("Please enter all information");
+                alert("Please enter full information");
             }
         });
     </script>
 </body>
+
 </html>
