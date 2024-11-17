@@ -1,4 +1,5 @@
 import axios from "axios";
+import crypto from "crypto";
 import connection from "../config/connectDB.js";
 import aesUtil from "../helpers/AESEncrypt.js";
 
@@ -50,7 +51,7 @@ const gameCategoriesPage = (GameTagId) => async (req, res) => {
   try {
     const response = await axios({
       method: "GET",
-      url: `${process.env.APP_BASE_URL}/jdb_game_list.json`,
+      url: "https://webghost.api-jetx.online/api/neo_jdb/game_list",
     });
 
     const tagName = tagList.find((item) => item.id === GameTagId)?.name;
@@ -89,7 +90,7 @@ const gameSlotsPage = (GameTagId) => async (req, res) => {
   try {
     const response = await axios({
       method: "GET",
-      url: `${process.env.APP_BASE_URL}/jdb_game_list.json`,
+      url: "https://webghost.api-jetx.online/api/neo_jdb/game_list",
     });
 
     const tagName = tagList.find((item) => item.id === GameTagId)?.name;
@@ -121,7 +122,7 @@ const gameQuickPopularList = async (req, res) => {
   try {
     const response = await axios({
       method: "GET",
-      url: `${process.env.APP_BASE_URL}/jdb_game_list.json`,
+      url: "https://webghost.api-jetx.online/api/neo_jdb/game_list",
     });
 
     const tagName = tagList.find((item) => item.id === 7)?.name;
@@ -146,67 +147,81 @@ const gameQuickPopularList = async (req, res) => {
   }
 };
 
+
+//Helper function to encrypt data
+const encryptData = (data, key, iv) => {
+    const cipher = crypto.createCipheriv('aes-128-cbc', Buffer.from(key), Buffer.from(iv));
+    let encrypted = cipher.update(data, 'utf8', 'base64');
+    encrypted += cipher.final('base64');
+    return encrypted.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+};
+
 const generateGameLink = async (req, res) => {
   try {
-    let token = req.cookies.auth;
-    let gType = req.query.g_type;
-    let mType = req.query.m_type;
-
-    const [rows] = await connection.execute(
-      "SELECT `token`, `status`, `phone` , `money` FROM `users` WHERE `token` = ? AND `veri` = 1",
-      [token],
-    );
-
-    if (rows.length === 0) {
-      return res.status(400).json({
-        message: "Login is required to access this api",
+    const token = req.cookies.auth; // Check if token exists
+    if (!token) {
+      return res.status(401).json({
+        message: "Login is required to access this API",
         isAuthorized: false,
       });
     }
 
+    const gType = req.query.g_type;
+    const mType = req.query.m_type;
+
+    // Check if gType and mType are provided
     if (!gType || !mType) {
       return res.status(400).json({
-        message: "gType and mType is required!",
+        message: "gType and mType are required!",
         isAuthorized: true,
       });
     }
 
-    const response = await axios({
-      method: "GET",
-      url: "https://bytefusionapi.com/api/neo_jdb/generate_link",
-      data: {
-        parent: agentId,
-        uid: rows?.[0]?.phone,
-        balance: rows?.[0]?.money,
-        gType: gType,
-        mType: mType,
-        windowMode: "2",
-        key: key,
-        iv: iv,
-        dc: dc,
-        url: API_URL,
-      },
-    });
+    // Query the database for the user
+    const [rows] = await connection.execute(
+      "SELECT token, status, phone FROM users WHERE token = ? AND veri = 1",
+      [token]
+    );
 
-    const status = response.data.status;
-
-    if (status === "0000") {
-      return res.redirect(response?.data?.path);
+    // Check if user exists
+    if (rows.length === 0) {
+      return res.status(401).json({
+        message: "Invalid token or user not verified",
+        isAuthorized: false,
+      });
     }
 
-    return res.status(400).json({
-      message: "Something went wrong!",
-      data: response?.data,
-      isAuthorized: true,
+    const mobile = rows[0].phone; // Get the user's phone number
+
+    // Call external API to get the game link
+    const response = await axios.post("http://webghost.api-jetx.online/postjdb", {
+      Mobile: mobile,
+      gType: gType,
+      mType: mType,
+      ReferrerUrl: process.env.JDB_GAME_BASE_URL,
     });
+
+    if (!response.data.generatedUrl) {
+      return res.status(500).json({
+        message: "Failed to generate game link",
+        isAuthorized: true,
+      });
+    }
+
+    console.log("Generated URL:", response.data.generatedUrl);
+
+    // Redirect to the generated URL
+    return res.redirect(response.data.generatedUrl);
+
   } catch (error) {
-    console.log(error);
-    console.log(error?.response?.data);
+    console.error("Error generating game link:", error);
     return res.status(500).json({
-      message: "Something went wrong!",
+      message: "An error occurred while generating the game link",
+      error: error.message,
     });
   }
 };
+
 
 const mainFunction = async (req, res) => {
   try {
