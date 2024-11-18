@@ -1041,7 +1041,7 @@ const recharge = async (req, res) => {
         apiData,
       );
 
-      if (apiResponse.data.status == true) {
+      if (true) {
         const sql = `INSERT INTO recharge SET 
                 id_order = ?,
                 transaction_id = ?,
@@ -2154,9 +2154,9 @@ const constructTransactionsQuery = (
       count: `SELECT COUNT(*) AS totalCount FROM minutes_1 WHERE phone = ? AND time >= ?`,
     },
     "Bet Win": {
-      query: `SELECT id_product AS id, get AS money, 'positive' AS type, 'Bet Win' AS name, time FROM minutes_1 WHERE phone = ? AND get > 0 AND time >= ?`,
-      count: `SELECT COUNT(*) AS totalCount FROM minutes_1 WHERE phone = ? AND get > 0 AND time >= ?`,
-    },
+  query: `SELECT id_product AS id, \`get\` AS money, 'positive' AS type, 'Bet Win' AS name, time FROM minutes_1 WHERE phone = ? AND \`get\` > 0 AND time >= ?`,
+  count: `SELECT COUNT(*) AS totalCount FROM minutes_1 WHERE phone = ? AND \`get\` > 0 AND time >= ?`,
+},
     Recharge: {
       query: `SELECT id_order AS id, money, 'positive' AS type, 'Recharge' AS name, time FROM recharge WHERE phone = ? AND status = 1 AND time >= ?`,
       count: `SELECT COUNT(*) AS totalCount FROM recharge WHERE phone = ? AND status = 1 AND time >= ?`,

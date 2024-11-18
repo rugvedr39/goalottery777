@@ -24,10 +24,10 @@ export const PaymentStatusMap = {
 
 const PaymentMethodsMap = {
   UPI_GATEWAY: "upi_gateway",
-  UPI_MANUAL: "upi_manual",
+  UPI_MANUAL: "rspay",
   USDT_MANUAL: "usdt_manual",
   WOW_PAY: "wow_pay",
-  RS_PAY: "rs_pay",
+  RS_PAY: "rspay",
   USDT: "usdt",
   UPAY: "upay",
 };

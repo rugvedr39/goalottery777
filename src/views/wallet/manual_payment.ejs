@@ -174,13 +174,13 @@
             padding: 10px;
             user-select: none;
             font: inherit;
-            color: #896646;
+            color: #61a9ff;
             font-size: 1rem;
             font-weight: 700;
             letter-spacing: .01333rem;
             border: none;
             border-radius: 99rem;
-            background: linear-gradient(131deg, #f2d5b2 0%, #d9b38c 100%);
+            background: linear-gradient(131deg, #f2d5b2 0%, #22275b 100%);
         }
 
         .upi_pay_now {
@@ -215,12 +215,15 @@
 
             <style>
                 .upi_qr__img {
-                    width: 65%;
+                    width: 150px;
+                    height: 150px;
                     margin-top: 30px;
                     margin-bottom: 30px;
                 }
             </style>
-            <img src="/payment/upi_qr.jpg" alt="" class="upi_qr__img">
+            <!-- <img src="/payment/upi_qr.jpg" alt="" class="upi_qr__img"> -->
+            <canvas id="upiQrCode" class="upi_qr__img"></canvas>
+
             <button class="upi_display_content" id="copy_upi_id">
                 <p>
                     <strong>UPI ID: </strong>
@@ -284,7 +287,24 @@
         </footer>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
     <script>
+
+        const upiId = '<%= UpiId %>'; // Dynamic UPI ID passed from the server
+        const upiString = `upi://pay?pa=${upiId}&cu=INR`; // Customize as needed
+
+        QRCode.toCanvas(document.getElementById('upiQrCode'), upiString, function (error) {
+            if (error) {
+                console.error('Error generating QR code:', error);
+            } else {
+                console.log('QR code successfully generated');
+            }
+        });
+
+
         const copyUpiId = document.getElementById("copy_upi_id");
 
         copyUpiId.addEventListener("click", function () {
@@ -328,35 +348,66 @@
         const submitButton = document.getElementById("submit_button");
         submitButton.addEventListener("click", async (event) => {
             try {
-
-
                 event.preventDefault();
                 const upiRefNo = document.getElementById("upi_ref_no").value;
                 const amount = '<%=Amount%>';
 
-                const response = await axios.post("/wallet/paynow/manual_upi_request", {
-                    money: amount,
-                    utr: upiRefNo,
-                })
+                // const response = await axios.post("/wallet/paynow/manual_upi_request", {
+                //     money: amount,
+                //     utr: upiRefNo,
+                // })
 
-                if (!response?.data) {
-                    alertMessage("Something went Wrong!")
-                    return
-                }
+                // if (!response?.data) {
+                //     alertMessage("Something went Wrong!")
+                //     return
+                // }
 
-                if (response?.data?.status === false) {
-                    alertMessage(response?.data?.message)
-                    return
-                }
+                // if (response?.data?.status === false) {
+                //     alertMessage(response?.data?.message)
+                //     return
+                // }
 
-                alertMessage(response?.data?.message)
+                // alertMessage(response?.data?.message)
 
-                window.location.href = "/wallet/rechargerecord"
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/api/webapi/recharge",
+                    data: {
+                        money: amount,
+                        type: "rspay",
+                        upiRefNo:upiRefNo
+                    },
+                    dataType: "json",
+                    success: function (response) {
+                        let data = response.datas;
+                        console.log(response);
+                        
+                        if (!response.status) {
+                            alertMess(response.message, $(this), 5000);
+                            $("#create-bank").removeClass('block-click');
+                            return
+                        }else{
+                             window.location.href = "/wallet/rechargerecord"
+                        }
+
+                        $('.Loading').fadeIn(0);
+                        setTimeout(() => {
+                            $('.Loading').fadeOut(0);
+                            location.reload();
+                            // setTimeout(() => {
+                            //     location.href = data.url;
+                            // }, 100);
+                        }, 1500);
+                    }
+                });
             } catch (error) {
                 console.log(error);
                 alertMessage("Something went Wrong!")
             }
-        });
+        }
+    );
     </script>
 </body>
 
