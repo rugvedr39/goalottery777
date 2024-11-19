@@ -179,61 +179,40 @@ const totalJoin = async (req, res) => {
 };
 
 const listMember = async (req, res) => {
-  let { pageno, limit, search } = req.body;
-  const offset = (pageno - 1) * limit;
+  let { pageno, limit } = req.body;
 
   if (!pageno || !limit) {
-    return res.status(200).json({
-      code: 0,
-      msg: "No more data",
-      data: {
-        gameslist: [],
-      },
-      status: false,
-    });
+      return res.status(200).json({
+          code: 0,
+          msg: "No more data",
+          data: {
+              gameslist: [],
+          },
+          status: false,
+      });
   }
 
   if (pageno < 0 || limit < 0) {
-    return res.status(200).json({
-      code: 0,
-      msg: "No more data",
-      data: {
-        gameslist: [],
-      },
-      status: false,
-    });
+      return res.status(200).json({
+          code: 0,
+          msg: "No more data",
+          data: {
+              gameslist: [],
+          },
+          status: false,
+      });
   }
-
-  let sql = "SELECT * FROM users WHERE veri = 1 AND level != 2";
-  let countSql =
-    "SELECT COUNT(*) as total FROM users WHERE veri = 1 AND level != 2";
-  let params = [];
-
-  if (search) {
-    sql += " AND (phone LIKE ? OR id_user LIKE ?)";
-    countSql += " AND (phone LIKE ? OR phone LIKE ?)";
-    params = [`%${search}%`, `%${search}%`];
-  }
-
-  sql += " ORDER BY id DESC LIMIT ? OFFSET ?";
-  params.push(limit, offset);
-
-  // Execute the query to fetch users
-  const [users] = await connection.execute(sql, params);
-
-  const [total_users] = await connection.query(countSql, params.slice(0, -2));
-
-  // const [users] = await connection.execute(
-  //    "SELECT * FROM users WHERE veri = 1 AND level != 2 ORDER BY id DESC LIMIT ? OFFSET ?",
-  //    [limit, offset]
-  //  );
-  //  const [total_users] = await connection.query(`SELECT * FROM users WHERE veri = 1 AND level != 2`)
+  const [users] = await connection.query(
+      `SELECT * FROM users WHERE veri = 1 AND level != 2 ORDER BY id DESC LIMIT ${pageno}, ${limit} `
+  );
+  const [total_users] = await connection.query(
+      `SELECT * FROM users WHERE veri = 1 AND level != 2`
+  );
   return res.status(200).json({
-    message: "Success",
-    status: true,
-    datas: users,
-    currentPage: pageno,
-    page_total: Math.ceil(total_users[0].total / limit),
+      message: "Success",
+      status: true,
+      datas: users,
+      page_total: Math.ceil(total_users.length / limit),
   });
 };
 

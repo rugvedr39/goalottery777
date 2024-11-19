@@ -39,6 +39,7 @@ const supportPage = async (req, res) => {
           "SELECT `telegram` FROM point_list WHERE phone = ?",
           [users[0].ctv],
         );
+        
       }
     }
     telegram = settings[0].telegram;
