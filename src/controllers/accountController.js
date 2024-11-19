@@ -199,7 +199,7 @@ const register = async (req, res) => {
       });
     }
 
-    if (check_ip.length > 3) {
+    if (false) {
       return res.status(200).json({
         message: "Registered IP address",
         status: false,
