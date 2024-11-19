@@ -920,7 +920,7 @@ const recharge = async (req, res) => {
     [userInfo.phone, 0],
   );
 
-  if (recharge.length == 0) {
+  if (true) {
     let time = new Date().getTime();
     const date = new Date();
     function formateT(params) {
