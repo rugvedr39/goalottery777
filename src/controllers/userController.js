@@ -880,6 +880,7 @@ const recharge = async (req, res) => {
   let money = req.body.money;
   let type = req.body.type;
   let typeid = req.body.typeid;
+  let upiRefNo = req.body.upiRefNo;
 
   const minimumMoney = process.env.MINIMUM_MONEY_INR;
 
@@ -994,6 +995,7 @@ const recharge = async (req, res) => {
             phone = ?,
             money = ?,
             type = ?,
+            utr = ?,
             status = ?,
             today = ?,
             url = ?,
@@ -1004,6 +1006,7 @@ const recharge = async (req, res) => {
         userInfo.phone,
         money,
         type,
+        upiRefNo,
         0,
         checkTime,
         "NULL",
