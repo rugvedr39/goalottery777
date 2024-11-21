@@ -964,8 +964,7 @@ const addWinGo = async (game) => {
     }
 
     let timeNow = Date.now();
-    let gameRepresentationId = GameRepresentationIds.WINGO[game];
-    let NewGamePeriod = generatePeriod(gameRepresentationId);
+    let NewGamePeriod = parseInt(winGoNow[0].period, 10) + 1;
 
     //console.log(NewGamePeriod, join);
 
