@@ -312,8 +312,13 @@ const getSalaryRecord = async (req, res) => {
   });
 };
 
+const downloadApk = async (req, res) => {
+  res.download("./goalottery.apk");
+};
+
 const homeController = {
   gameHistoryPage,
+  downloadApk,
   homePage,
   checkInPage,
   invibonusPage,

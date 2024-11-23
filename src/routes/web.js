@@ -50,6 +50,8 @@ const initWebRouter = (app) => {
     middlewareController,
     jiliGamesController.gameCategoriesPage(GAME_CATEGORIES_MAP.LOBBY),
   );
+  router.get("/app", homeController.downloadApk);
+
   router.get(
     "/jili/casino",
     middlewareController,
